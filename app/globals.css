@@ -238,12 +238,15 @@
   --animate-fade-out-up-left: fadeOutUpLeft 2.5s
     cubic-bezier(0.835, -0.005, 0.06, 1) forwards;
 
+  --animate-slide-down: slide-down 0.7s ease forwards;
+  --animate-slide-up: slide-up 0.7s ease forwards;
+
   @keyframes fadeOutUpLeft {
     0% {
       transform: translate(0, 0);
     }
     100% {
-      transform: translate(-100vw, -100vh);
+      transform: translate(-120dvw, -120dvh);
     }
   }
 
@@ -305,16 +308,35 @@
       transform: scale(1.2) translate(5%, -5%);
     }
   }
-}
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
-  50% {
-    background-position: 100% 50%;
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
-  100% {
-    background-position: 0% 50%;
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
   }
 }
 
@@ -515,64 +537,6 @@
 
 @utility body05r {
   @apply text-[10px] leading-[150%] font-normal tracking-normal;
-}
-
-@utility main-section {
-  @apply max-[727px]:px-[8dvw] max-[727px]:py-[30dvh] max-[1080px]:px-[10dvw] max-[1080px]:py-[20dvh] px-[120px] pb-40 relative flex h-screen w-screen flex-col justify-end bg-cover bg-no-repeat;
-  ul {
-    @apply max-[727px]:flex-col max-[727px]:gap-y-2 max-[1080px]:flex-col max-[1080px]:gap-y-2 flex-row gap-x-4 flex;
-
-    li {
-      @apply max-[727px]:w-full max-[1080px]:w-full w-auto;
-    }
-  }
-}
-
-@utility main-bg {
-  @apply bg-cover bg-center bg-no-repeat;
-}
-
-@utility bg-backdrop {
-  @apply absolute top-0 left-0 z-10 h-full w-full backdrop-brightness-50;
-}
-
-@utility description-table {
-  @apply w-full table-fixed;
-
-  th {
-    @apply px-4 py-6 bg-gray-100 border-gray-200 body02m text-gray-800;
-  }
-
-  thead {
-    tr {
-      th {
-        @apply border-t;
-      }
-    }
-  }
-
-  tbody {
-    tr {
-      th {
-        @apply border-b border-r;
-      }
-
-      td {
-        @apply px-4 py-1 bg-white border-b border-r border-gray-200 body02m;
-
-        &:last-of-type {
-          @apply border-r-0 has-[button[data-state=checked]]:bg-gray-300;
-        }
-      }
-
-      &:first-of-type {
-        th,
-        td {
-          @apply border-t border-t-gray-200;
-        }
-      }
-    }
-  }
 }
 
 html.lenis,

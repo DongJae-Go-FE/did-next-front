@@ -34,10 +34,6 @@ const isNodeLogoItem = (item: LogoItem): item is NodeLogoItem => {
   return "node" in item;
 };
 
-//  const isImageLogoItem = (item: LogoItem): item is ImageLogoItem => {
-//    return "src" in item;
-//  };
-
 export interface LogoLoopProps {
   logos: LogoItem[];
   speed?: number;

@@ -240,7 +240,7 @@ export default function IntroPage() {
           ariaLabel="Technology partners"
         />
       </div>
-      <div className="flex justify-center items-center w-full h-[calc(100dvh-200px)] flex-col gap-y-2">
+      <div className="flex justify-center items-center w-full h-[calc(80dvh-200px)] flex-col gap-y-2">
         <SplitText
           text="WYD 2027 SEOUL DID 페이지에 오신걸 환영합니다."
           className="heading01b text-[clamp(18px,3dvw,40px)] text-center font-black"

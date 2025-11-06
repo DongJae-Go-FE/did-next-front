@@ -48,7 +48,7 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
-        <p className="body02R">Copyright ⓒ 인천교구 All rights reserved</p>
+        <p className="body02R">Copyright ⓒ WYD2027 SEOUL DID All rights reserved</p>
       </div>
     </footer>
   );

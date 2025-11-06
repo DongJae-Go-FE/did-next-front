@@ -97,10 +97,12 @@ function SvgOverlay({
   dioceseData,
   mapRef,
   shouldAnimate,
+  hoveredIndex,
 }: {
   dioceseData: typeof data;
   mapRef: React.RefObject<NaverMap | null>;
   shouldAnimate: boolean;
+  hoveredIndex: number | null;
 }) {
   const [lines, setLines] = useState<LineData[]>([]);
 
@@ -186,12 +188,26 @@ function SvgOverlay({
             }
           }
           
+          @keyframes glowingLine {
+            from {
+              stroke-dashoffset: var(--path-length);
+            }
+            to {
+              stroke-dashoffset: calc(var(--path-length) * -1);
+            }
+          }
+          
           .animated-line {
             animation: drawLine 1s ease-in-out forwards;
           }
 
           .line-hidden {
             stroke-dashoffset: var(--path-length);
+          }
+
+          .glowing-line {
+            animation: glowingLine 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
           }
         `}
       </style>
@@ -207,21 +223,41 @@ function SvgOverlay({
         }}
       >
         {lines.map((line, i) => (
-          <path
-            key={i}
-            d={`M ${line.x1} ${line.y1} L ${line.mx} ${line.y1} L ${line.mx} ${line.y2} L ${line.x2} ${line.y2}`}
-            stroke="#007aff"
-            strokeWidth="2"
-            fill="none"
-            className={shouldAnimate ? "animated-line" : "line-hidden"}
-            strokeDasharray={line.pathLength}
-            strokeDashoffset={line.pathLength}
-            style={
-              {
-                "--path-length": `${line.pathLength}px`,
-              } as React.CSSProperties
-            }
-          />
+          <g key={i}>
+            <path
+              d={`M ${line.x1} ${line.y1} L ${line.mx} ${line.y1} L ${line.mx} ${line.y2} L ${line.x2} ${line.y2}`}
+              stroke="#007aff"
+              strokeWidth="2"
+              fill="none"
+              className={shouldAnimate ? "animated-line" : "line-hidden"}
+              strokeDasharray={line.pathLength}
+              strokeDashoffset={line.pathLength}
+              style={
+                {
+                  "--path-length": `${line.pathLength}px`,
+                } as React.CSSProperties
+              }
+            />
+
+            {hoveredIndex === i && (
+              <path
+                d={`M ${line.x1} ${line.y1} L ${line.mx} ${line.y1} L ${line.mx} ${line.y2} L ${line.x2} ${line.y2}`}
+                stroke="white"
+                strokeWidth="3"
+                fill="none"
+                className="glowing-line"
+                strokeDasharray={`${line.pathLength * 0.2} ${
+                  line.pathLength * 0.8
+                }`}
+                strokeLinecap="round"
+                style={
+                  {
+                    "--path-length": `${line.pathLength}px`,
+                  } as React.CSSProperties
+                }
+              />
+            )}
+          </g>
         ))}
       </svg>
     </>
@@ -242,8 +278,10 @@ export default function Map({
   const [shouldAnimateLines, setShouldAnimateLines] = useState(false);
   const [animationTriggered, setAnimationTriggered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [hoveredMarkerIndex, setHoveredMarkerIndex] = useState<number | null>(
+    null
+  );
 
-  // 화면 크기 감지
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth <= 1079);
@@ -404,10 +442,19 @@ export default function Map({
     markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
 
-    data.forEach((diocese) => {
+    data.forEach((diocese, index) => {
       const markerContainer = document.createElement("div");
       markerContainer.className = "custom-marker";
       markerContainer.style.zIndex = "100";
+
+      // Add hover event listeners
+      markerContainer.addEventListener("mouseenter", () => {
+        setHoveredMarkerIndex(index);
+      });
+
+      markerContainer.addEventListener("mouseleave", () => {
+        setHoveredMarkerIndex(null);
+      });
 
       const root = createRoot(markerContainer);
       root.render(
@@ -506,6 +553,7 @@ export default function Map({
           dioceseData={data}
           mapRef={mapRef}
           shouldAnimate={shouldAnimateLines}
+          hoveredIndex={hoveredMarkerIndex}
         />
       )}
     </div>

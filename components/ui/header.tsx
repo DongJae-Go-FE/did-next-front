@@ -8,7 +8,6 @@ import { useState, useEffect, useMemo } from "react";
 
 import { cn } from "@/lib/utils";
 
-import Drawer from "@/components/drawer";
 import {
   Select,
   SelectContent,
@@ -16,6 +15,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+import Menu from "../menu";
 
 export default function Header() {
   const { push } = useRouter();
@@ -125,7 +126,7 @@ export default function Header() {
             isScrolled ? "[&_svg_path]:fill-black" : "[&_svg_path]:fill-white"
           )}
         >
-          <Drawer />
+          <Menu />
         </li>
       </ul>
     </header>
