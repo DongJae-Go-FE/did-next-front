@@ -31,15 +31,14 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  /** 추후 배포 후 수정 필요 */
-  metadataBase: new URL("http://localhost:9090"),
+  metadataBase: new URL("https://wyd2027did.org"),
   title: "2027 WYD SEOUL DID",
   description: "2027 WYD SEOUL DID 공식 웹사이트",
   keywords:
-    "가톨릭, 천주교, 세계 청년 대회, 인천교구, 성당, 서율, 청년, WYD, DID, 2027, WYD2027, Seoul, Korea",
+    "가톨릭, 천주교, 세계 청년 대회, 인천교구, 서울교구, 서울대 교구, 성당, 서울, 청년, WYD, DID, 2027, WYD2027, Seoul, Korea, 한국, 대한민국, 2027 서울 세계청년대회, 세계청년대회, 2027 세계청년대회, WYD, World Youth Day, 2027 WYD, 서울 WYD, GMG, JMJ, WYD Seoul 2027, GMG Seul 2027, JMJ Seúl 2027, JMJ Séoul 2027",
   applicationName: "2027 WYD SEOUL DID",
   generator: "Next.js",
-  // authors: [{ name: "clemens", url: "https://github.com/DongJae-Go-FE" }],
+
   creator: "clemens",
   publisher: "clemens",
   referrer: "origin-when-cross-origin",
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
     title: "2027 WYD SEOUL DID",
     description: "2027 WYD SEOUL DID 공식 웹사이트",
     siteName: "2027 WYD SEOUL DID",
-    images: ["/logo.png"],
+    images: ["/logo.svg"],
     locale: "ko_KR",
     type: "website",
   },
@@ -62,8 +61,8 @@ export const metadata: Metadata = {
     "Content-Script-Type": "Text/javascript",
     Subject: "2027 WYD SEOUL DID 공식 웹사이트",
     "Other Agent": "clemens",
-    Date: "2025-02-20T12:17:00+09:00",
-    Build: "20250220",
+    Date: "2025-11-07T12:17:00+09:00",
+    Build: "20251107",
     "Last-Modified": "Thu, 20 Feb 2025 12:17:00",
     Copyright: "2027 WYD SEOUL DID 공식 웹사이트",
     "geo.region": "KR-41",
