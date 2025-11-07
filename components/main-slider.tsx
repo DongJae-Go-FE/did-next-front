@@ -76,6 +76,24 @@ export default function MainSlider() {
     }
   }, [flickingRef]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (isAnimating) return;
+
+      if (e.key === "ArrowLeft") {
+        handlePrevSlide();
+      } else if (e.key === "ArrowRight") {
+        handleNextSlide();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isAnimating]);
+
   const handleNextSlide = () => {
     if (!isAnimating && flickingInstanceRef.current) {
       flickingInstanceRef.current.next();
