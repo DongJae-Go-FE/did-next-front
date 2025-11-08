@@ -2,7 +2,7 @@
 
 import { useCallback, useRef, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { debounce } from "lodash";
+import { throttle } from "lodash";
 import Marker from "./marker";
 import data from "../public/data";
 
@@ -162,9 +162,9 @@ function SvgOverlay({
       updateLines
     );
 
-    const handleResize = debounce(() => {
+    const handleResize = throttle(() => {
       updateLines();
-    }, 300);
+    }, 100);
 
     window.addEventListener("resize", handleResize);
 
@@ -264,11 +264,7 @@ function SvgOverlay({
   );
 }
 
-export default function Map({
-  onChangeValue,
-}: {
-  onChangeValue: (value: string) => void;
-}) {
+export default function Map() {
   const mapRef = useRef<NaverMap | null>(null);
   const polygonsRef = useRef<naver.maps.Polygon[]>([]);
   const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -332,7 +328,7 @@ export default function Map({
   }, [animationTriggered, isMobile]);
 
   useEffect(() => {
-    const handleResize = debounce(() => {
+    const handleResize = throttle(() => {
       const map = mapRef.current;
       if (!map) return;
 
@@ -340,7 +336,7 @@ export default function Map({
 
       const center = map.getCenter();
       map.setCenter(center);
-    }, 300);
+    }, 100);
 
     window.addEventListener("resize", handleResize);
 
@@ -357,12 +353,7 @@ export default function Map({
   };
 
   const createPolygon = useCallback(
-    (
-      map: NaverMap,
-      paths: naver.maps.LatLng[][],
-      areaName: string,
-      color: string
-    ) => {
+    (map: NaverMap, paths: naver.maps.LatLng[][], color: string) => {
       const polygon = new window.naver.maps.Polygon({
         map: map,
         paths: paths,
@@ -372,12 +363,6 @@ export default function Map({
         strokeOpacity: 0.6,
         strokeWeight: 2,
         clickable: true,
-      });
-
-      window.naver.maps.Event.addListener(polygon, "click", () => {
-        if (areaName) {
-          onChangeValue(areaName);
-        }
       });
 
       window.naver.maps.Event.addListener(polygon, "mouseover", () => {
@@ -396,7 +381,7 @@ export default function Map({
 
       return polygon;
     },
-    [onChangeValue]
+    []
   );
 
   const drawPolygons = useCallback(
@@ -412,20 +397,18 @@ export default function Map({
 
         geoData.features.forEach((feature) => {
           const geometryType = feature.geometry?.type;
-          const areaName =
-            feature.properties?.area1 || feature.properties?.area;
 
           if (geometryType === "Polygon") {
             const paths = convertCoordinates(
               feature.geometry.coordinates as number[][][]
             );
-            const polygon = createPolygon(map, paths, areaName || "", color);
+            const polygon = createPolygon(map, paths, color);
             polygonsRef.current.push(polygon);
           } else if (geometryType === "MultiPolygon") {
             const multiCoords = feature.geometry.coordinates as number[][][][];
             multiCoords.forEach((polygonCoords) => {
               const paths = convertCoordinates(polygonCoords);
-              const polygon = createPolygon(map, paths, areaName || "", color);
+              const polygon = createPolygon(map, paths, color);
               polygonsRef.current.push(polygon);
             });
           }
@@ -447,7 +430,6 @@ export default function Map({
       markerContainer.className = "custom-marker";
       markerContainer.style.zIndex = "100";
 
-      // Add hover event listeners
       markerContainer.addEventListener("mouseenter", () => {
         setHoveredMarkerIndex(index);
       });
@@ -457,12 +439,7 @@ export default function Map({
       });
 
       const root = createRoot(markerContainer);
-      root.render(
-        <Marker
-          onClick={() => onChangeValue(diocese.name)}
-          name={diocese.name}
-        />
-      );
+      root.render(<Marker name={diocese.name} />);
 
       const lat = isMobile ? diocese.latitude2 : diocese.latitude;
       const lng = isMobile ? diocese.longitude2 : diocese.longitude;
@@ -479,7 +456,7 @@ export default function Map({
 
       markersRef.current.push(marker);
     });
-  }, [isMobile, onChangeValue]);
+  }, [isMobile]);
 
   const initializeMap = useCallback(() => {
     if (!window.naver || !window.naver.maps) return;

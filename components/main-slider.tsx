@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect, ComponentProps } from "react";
+import {
+  useState,
+  useRef,
+  useEffect,
+  ComponentProps,
+  useCallback,
+} from "react";
 
 import Flicking, { EVENTS } from "@egjs/flicking";
 
@@ -16,6 +22,7 @@ import "@egjs/flicking-plugins/dist/pagination.css";
 import SliderItem01 from "./slider-item/slider-item01";
 import SliderItem02 from "./slider-item/slider-item02";
 import SliderItem03 from "./slider-item/slider-item03";
+import SliderItem04 from "./slider-item/slider-item04";
 
 export default function MainSlider() {
   const flickingRef = useRef<HTMLDivElement>(null);
@@ -74,7 +81,23 @@ export default function MainSlider() {
         flickingInstance.destroy();
       };
     }
-  }, [flickingRef]);
+  }, []);
+
+  const handleNextSlide = useCallback(() => {
+    if (!isAnimating && flickingInstanceRef.current) {
+      flickingInstanceRef.current.next();
+
+      if (autoPlayInstanceRef.current) {
+        autoPlayInstanceRef.current.stop();
+      }
+    }
+  }, [isAnimating]);
+
+  const handlePrevSlide = useCallback(() => {
+    if (!isAnimating && flickingInstanceRef.current) {
+      flickingInstanceRef.current.prev();
+    }
+  }, [isAnimating]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -92,22 +115,7 @@ export default function MainSlider() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isAnimating]);
-
-  const handleNextSlide = () => {
-    if (!isAnimating && flickingInstanceRef.current) {
-      flickingInstanceRef.current.next();
-
-      if (autoPlayInstanceRef.current) {
-        autoPlayInstanceRef.current.stop();
-      }
-    }
-  };
-  const handlePrevSlide = () => {
-    if (!isAnimating && flickingInstanceRef.current) {
-      flickingInstanceRef.current.prev();
-    }
-  };
+  }, [isAnimating, handleNextSlide, handlePrevSlide]);
 
   const handleAutoPlay = () => {
     setIsAutoPlay((prev) => {
@@ -137,6 +145,9 @@ export default function MainSlider() {
         </Panel>
         <Panel>
           <SliderItem03 />
+        </Panel>
+        <Panel>
+          <SliderItem04 />
         </Panel>
       </div>
       <div

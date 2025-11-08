@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import SliderBackdrop from "../ui/slider-backdrop";
 
 import {
@@ -10,11 +12,13 @@ import {
 export default function SliderItem02() {
   return (
     <div className="w-full h-full bg-gray-900 overflow-hidden relative">
-      <div
-        className="w-full h-full animate-pan-zoom bg-cover bg-left-bottom"
-        style={{
-          backgroundImage: "url('/main/main02.jpeg')",
-        }}
+      <Image
+        src="/main/main02.jpeg"
+        className="w-full h-full animate-pan-zoom bg-cover bg-left-bottom object-cover object-center"
+        fill
+        priority
+        sizes="100vw"
+        alt="WYD 2027 DID 메인 이미지 두번째"
       />
       <div className="text-white heading03b absolute top-[30dvh] z-40 pl-8 flex flex-col gap-y-1 right-[5dvw]">
         <SlideTextContainer>
