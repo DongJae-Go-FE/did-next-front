@@ -16,7 +16,6 @@ export default function SliderItem04() {
         src="/main/main04.jpeg"
         className="w-full h-full animate-pan-zoom bg-cover bg-left-bottom object-cover object-center"
         fill
-        priority
         sizes="100vw"
         alt="WYD 2027 DID 메인 이미지 네번째"
       />
