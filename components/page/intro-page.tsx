@@ -21,7 +21,7 @@ export default function IntroPage() {
         />
       ),
       title: "안동교구",
-      href: "",
+      href: "https://www.acatholic.or.kr",
     },
     {
       node: (
@@ -35,7 +35,7 @@ export default function IntroPage() {
         />
       ),
       title: "부산교구",
-      href: "",
+      href: "http://www.catholicbusan.or.kr",
     },
     {
       node: (
@@ -49,7 +49,7 @@ export default function IntroPage() {
         />
       ),
       title: "청주교구",
-      href: "",
+      href: "https://www.cdcj.or.kr",
     },
     {
       node: (
@@ -59,11 +59,11 @@ export default function IntroPage() {
           height={40}
           className="w-auto h-10 cursor-pointer"
           priority
-          alt="전주교구"
+          alt="춘천교구"
         />
       ),
-      title: "전주교구",
-      href: "",
+      title: "춘천교구",
+      href: "https://www.cccatholic.or.kr",
     },
     {
       node: (
@@ -77,7 +77,7 @@ export default function IntroPage() {
         />
       ),
       title: "대구교구",
-      href: "",
+      href: "https://www.daegu-archdiocese.or.kr",
     },
     {
       node: (
@@ -91,7 +91,7 @@ export default function IntroPage() {
         />
       ),
       title: "대전교구",
-      href: "",
+      href: "https://www.djcatholic.or.kr/home",
     },
     {
       node: (
@@ -105,7 +105,7 @@ export default function IntroPage() {
         />
       ),
       title: "광주교구",
-      href: "",
+      href: "https://www.gjcatholic.or.kr",
     },
     {
       node: (
@@ -119,7 +119,7 @@ export default function IntroPage() {
         />
       ),
       title: "인천교구",
-      href: "",
+      href: "http://www.caincheon.or.kr",
     },
     {
       node: (
@@ -133,7 +133,7 @@ export default function IntroPage() {
         />
       ),
       title: "제주교구",
-      href: "",
+      href: "https://www.diocesejeju.or.kr",
     },
     {
       node: (
@@ -147,7 +147,7 @@ export default function IntroPage() {
         />
       ),
       title: "전주교구",
-      href: "",
+      href: "https://www.jcatholic.or.kr",
     },
     {
       node: (
@@ -161,7 +161,7 @@ export default function IntroPage() {
         />
       ),
       title: "마산교구",
-      href: "",
+      href: "https://cathms.kr",
     },
     {
       node: (
@@ -175,7 +175,7 @@ export default function IntroPage() {
         />
       ),
       title: "군종교구",
-      href: "",
+      href: "https://www.gunjong.or.kr",
     },
     {
       node: (
@@ -189,7 +189,7 @@ export default function IntroPage() {
         />
       ),
       title: "수원교구",
-      href: "",
+      href: "https://www.casuwon.or.kr",
     },
     {
       node: (
@@ -203,7 +203,7 @@ export default function IntroPage() {
         />
       ),
       title: "의정부교구",
-      href: "",
+      href: "http://ucatholic.or.kr",
     },
     {
       node: (
@@ -217,7 +217,7 @@ export default function IntroPage() {
         />
       ),
       title: "원주교구",
-      href: "",
+      href: "http://www.wjcatholic.or.kr",
     },
   ];
 
@@ -237,7 +237,7 @@ export default function IntroPage() {
           scaleOnHover
           fadeOut
           fadeOutColor="#ffffff"
-          ariaLabel="Technology partners"
+          ariaLabel="교구 로고 모음"
         />
       </div>
       <div className="flex justify-center items-center w-full h-[calc(80dvh-200px)] flex-col gap-y-2">
@@ -283,7 +283,7 @@ export default function IntroPage() {
           scaleOnHover
           fadeOut
           fadeOutColor="#ffffff"
-          ariaLabel="Technology partners"
+          ariaLabel="교구 로고 모음"
         />
       </div>
     </>

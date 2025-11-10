@@ -191,7 +191,7 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
           <p className="m-0 font-bold">{data.name}</p>
         </div>
         <p className="m-0 text-gray-600">
-          달성률: {data.달성률}% ({data.현재인원.toLocaleString()}명/
+          신청 현황: {data.달성률}% ({data.현재인원.toLocaleString()}명/
           {data.목표인원.toLocaleString()}명)
         </p>
       </div>
