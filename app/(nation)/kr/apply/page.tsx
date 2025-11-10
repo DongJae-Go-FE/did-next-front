@@ -18,9 +18,108 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+const data = [
+  {
+    name: "서울대교구",
+    image: "/incheon-bg.webp",
+    alt: "서울대교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "인천교구",
+    image: "/incheon-bg.webp",
+    alt: "인천교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "수원교구",
+    image: "/incheon-bg.webp",
+    alt: "수원교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "의정부교구",
+    image: "/incheon-bg.webp",
+    alt: "의정부교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "춘천교구",
+    image: "/incheon-bg.webp",
+    alt: "춘천교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "원주교구",
+    image: "/incheon-bg.webp",
+    alt: "원주교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "대전교구",
+    image: "/incheon-bg.webp",
+    alt: "대전교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "청주교구",
+    image: "/incheon-bg.webp",
+    alt: "청주교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "대구대교구",
+    image: "/incheon-bg.webp",
+    alt: "대구대교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "부산교구",
+    image: "/incheon-bg.webp",
+    alt: "부산교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "마산교구",
+    image: "/incheon-bg.webp",
+    alt: "마산교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "안동교구",
+    image: "/incheon-bg.webp",
+    alt: "안동교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "광주대교구",
+    image: "/incheon-bg.webp",
+    alt: "광주대교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "전주교구",
+    image: "/incheon-bg.webp",
+    alt: "전주교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "제주교구",
+    image: "/incheon-bg.webp",
+    alt: "제주교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+  {
+    name: "군종교구",
+    image: "/incheon-bg.webp",
+    alt: "군종교구 이미지",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+  },
+];
+
 export default function Page() {
   return (
-    <SubLayout>
+    <SubLayout className="relative">
       <LeftMenu
         title="참여"
         menus={[
@@ -44,36 +143,47 @@ export default function Page() {
       />
       <SubContentContainer>
         <SubContentTitle>DID 신청</SubContentTitle>
-        <ul className="w-full">
-          <li>
-            <Card className="w-full max-w-sm">
-              <CardContent>
-                <Image
-                  src="/incheon-bg.webp"
-                  width={400}
-                  height={300}
-                  priority
-                  alt="인천교구 이미지"
-                />
-              </CardContent>
-              <CardHeader>
-                <CardTitle>인천 교구 WYD 신청</CardTitle>
-                <CardDescription>
-                  아래 버튼을 누르면 인천교구 WYD 신청을 합니다.
-                </CardDescription>
-              </CardHeader>
+        <ul
+          className="w-full grid gap-4"
+          style={{
+            gridTemplateColumns:
+              "repeat(auto-fill, minmax(min(300px,100%), 1fr))",
+          }}
+        >
+          {data.map(({ alt, href, image, name }) => {
+            return (
+              <li key={name}>
+                <Card className="w-full max-w-full">
+                  <CardContent>
+                    <Image
+                      src={image}
+                      className="w-full"
+                      width={400}
+                      height={300}
+                      priority
+                      alt={alt}
+                    />
+                  </CardContent>
+                  <CardHeader>
+                    <CardTitle title={`${name} 교구 WYD 신청`}>{name} 교구 WYD 신청</CardTitle>
+                    <CardDescription className="truncate" title={`버튼을 누르면 ${name} 교구 WYD 신청을 합니다.`}>
+                      버튼을 누르면 {name} 교구 WYD 신청을 합니다.
+                    </CardDescription>
+                  </CardHeader>
 
-              <CardFooter className="flex-col gap-2">
-                <Link
-                  className="h-12 bg-gray-900 text-white w-full flex justify-center items-center body01m rounded-md hover:bg-gray-800"
-                  target="_blank"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973"
-                >
-                  신청하기
-                </Link>
-              </CardFooter>
-            </Card>
-          </li>
+                  <CardFooter className="flex-col gap-2">
+                    <Link
+                      className="h-12 bg-gray-900 text-white w-full flex justify-center items-center body01m rounded-md hover:bg-gray-800"
+                      target="_blank"
+                      href={href}
+                    >
+                      신청하기
+                    </Link>
+                  </CardFooter>
+                </Card>
+              </li>
+            );
+          })}
         </ul>
       </SubContentContainer>
     </SubLayout>

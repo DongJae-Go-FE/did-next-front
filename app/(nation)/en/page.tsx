@@ -8,7 +8,7 @@ export default function Page() {
     >
       <div className="flex flex-col gap-y-3 justify-center items-center">
         <MessageCircleWarning width={60} height={60} />
-        <p className="heading01b">This language page is coming soon.</p>
+        <p className="heading01b text-center">This language page is coming soon.</p>
       </div>
     </main>
   );

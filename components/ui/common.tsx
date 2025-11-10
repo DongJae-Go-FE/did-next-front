@@ -35,7 +35,7 @@ function SubContentTitle({
   return (
     <h2
       className={cn(
-        "flex justify-between items-center heading03b text-gray-900 mb-10",
+        "flex justify-between items-center heading03b text-gray-900 mb-4",
         className
       )}
       {...props}
