@@ -51,34 +51,46 @@ export default function Marker({
 
         <div className="w-full flex gap-y-4 flex-col">
           <h2 className="heading03b">{name}</h2>
-          <div className="flex h-[calc(100%-52px)] gap-x-8">
+          <div className="flex h-[calc(100%-52px)] gap-x-8 max-[1079]:flex-col max-[1079]:gap-y-8">
             <Image
               src="/incheon.svg"
               width={360}
               height={110}
+              className="max-[1079px]:w-full"
               priority
               alt={`${name} 로고 사진`}
             />
-            <div className="w-[calc(100%-393px)] [&_>_div]:h-full">
-              <Table type="description" className="h-full table-auto">
+            <div className="w-[calc(100%-393px)] [&_>_div]:h-full max-[1079px]:w-full">
+              <Table
+                type="description"
+                className="h-full table-auto max-[1079px]:table-fixed"
+              >
                 <TableCaption>{name} 테이블</TableCaption>
                 <TableBody>
                   <TableRow>
-                    <TableHead className="w-50 text-center">교구명</TableHead>
+                    <TableHead className="w-50 max-[767px]:w-20 text-center">
+                      교구명
+                    </TableHead>
                     <TableCell>인천교구</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableHead className="w-50 text-center">전화번호</TableHead>
+                    <TableHead className="w-50 max-[767px]:w-20 text-center">
+                      전화번호
+                    </TableHead>
                     <TableCell>032-765-6960</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableHead className="w-50 text-center">주소</TableHead>
+                    <TableHead className="w-50 max-[767px]:w-20 text-center">
+                      주소
+                    </TableHead>
                     <TableCell>
                       인천광역시 동구 박문로1 (송림동 103-25)
                     </TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableHead className="w-50 text-center">홈페이지</TableHead>
+                    <TableHead className="w-50 max-[767px]:w-20 text-center">
+                      홈페이지
+                    </TableHead>
                     <TableCell>
                       <Link
                         href="http://www.caincheon.or.kr/"

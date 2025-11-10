@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import "../../globals.css"
 
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
@@ -9,17 +9,17 @@ import SmoothScrolling from "@/components/smooth-scroll";
 const pretendard = localFont({
   src: [
     {
-      path: "fonts/Pretendard-Regular.subset.woff2",
+      path: "../../fonts/Pretendard-Regular.subset.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "fonts/Pretendard-Medium.subset.woff2",
+      path: "../../fonts/Pretendard-Medium.subset.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "fonts/Pretendard-Bold.subset.woff2",
+      path: "../../fonts/Pretendard-Bold.subset.woff2",
       weight: "700",
       style: "normal",
     },
@@ -78,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="lenis lenis-smooth">
+    <html lang="ko" className="lenis lenis-smooth">
       <body className={pretendard.className}>
         <Header />
         <SmoothScrolling>{children}</SmoothScrolling>

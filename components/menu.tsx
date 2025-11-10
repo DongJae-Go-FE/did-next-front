@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 import { type ComponentProps } from "react";
 
@@ -41,16 +44,18 @@ export default function Menu() {
         <div className="px-8 flex-1 overflow-y-auto">
           <div className="w-full h-30 flex justify-between items-center flex-shrink-0 max-[1079px]:border-b max-[1079px]:border-gray-800">
             <h2>
-              <Link href="/">
-                <Image
-                  src="/logo-white.svg"
-                  alt="wyd logo"
-                  width={60}
-                  height={40}
-                  className="w-auto h-18"
-                  priority
-                />
-              </Link>
+              <DialogClose asChild>
+                <Link href="/">
+                  <Image
+                    src="/logo-white.svg"
+                    alt="wyd logo"
+                    width={60}
+                    height={40}
+                    className="w-auto h-18"
+                    priority
+                  />
+                </Link>
+              </DialogClose>
             </h2>
             <DialogClose asChild>
               <button type="button" className="cursor-pointer">
@@ -113,7 +118,7 @@ export default function Menu() {
               <MenuContainerTitle>참여</MenuContainerTitle>
               <MenuContainerList style={{ animationDelay: "1.8s" }}>
                 <li>
-                  <MenuContainerListItemLink>
+                  <MenuContainerListItemLink href="/kr/apply">
                     DID 신청
                   </MenuContainerListItemLink>
                 </li>
@@ -195,17 +200,23 @@ function MenuContainerListItemLink({
   children,
   ...props
 }: ComponentProps<"a">) {
+  const pathName = usePathname();
+
   return (
-    <Link
-      href={href || ""}
-      className={cn(
-        "hover:text-[#0052CC] transition-colors duration-300 relative",
-        "before:absolute before:left-0 before:-bottom-1 before:w-0 before:h-1 before:bg-[#0052cc] before:transition-[width] before:delay-200 hover:before:w-full",
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </Link>
+    <DialogClose asChild>
+      <Link
+        href={href || ""}
+        className={cn(
+          "hover:text-[#0052CC] transition-colors duration-300 relative",
+          "before:absolute before:left-0 before:-bottom-1 before:w-0 before:h-1 before:bg-[#0052cc] before:transition-[width] before:delay-200 hover:before:w-full",
+          pathName === href &&
+            "text-[#0052CC] before:h-1 before:bg-[#0052cc] before:w-full",
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </Link>
+    </DialogClose>
   );
 }

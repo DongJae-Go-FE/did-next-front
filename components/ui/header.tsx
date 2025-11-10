@@ -28,6 +28,11 @@ export default function Header() {
     return ["kr", "en", "jp", "cn"];
   }, []);
 
+  const isRootPage = useMemo(() => {
+    const segments = pathname.split("/").filter(Boolean);
+    return segments.length === 1 && supportedLangs.includes(segments[0]);
+  }, [pathname, supportedLangs]);
+
   useEffect(() => {
     const targetElement = document.querySelector("#section");
 
@@ -46,7 +51,13 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!isRootPage) {
+      setIsScrolled(false);
+    }
+  }, [isRootPage]);
 
   useEffect(() => {
     const firstSegment = pathname.split("/")[1];
@@ -75,13 +86,19 @@ export default function Header() {
     push(newPath || `/${lang}`);
   };
 
+  const shouldShowWhiteBg = !isRootPage || isScrolled;
+
   return (
     <header
       className={cn(
-        "w-full h-30 flex items-center px-8 fixed top-0 left-0 z-5000 justify-between transition- duration-300 ",
-        isScrolled
-          ? "bg-white text-black border-b border-gray-200 shadow-sm"
-          : "bg-transparent text-white border-none"
+        "w-full h-30 flex items-center px-8 fixed top-0 left-0 z-5000 justify-between transition-colors duration-300",
+
+        isRootPage && !isScrolled && "bg-transparent text-white border-none",
+        isRootPage &&
+          isScrolled &&
+          "bg-white text-black border-b border-gray-200 shadow-sm",
+
+        !isRootPage && "bg-white text-black border-b border-gray-200"
       )}
     >
       <h1>
@@ -123,7 +140,9 @@ export default function Header() {
         <li
           className={cn(
             "transition-colors duration-500",
-            isScrolled ? "[&_svg_path]:fill-black" : "[&_svg_path]:fill-white"
+            shouldShowWhiteBg
+              ? "[&_svg_path]:fill-black"
+              : "[&_svg_path]:fill-white"
           )}
         >
           <Menu />

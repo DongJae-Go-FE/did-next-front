@@ -23,11 +23,12 @@ export default function SponsorPage() {
               key={index}
             >
               <Link
-                href="/"
+                href="https://www.cbck.or.kr/"
+                target="_blank"
                 className="flex w-full h-full justify-center items-center"
               >
                 <Image
-                  src="/logo/logo-andong.svg"
+                  src="sponsor-logo.svg"
                   alt="스폰서1"
                   width={200}
                   height={40}
