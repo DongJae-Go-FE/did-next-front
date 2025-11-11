@@ -13,8 +13,8 @@ export default function IntroPage() {
       node: (
         <Image
           src="/logo/logo-andong.svg"
-          width={200}
-          height={40}
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="안동교구"
@@ -26,9 +26,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="./logo/logo-busan.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-busan.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="부산교구"
@@ -40,9 +40,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-cheongju.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-cheongju.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="청주교구"
@@ -54,9 +54,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-chuncheon.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-chuncheon.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="춘천교구"
@@ -68,9 +68,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-daegu.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-daegu.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="대구교구"
@@ -82,9 +82,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-daejeon.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-daejeon.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="대전교구"
@@ -96,9 +96,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-gwangju.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-gwangju.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="광주교구"
@@ -110,9 +110,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-incheon.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-incheon.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="인천교구"
@@ -124,9 +124,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-jeju.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-jeju.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="제주교구"
@@ -138,9 +138,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-jeonju.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-jeonju.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="전주교구"
@@ -152,9 +152,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-masan.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-masan.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="마산교구"
@@ -166,7 +166,7 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-militury.svg"
+          src="/logo/logo-militury.svg"
           width={200}
           height={120}
           className="w-auto h-10 cursor-pointer"
@@ -180,9 +180,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-suwon.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-suwon.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="수원교구"
@@ -194,9 +194,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-uijeongbu.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-uijeongbu.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="의정부교구"
@@ -208,9 +208,9 @@ export default function IntroPage() {
     {
       node: (
         <Image
-          src="../logo/logo-wonju.svg"
-          width={200}
-          height={40}
+          src="/logo/logo-wonju.svg"
+          width={0}
+          height={0}
           className="w-auto h-10 cursor-pointer"
           priority
           alt="원주교구"

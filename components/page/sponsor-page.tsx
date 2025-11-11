@@ -30,8 +30,10 @@ export default function SponsorPage() {
                 <Image
                   src="sponsor-logo.svg"
                   alt="스폰서1"
-                  width={200}
-                  height={40}
+                  width={0}
+                  height={0}
+                  className="h-18 w-auto"
+                  priority
                 />
               </Link>
             </li>

@@ -232,6 +232,7 @@
     forwards;
   --animate-pan-zoom: pan-zoom 5s ease-in-out forwards;
   --animate-pan-zoom-center: pan-zoom-center 5s ease-in-out forwards;
+  --animate-pan-zoom-center-small: pan-zoom-center-small 2s ease-in-out forwards;
 
   --shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
 
@@ -316,6 +317,15 @@
     }
     100% {
       transform: scale(2) translate(-2%, 0%);
+    }
+  }
+
+  @keyframes pan-zoom-center-small {
+    0% {
+      transform: scale(1) translate(0, 0);
+    }
+    100% {
+      transform: scale(1.2) translate(-2%, 0%);
     }
   }
 

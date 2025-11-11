@@ -76,14 +76,15 @@ export default function Header() {
 
     let newPath = "";
 
-    if (supportedLangs.includes(firstSegment)) {
-      segments[0] = lang;
-      newPath = "/" + segments.join("/");
+    if (!isRootPage) {
+      newPath = `/${lang}`;
+    } else if (supportedLangs.includes(firstSegment)) {
+      newPath = `/${lang}`;
     } else {
-      newPath = `/${lang}/${segments.join("/")}`;
+      newPath = `/${lang}`;
     }
 
-    push(newPath || `/${lang}`);
+    push(newPath);
   };
 
   const shouldShowWhiteBg = !isRootPage || isScrolled;
