@@ -128,12 +128,6 @@ export default function Header() {
               <SelectItem value="en" size="lg">
                 ENG
               </SelectItem>
-              <SelectItem value="jp" size="lg">
-                JP
-              </SelectItem>
-              <SelectItem value="cn" size="lg">
-                CN
-              </SelectItem>
             </SelectContent>
           </Select>
         </li>
