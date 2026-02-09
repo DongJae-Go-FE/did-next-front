@@ -1,16 +1,16 @@
 import Link from "next/link";
 
-import { BackDrop } from "../ui/common";
+import { BackDrop } from "../../ui/common";
 
 import { ArrowRight } from "lucide-react";
 
-export default function PrayPage() {
+export default function PrayPageEn() {
   return (
     <>
       <h2 className="heading02b text-[clamp(24px,6dvw,60px)] text-white relative z-50 w-full text-center">
-        2027 서울 세계청년대회
+        2027 Seoul World Youth Day
         <br />
-        묵주기도 10억단 바치기
+        1 Billion Rosary Offering
       </h2>
       <div className="w-full h-auto flex items-center justify-center gap-x-2 relative z-50 max-[1079px]:flex-col max-[1079px]:gap-y-2">
         <Link
@@ -19,12 +19,12 @@ export default function PrayPage() {
           className="flex-1 w-full block border border-gray-100 rounded-sm p-6 text-white h-50 transition-all hover:bg-white hover:text-black duration-300 relative group"
         >
           <h3 className="heading03b text-[clamp(24px,3dvw,36px)] mb-2">
-            단체 참여
+            Group Participation
           </h3>
           <p className="body01B text-[clamp(16px,2dvw,24px)]">
-            단체 소속으로 WYD 홈페이지를 통해
+            Join the offering campaign
             <br />
-            봉헌 운동에 참여할 수 있습니다.
+            as a group through the WYD website.
           </p>
           <ArrowRight
             width={70}
@@ -38,12 +38,12 @@ export default function PrayPage() {
           className="flex-1 w-full block border border-gray-100 rounded-sm p-6 text-white h-50 transition-all hover:bg-white hover:text-black duration-300 relative group"
         >
           <h3 className="heading03b text-[clamp(24px,3dvw,36px)] mb-2">
-            개인 참여
+            Individual Participation
           </h3>
           <p className="body01B text-[clamp(16px,2dvw,24px)]">
-            개인 누구나 쉽게
+            Anyone can easily participate
             <br />
-            봉헌 운동에 참여할 수 있습니다.
+            in the offering campaign.
           </p>
           <ArrowRight
             width={70}

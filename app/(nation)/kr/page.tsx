@@ -1,4 +1,5 @@
 import MainSlider from "@/components/main-slider";
+import FightPage from "@/components/page/fight-page";
 import IntroPage from "@/components/page/intro-page";
 import MapPage from "@/components/page/map-page";
 import ChartPage from "@/components/page/chart-page";
@@ -11,6 +12,7 @@ export default function Home() {
       <div className="relative bg-black">
         <MainSlider />
       </div>
+      <FightPage />
       <div className="w-screen min-h-[80dvh] bg-white px-8 py-16" id="section">
         <IntroPage />
       </div>
@@ -20,7 +22,7 @@ export default function Home() {
       <div className="w-screen h-fit bg-white px-8 py-16 max-[767]:hidden">
         <ChartPage />
       </div>
-      <div className="w-screen min-h-screen bg-gray-100 px-8 py-16">
+      <div className="w-screen h-fit bg-gray-100 px-8 py-16">
         <SponsorPage />
       </div>
       <div

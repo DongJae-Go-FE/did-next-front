@@ -20,7 +20,7 @@ import { X, Menu as MenuIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-export default function Menu() {
+export default function MenuEn() {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -38,14 +38,14 @@ export default function Menu() {
         )}
       >
         <DialogHeader className="sr-only">
-          <DialogTitle>DID 메뉴</DialogTitle>
-          <DialogDescription>DID 메뉴입니다.</DialogDescription>
+          <DialogTitle>DID Menu</DialogTitle>
+          <DialogDescription>DID Navigation Menu</DialogDescription>
         </DialogHeader>
         <div className="px-8 flex-1 overflow-y-auto">
           <div className="w-full h-30 flex justify-between items-center flex-shrink-0 max-[1079px]:border-b max-[1079px]:border-gray-800">
             <h2>
               <DialogClose asChild>
-                <Link href="/">
+                <Link href="/en">
                   <Image
                     src="/logo-white.svg"
                     alt="wyd logo"
@@ -69,7 +69,7 @@ export default function Menu() {
               <MenuContainerList style={{ animationDelay: "1s" }}>
                 <li>
                   <MenuContainerListItemLink>
-                    교구대회 소개
+                    About DID
                   </MenuContainerListItemLink>
                 </li>
               </MenuContainerList>
@@ -79,22 +79,22 @@ export default function Menu() {
               <MenuContainerList style={{ animationDelay: "1.4s" }}>
                 <li>
                   <MenuContainerListItemLink>
-                    공지사항
+                    Announcements
                   </MenuContainerListItemLink>
                 </li>
                 <li>
                   <MenuContainerListItemLink>
-                    후원사 소개
+                    Sponsors
                   </MenuContainerListItemLink>
                 </li>
               </MenuContainerList>
             </MenuContainer>
             <MenuContainer className="border-r-0">
-              <MenuContainerTitle>참여</MenuContainerTitle>
+              <MenuContainerTitle>PARTICIPATE</MenuContainerTitle>
               <MenuContainerList style={{ animationDelay: "1.8s" }}>
                 <li>
-                  <MenuContainerListItemLink href="/kr/apply">
-                    DID 신청
+                  <MenuContainerListItemLink href="/en/apply">
+                    DID Application
                   </MenuContainerListItemLink>
                 </li>
               </MenuContainerList>

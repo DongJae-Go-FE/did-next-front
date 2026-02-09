@@ -3,7 +3,7 @@ import { differenceInDays } from "date-fns";
 import CountUp from "@/components/count-up";
 
 export default function CountDay() {
-  const targetDate = new Date(2027, 8, 3);
+  const targetDate = new Date(2027, 7, 4);
 
   const today = new Date();
 

@@ -36,7 +36,7 @@ function SubContentTitle({
     <h2
       className={cn(
         "flex justify-between items-center heading03b text-gray-900 mb-4",
-        className
+        className,
       )}
       {...props}
     >
@@ -45,4 +45,13 @@ function SubContentTitle({
   );
 }
 
-export { SubLayout, SubContentContainer, SubContentTitle };
+function BackDrop({ className, ...props }: ComponentProps<"div">) {
+  return (
+    <div
+      className={cn("absolute inset-0 z-10 backdrop-brightness-75", className)}
+      {...props}
+    />
+  );
+}
+
+export { SubLayout, SubContentContainer, SubContentTitle, BackDrop };

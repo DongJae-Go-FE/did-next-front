@@ -22,99 +22,99 @@ import SliderBackdrop from "@/components/ui/slider-backdrop";
 
 const data = [
   {
-    name: "서울대교구",
+    name: "Archdiocese of Seoul",
     image: "/apply/seoul.webp",
-    alt: "서울대교구 이미지",
+    alt: "Archdiocese of Seoul",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "인천교구",
+    name: "Diocese of Incheon",
     image: "/apply/incheon.webp",
-    alt: "인천교구 이미지",
+    alt: "Diocese of Incheon",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "수원교구",
+    name: "Diocese of Suwon",
     image: "/apply/suwon.webp",
-    alt: "수원교구 이미지",
+    alt: "Diocese of Suwon",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "의정부교구",
+    name: "Diocese of Uijeongbu",
     image: "/apply/uijeongbu.webp",
-    alt: "의정부교구 이미지",
+    alt: "Diocese of Uijeongbu",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "춘천교구",
+    name: "Diocese of Chuncheon",
     image: "/apply/chuncheon.webp",
-    alt: "춘천교구 이미지",
+    alt: "Diocese of Chuncheon",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "원주교구",
+    name: "Diocese of Wonju",
     image: "/apply/wonju.webp",
-    alt: "원주교구 이미지",
+    alt: "Diocese of Wonju",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "대전교구",
+    name: "Diocese of Daejeon",
     image: "/apply/daejeon.webp",
-    alt: "대전교구 이미지",
+    alt: "Diocese of Daejeon",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "청주교구",
+    name: "Diocese of Cheongju",
     image: "/apply/cheongju.webp",
-    alt: "청주교구 이미지",
+    alt: "Diocese of Cheongju",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "대구대교구",
+    name: "Archdiocese of Daegu",
     image: "/apply/daegu.webp",
-    alt: "대구대교구 이미지",
+    alt: "Archdiocese of Daegu",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "부산교구",
+    name: "Diocese of Busan",
     image: "/apply/busan.webp",
-    alt: "부산교구 이미지",
+    alt: "Diocese of Busan",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "마산교구",
+    name: "Diocese of Masan",
     image: "/apply/masan.webp",
-    alt: "마산교구 이미지",
+    alt: "Diocese of Masan",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "안동교구",
+    name: "Diocese of Andong",
     image: "/apply/andong.webp",
-    alt: "안동교구 이미지",
+    alt: "Diocese of Andong",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "광주대교구",
+    name: "Archdiocese of Gwangju",
     image: "/apply/gwangju.webp",
-    alt: "광주대교구 이미지",
+    alt: "Archdiocese of Gwangju",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "전주교구",
+    name: "Diocese of Jeonju",
     image: "/apply/jeonju.webp",
-    alt: "전주교구 이미지",
+    alt: "Diocese of Jeonju",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "제주교구",
+    name: "Diocese of Jeju",
     image: "/apply/jeju.webp",
-    alt: "제주교구 이미지",
+    alt: "Diocese of Jeju",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
   {
-    name: "군종교구",
+    name: "Military Ordinariate",
     image: "/apply/gun.webp",
-    alt: "군종교구 이미지",
+    alt: "Military Ordinariate",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
   },
 ];
@@ -127,31 +127,31 @@ export default function Page() {
           src="/visual.jpg"
           sizes="100vw"
           fill
-          alt="서브페이지 배경"
+          alt="Sub page background"
           priority
           className="object-cover object-center w-full h-full animate-pan-zoom-center-small"
         />
         <div className="flex flex-col gap-y-2 text-white z-40 relative justify-center animate-fadeIn2 opacity-0">
-          <h2 className="heading02b">DID 신청</h2>
+          <h2 className="heading02b">DID Application</h2>
           <ul className="flex gap-x-1 justify-center body01b">
-            <li>참여 /</li>
-            <li>신청</li>
+            <li>Participate /</li>
+            <li>Apply</li>
           </ul>
         </div>
         <SliderBackdrop />
       </div>
       <SubLayout className="relative">
         <LeftMenu
-          title="참여"
+          title="Participate"
           menus={[
             {
-              label: "DID 신청",
-              href: "/kr/apply",
+              label: "DID Application",
+              href: "/en/apply",
             },
           ]}
         />
         <SubContentContainer>
-          <SubContentTitle>DID 신청</SubContentTitle>
+          <SubContentTitle>DID Application</SubContentTitle>
           <ul
             className="w-full grid gap-4"
             style={{
@@ -173,14 +173,14 @@ export default function Page() {
                       />
                     </CardContent>
                     <CardHeader>
-                      <CardTitle title={`${name} 교구 WYD 신청`}>
-                        {name} 교구 WYD 신청
+                      <CardTitle title={`${name} WYD Application`}>
+                        {name} WYD Application
                       </CardTitle>
                       <CardDescription
                         className="truncate"
-                        title={`버튼을 누르면 ${name} 교구 WYD 신청을 합니다.`}
+                        title={`Click to apply for WYD through ${name}.`}
                       >
-                        버튼을 누르면 {name} 교구 WYD 신청을 합니다.
+                        Click to apply for WYD through {name}.
                       </CardDescription>
                     </CardHeader>
 
@@ -190,7 +190,7 @@ export default function Page() {
                         target="_blank"
                         href={href}
                       >
-                        신청하기
+                        Apply
                       </Link>
                     </CardFooter>
                   </Card>

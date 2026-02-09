@@ -19,12 +19,12 @@ import { Pause, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import "@egjs/flicking/dist/flicking.css";
 import "@egjs/flicking-plugins/dist/pagination.css";
 
-import SliderItem01 from "./slider-item/slider-item01";
-import SliderItem02 from "./slider-item/slider-item02";
-import SliderItem03 from "./slider-item/slider-item03";
-import SliderItem04 from "./slider-item/slider-item04";
+import SliderItem01En from "./slider-item/en/slider-item01";
+import SliderItem02En from "./slider-item/en/slider-item02";
+import SliderItem03En from "./slider-item/en/slider-item03";
+import SliderItem04En from "./slider-item/en/slider-item04";
 
-export default function MainSlider() {
+export default function MainSliderEn() {
   const flickingRef = useRef<HTMLDivElement>(null);
   const flickingInstanceRef = useRef<Flicking | null>(null);
   const autoPlayInstanceRef = useRef<AutoPlay | null>(null);
@@ -138,16 +138,16 @@ export default function MainSlider() {
     >
       <div className="flicking-camera">
         <Panel>
-          <SliderItem01 />
+          <SliderItem01En />
         </Panel>
         <Panel>
-          <SliderItem02 />
+          <SliderItem02En />
         </Panel>
         <Panel>
-          <SliderItem03 />
+          <SliderItem03En />
         </Panel>
         <Panel>
-          <SliderItem04 />
+          <SliderItem04En />
         </Panel>
       </div>
       <div
@@ -159,7 +159,7 @@ export default function MainSlider() {
         <button
           type="button"
           disabled={isAnimating}
-          title={isAutoPlay ? "일시정지 버튼" : "재생 버튼"}
+          title={isAutoPlay ? "Pause" : "Play"}
           className="mr-4 max-[727px]:hidden max-[1080px]:hidden flex w-[60px] justify-center items-center cursor-pointer"
           onClick={handleAutoPlay}
         >
@@ -183,7 +183,7 @@ export default function MainSlider() {
         </button>
         <button
           type="button"
-          title="이전 슬라이드 버튼"
+          title="Previous slide"
           disabled={isAnimating}
           className="cursor-pointer"
           onClick={handlePrevSlide}
@@ -193,7 +193,7 @@ export default function MainSlider() {
         <div className="flicking-pagination relative! bottom-0! w-[120px]!" />
         <button
           type="button"
-          title="다음 슬라이드 버튼"
+          title="Next slide"
           disabled={isAnimating}
           className="cursor-pointer"
           onClick={handleNextSlide}

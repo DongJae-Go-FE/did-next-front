@@ -16,12 +16,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import Menu from "../menu";
+import MenuEn from "../menu-en";
 
-export default function Header() {
+export default function HeaderEn() {
   const { push } = useRouter();
   const pathname = usePathname();
-  const [value, setValue] = useState("kr");
+  const [value, setValue] = useState("en");
   const [isScrolled, setIsScrolled] = useState(false);
 
   const supportedLangs = useMemo(() => {
@@ -64,7 +64,7 @@ export default function Header() {
     if (supportedLangs.includes(firstSegment)) {
       setValue(firstSegment);
     } else {
-      setValue("kr");
+      setValue("en");
     }
   }, [pathname, supportedLangs]);
 
@@ -103,7 +103,7 @@ export default function Header() {
       )}
     >
       <h1>
-        <Link href="/">
+        <Link href="/en">
           <Image
             src="/logo.svg"
             alt="wyd logo"
@@ -146,7 +146,7 @@ export default function Header() {
               : "[&_svg_path]:fill-white",
           )}
         >
-          <Menu />
+          <MenuEn />
         </li>
       </ul>
     </header>
