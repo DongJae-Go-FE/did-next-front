@@ -21,8 +21,6 @@ import "@egjs/flicking-plugins/dist/pagination.css";
 
 import SliderItem01En from "./slider-item/en/slider-item01";
 import SliderItem02En from "./slider-item/en/slider-item02";
-import SliderItem03En from "./slider-item/en/slider-item03";
-import SliderItem04En from "./slider-item/en/slider-item04";
 
 export default function MainSliderEn() {
   const flickingRef = useRef<HTMLDivElement>(null);
@@ -143,12 +141,6 @@ export default function MainSliderEn() {
         <Panel>
           <SliderItem02En />
         </Panel>
-        <Panel>
-          <SliderItem03En />
-        </Panel>
-        <Panel>
-          <SliderItem04En />
-        </Panel>
       </div>
       <div
         className={cn(
@@ -208,7 +200,7 @@ export default function MainSliderEn() {
 function Panel({ children, className, ...props }: ComponentProps<"div">) {
   return (
     <div className={cn("panel", className)} {...props}>
-      <div className="h-full w-full">{children}</div>
+      <div className="relative h-full w-full overflow-hidden">{children}</div>
     </div>
   );
 }

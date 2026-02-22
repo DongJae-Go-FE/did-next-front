@@ -22,7 +22,7 @@ export default function Home() {
       <div className="w-screen h-fit bg-white px-8 py-16 max-[767]:hidden">
         <ChartPageEn />
       </div>
-      <div className="w-screen h-fit bg-gray-100 px-8 py-16">
+      <div className="w-screen h-fit bg-gray-100 px-8 py-16 scroll-mt-30" id="sponsor">
         <SponsorPageEn />
       </div>
       <div

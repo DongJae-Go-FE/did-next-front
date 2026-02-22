@@ -19,10 +19,10 @@ import { Pause, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import "@egjs/flicking/dist/flicking.css";
 import "@egjs/flicking-plugins/dist/pagination.css";
 
+import SliderItem00 from "./slider-item/slider-item00";
+import SliderItem000 from "./slider-item/slider-item000";
 import SliderItem01 from "./slider-item/slider-item01";
 import SliderItem02 from "./slider-item/slider-item02";
-import SliderItem03 from "./slider-item/slider-item03";
-import SliderItem04 from "./slider-item/slider-item04";
 
 export default function MainSlider() {
   const flickingRef = useRef<HTMLDivElement>(null);
@@ -138,16 +138,16 @@ export default function MainSlider() {
     >
       <div className="flicking-camera">
         <Panel>
+          <SliderItem00 />
+        </Panel>
+        <Panel>
+          <SliderItem000 />
+        </Panel>
+        <Panel>
           <SliderItem01 />
         </Panel>
         <Panel>
           <SliderItem02 />
-        </Panel>
-        <Panel>
-          <SliderItem03 />
-        </Panel>
-        <Panel>
-          <SliderItem04 />
         </Panel>
       </div>
       <div
@@ -208,7 +208,7 @@ export default function MainSlider() {
 function Panel({ children, className, ...props }: ComponentProps<"div">) {
   return (
     <div className={cn("panel", className)} {...props}>
-      <div className="h-full w-full">{children}</div>
+      <div className="relative h-full w-full overflow-hidden">{children}</div>
     </div>
   );
 }

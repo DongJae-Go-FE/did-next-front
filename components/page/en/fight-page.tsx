@@ -14,13 +14,17 @@ const items = [
   {
     type: "link" as const,
     href: "/",
-    src: "/main/fight/f1.jpg",
+    src: "/main/fight/f1.png",
     alt: "WYD 2027 Support Video",
+    imageClassName:
+      "object-[30%_38%] max-[1079px]:object-[26%_38%] max-[767px]:object-[24%_32%]",
     label: (
       <>
-        Watch 2027 WYD
+        Son Suk-hee
         <br />
-        Support Video
+        Marcellino
+        <br />
+        Announcer
       </>
     ),
   },
@@ -29,33 +33,36 @@ const items = [
   { type: "coming" as const, src: "/main/main04.png", alt: "ComingSoon" },
 ];
 
+const desktopItems = items.slice(0, 3);
+
 function CardItem({ item }: { item: (typeof items)[number] }) {
   if (item.type === "link") {
     return (
-      <Link href={item.href} className="h-40 block relative">
+      <Link href={item.href} className="group block h-full w-full relative">
         <Image
           src={item.src}
           alt={item.alt}
           fill
-          className="absolute -top-4 object-cover"
+          sizes="(max-width: 767px) 90vw, 33vw"
+          className={`object-cover transition-transform duration-300 group-hover:scale-[1.02] ${item.imageClassName ?? "object-center"}`}
         />
-        <span className="absolute z-30 w-full h-full flex justify-center items-center text-center body01b text-white opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+        <span className="absolute top-1/2 right-[4.5%] z-30 w-[30%] -translate-y-1/2 text-left heading03b leading-[1.18] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] max-[1279px]:w-[34%] max-[1279px]:text-[clamp(18px,1.6vw,24px)] max-[1079px]:right-[3.5%] max-[1079px]:w-[40%] max-[1079px]:leading-[1.1] max-[767px]:w-[46%] max-[767px]:text-[18px]">
           {item.label}
         </span>
-        <BackDrop className="opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
       </Link>
     );
   }
 
   return (
-    <div className="h-40 relative">
+    <div className="relative h-full w-full">
       <Image
         src={item.src}
         alt={item.alt}
         fill
-        className="absolute -top-4 object-cover"
+        sizes="(max-width: 767px) 90vw, 33vw"
+        className="object-cover object-center"
       />
-      <span className="absolute z-100 w-full h-full flex justify-center items-center text-center heading02b text-white">
+      <span className="absolute inset-0 z-30 flex items-center justify-center text-center heading02b leading-[0.95] text-white max-[767px]:text-[28px]">
         COMING
         <br />
         SOON
@@ -76,39 +83,46 @@ export default function FightPageEn() {
   }, []);
 
   return (
-    <div className="w-full h-80 px-8 py-8 max-[767px]:px-4">
-      <h2 className="heading02b mb-8 max-[1079px]:text-[24px] max-[767px]:text-[18px] flex justify-between items-end">
-        We Support You
+    <section className="w-full px-8 py-6 max-[767px]:px-4">
+      <h2 className="mb-6 leading-none font-bold tracking-tight text-[clamp(18px,2.35vw,34px)]">
+        <span className="text-[#214D9D]">2027 WYD</span>{" "}
+        <span className="text-black">and </span>
+        <span className="text-[#E54A47]">Diocesan Events</span>{" "}
+        <span className="text-black">are supported! </span>
+        <span className="text-black">CHEER UP </span>
+        <span className="text-[#214D9D]">2027 WYD</span>{" "}
+        <span className="text-black">&amp; </span>
+        <span className="text-[#E54A47]">DID!</span>
       </h2>
 
       {isMobile ? (
         <Swiper
           modules={[Pagination]}
-          spaceBetween={8}
-          slidesPerView={1.2}
+          spaceBetween={10}
+          slidesPerView={1.15}
           pagination={{ clickable: true }}
           className="fight-swiper"
         >
           {items.map((item, i) => (
             <SwiperSlide key={i}>
-              <div className="relative overflow-hidden group rounded-md">
+              <div className="relative aspect-[16/6] overflow-hidden bg-neutral-200">
                 <CardItem item={item} />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       ) : (
-        <ul className="flex gap-x-2">
-          {items.map((item, i) => (
+        <ul className="grid grid-cols-3 gap-8">
+          {desktopItems.map((item, i) => (
             <li
               key={i}
-              className="flex-1 relative max-w-1/4 overflow-hidden group rounded-md"
+              className="relative aspect-[16/5.45] overflow-hidden bg-neutral-200"
             >
               <CardItem item={item} />
             </li>
           ))}
         </ul>
       )}
-    </div>
+    </section>
   );
 }

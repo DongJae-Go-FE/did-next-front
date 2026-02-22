@@ -83,7 +83,7 @@ export default function MenuEn() {
                   </MenuContainerListItemLink>
                 </li>
                 <li>
-                  <MenuContainerListItemLink>
+                  <MenuContainerListItemLink href="/en#sponsor">
                     Sponsors
                   </MenuContainerListItemLink>
                 </li>

@@ -16,14 +16,13 @@ export default function SliderItem01() {
     <div
       className={cn(
         "max-[727px]:px-[8dvw] max-[727px]:py-[30dvh] max-[1080px]:px-[10dvw] max-[1080px]:py-[20dvh] px-[120px] relative",
-        "pb-40 flex h-screen w-screen flex-col justify-end bg-cover bg-no-repeat relative p-0 overflow-hidden bg-center"
+        "pb-40 flex h-screen w-screen flex-col justify-end bg-cover bg-no-repeat relative p-0 overflow-hidden bg-center",
       )}
     >
       <Image
         src="/main/main01.jpeg"
         alt="WYD 2027 DID 메인 이미지 첫번째"
         fill
-        priority
         sizes="100vw"
         className="object-cover object-center"
       />

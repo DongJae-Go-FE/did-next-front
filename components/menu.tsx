@@ -83,7 +83,7 @@ export default function Menu() {
                   </MenuContainerListItemLink>
                 </li>
                 <li>
-                  <MenuContainerListItemLink>
+                  <MenuContainerListItemLink href="/kr#sponsor">
                     후원사 소개
                   </MenuContainerListItemLink>
                 </li>
