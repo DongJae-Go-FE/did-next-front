@@ -25,7 +25,7 @@ function SponsorItem({ index, locale }: { index: number; locale: Locale }) {
           alt={locale === "kr" ? `스폰서${index + 1}` : `Sponsor ${index + 1}`}
           width={0}
           height={0}
-          className="h-18 w-auto"
+          className="h-18 w-auto aspect-video"
           priority
         />
       </Link>
