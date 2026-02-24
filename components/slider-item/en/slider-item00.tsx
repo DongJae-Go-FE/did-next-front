@@ -12,7 +12,7 @@ export default function SliderItem00En() {
         alt="WYD 2027 DID main image first slide"
       />
       <h2 className="heading02b absolute top-1/2 left-1/2 z-20 w-full -translate-x-1/2 -translate-y-1/2 transform text-center text-5xl text-white animate-bottomUp opacity-0 max-[1080px]:text-3xl">
-        2027 WYD Days in Diocese
+        2027 WYD DID
         <br />
         COMING SOON
       </h2>
