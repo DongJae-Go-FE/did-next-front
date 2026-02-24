@@ -12,7 +12,7 @@ export default function SliderItem000() {
         alt="WYD 2027 DID 메인 이미지 첫번째"
       />
 
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 text-center flex flex-col gap-y-4 text-white">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 text-center flex flex-col gap-y-4 text-white w-full">
         <h2 className="heading02b text-5xl max-[1080px]:text-4xl max-[769px]:text-3xl w-full">안내문</h2>
         <p className="whitespace-pre-line w-full body01b text-3xl max-[1080px]:text-2xl max-[769px]:text-xl">{`본 페이지는 교구대회 참가 신청을 위한 전용 페이지로, 
         교구대회 신청은 본 페이지를 통해서만 가능하며 

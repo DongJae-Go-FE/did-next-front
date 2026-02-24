@@ -12,7 +12,7 @@ export default function SliderItem000En() {
         alt="WYD 2027 DID main image notice slide"
       />
 
-      <div className="absolute top-1/2 left-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 transform flex-col gap-y-4 text-center text-white">
+      <div className="absolute top-1/2 left-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 transform flex-col gap-y-4 text-center text-white w-full">
         <h2 className="heading02b w-full text-5xl max-[1080px]:text-4xl max-[769px]:text-3xl">
           Notice
         </h2>
