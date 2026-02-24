@@ -100,15 +100,13 @@ export default function Marker({
       <DialogTrigger asChild>
         <button
           type="button"
-          className="h-[30px] relative cursor-pointer flex z-2000 rounded-full items-center gap-x-1 px-2 top-0.5"
-          style={{ backgroundColor: "#0047BB" }}
+          className="group h-[30px] relative cursor-pointer flex z-2000 rounded-full items-center gap-x-1 px-2 top-0.5 bg-[#0047BB] transition-colors duration-150 hover:bg-[#0A57D0]"
           onClick={onClick}
         >
           <div className="w-5.5 h-5.5 bg-white rounded-full flex items-center justify-center relative">
             <MapPin width={18} height={18} fill="#fff" />
             <span
-              className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-              style={{ backgroundColor: "#0047BB" }}
+              className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 bg-[#0047BB] transition-colors duration-150 group-hover:bg-[#0A57D0]"
             />
           </div>
           <div className="body03m text-white whitespace-nowrap">{displayName}</div>

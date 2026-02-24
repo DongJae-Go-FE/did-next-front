@@ -67,16 +67,6 @@ const regionColors = [
 
 export type NaverMap = naver.maps.Map;
 
-interface LineData {
-  x1: number;
-  y1: number;
-  x2: number;
-  y2: number;
-  mx: number;
-  my: number;
-  pathLength: number;
-}
-
 interface GeoJSONFeature {
   geometry: {
     type: string;
@@ -92,164 +82,16 @@ interface GeoJSONData {
   features: GeoJSONFeature[];
 }
 
-function SvgOverlay({
-  dioceseData,
-  mapRef,
-  shouldAnimate,
-  hoveredIndex,
-}: {
-  dioceseData: typeof data;
-  mapRef: React.RefObject<NaverMap | null>;
-  shouldAnimate: boolean;
-  hoveredIndex: number | null;
-}) {
-  const [lines, setLines] = useState<LineData[]>([]);
-
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map) return;
-
-    const updateLines = () => {
-      if (!mapRef.current) return;
-
-      const newLines: LineData[] = [];
-
-      dioceseData.forEach((d) => {
-        if (!d.latitude2 || !d.longitude2) return;
-
-        try {
-          const projection = mapRef.current!.getProjection();
-
-          const start = projection.fromCoordToOffset(
-            new window.naver.maps.LatLng(d.latitude2, d.longitude2)
-          );
-          const end = projection.fromCoordToOffset(
-            new window.naver.maps.LatLng(d.latitude, d.longitude)
-          );
-
-          const midX = (start.x + end.x) / 2;
-          const midY = (start.y + end.y) / 2;
-
-          const dist1 = Math.abs(midX - start.x);
-          const dist2 = Math.abs(midY - start.y);
-          const dist3 = Math.abs(end.x - midX);
-          const dist4 = Math.abs(end.y - midY);
-          const totalLength = dist1 + dist2 + dist3 + dist4;
-
-          newLines.push({
-            x1: start.x,
-            y1: start.y,
-            x2: end.x,
-            y2: end.y,
-            mx: midX,
-            my: midY,
-            pathLength: totalLength,
-          });
-        } catch (error) {
-          console.error("Error calculating line coordinates:", error);
-        }
-      });
-
-      setLines(newLines);
-    };
-
-    updateLines();
-
-    const listener = window.naver.maps.Event.addListener(
-      map,
-      "bounds_changed",
-      updateLines
-    );
-
-    const handleResize = throttle(() => {
-      updateLines();
-    }, 100);
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.naver.maps.Event.removeListener(listener);
-      window.removeEventListener("resize", handleResize);
-      handleResize.cancel();
-    };
-  }, [dioceseData, mapRef]);
-
-  return (
-    <>
-      <style>
-        {`
-          @keyframes drawLine {
-            from { stroke-dashoffset: var(--path-length); }
-            to { stroke-dashoffset: 0; }
-          }
-
-          @keyframes glowingLine {
-            from { stroke-dashoffset: var(--path-length); }
-            to { stroke-dashoffset: calc(var(--path-length) * -1); }
-          }
-
-          .animated-line { animation: drawLine 1s ease-in-out forwards; }
-          .line-hidden { stroke-dashoffset: var(--path-length); }
-          .glowing-line {
-            animation: glowingLine 1.5s ease-in-out infinite;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
-          }
-        `}
-      </style>
-      <svg
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          pointerEvents: "none",
-          zIndex: 1,
-        }}
-      >
-        {lines.map((line, i) => (
-          <g key={i}>
-            <path
-              d={`M ${line.x1} ${line.y1} L ${line.mx} ${line.y1} L ${line.mx} ${line.y2} L ${line.x2} ${line.y2}`}
-              stroke="#0047BB"
-              strokeWidth="2"
-              fill="none"
-              className={shouldAnimate ? "animated-line" : "line-hidden"}
-              strokeDasharray={line.pathLength}
-              strokeDashoffset={line.pathLength}
-              style={{ "--path-length": `${line.pathLength}px` } as React.CSSProperties}
-            />
-            {hoveredIndex === i && (
-              <path
-                d={`M ${line.x1} ${line.y1} L ${line.mx} ${line.y1} L ${line.mx} ${line.y2} L ${line.x2} ${line.y2}`}
-                stroke="white"
-                strokeWidth="3"
-                fill="none"
-                className="glowing-line"
-                strokeDasharray={`${line.pathLength * 0.2} ${line.pathLength * 0.8}`}
-                strokeLinecap="round"
-                style={{ "--path-length": `${line.pathLength}px` } as React.CSSProperties}
-              />
-            )}
-          </g>
-        ))}
-      </svg>
-    </>
-  );
-}
-
 export default function Map({ locale = "kr" }: { locale?: Locale }) {
   const mapId = `naver-map-${locale}`;
   const mapRef = useRef<NaverMap | null>(null);
   const polygonsRef = useRef<naver.maps.Polygon[]>([]);
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const markersRef = useRef<naver.maps.Marker[]>([]);
+  const linePolylinesRef = useRef<naver.maps.Polyline[]>([]);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [mapOpacity, setMapOpacity] = useState(0);
-  const [shouldAnimateLines, setShouldAnimateLines] = useState(false);
-  const [animationTriggered, setAnimationTriggered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [hoveredMarkerIndex, setHoveredMarkerIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const checkScreenSize = () => setIsMobile(window.innerWidth <= 1079);
@@ -271,21 +113,12 @@ export default function Map({ locale = "kr" }: { locale?: Locale }) {
         Math.min(1, (windowHeight - rect.top) / (windowHeight + mapHeight))
       );
       setMapOpacity(Math.min(1, scrollProgress * 2));
-
-      if (!animationTriggered && !isMobile) {
-        const visibleHeight =
-          Math.min(windowHeight, rect.bottom) - Math.max(0, rect.top);
-        if (visibleHeight / mapHeight >= 0.8) {
-          setShouldAnimateLines(true);
-          setAnimationTriggered(true);
-        }
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [animationTriggered, isMobile]);
+  }, []);
 
   useEffect(() => {
     const handleResize = throttle(() => {
@@ -371,6 +204,48 @@ export default function Map({ locale = "kr" }: { locale?: Locale }) {
     [createPolygon]
   );
 
+  const clearConnectionLines = useCallback(() => {
+    linePolylinesRef.current.forEach((line) => line.setMap(null));
+    linePolylinesRef.current = [];
+  }, []);
+
+  const drawConnectionLines = useCallback(() => {
+    const map = mapRef.current;
+    if (!map || isMobile) {
+      clearConnectionLines();
+      return;
+    }
+
+    clearConnectionLines();
+
+    data.forEach((diocese) => {
+      if (!diocese.latitude2 || !diocese.longitude2) return;
+
+      const start = new window.naver.maps.LatLng(diocese.latitude2, diocese.longitude2);
+      const end = new window.naver.maps.LatLng(diocese.latitude, diocese.longitude);
+      const midLng = (diocese.longitude2 + diocese.longitude) / 2;
+
+      const path = [
+        start,
+        new window.naver.maps.LatLng(diocese.latitude2, midLng),
+        new window.naver.maps.LatLng(diocese.latitude, midLng),
+        end,
+      ];
+
+      const baseLine = new window.naver.maps.Polyline({
+        map,
+        path,
+        strokeColor: "#0047BB",
+        strokeOpacity: 0.95,
+        strokeWeight: 2,
+        clickable: false,
+        zIndex: 10,
+      });
+
+      linePolylinesRef.current.push(baseLine);
+    });
+  }, [clearConnectionLines, isMobile]);
+
   const updateMarkerPositions = useCallback(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -378,13 +253,11 @@ export default function Map({ locale = "kr" }: { locale?: Locale }) {
     markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
 
-    data.forEach((diocese, index) => {
+    data.forEach((diocese) => {
       const markerContainer = document.createElement("div");
       markerContainer.className = "custom-marker";
-      markerContainer.style.zIndex = "100";
-
-      markerContainer.addEventListener("mouseenter", () => setHoveredMarkerIndex(index));
-      markerContainer.addEventListener("mouseleave", () => setHoveredMarkerIndex(null));
+      markerContainer.style.zIndex = "9999";
+      markerContainer.style.position = "relative";
 
       const root = createRoot(markerContainer);
       root.render(<Marker name={diocese.name} locale={locale} />);
@@ -399,7 +272,7 @@ export default function Map({ locale = "kr" }: { locale?: Locale }) {
           anchor: new naver.maps.Point(15, 30),
           content: markerContainer,
         },
-        zIndex: 100,
+        zIndex: 9999,
       });
 
       markersRef.current.push(marker);
@@ -432,12 +305,15 @@ export default function Map({ locale = "kr" }: { locale?: Locale }) {
     mapRef.current = map;
     drawPolygons(map);
     updateMarkerPositions();
+    drawConnectionLines();
     setMapLoaded(true);
-  }, [mapId, drawPolygons, updateMarkerPositions]);
+  }, [mapId, drawPolygons, updateMarkerPositions, drawConnectionLines]);
 
   useEffect(() => {
-    if (mapLoaded) updateMarkerPositions();
-  }, [isMobile, mapLoaded, updateMarkerPositions]);
+    if (!mapLoaded) return;
+    updateMarkerPositions();
+    drawConnectionLines();
+  }, [isMobile, mapLoaded, updateMarkerPositions, drawConnectionLines]);
 
   useEffect(() => {
     if (window.naver && window.naver.maps) {
@@ -452,9 +328,10 @@ export default function Map({ locale = "kr" }: { locale?: Locale }) {
     document.head.appendChild(script);
 
     return () => {
+      clearConnectionLines();
       if (script.parentNode) script.parentNode.removeChild(script);
     };
-  }, [initializeMap]);
+  }, [initializeMap, clearConnectionLines]);
 
   return (
     <div
@@ -463,14 +340,6 @@ export default function Map({ locale = "kr" }: { locale?: Locale }) {
       className="relative w-full min-h-[calc(100dvh-208px)]"
     >
       <div id={mapId} className="min-h-[calc(100dvh-208px)] w-full bg-gray-200" />
-      {mapLoaded && !isMobile && (
-        <SvgOverlay
-          dioceseData={data}
-          mapRef={mapRef}
-          shouldAnimate={shouldAnimateLines}
-          hoveredIndex={hoveredMarkerIndex}
-        />
-      )}
     </div>
   );
 }

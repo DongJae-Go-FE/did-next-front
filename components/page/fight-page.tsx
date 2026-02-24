@@ -34,7 +34,7 @@ function CardItem({ item }: { item: ItemType }) {
           sizes="(max-width: 767px) 90vw, 33vw"
           className={`object-cover transition-transform duration-300 group-hover:scale-[1.02] ${item.imageClassName}`}
         />
-        <span className="absolute top-1/2 right-[4.5%] z-30 w-[30%] -translate-y-1/2 text-left heading03b text-[clamp(30px,2.35vw,36px)] leading-[1.25] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] max-[1279px]:w-[34%] max-[1279px]:text-[clamp(22px,2vw,32px)] max-[1079px]:right-[3.5%] max-[1079px]:w-[40%] max-[1079px]:leading-[1.15] max-[767px]:right-[6%] max-[767px]:w-[40%] max-[767px]:text-[20px] whitespace-nowrap">
+        <span className="absolute top-1/2 right-[8%] z-30 w-[30%] -translate-y-1/2 text-left heading03b text-[clamp(30px,2.35vw,32px)] leading-[1.25] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] max-[1279px]:w-[34%] max-[1279px]:text-[clamp(22px,2vw,32px)] max-[1079px]:right-[3.5%] max-[1079px]:w-[40%] max-[1079px]:leading-[1.15] max-[767px]:right-[6%] max-[767px]:w-[40%] max-[767px]:text-[20px] whitespace-nowrap">
           {item.label.map((line, i) => (
             <span key={i}>
               {i > 0 && <br />}
