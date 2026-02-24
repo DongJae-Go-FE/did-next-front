@@ -5,6 +5,7 @@ import { createRoot } from "react-dom/client";
 import { throttle } from "lodash";
 import Marker from "./marker";
 import data from "../public/data";
+import type { Locale } from "@/app/(nation)/_lib/content";
 
 import resionJson1 from "../public/regions/region01.json";
 import resionJson2 from "../public/regions/region02.json";
@@ -63,8 +64,6 @@ const regionColors = [
   "#778CA3",
   "#4B6584",
 ];
-
-const mapId = "naver-map";
 
 export type NaverMap = naver.maps.Map;
 
@@ -180,31 +179,17 @@ function SvgOverlay({
       <style>
         {`
           @keyframes drawLine {
-            from {
-              stroke-dashoffset: var(--path-length);
-            }
-            to {
-              stroke-dashoffset: 0;
-            }
+            from { stroke-dashoffset: var(--path-length); }
+            to { stroke-dashoffset: 0; }
           }
-          
+
           @keyframes glowingLine {
-            from {
-              stroke-dashoffset: var(--path-length);
-            }
-            to {
-              stroke-dashoffset: calc(var(--path-length) * -1);
-            }
-          }
-          
-          .animated-line {
-            animation: drawLine 1s ease-in-out forwards;
+            from { stroke-dashoffset: var(--path-length); }
+            to { stroke-dashoffset: calc(var(--path-length) * -1); }
           }
 
-          .line-hidden {
-            stroke-dashoffset: var(--path-length);
-          }
-
+          .animated-line { animation: drawLine 1s ease-in-out forwards; }
+          .line-hidden { stroke-dashoffset: var(--path-length); }
           .glowing-line {
             animation: glowingLine 1.5s ease-in-out infinite;
             filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
@@ -232,13 +217,8 @@ function SvgOverlay({
               className={shouldAnimate ? "animated-line" : "line-hidden"}
               strokeDasharray={line.pathLength}
               strokeDashoffset={line.pathLength}
-              style={
-                {
-                  "--path-length": `${line.pathLength}px`,
-                } as React.CSSProperties
-              }
+              style={{ "--path-length": `${line.pathLength}px` } as React.CSSProperties}
             />
-
             {hoveredIndex === i && (
               <path
                 d={`M ${line.x1} ${line.y1} L ${line.mx} ${line.y1} L ${line.mx} ${line.y2} L ${line.x2} ${line.y2}`}
@@ -246,15 +226,9 @@ function SvgOverlay({
                 strokeWidth="3"
                 fill="none"
                 className="glowing-line"
-                strokeDasharray={`${line.pathLength * 0.2} ${
-                  line.pathLength * 0.8
-                }`}
+                strokeDasharray={`${line.pathLength * 0.2} ${line.pathLength * 0.8}`}
                 strokeLinecap="round"
-                style={
-                  {
-                    "--path-length": `${line.pathLength}px`,
-                  } as React.CSSProperties
-                }
+                style={{ "--path-length": `${line.pathLength}px` } as React.CSSProperties}
               />
             )}
           </g>
@@ -264,7 +238,8 @@ function SvgOverlay({
   );
 }
 
-export default function Map() {
+export default function Map({ locale = "kr" }: { locale?: Locale }) {
+  const mapId = `naver-map-${locale}`;
   const mapRef = useRef<NaverMap | null>(null);
   const polygonsRef = useRef<naver.maps.Polygon[]>([]);
   const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -274,21 +249,13 @@ export default function Map() {
   const [shouldAnimateLines, setShouldAnimateLines] = useState(false);
   const [animationTriggered, setAnimationTriggered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [hoveredMarkerIndex, setHoveredMarkerIndex] = useState<number | null>(
-    null
-  );
+  const [hoveredMarkerIndex, setHoveredMarkerIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 1079);
-    };
-
+    const checkScreenSize = () => setIsMobile(window.innerWidth <= 1079);
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
-
-    return () => {
-      window.removeEventListener("resize", checkScreenSize);
-    };
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   useEffect(() => {
@@ -303,16 +270,12 @@ export default function Map() {
         0,
         Math.min(1, (windowHeight - rect.top) / (windowHeight + mapHeight))
       );
-
-      const opacity = Math.min(1, scrollProgress * 2);
-      setMapOpacity(opacity);
+      setMapOpacity(Math.min(1, scrollProgress * 2));
 
       if (!animationTriggered && !isMobile) {
         const visibleHeight =
           Math.min(windowHeight, rect.bottom) - Math.max(0, rect.top);
-        const visiblePercentage = visibleHeight / mapHeight;
-
-        if (visiblePercentage >= 0.8) {
+        if (visibleHeight / mapHeight >= 0.8) {
           setShouldAnimateLines(true);
           setAnimationTriggered(true);
         }
@@ -321,10 +284,7 @@ export default function Map() {
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [animationTriggered, isMobile]);
 
   useEffect(() => {
@@ -338,34 +298,31 @@ export default function Map() {
       const isMobileScreen = screenWidth <= 1079;
       const isSmallScreen = screenWidth <= 767;
 
-      const newCenter = isMobileScreen
-        ? new window.naver.maps.LatLng(36.5, 127.8)
-        : new window.naver.maps.LatLng(35.886, 127.6);
-      const newZoom = isSmallScreen ? 6 : isMobileScreen ? 6 : 7;
-
-      map.setCenter(newCenter);
-      map.setZoom(newZoom);
+      map.setCenter(
+        isMobileScreen
+          ? new window.naver.maps.LatLng(36.5, 127.8)
+          : new window.naver.maps.LatLng(35.886, 127.6)
+      );
+      map.setZoom(isSmallScreen ? 6 : isMobileScreen ? 6 : 7);
     }, 200);
 
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
       handleResize.cancel();
     };
   }, []);
 
-  const convertCoordinates = (coordinates: number[][][]) => {
-    return coordinates.map((ring) =>
+  const convertCoordinates = (coordinates: number[][][]) =>
+    coordinates.map((ring) =>
       ring.map((coord) => new window.naver.maps.LatLng(coord[1], coord[0]))
     );
-  };
 
   const createPolygon = useCallback(
     (map: NaverMap, paths: naver.maps.LatLng[][], color: string) => {
       const polygon = new window.naver.maps.Polygon({
-        map: map,
-        paths: paths,
+        map,
+        paths,
         fillColor: color,
         fillOpacity: 0.3,
         strokeColor: color,
@@ -375,17 +332,10 @@ export default function Map() {
       });
 
       window.naver.maps.Event.addListener(polygon, "mouseover", () => {
-        polygon.setOptions({
-          fillOpacity: 0.6,
-          strokeWeight: 3,
-        } as naver.maps.PolygonOptions);
+        polygon.setOptions({ fillOpacity: 0.6, strokeWeight: 3 } as naver.maps.PolygonOptions);
       });
-
       window.naver.maps.Event.addListener(polygon, "mouseout", () => {
-        polygon.setOptions({
-          fillOpacity: 0.3,
-          strokeWeight: 2,
-        } as naver.maps.PolygonOptions);
+        polygon.setOptions({ fillOpacity: 0.3, strokeWeight: 2 } as naver.maps.PolygonOptions);
       });
 
       return polygon;
@@ -408,17 +358,11 @@ export default function Map() {
           const geometryType = feature.geometry?.type;
 
           if (geometryType === "Polygon") {
-            const paths = convertCoordinates(
-              feature.geometry.coordinates as number[][][]
-            );
-            const polygon = createPolygon(map, paths, color);
-            polygonsRef.current.push(polygon);
+            const paths = convertCoordinates(feature.geometry.coordinates as number[][][]);
+            polygonsRef.current.push(createPolygon(map, paths, color));
           } else if (geometryType === "MultiPolygon") {
-            const multiCoords = feature.geometry.coordinates as number[][][][];
-            multiCoords.forEach((polygonCoords) => {
-              const paths = convertCoordinates(polygonCoords);
-              const polygon = createPolygon(map, paths, color);
-              polygonsRef.current.push(polygon);
+            (feature.geometry.coordinates as number[][][][]).forEach((polygonCoords) => {
+              polygonsRef.current.push(createPolygon(map, convertCoordinates(polygonCoords), color));
             });
           }
         });
@@ -439,16 +383,11 @@ export default function Map() {
       markerContainer.className = "custom-marker";
       markerContainer.style.zIndex = "100";
 
-      markerContainer.addEventListener("mouseenter", () => {
-        setHoveredMarkerIndex(index);
-      });
-
-      markerContainer.addEventListener("mouseleave", () => {
-        setHoveredMarkerIndex(null);
-      });
+      markerContainer.addEventListener("mouseenter", () => setHoveredMarkerIndex(index));
+      markerContainer.addEventListener("mouseleave", () => setHoveredMarkerIndex(null));
 
       const root = createRoot(markerContainer);
-      root.render(<Marker name={diocese.name} />);
+      root.render(<Marker name={diocese.name} locale={locale} />);
 
       const lat = isMobile ? diocese.latitude2 : diocese.latitude;
       const lng = isMobile ? diocese.longitude2 : diocese.longitude;
@@ -465,7 +404,7 @@ export default function Map() {
 
       markersRef.current.push(marker);
     });
-  }, [isMobile]);
+  }, [isMobile, locale]);
 
   const initializeMap = useCallback(() => {
     if (!window.naver || !window.naver.maps) return;
@@ -474,7 +413,7 @@ export default function Map() {
     const isMobileScreen = screenWidth <= 1079;
     const isSmallScreen = screenWidth <= 767;
 
-    const mapOptions = {
+    const map = new window.naver.maps.Map(mapId, {
       center: isMobileScreen
         ? new window.naver.maps.LatLng(36.5, 127.8)
         : new window.naver.maps.LatLng(35.886, 127.6),
@@ -487,24 +426,17 @@ export default function Map() {
       disableDoubleTapZoom: !isMobileScreen,
       draggable: isMobileScreen,
       zoomControl: false,
-      logoControlOptions: {
-        position: naver.maps.Position.BOTTOM_LEFT,
-      },
-    };
+      logoControlOptions: { position: naver.maps.Position.BOTTOM_LEFT },
+    });
 
-    const map = new window.naver.maps.Map(mapId, mapOptions);
     mapRef.current = map;
-
     drawPolygons(map);
     updateMarkerPositions();
-
     setMapLoaded(true);
-  }, [drawPolygons, updateMarkerPositions]);
+  }, [mapId, drawPolygons, updateMarkerPositions]);
 
   useEffect(() => {
-    if (mapLoaded) {
-      updateMarkerPositions();
-    }
+    if (mapLoaded) updateMarkerPositions();
   }, [isMobile, mapLoaded, updateMarkerPositions]);
 
   useEffect(() => {
@@ -517,29 +449,20 @@ export default function Map() {
     script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}&submodules=geocoder`;
     script.async = true;
     script.onload = initializeMap;
-
     document.head.appendChild(script);
 
     return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
+      if (script.parentNode) script.parentNode.removeChild(script);
     };
   }, [initializeMap]);
 
   return (
     <div
       ref={mapContainerRef}
-      style={{
-        opacity: mapOpacity,
-        transition: "opacity 0.3s ease-out",
-      }}
+      style={{ opacity: mapOpacity, transition: "opacity 0.3s ease-out" }}
       className="relative w-full min-h-[calc(100dvh-208px)]"
     >
-      <div
-        id={mapId}
-        className="min-h-[calc(100dvh-208px)] w-full bg-gray-200"
-      />
+      <div id={mapId} className="min-h-[calc(100dvh-208px)] w-full bg-gray-200" />
       {mapLoaded && !isMobile && (
         <SvgOverlay
           dioceseData={data}

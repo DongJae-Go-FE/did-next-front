@@ -23,14 +23,21 @@ import SliderItem00 from "./slider-item/slider-item00";
 import SliderItem000 from "./slider-item/slider-item000";
 import SliderItem01 from "./slider-item/slider-item01";
 import SliderItem02 from "./slider-item/slider-item02";
+import SliderItem01En from "./slider-item/en/slider-item01";
+import SliderItem02En from "./slider-item/en/slider-item02";
 
-export default function MainSlider() {
+import { content, type Locale } from "@/app/(nation)/_lib/content";
+
+export default function MainSlider({ locale = "kr" }: { locale?: Locale }) {
   const flickingRef = useRef<HTMLDivElement>(null);
   const flickingInstanceRef = useRef<Flicking | null>(null);
   const autoPlayInstanceRef = useRef<AutoPlay | null>(null);
 
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
+
+  const t = content[locale].slider;
+  const isKr = locale === "kr";
 
   useEffect(() => {
     if (flickingRef.current) {
@@ -137,18 +144,31 @@ export default function MainSlider() {
       className="flicking-viewport relative h-[90dvh] w-screen flicking-hidden"
     >
       <div className="flicking-camera">
-        <Panel>
-          <SliderItem00 />
-        </Panel>
-        <Panel>
-          <SliderItem000 />
-        </Panel>
-        <Panel>
-          <SliderItem01 />
-        </Panel>
-        <Panel>
-          <SliderItem02 />
-        </Panel>
+        {isKr ? (
+          <>
+            <Panel>
+              <SliderItem00 />
+            </Panel>
+            <Panel>
+              <SliderItem000 />
+            </Panel>
+            <Panel>
+              <SliderItem01 />
+            </Panel>
+            <Panel>
+              <SliderItem02 />
+            </Panel>
+          </>
+        ) : (
+          <>
+            <Panel>
+              <SliderItem01En />
+            </Panel>
+            <Panel>
+              <SliderItem02En />
+            </Panel>
+          </>
+        )}
       </div>
       <div
         className={cn(
@@ -159,7 +179,7 @@ export default function MainSlider() {
         <button
           type="button"
           disabled={isAnimating}
-          title={isAutoPlay ? "일시정지 버튼" : "재생 버튼"}
+          title={isAutoPlay ? t.pauseTitle : t.playTitle}
           className="mr-4 max-[727px]:hidden max-[1080px]:hidden flex w-[60px] justify-center items-center cursor-pointer"
           onClick={handleAutoPlay}
         >
@@ -183,7 +203,7 @@ export default function MainSlider() {
         </button>
         <button
           type="button"
-          title="이전 슬라이드 버튼"
+          title={t.prevTitle}
           disabled={isAnimating}
           className="cursor-pointer"
           onClick={handlePrevSlide}
@@ -193,7 +213,7 @@ export default function MainSlider() {
         <div className="flicking-pagination relative! bottom-0! w-[120px]!" />
         <button
           type="button"
-          title="다음 슬라이드 버튼"
+          title={t.nextTitle}
           disabled={isAnimating}
           className="cursor-pointer"
           onClick={handleNextSlide}

@@ -6,220 +6,43 @@ import LogoLoop from "@/components/logo-loop";
 import SplitText from "@/components/split-text";
 
 import CountDay from "../count-day";
+import { content, type Locale } from "@/app/(nation)/_lib/content";
 
-export default function IntroPage() {
-  const techLogos = [
-    {
-      node: (
-        <Image
-          src="/logo/logo-andong.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="안동교구"
-        />
-      ),
-      title: "안동교구",
-      href: "https://www.acatholic.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-busan.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="부산교구"
-        />
-      ),
-      title: "부산교구",
-      href: "http://www.catholicbusan.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-cheongju.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="청주교구"
-        />
-      ),
-      title: "청주교구",
-      href: "https://www.cdcj.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-chuncheon.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="춘천교구"
-        />
-      ),
-      title: "춘천교구",
-      href: "https://www.cccatholic.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-daegu.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="대구교구"
-        />
-      ),
-      title: "대구교구",
-      href: "https://www.daegu-archdiocese.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-daejeon.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="대전교구"
-        />
-      ),
-      title: "대전교구",
-      href: "https://www.djcatholic.or.kr/home",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-gwangju.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="광주교구"
-        />
-      ),
-      title: "광주교구",
-      href: "https://www.gjcatholic.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-incheon.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="인천교구"
-        />
-      ),
-      title: "인천교구",
-      href: "http://www.caincheon.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-jeju.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="제주교구"
-        />
-      ),
-      title: "제주교구",
-      href: "https://www.diocesejeju.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-jeonju.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="전주교구"
-        />
-      ),
-      title: "전주교구",
-      href: "https://www.jcatholic.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-masan.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="마산교구"
-        />
-      ),
-      title: "마산교구",
-      href: "https://cathms.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-militury.svg"
-          width={200}
-          height={120}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="군종교구"
-        />
-      ),
-      title: "군종교구",
-      href: "https://www.gunjong.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-suwon.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="수원교구"
-        />
-      ),
-      title: "수원교구",
-      href: "https://www.casuwon.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-uijeongbu.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="의정부교구"
-        />
-      ),
-      title: "의정부교구",
-      href: "http://ucatholic.or.kr",
-    },
-    {
-      node: (
-        <Image
-          src="/logo/logo-wonju.svg"
-          width={0}
-          height={0}
-          className="w-auto h-10 cursor-pointer"
-          priority
-          alt="원주교구"
-        />
-      ),
-      title: "원주교구",
-      href: "http://www.wjcatholic.or.kr",
-    },
-  ];
+const dioceseLogo = [
+  { src: "/logo/logo-andong.svg", krName: "안동교구", enName: "Diocese of Andong", href: "https://www.acatholic.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-busan.svg", krName: "부산교구", enName: "Diocese of Busan", href: "http://www.catholicbusan.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-cheongju.svg", krName: "청주교구", enName: "Diocese of Cheongju", href: "https://www.cdcj.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-chuncheon.svg", krName: "춘천교구", enName: "Diocese of Chuncheon", href: "https://www.cccatholic.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-daegu.svg", krName: "대구교구", enName: "Archdiocese of Daegu", href: "https://www.daegu-archdiocese.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-daejeon.svg", krName: "대전교구", enName: "Diocese of Daejeon", href: "https://www.djcatholic.or.kr/home", w: 0, h: 0 },
+  { src: "/logo/logo-gwangju.svg", krName: "광주교구", enName: "Archdiocese of Gwangju", href: "https://www.gjcatholic.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-incheon.svg", krName: "인천교구", enName: "Diocese of Incheon", href: "http://www.caincheon.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-jeju.svg", krName: "제주교구", enName: "Diocese of Jeju", href: "https://www.diocesejeju.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-jeonju.svg", krName: "전주교구", enName: "Diocese of Jeonju", href: "https://www.jcatholic.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-masan.svg", krName: "마산교구", enName: "Diocese of Masan", href: "https://cathms.kr", w: 0, h: 0 },
+  { src: "/logo/logo-militury.svg", krName: "군종교구", enName: "Military Ordinariate", href: "https://www.gunjong.or.kr", w: 200, h: 120 },
+  { src: "/logo/logo-suwon.svg", krName: "수원교구", enName: "Diocese of Suwon", href: "https://www.casuwon.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-uijeongbu.svg", krName: "의정부교구", enName: "Diocese of Uijeongbu", href: "http://ucatholic.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-wonju.svg", krName: "원주교구", enName: "Diocese of Wonju", href: "http://www.wjcatholic.or.kr", w: 0, h: 0 },
+];
+
+export default function IntroPage({ locale = "kr" }: { locale?: Locale }) {
+  const t = content[locale].intro;
+
+  const techLogos = dioceseLogo.map((d) => ({
+    node: (
+      <Image
+        src={d.src}
+        width={d.w}
+        height={d.h}
+        className="w-auto h-10 cursor-pointer"
+        priority
+        alt={locale === "kr" ? d.krName : d.enName}
+      />
+    ),
+    title: locale === "kr" ? d.krName : d.enName,
+    href: d.href,
+  }));
 
   return (
     <>
@@ -237,12 +60,12 @@ export default function IntroPage() {
           scaleOnHover
           fadeOut
           fadeOutColor="#ffffff"
-          ariaLabel="교구 로고 모음"
+          ariaLabel={t.logoAriaLabel}
         />
       </div>
       <div className="flex justify-center items-center w-full h-[calc(80dvh-200px)] flex-col gap-y-2">
         <SplitText
-          text="WYD 2027 SEOUL DID 페이지에 오신걸 환영합니다."
+          text={t.welcomeText}
           className="heading01b text-[clamp(18px,3dvw,40px)] text-center font-black"
           delay={100}
           duration={1}
@@ -283,7 +106,7 @@ export default function IntroPage() {
           scaleOnHover
           fadeOut
           fadeOutColor="#ffffff"
-          ariaLabel="교구 로고 모음"
+          ariaLabel={t.logoAriaLabel}
         />
       </div>
     </>

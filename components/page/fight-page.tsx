@@ -10,32 +10,20 @@ import { BackDrop } from "../ui/common";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const items = [
-  {
-    type: "link" as const,
-    href: "/",
-    src: "/main/fight/f1.png",
-    alt: "손석희 아나운서 응원영상",
-    imageClassName:
-      "object-[30%_38%] max-[1079px]:object-[26%_38%] max-[767px]:object-[24%_32%]",
-    label: (
-      <>
-        손석희
-        <br />
-        마르첼리노
-        <br />
-        아나운서
-      </>
-    ),
-  },
-  { type: "coming" as const, src: "/main/main04.png", alt: "ComingSoon" },
-  { type: "coming" as const, src: "/main/main04.png", alt: "ComingSoon" },
-  { type: "coming" as const, src: "/main/main04.png", alt: "ComingSoon" },
-];
+import { content, type Locale } from "@/app/(nation)/_lib/content";
 
-const desktopItems = items.slice(0, 3);
+type ItemType =
+  | {
+      type: "link";
+      href: string;
+      src: string;
+      alt: string;
+      imageClassName: string;
+      label: string[];
+    }
+  | { type: "coming"; src: string; alt: string };
 
-function CardItem({ item }: { item: (typeof items)[number] }) {
+function CardItem({ item }: { item: ItemType }) {
   if (item.type === "link") {
     return (
       <Link href={item.href} className="group block h-full w-full relative">
@@ -44,10 +32,15 @@ function CardItem({ item }: { item: (typeof items)[number] }) {
           alt={item.alt}
           fill
           sizes="(max-width: 767px) 90vw, 33vw"
-          className={`object-cover transition-transform duration-300 group-hover:scale-[1.02] ${item.imageClassName ?? "object-center"}`}
+          className={`object-cover transition-transform duration-300 group-hover:scale-[1.02] ${item.imageClassName}`}
         />
-        <span className="absolute top-1/2 right-[4.5%] z-30 w-[30%] -translate-y-1/2 text-left heading03b leading-[1.25] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] max-[1279px]:w-[34%] max-[1279px]:text-[clamp(20px,1.9vw,30px)] max-[1079px]:right-[3.5%] max-[1079px]:w-[40%] max-[1079px]:leading-[1.15] max-[767px]:w-[46%] max-[767px]:text-[20px]">
-          {item.label}
+        <span className="absolute top-1/2 right-[4.5%] z-30 w-[30%] -translate-y-1/2 text-left heading03b text-[clamp(30px,2.35vw,36px)] leading-[1.25] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] max-[1279px]:w-[34%] max-[1279px]:text-[clamp(22px,2vw,32px)] max-[1079px]:right-[3.5%] max-[1079px]:w-[40%] max-[1079px]:leading-[1.15] max-[767px]:right-[6%] max-[767px]:w-[40%] max-[767px]:text-[20px] whitespace-nowrap">
+          {item.label.map((line, i) => (
+            <span key={i}>
+              {i > 0 && <br />}
+              {line}
+            </span>
+          ))}
         </span>
       </Link>
     );
@@ -72,8 +65,26 @@ function CardItem({ item }: { item: (typeof items)[number] }) {
   );
 }
 
-export default function FightPage() {
+export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
   const [isMobile, setIsMobile] = useState(false);
+  const t = content[locale].fightPage;
+
+  const items: ItemType[] = [
+    {
+      type: "link",
+      href: "/",
+      src: "/main/fight/f1.png",
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      label: t.personLabel as unknown as string[],
+    },
+    { type: "coming", src: "/main/main04.png", alt: "ComingSoon" },
+    { type: "coming", src: "/main/main04.png", alt: "ComingSoon" },
+    { type: "coming", src: "/main/main04.png", alt: "ComingSoon" },
+  ];
+
+  const desktopItems = items.slice(0, 3);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -85,15 +96,11 @@ export default function FightPage() {
   return (
     <section className="w-full px-8 py-6 max-[767px]:px-4">
       <h2 className="mb-6 leading-none font-bold tracking-tight text-[clamp(18px,2.35vw,34px)]">
-        <span className="text-[#214D9D]">2027 WYD</span>{" "}
-        <span className="text-black">와 </span>
-        <span className="text-[#E54A47]">교구대회를</span>{" "}
-        <span className="text-black">응원합니다! </span>
-        <br className="hidden max-[767px]:block" />
-        <span className="text-black">CHEER UP </span>
-        <span className="text-[#214D9D]">2027 WYD</span>{" "}
-        <span className="text-black">&amp; </span>
-        <span className="text-[#E54A47]">DID!</span>
+        {t.titleParts.map((part, i) => (
+          <span key={i} style={{ color: part.color }}>
+            {part.text}
+          </span>
+        ))}
       </h2>
 
       {isMobile ? (

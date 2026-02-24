@@ -20,7 +20,11 @@ import { X, Menu as MenuIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-export default function Menu() {
+import { content, type Locale } from "@/app/(nation)/_lib/content";
+
+export default function Menu({ locale = "kr" }: { locale?: Locale }) {
+  const t = content[locale].menu;
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -38,14 +42,14 @@ export default function Menu() {
         )}
       >
         <DialogHeader className="sr-only">
-          <DialogTitle>DID 메뉴</DialogTitle>
-          <DialogDescription>DID 메뉴입니다.</DialogDescription>
+          <DialogTitle>{t.dialogTitle}</DialogTitle>
+          <DialogDescription>{t.dialogDescription}</DialogDescription>
         </DialogHeader>
         <div className="px-8 flex-1 overflow-y-auto">
           <div className="w-full h-30 flex justify-between items-center flex-shrink-0 max-[1079px]:border-b max-[1079px]:border-gray-800">
             <h2>
               <DialogClose asChild>
-                <Link href="/">
+                <Link href={t.logoHref}>
                   <Image
                     src="/logo-white.svg"
                     alt="wyd logo"
@@ -64,51 +68,27 @@ export default function Menu() {
             </DialogClose>
           </div>
           <nav className="w-full flex text-white py-8 max-[1079px]:flex-col max-[1079px]:gap-y-5 max-[1079px]:overflow-y-auto h-[calc(100dvh-120px)]">
-            <MenuContainer>
-              <MenuContainerTitle>2027 DID</MenuContainerTitle>
-              <MenuContainerList style={{ animationDelay: "1s" }}>
-                <li>
-                  <MenuContainerListItemLink>
-                    교구대회 소개
-                  </MenuContainerListItemLink>
-                </li>
-                <li>
-                  <MenuContainerListItemLink href="/kr#map">
-                    교구 소개
-                  </MenuContainerListItemLink>
-                </li>
-              </MenuContainerList>
-            </MenuContainer>
-            <MenuContainer>
-              <MenuContainerTitle>NOTICE</MenuContainerTitle>
-              <MenuContainerList style={{ animationDelay: "1.4s" }}>
-                <li>
-                  <MenuContainerListItemLink>
-                    공지사항
-                  </MenuContainerListItemLink>
-                </li>
-                <li>
-                  <MenuContainerListItemLink href="/kr#sponsor">
-                    후원사 소개
-                  </MenuContainerListItemLink>
-                </li>
-              </MenuContainerList>
-            </MenuContainer>
-            <MenuContainer className="border-r-0">
-              <MenuContainerTitle>참여</MenuContainerTitle>
-              <MenuContainerList style={{ animationDelay: "1.8s" }}>
-                <li>
-                  <MenuContainerListItemLink href="/kr/apply">
-                    DID 신청
-                  </MenuContainerListItemLink>
-                </li>
-                <li>
-                  <MenuContainerListItemLink href="/kr/status">
-                    교구별 신청 현황
-                  </MenuContainerListItemLink>
-                </li>
-              </MenuContainerList>
-            </MenuContainer>
+            {t.sections.map((section, sectionIdx) => (
+              <MenuContainer
+                key={section.title}
+                className={sectionIdx === t.sections.length - 1 ? "border-r-0" : ""}
+              >
+                <MenuContainerTitle>{section.title}</MenuContainerTitle>
+                <MenuContainerList
+                  style={{
+                    animationDelay: `${1 + sectionIdx * 0.4}s`,
+                  }}
+                >
+                  {section.items.map((item) => (
+                    <li key={item.label}>
+                      <MenuContainerListItemLink href={item.href || ""}>
+                        {item.label}
+                      </MenuContainerListItemLink>
+                    </li>
+                  ))}
+                </MenuContainerList>
+              </MenuContainer>
+            ))}
           </nav>
         </div>
       </DialogContent>

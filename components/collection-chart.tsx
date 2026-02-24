@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { DioceseChartDatum } from "@/lib/notion-status";
 import {
   BarChart,
   Bar,
@@ -11,105 +12,6 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-
-const rawData = [
-  {
-    name: "서울",
-    현재인원: 8700,
-    목표인원: 10000,
-    color: "#8884d8",
-  },
-  {
-    name: "인천",
-    현재인원: 3200,
-    목표인원: 5000,
-    color: "#82ca9d",
-  },
-  {
-    name: "수원",
-    현재인원: 4600,
-    목표인원: 5000,
-    color: "#ffc658",
-  },
-  {
-    name: "청주",
-    현재인원: 2340,
-    목표인원: 3000,
-    color: "#ff8042",
-  },
-  {
-    name: "대전",
-    현재인원: 3300,
-    목표인원: 6000,
-    color: "#a4de6c",
-  },
-  {
-    name: "전주",
-    현재인원: 2130,
-    목표인원: 3000,
-    color: "#d0ed57",
-  },
-  {
-    name: "광주",
-    현재인원: 4450,
-    목표인원: 5000,
-    color: "#83a6ed",
-  },
-  {
-    name: "제주",
-    현재인원: 860,
-    목표인원: 2000,
-    color: "#8dd1e1",
-  },
-  {
-    name: "의정부",
-    현재인원: 2880,
-    목표인원: 3000,
-    color: "#d084d0",
-  },
-  {
-    name: "춘천",
-    현재인원: 1700,
-    목표인원: 2500,
-    color: "#ffb6c1",
-  },
-  {
-    name: "원주",
-    현재인원: 2460,
-    목표인원: 3000,
-    color: "#ffa07a",
-  },
-  {
-    name: "안동",
-    현재인원: 1180,
-    목표인원: 2000,
-    color: "#98d8c8",
-  },
-  {
-    name: "대구",
-    현재인원: 5460,
-    목표인원: 6000,
-    color: "#f7b7a3",
-  },
-  {
-    name: "부산",
-    현재인원: 6000,
-    목표인원: 8000,
-    color: "#c9a0dc",
-  },
-  {
-    name: "마산",
-    현재인원: 2520,
-    목표인원: 3000,
-    color: "#ffcc99",
-  },
-  {
-    name: "군종",
-    현재인원: 1860,
-    목표인원: 3000,
-    color: "#aed6f1",
-  },
-];
 
 interface ChartData {
   name: string;
@@ -134,11 +36,6 @@ interface CustomActiveBarProps {
   payload?: ChartData;
 }
 
-const data: ChartData[] = rawData.map((item) => ({
-  ...item,
-  달성률: Math.round((item.현재인원 / item.목표인원) * 100),
-}));
-
 const lightenColor = (color: string, percent: number) => {
   const num = parseInt(color.replace("#", ""), 16);
   const amt = Math.round(2.55 * percent);
@@ -158,7 +55,7 @@ const lightenColor = (color: string, percent: number) => {
   );
 };
 
-const CustomLegend = () => {
+const CustomLegend = ({ data }: { data: ChartData[] }) => {
   return (
     <div className="w-full p-2.5">
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
@@ -225,9 +122,17 @@ const CustomActiveBar = ({
   );
 };
 
-export default function CollectionChart() {
+interface CollectionChartProps {
+  data: DioceseChartDatum[];
+}
+
+export default function CollectionChart({ data: sourceData }: CollectionChartProps) {
   const [isVisible, setIsVisible] = useState(false);
   const chartRef = useRef<HTMLDivElement>(null);
+  const data: ChartData[] = sourceData.map((item) => ({
+    ...item,
+    달성률: Math.round((item.현재인원 / item.목표인원) * 100),
+  }));
 
   useEffect(() => {
     const currentRef = chartRef.current;
@@ -294,7 +199,7 @@ export default function CollectionChart() {
           ))}
         </Bar>
       </BarChart>
-      <CustomLegend />
+      <CustomLegend data={data} />
     </div>
   );
 }

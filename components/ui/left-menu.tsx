@@ -6,11 +6,11 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 type MenusType = {
-  label: string;
-  href: string;
+  readonly label: string;
+  readonly href: string;
 };
 
-export default function LeftMenu(props: { title: string; menus: MenusType[] }) {
+export default function LeftMenu(props: { title: string; menus: readonly MenusType[] }) {
   const pathName = usePathname();
 
   return (

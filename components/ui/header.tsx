@@ -17,11 +17,12 @@ import {
 } from "@/components/ui/select";
 
 import Menu from "../menu";
+import type { Locale } from "@/app/(nation)/_lib/content";
 
-export default function Header() {
+export default function Header({ locale = "kr" }: { locale?: Locale }) {
   const { push } = useRouter();
   const pathname = usePathname();
-  const [value, setValue] = useState("kr");
+  const [value, setValue] = useState<string>(locale);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const supportedLangs = useMemo(() => {
@@ -64,27 +65,13 @@ export default function Header() {
     if (supportedLangs.includes(firstSegment)) {
       setValue(firstSegment);
     } else {
-      setValue("kr");
+      setValue(locale);
     }
-  }, [pathname, supportedLangs]);
+  }, [pathname, supportedLangs, locale]);
 
   const handleLanguageChange = (lang: string) => {
     setValue(lang);
-
-    const segments = pathname.split("/").filter(Boolean);
-    const firstSegment = segments[0];
-
-    let newPath = "";
-
-    if (!isRootPage) {
-      newPath = `/${lang}`;
-    } else if (supportedLangs.includes(firstSegment)) {
-      newPath = `/${lang}`;
-    } else {
-      newPath = `/${lang}`;
-    }
-
-    push(newPath);
+    push(`/${lang}`);
   };
 
   const shouldShowWhiteBg = !isRootPage || isScrolled;
@@ -103,7 +90,7 @@ export default function Header() {
       )}
     >
       <h1>
-        <Link href="/">
+        <Link href={locale === "kr" ? "/" : `/${locale}`}>
           <Image
             src="/logo.svg"
             alt="wyd logo"
@@ -140,7 +127,7 @@ export default function Header() {
               : "[&_svg_path]:fill-white",
           )}
         >
-          <Menu />
+          <Menu locale={locale} />
         </li>
       </ul>
     </header>

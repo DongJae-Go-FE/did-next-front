@@ -1,54 +1,50 @@
 import Link from "next/link";
 import Image from "next/image";
+import { content, type Locale } from "@/app/(nation)/_lib/content";
 
-export default function Footer() {
+export default function Footer({ locale = "kr" }: { locale?: Locale }) {
+  const t = content[locale].footer;
+
   return (
     <footer className="w-dvw flex h-[296px] justify-between bg-[#222] px-8 py-[30px] text-white max-[1079px]:flex-wrap max-[1079px]:h-auto max-[1079px]:gap-y-8">
       <div className="flex flex-col">
         <h3 className="mb-6">
-          <Link href="/" className="flex items-center gap-x-1">
+          <Link href={t.homeHref} className="flex items-center gap-x-1">
             <Image
               src="/logo-white.svg"
               className="w-auto h-auto"
               width={104}
               height={120}
-              alt="DID 로고"
+              alt={t.logoAlt}
               priority
             />
           </Link>
         </h3>
         <address className="not-italic">
           <ul className="flex flex-col gap-y-2 body02R">
-            <li>도로명 주소 : 인천광역시 동구 박문로1 (송림동 103-25)</li>
-            <li>지번 주소 : 인천광역시 동구 송림동 103-8</li>
-            <li>이메일 : masterforce999@naver.com</li>
+            <li>{t.address}</li>
+            {t.address2 && <li>{t.address2}</li>}
+            <li>{t.email}</li>
           </ul>
         </address>
       </div>
       <div>
-        <h3 className="heading03B">032-765-6960</h3>
-        <p className="body02R">운영시간: 10:00 ~ 18:00</p>
+        <h3 className="heading03B">{t.phone}</h3>
+        <p className="body02R">{t.hours}</p>
         <ul className="mt-4 mb-12 flex gap-x-4">
-          <li>
-            <Link
-              href="http://www.caincheon.or.kr/"
-              className="body02R underline underline-offset-4"
-              target="_blank"
-            >
-              인천교구청
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="https://youth.caincheon.or.kr/"
-              className="body02R underline underline-offset-4"
-              target="_blank"
-            >
-              인천교구 청소년 사목국
-            </Link>
-          </li>
+          {t.links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="body02R underline underline-offset-4"
+                target="_blank"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
-        <p className="body02R">Copyright ⓒ WYD2027 SEOUL DID All rights reserved</p>
+        <p className="body02R">{t.copyright}</p>
       </div>
     </footer>
   );

@@ -7,11 +7,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
 import GradientText from "../gradient-text";
+import { content, type Locale } from "@/app/(nation)/_lib/content";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-function SponsorItem({ index }: { index: number }) {
+function SponsorItem({ index, locale }: { index: number; locale: Locale }) {
   return (
     <li className="bg-white h-30 border border-gray-200 rounded-sm hover:bg-gray-50 transition-colors duration-100">
       <Link
@@ -21,7 +22,7 @@ function SponsorItem({ index }: { index: number }) {
       >
         <Image
           src="sponsor-logo.svg"
-          alt={`스폰서${index + 1}`}
+          alt={locale === "kr" ? `스폰서${index + 1}` : `Sponsor ${index + 1}`}
           width={0}
           height={0}
           className="h-18 w-auto"
@@ -32,8 +33,9 @@ function SponsorItem({ index }: { index: number }) {
   );
 }
 
-export default function SponsorPage() {
+export default function SponsorPage({ locale = "kr" }: { locale?: Locale }) {
   const [isMobile, setIsMobile] = useState(false);
+  const t = content[locale].sponsorPage;
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 1079);
@@ -45,7 +47,7 @@ export default function SponsorPage() {
   return (
     <>
       <h2 className="heading02b mb-8 max-[1079px]:text-[24px] max-[767px]:text-[18px]">
-        공식 후원사
+        {t.title}
       </h2>
 
       {isMobile ? (
@@ -62,7 +64,7 @@ export default function SponsorPage() {
         >
           {[...Array(9)].map((_, index) => (
             <SwiperSlide key={index}>
-              <SponsorItem index={index} />
+              <SponsorItem index={index} locale={locale} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -75,13 +77,13 @@ export default function SponsorPage() {
           }}
         >
           {[...Array(9)].map((_, index) => (
-            <SponsorItem key={index} index={index} />
+            <SponsorItem key={index} index={index} locale={locale} />
           ))}
         </ul>
       )}
 
       <div className="h-100 max-[1079px]:h-60 max-[767px]:h-44 bg-white w-full mt-2 border border-gray-200 rounded-sm flex justify-center items-center flex-col gap-y-2">
-        <h2 className="heading01b text-[clamp(18px,3dvw,40px)]">후원 문의</h2>
+        <h2 className="heading01b text-[clamp(18px,3dvw,40px)]">{t.inquiryTitle}</h2>
         <a href="#none">
           <GradientText
             colors={[

@@ -1,24 +1,8 @@
 import Link from "next/link";
+import { content, type Locale } from "@/app/(nation)/_lib/content";
 
-const content = {
-  kr: {
-    label: "DID APPLY",
-    title: "DiD 신청하기",
-    desc: "교구별 신청 페이지에서 참여 가능한 교구를 확인하고 바로 신청할 수 있습니다.",
-    cta: "신청 페이지 이동",
-    href: "/kr/apply",
-  },
-  en: {
-    label: "DID APPLY",
-    title: "Apply for DiD",
-    desc: "Check available dioceses on the application page and apply right away.",
-    cta: "Go to Application",
-    href: "/en/apply",
-  },
-};
-
-export default function ApplyCtaSection({ locale = "kr" }: { locale?: "kr" | "en" }) {
-  const t = content[locale];
+export default function ApplyCtaSection({ locale = "kr" }: { locale?: Locale }) {
+  const t = content[locale].applyCta;
 
   return (
     <section className="w-screen bg-[#F3F4F6] px-8 py-14 max-[767px]:px-4">

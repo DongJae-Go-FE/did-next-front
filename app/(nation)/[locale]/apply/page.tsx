@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 import {
   SubLayout,
@@ -19,131 +21,193 @@ import {
 } from "@/components/ui/card";
 
 import SliderBackdrop from "@/components/ui/slider-backdrop";
+import { content, locales, type Locale } from "../../_lib/content";
 
-const data = [
+const SITE_URL = "https://wyd2027did.org";
+const OG_IMAGE = "/logo.svg";
+
+const dioceseData = [
   {
-    name: "Diocese of Andong",
+    krName: "안동교구",
+    enName: "Diocese of Andong",
     image: "/apply/andong.webp",
-    alt: "Diocese of Andong",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 10,
     total: 50,
   },
   {
-    name: "Diocese of Busan",
+    krName: "부산교구",
+    enName: "Diocese of Busan",
     image: "/apply/busan.webp",
-    alt: "Diocese of Busan",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 90,
     total: 170,
   },
   {
-    name: "Diocese of Cheongju",
+    krName: "청주교구",
+    enName: "Diocese of Cheongju",
     image: "/apply/cheongju.webp",
-    alt: "Diocese of Cheongju",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 25,
     total: 90,
   },
   {
-    name: "Diocese of Chuncheon",
+    krName: "춘천교구",
+    enName: "Diocese of Chuncheon",
     image: "/apply/chuncheon.webp",
-    alt: "Diocese of Chuncheon",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 20,
     total: 80,
   },
   {
-    name: "Archdiocese of Daegu",
+    krName: "대구대교구",
+    enName: "Archdiocese of Daegu",
     image: "/apply/daegu.webp",
-    alt: "Archdiocese of Daegu",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 70,
     total: 160,
   },
   {
-    name: "Diocese of Daejeon",
+    krName: "대전교구",
+    enName: "Diocese of Daejeon",
     image: "/apply/daejeon.webp",
-    alt: "Diocese of Daejeon",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 55,
     total: 130,
   },
   {
-    name: "Archdiocese of Gwangju",
+    krName: "광주대교구",
+    enName: "Archdiocese of Gwangju",
     image: "/apply/gwangju.webp",
-    alt: "Archdiocese of Gwangju",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 60,
     total: 140,
   },
   {
-    name: "Diocese of Incheon",
+    krName: "인천교구",
+    enName: "Diocese of Incheon",
     image: "/apply/incheon.jpg",
-    alt: "Diocese of Incheon",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 45,
     total: 120,
   },
   {
-    name: "Diocese of Jeju",
+    krName: "제주교구",
+    enName: "Diocese of Jeju",
     image: "/apply/jeju.webp",
-    alt: "Diocese of Jeju",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 12,
     total: 40,
   },
   {
-    name: "Diocese of Jeonju",
+    krName: "전주교구",
+    enName: "Diocese of Jeonju",
     image: "/apply/jeonju.webp",
-    alt: "Diocese of Jeonju",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 35,
     total: 110,
   },
   {
-    name: "Diocese of Masan",
+    krName: "마산교구",
+    enName: "Diocese of Masan",
     image: "/apply/masan.webp",
-    alt: "Diocese of Masan",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 18,
     total: 70,
   },
   {
-    name: "Military Ordinariate",
+    krName: "군종교구",
+    enName: "Military Ordinariate",
     image: "/apply/gun.webp",
-    alt: "Military Ordinariate",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 40,
     total: 100,
   },
   {
-    name: "Diocese of Suwon",
+    krName: "수원교구",
+    enName: "Diocese of Suwon",
     image: "/apply/suwon.webp",
-    alt: "Diocese of Suwon",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 80,
     total: 150,
   },
   {
-    name: "Diocese of Uijeongbu",
+    krName: "의정부교구",
+    enName: "Diocese of Uijeongbu",
     image: "/apply/uijeongbu.webp",
-    alt: "Diocese of Uijeongbu",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 30,
     total: 100,
   },
   {
-    name: "Diocese of Wonju",
+    krName: "원주교구",
+    enName: "Diocese of Wonju",
     image: "/apply/wonju.webp",
-    alt: "Diocese of Wonju",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 15,
     total: 60,
   },
 ];
 
-export default function Page() {
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: localeStr } = await params;
+  if (!locales.includes(localeStr as Locale)) return {};
+  const locale = localeStr as Locale;
+  const t = content[locale].applyPage;
+  const base = content[locale].metadata;
+
+  return {
+    title: `${t.heroTitle} | 2027 WYD SEOUL DID`,
+    description: base.description,
+    keywords: base.keywords,
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/apply`,
+      languages: {
+        ko: `${SITE_URL}/kr/apply`,
+        en: `${SITE_URL}/en/apply`,
+        "x-default": `${SITE_URL}/kr/apply`,
+      },
+    },
+    openGraph: {
+      title: `${t.heroTitle} | 2027 WYD SEOUL DID`,
+      description: base.description,
+      url: `${SITE_URL}/${locale}/apply`,
+      siteName: "2027 WYD SEOUL DID",
+      locale: base.ogLocale,
+      type: "website",
+      images: [{ url: OG_IMAGE, alt: "2027 WYD SEOUL DID logo" }],
+    },
+    twitter: {
+      card: "summary",
+      title: `${t.heroTitle} | 2027 WYD SEOUL DID`,
+      description: base.description,
+      images: [OG_IMAGE],
+    },
+  };
+}
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: localeStr } = await params;
+
+  if (!locales.includes(localeStr as Locale)) {
+    notFound();
+  }
+
+  const locale = localeStr as Locale;
+  const t = content[locale].applyPage;
+
   return (
     <div className="pt-30">
       <div className="w-full h-75 relative overflow-hidden flex justify-center items-center">
@@ -151,35 +215,24 @@ export default function Page() {
           src="/visual.png"
           sizes="100vw"
           fill
-          alt="Sub page background"
+          alt={t.heroAlt}
           priority
           className="object-cover object-center w-full h-full animate-pan-zoom-center-small"
         />
         <div className="flex flex-col gap-y-2 text-white z-40 relative justify-center animate-fadeIn2 opacity-0">
-          <h2 className="heading02b">DID Application</h2>
+          <h2 className="heading02b">{t.heroTitle}</h2>
           <ul className="flex gap-x-1 justify-center body01b">
-            <li>Participate /</li>
-            <li>Apply</li>
+            {t.breadcrumb.map((crumb) => (
+              <li key={crumb}>{crumb}</li>
+            ))}
           </ul>
         </div>
         <SliderBackdrop />
       </div>
       <SubLayout className="relative">
-        <LeftMenu
-          title="Participate"
-          menus={[
-            {
-              label: "DID Application",
-              href: "/en/apply",
-            },
-            {
-              label: "Application Status",
-              href: "/en/status",
-            },
-          ]}
-        />
+        <LeftMenu title={t.leftMenuTitle} menus={t.leftMenuItems} />
         <SubContentContainer>
-          <SubContentTitle>DID Application</SubContentTitle>
+          <SubContentTitle>{t.pageTitle}</SubContentTitle>
           <ul
             className="w-full grid gap-4"
             style={{
@@ -187,11 +240,12 @@ export default function Page() {
                 "repeat(auto-fill, minmax(min(300px,100%), 1fr))",
             }}
           >
-            {data.map(({ alt, href, image, name, applied, total }) => {
-              const rate = Math.round((applied / total) * 100);
+            {dioceseData.map(({ krName, enName, href, image, applied, total }) => {
+              const name = locale === "kr" ? krName : enName;
               const key = name.replace(/\s/g, "");
+              const rate = Math.round((applied / total) * 100);
               return (
-                <li key={name}>
+                <li key={krName}>
                   <Card className="w-full max-w-full px-4">
                     <CardContent className="relative h-44 overflow-hidden">
                       <Image
@@ -199,23 +253,23 @@ export default function Page() {
                         fill
                         className="object-cover"
                         priority
-                        alt={alt}
+                        alt={name}
                       />
                     </CardContent>
                     <CardHeader className="px-0">
-                      <CardTitle title={`${name} DID Application`}>
-                        {name} DID Application
+                      <CardTitle title={t.cardTitle(name)}>
+                        {t.cardTitle(name)}
                       </CardTitle>
                       <CardDescription
                         className="truncate"
-                        title={`Click the button to apply for ${name} DID.`}
+                        title={t.cardDesc(name)}
                       >
-                        Click the button to apply for {name} DID.
+                        {t.cardDesc(name)}
                       </CardDescription>
                       <div className="mt-1">
                         <div className="flex justify-between items-center mb-1">
                           <span className="text-xs font-medium text-gray-600">
-                            Application Rate
+                            {t.rateLabel}
                           </span>
                           <span className="text-xs font-semibold text-gray-800">
                             {rate}% ({applied}/{total})
@@ -246,7 +300,7 @@ export default function Page() {
                         target="_blank"
                         href={href}
                       >
-                        Apply
+                        {t.applyBtn}
                       </Link>
                     </CardFooter>
                   </Card>
