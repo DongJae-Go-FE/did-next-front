@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import {
   Dialog,
@@ -9,16 +10,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-import {
-  Table,
-  TableCaption,
-  TableBody,
-  TableRow,
-  TableHead,
-  TableCell,
-} from "@/components/ui/table";
-
-import { MapPin } from "lucide-react";
+import { MapPin, ExternalLink, Map } from "lucide-react";
 import dioceseData from "@/public/data";
 
 const dioceseImageMap: Record<string, string> = {
@@ -59,6 +51,23 @@ const dioceseNameMap: Record<string, string> = {
   군종교구: "Military Ordinariate",
 };
 
+const dioceseUrlMap: Record<string, string> = {
+  부산교구: "https://www.wyd2027did-busan.org",
+  안동교구: "https://www.wyd2027did-andong.org",
+  춘천교구: "https://www.wyd2027did-cccatholic.org",
+  대구대교구: "https://www.wyd2027did-daegu.org",
+  군종교구: "https://www.wyd2027did-gunjong.org",
+  광주대교구: "https://www.wyd2027did-gwangju.org",
+  제주교구: "https://www.wyd2027did-jeju.org",
+  전주교구: "https://www.wyd2027did-jeonju.org",
+  마산교구: "https://www.wyd2027did-masan.org",
+  의정부교구: "https://www.wyd2027did-uijeongbu.org",
+  원주교구: "https://www.wyd2027did-wonju.org",
+  청주교구: "https://www.wyd2027did-cdcj.org",
+  수원교구: "https://www.wyd2027did-suwon.org",
+  인천교구: "https://www.wyd2027did-incheon.org",
+};
+
 export default function MarkerEn({
   onClick,
   name,
@@ -69,64 +78,106 @@ export default function MarkerEn({
   const diocese = dioceseData.find((d) => d.name === name);
   const address = diocese?.address || "";
   const englishName = dioceseNameMap[name] || name;
+  const url = dioceseUrlMap[name];
+  const lat = diocese?.latitude2;
+  const lng = diocese?.longitude2;
+  const googleMapsUrl = lat && lng
+    ? `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`
+    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  const appleMapsUrl = lat && lng
+    ? `https://maps.apple.com/?ll=${lat},${lng}&q=${encodeURIComponent(englishName)}`
+    : `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
 
   return (
     <Dialog>
       <DialogTrigger asChild>
         <button
           type="button"
-          className="h-[30px] bg-blue-500 relative cursor-pointer flex z-2000 rounded-full items-center gap-x-1 px-2 top-0.5"
+          className="h-[30px] relative cursor-pointer flex z-2000 rounded-full items-center gap-x-1 px-2 top-0.5"
+          style={{ backgroundColor: "#0047BB" }}
           onClick={onClick}
         >
           <div className="w-5.5 h-5.5 bg-white rounded-full flex items-center justify-center relative">
             <MapPin width={18} height={18} fill="#fff" />
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-500 opacity-75" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" style={{ backgroundColor: "#0047BB" }} />
           </div>
           <div className="body03m text-white whitespace-nowrap">
             {englishName}
           </div>
         </button>
       </DialogTrigger>
-      <DialogContent className="min-h-[50dvh] w-full max-w-3/4 bg-white p-0 overflow-hidden sm:min-w-3/4">
+      <DialogContent className="w-[min(92vw,520px)] bg-white p-0 overflow-hidden rounded-2xl shadow-2xl border-0">
         <DialogHeader className="sr-only">
           <DialogTitle>{englishName}</DialogTitle>
           <DialogDescription>About {englishName}</DialogDescription>
         </DialogHeader>
 
         <div className="w-full flex flex-col">
-          <div className="relative w-full aspect-[16/7]">
+          {/* Image */}
+          <div className="relative w-full aspect-[16/9] overflow-hidden">
             <Image
               src={dioceseImageMap[name] || "/apply/seoul.webp"}
               fill
-              className="object-cover"
+              className="object-cover scale-105"
               priority
               alt={`${englishName} image`}
             />
-          </div>
-          <div className="p-8 flex flex-col gap-y-4">
-            <h2 className="heading03b">{englishName}</h2>
-            <div className="w-full">
-              <Table
-                type="description"
-                className="table-auto max-[1079px]:table-fixed"
-              >
-                <TableCaption>{englishName} Details</TableCaption>
-                <TableBody>
-                  <TableRow>
-                    <TableHead className="w-50 max-[767px]:w-20 text-center">
-                      Diocese
-                    </TableHead>
-                    <TableCell>{englishName}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableHead className="w-50 max-[767px]:w-20 text-center">
-                      Address
-                    </TableHead>
-                    <TableCell>{address}</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <h2 className="text-white text-xl font-bold leading-tight">
+                {englishName}
+              </h2>
             </div>
+          </div>
+
+          {/* Body */}
+          <div className="px-5 pt-4 pb-5 flex flex-col gap-y-4">
+            {/* Address */}
+            {address && (
+              <div className="flex items-start gap-x-2.5 bg-gray-50 rounded-xl px-3.5 py-3">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#0047BB" }} />
+                <span className="text-sm text-gray-600 leading-relaxed flex-1">
+                  {address}
+                </span>
+                <div className="flex items-center gap-x-1.5 flex-shrink-0 ml-1">
+                  <Link
+                    href={googleMapsUrl}
+                    target="_blank"
+                    title="View on Google Maps"
+                    className="flex items-center gap-x-1.5 px-2.5 py-1.5 rounded-lg bg-white border border-gray-300 text-xs font-semibold text-gray-600 hover:border-gray-400 hover:text-gray-800 transition-colors shadow-sm"
+                  >
+                    <Map className="w-3.5 h-3.5" />
+                    Google Map
+                  </Link>
+                  <Link
+                    href={appleMapsUrl}
+                    target="_blank"
+                    title="View on Apple Maps"
+                    className="flex items-center gap-x-1.5 px-2.5 py-1.5 rounded-lg bg-white border border-gray-300 text-xs font-semibold text-gray-600 hover:border-gray-400 hover:text-gray-800 transition-colors shadow-sm"
+                  >
+                    <Map className="w-3.5 h-3.5" />
+                    Apple Map
+                  </Link>
+                </div>
+              </div>
+            )}
+
+            {/* Button */}
+            {url ? (
+              <Link
+                href={url}
+                target="_blank"
+                className="group flex items-center justify-center gap-x-2 px-4 py-3 transition-colors rounded-xl text-white text-sm font-semibold w-full"
+                style={{ backgroundColor: "#0047BB" }}
+              >
+                Visit Diocese DID Website
+                <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </Link>
+            ) : (
+              <div className="flex items-center justify-center px-4 py-3 bg-gray-100 rounded-xl text-gray-400 text-sm w-full">
+                Website coming soon
+              </div>
+            )}
           </div>
         </div>
       </DialogContent>

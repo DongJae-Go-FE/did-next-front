@@ -6,9 +6,7 @@ import SliderBackdrop from "../../ui/slider-backdrop";
 
 import {
   SlideSmallText,
-  SlideSmallTextContainer,
   SlideText,
-  SlideTextContainer,
 } from "../../ui/slide-text";
 
 export default function SliderItem01En() {
@@ -27,26 +25,26 @@ export default function SliderItem01En() {
         sizes="100vw"
         className="object-cover object-center"
       />
-      <div className="text-white heading01b absolute top-[30dvh] z-40 pl-8 flex flex-col gap-y-1">
-        <SlideTextContainer>
-          <SlideText style={{ animationDelay: "1.2s" }}>
+      <div className="text-white heading01b absolute top-[30dvh] z-40 pl-8 flex flex-col gap-y-2">
+        <div className="h-[clamp(54px,9dvw,90px)] overflow-hidden">
+          <SlideText style={{ animationDelay: "1.2s" }} className="text-[clamp(36px,6dvw,60px)]">
             Take courage.
           </SlideText>
-        </SlideTextContainer>
-        <SlideTextContainer>
-          <SlideText style={{ animationDelay: "1.8s" }}>
+        </div>
+        <div className="h-[clamp(54px,9dvw,90px)] overflow-hidden">
+          <SlideText style={{ animationDelay: "1.8s" }} className="text-[clamp(36px,6dvw,60px)]">
             I have conquered the world.
           </SlideText>
-        </SlideTextContainer>
-        <SlideSmallTextContainer>
-          <SlideSmallText style={{ animationDelay: "2.3s" }}>
+        </div>
+        <div className="h-[clamp(54px,7.5dvw,81px)] overflow-hidden">
+          <SlideSmallText style={{ animationDelay: "2.3s" }} className="text-[clamp(24px,3dvw,36px)]">
             (John 16:33)
           </SlideSmallText>
-        </SlideSmallTextContainer>
+        </div>
       </div>
-      <div className="w-[200vw] h-[200vh] bg-black z-30 absolute animate-fade-out-up-left rounded-full -right-[25dvw] -bottom-[25dvw] max-[1080px]:-bottom-[50dvw]" />
+      <div className="w-[200vw] h-[200vh] bg-black z-30 absolute animate-fade-out-up-left rounded-full -right-[25dvw] -bottom-[15dvw] max-[1080px]:-bottom-[50dvw]" />
       <h2
-        className="absolute right-0 pr-5 z-40 bottom-[3.5dvw] heading02b text-white text-[clamp(30px,7dvw,130px)] animate-fadeIn opacity-0 max-[1079px]:hidden"
+        className="absolute right-0 pr-5 z-40 bottom-[8dvw] heading02b text-white text-[clamp(30px,7dvw,130px)] animate-fadeIn opacity-0 max-[1079px]:hidden"
         style={{ animationDelay: "3s" }}
       >
         DAYS IN DIOCESE

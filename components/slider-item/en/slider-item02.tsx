@@ -4,9 +4,7 @@ import SliderBackdrop from "../../ui/slider-backdrop";
 
 import {
   SlideSmallText,
-  SlideSmallTextContainer,
   SlideText,
-  SlideTextContainer,
 } from "../../ui/slide-text";
 
 export default function SliderItem02En() {
@@ -19,22 +17,22 @@ export default function SliderItem02En() {
         sizes="100vw"
         alt="WYD 2027 DID Main Image 2"
       />
-      <div className="text-white heading03b absolute top-[30dvh] z-40 pl-8 flex flex-col gap-y-1 right-[5dvw]">
-        <SlideTextContainer>
-          <SlideText style={{ animationDelay: "1.2s" }}>
+      <div className="text-white heading01b absolute top-[30dvh] z-40 pl-8 flex flex-col gap-y-2">
+        <div className="h-[clamp(54px,9dvw,90px)] overflow-hidden">
+          <SlideText style={{ animationDelay: "1.2s" }} className="text-[clamp(36px,6dvw,60px)]">
             Take courage.
           </SlideText>
-        </SlideTextContainer>
-        <SlideTextContainer>
-          <SlideText style={{ animationDelay: "1.8s" }}>
+        </div>
+        <div className="h-[clamp(54px,9dvw,90px)] overflow-hidden">
+          <SlideText style={{ animationDelay: "1.8s" }} className="text-[clamp(36px,6dvw,60px)]">
             I have conquered the world.
           </SlideText>
-        </SlideTextContainer>
-        <SlideSmallTextContainer>
-          <SlideSmallText style={{ animationDelay: "2.3s" }}>
+        </div>
+        <div className="h-[clamp(54px,7.5dvw,81px)] overflow-hidden">
+          <SlideSmallText style={{ animationDelay: "2.3s" }} className="text-[clamp(24px,3dvw,36px)]">
             (John 16:33)
           </SlideSmallText>
-        </SlideSmallTextContainer>
+        </div>
       </div>
       <SliderBackdrop />
     </div>

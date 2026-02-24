@@ -43,9 +43,9 @@ export default function SliderItem01() {
           </SlideSmallText>
         </SlideSmallTextContainer>
       </div>
-      <div className="w-[200vw] h-[200vh] bg-black z-30 absolute animate-fade-out-up-left rounded-full -right-[25dvw] -bottom-[25dvw] max-[1080px]:-bottom-[50dvw]" />
+      <div className="w-[200vw] h-[200vh] bg-black z-30 absolute animate-fade-out-up-left rounded-full -right-[25dvw] -bottom-[15dvw] max-[1080px]:-bottom-[50dvw]" />
       <h2
-        className="absolute right-0 pr-5 z-40 bottom-[3.5dvw] heading02b text-white text-[clamp(30px,7dvw,130px)] animate-fadeIn opacity-0 max-[1079px]:hidden"
+        className="absolute right-0 pr-5 z-40 bottom-[8dvw] heading02b text-white text-[clamp(30px,7dvw,130px)] animate-fadeIn opacity-0 max-[1079px]:hidden"
         style={{ animationDelay: "3s" }}
       >
         DAYS IN DIOCESE

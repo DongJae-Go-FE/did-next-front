@@ -101,7 +101,7 @@ export default function FightPageEn() {
           spaceBetween={10}
           slidesPerView={1.15}
           pagination={{ clickable: true }}
-          className="fight-swiper"
+          className="fight-swiper did-swiper"
         >
           {items.map((item, i) => (
             <SwiperSlide key={i}>

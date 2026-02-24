@@ -1,8 +1,9 @@
 import MainSlider from "@/components/main-slider";
+import ApplyCtaSection from "@/components/page/apply-cta-section";
 import FightPage from "@/components/page/fight-page";
 import IntroPage from "@/components/page/intro-page";
 import MapPage from "@/components/page/map-page";
-import ChartPage from "@/components/page/chart-page";
+// import ChartPage from "@/components/page/chart-page";
 import SponsorPage from "@/components/page/sponsor-page";
 import PrayPage from "@/components/page/pray-page";
 
@@ -13,16 +14,18 @@ export default function Home() {
         <MainSlider />
       </div>
       <FightPage />
+
       <div className="w-screen min-h-[80dvh] bg-white px-8 py-16" id="section">
         <IntroPage />
       </div>
-      <div className="w-screen min-h-screen bg-white px-8 py-16">
+      <ApplyCtaSection />
+      <div className="w-screen min-h-screen bg-white px-8 py-16" id="map">
         <MapPage />
       </div>
-      <div className="w-screen h-fit bg-white px-8 py-16 max-[767]:hidden">
-        <ChartPage />
-      </div>
-      <div className="w-screen h-fit bg-gray-100 px-8 py-16 scroll-mt-30" id="sponsor">
+      <div
+        className="w-screen h-fit bg-gray-100 px-8 py-16 scroll-mt-30"
+        id="sponsor"
+      >
         <SponsorPage />
       </div>
       <div

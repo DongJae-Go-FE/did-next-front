@@ -72,6 +72,11 @@ export default function Menu() {
                     교구대회 소개
                   </MenuContainerListItemLink>
                 </li>
+                <li>
+                  <MenuContainerListItemLink href="/kr#map">
+                    교구 소개
+                  </MenuContainerListItemLink>
+                </li>
               </MenuContainerList>
             </MenuContainer>
             <MenuContainer>
@@ -95,6 +100,11 @@ export default function Menu() {
                 <li>
                   <MenuContainerListItemLink href="/kr/apply">
                     DID 신청
+                  </MenuContainerListItemLink>
+                </li>
+                <li>
+                  <MenuContainerListItemLink href="/kr/status">
+                    교구별 신청 현황
                   </MenuContainerListItemLink>
                 </li>
               </MenuContainerList>

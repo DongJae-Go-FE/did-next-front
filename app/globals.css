@@ -358,6 +358,7 @@
       transform: translateY(-100%);
     }
   }
+
 }
 
 .animate-gradient {
@@ -591,4 +592,19 @@ body,
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
+}
+
+/* Swiper 색상 오버라이드 */
+.did-swiper .swiper-pagination-bullet-active {
+  background-color: #0047BB !important;
+}
+
+.did-swiper .swiper-button-next,
+.did-swiper .swiper-button-prev {
+  color: #0047BB !important;
+}
+
+.did-swiper .swiper-button-next::after,
+.did-swiper .swiper-button-prev::after {
+  font-size: 20px !important;
 }

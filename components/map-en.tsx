@@ -226,7 +226,7 @@ function SvgOverlay({
           <g key={i}>
             <path
               d={`M ${line.x1} ${line.y1} L ${line.mx} ${line.y1} L ${line.mx} ${line.y2} L ${line.x2} ${line.y2}`}
-              stroke="#007aff"
+              stroke="#0047BB"
               strokeWidth="2"
               fill="none"
               className={shouldAnimate ? "animated-line" : "line-hidden"}
@@ -334,9 +334,18 @@ export default function MapEn() {
 
       map.autoResize();
 
-      const center = map.getCenter();
-      map.setCenter(center);
-    }, 100);
+      const screenWidth = window.innerWidth;
+      const isMobileScreen = screenWidth <= 1079;
+      const isSmallScreen = screenWidth <= 767;
+
+      const newCenter = isMobileScreen
+        ? new window.naver.maps.LatLng(36.5, 127.8)
+        : new window.naver.maps.LatLng(35.886, 127.6);
+      const newZoom = isSmallScreen ? 6 : isMobileScreen ? 6 : 7;
+
+      map.setCenter(newCenter);
+      map.setZoom(newZoom);
+    }, 200);
 
     window.addEventListener("resize", handleResize);
 
@@ -461,16 +470,22 @@ export default function MapEn() {
   const initializeMap = useCallback(() => {
     if (!window.naver || !window.naver.maps) return;
 
+    const screenWidth = window.innerWidth;
+    const isMobileScreen = screenWidth <= 1079;
+    const isSmallScreen = screenWidth <= 767;
+
     const mapOptions = {
-      center: new window.naver.maps.LatLng(35.886, 127.6),
-      zoom: 7,
+      center: isMobileScreen
+        ? new window.naver.maps.LatLng(36.5, 127.8)
+        : new window.naver.maps.LatLng(35.886, 127.6),
+      zoom: isSmallScreen ? 6 : isMobileScreen ? 6 : 7,
       scaleControl: true,
       mapDataControl: true,
       scrollWheel: false,
-      pinchZoom: false,
-      disableDoubleClickZoom: true,
-      disableDoubleTapZoom: true,
-      draggable: false,
+      pinchZoom: isMobileScreen,
+      disableDoubleClickZoom: !isMobileScreen,
+      disableDoubleTapZoom: !isMobileScreen,
+      draggable: isMobileScreen,
       zoomControl: false,
       logoControlOptions: {
         position: naver.maps.Position.BOTTOM_LEFT,

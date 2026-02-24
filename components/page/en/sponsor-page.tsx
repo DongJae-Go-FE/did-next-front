@@ -36,7 +36,7 @@ export default function SponsorPageEn() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => setIsMobile(window.innerWidth <= 1079);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -53,8 +53,12 @@ export default function SponsorPageEn() {
           modules={[Pagination]}
           spaceBetween={8}
           slidesPerView={1.5}
+          breakpoints={{
+            640: { slidesPerView: 2.5 },
+            768: { slidesPerView: 3.5 },
+          }}
           pagination={{ clickable: true }}
-          className="sponsor-swiper"
+          className="sponsor-swiper pb-8 did-swiper"
         >
           {[...Array(9)].map((_, index) => (
             <SwiperSlide key={index}>
@@ -76,7 +80,7 @@ export default function SponsorPageEn() {
         </ul>
       )}
 
-      <div className="h-100 bg-white w-full mt-2 border border-gray-200 rounded-sm flex justify-center items-center flex-col gap-y-2">
+      <div className="h-100 max-[1079px]:h-60 max-[767px]:h-44 bg-white w-full mt-2 border border-gray-200 rounded-sm flex justify-center items-center flex-col gap-y-2">
         <h2 className="heading01b text-[clamp(18px,3dvw,40px)]">
           Sponsorship Inquiry
         </h2>

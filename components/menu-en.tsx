@@ -72,6 +72,11 @@ export default function MenuEn() {
                     About DID
                   </MenuContainerListItemLink>
                 </li>
+                <li>
+                  <MenuContainerListItemLink href="/en#map">
+                    Diocese Info &amp; Apply
+                  </MenuContainerListItemLink>
+                </li>
               </MenuContainerList>
             </MenuContainer>
             <MenuContainer>
