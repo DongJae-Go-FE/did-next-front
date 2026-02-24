@@ -20,6 +20,7 @@ import "@egjs/flicking/dist/flicking.css";
 import "@egjs/flicking-plugins/dist/pagination.css";
 
 import SliderItem00 from "./slider-item/slider-item00";
+import SliderItem000 from "./slider-item/slider-item000";
 import SliderItem01 from "./slider-item/slider-item01";
 import SliderItem02 from "./slider-item/slider-item02";
 import SliderItem00En from "./slider-item/en/slider-item00";
@@ -148,6 +149,9 @@ export default function MainSlider({ locale = "kr" }: { locale?: Locale }) {
           <>
             <Panel>
               <SliderItem00 />
+            </Panel>
+            <Panel>
+              <SliderItem000 />
             </Panel>
             <Panel>
               <SliderItem01 />
