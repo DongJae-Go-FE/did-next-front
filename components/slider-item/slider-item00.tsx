@@ -1,5 +1,4 @@
 import Image from "next/image";
-import SliderBackdrop from "../ui/slider-backdrop";
 
 export default function SliderItem00() {
   return (
