@@ -194,7 +194,6 @@ export const content = {
           title: "PARTICIPATE",
           items: [
             { label: "DID Application", href: "/en/apply" },
-            { label: "Application Status", href: "/en/status" },
           ],
         },
       ],
@@ -249,7 +248,6 @@ export const content = {
       leftMenuTitle: "Participate",
       leftMenuItems: [
         { label: "DID Application", href: "/en/apply" },
-        { label: "Application Status", href: "/en/status" },
       ],
       pageTitle: "DID Application",
       cardTitle: (name: string) => `${name} DID Application`,
@@ -264,7 +262,6 @@ export const content = {
       leftMenuTitle: "Participate",
       leftMenuItems: [
         { label: "DID Application", href: "/en/apply" },
-        { label: "Application Status", href: "/en/status" },
       ],
       pageTitle: "Application Status",
     },
