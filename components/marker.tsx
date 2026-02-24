@@ -139,20 +139,20 @@ export default function Marker({
 
           <div className="px-5 pt-4 pb-5 flex flex-col gap-y-4">
             {address && (
-              <div className="flex items-start gap-x-2.5 bg-gray-50 rounded-xl px-3.5 py-3">
+              <div className="flex items-start gap-x-2.5 bg-gray-50 rounded-xl px-3.5 py-3 max-[767px]:flex-col max-[767px]:gap-y-3">
                 <MapPin
                   className="w-4 h-4 mt-0.5 flex-shrink-0"
                   style={{ color: "#0047BB" }}
                 />
-                <span className="text-sm text-gray-600 leading-relaxed flex-1">
+                <span className="text-sm text-gray-600 leading-relaxed flex-1 max-[767px]:w-full">
                   {address}
                 </span>
-                <div className="flex items-center gap-x-1.5 flex-shrink-0 ml-1">
+                <div className="flex items-center gap-1.5 flex-shrink-0 ml-1 max-[767px]:ml-0 max-[767px]:w-full max-[767px]:flex-wrap">
                   <Link
                     href={googleMapsUrl}
                     target="_blank"
                     title={isEn ? "View on Google Maps" : "구글맵으로 보기"}
-                    className="flex items-center gap-x-1.5 px-2.5 py-1.5 rounded-lg bg-white border border-gray-300 text-xs font-semibold text-gray-600 hover:border-gray-400 hover:text-gray-800 transition-colors shadow-sm"
+                    className="flex items-center gap-x-1.5 px-2.5 py-1.5 rounded-lg bg-white border border-gray-300 text-xs font-semibold text-gray-600 hover:border-gray-400 hover:text-gray-800 transition-colors shadow-sm max-[767px]:flex-1 max-[767px]:justify-center"
                   >
                     <Map className="w-3.5 h-3.5" />
                     Google Map
@@ -161,7 +161,7 @@ export default function Marker({
                     href={appleMapsUrl}
                     target="_blank"
                     title={isEn ? "View on Apple Maps" : "애플맵으로 보기"}
-                    className="flex items-center gap-x-1.5 px-2.5 py-1.5 rounded-lg bg-white border border-gray-300 text-xs font-semibold text-gray-600 hover:border-gray-400 hover:text-gray-800 transition-colors shadow-sm"
+                    className="flex items-center gap-x-1.5 px-2.5 py-1.5 rounded-lg bg-white border border-gray-300 text-xs font-semibold text-gray-600 hover:border-gray-400 hover:text-gray-800 transition-colors shadow-sm max-[767px]:flex-1 max-[767px]:justify-center"
                   >
                     <Map className="w-3.5 h-3.5" />
                     Apple Map
