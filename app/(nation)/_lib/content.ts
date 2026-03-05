@@ -22,7 +22,7 @@ export const content = {
       homeHref: "/",
       address: "도로명 주소 : 인천광역시 동구 박문로1 (송림동 103-25)",
       address2: "지번 주소 : 인천광역시 동구 송림동 103-8",
-      email: "이메일 : masterforce999@naver.com",
+      email: "이메일 : wyd2027did@cbck.kr",
       phone: "032-765-6960",
       hours: "운영시간: 10:00 ~ 18:00",
       links: [
@@ -159,7 +159,7 @@ export const content = {
       homeHref: "/en",
       address: "Address: 1 Bakmun-ro, Dong-gu, Incheon, Republic of Korea",
       address2: "",
-      email: "Email: masterforce999@naver.com",
+      email: "Email: wyd2027did@cbck.kr",
       phone: "+82-32-765-6960",
       hours: "Hours: 10:00 AM ~ 6:00 PM (KST)",
       links: [
