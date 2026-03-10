@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -21,6 +20,7 @@ import {
 } from "@/components/ui/card";
 
 import SliderBackdrop from "@/components/ui/slider-backdrop";
+import ApplyButton from "@/components/apply-button";
 import { content, locales, type Locale } from "../../_lib/content";
 
 const SITE_URL = "https://wyd2027did.org";
@@ -294,14 +294,16 @@ export default async function Page({
                     </CardHeader>
 
                     <CardFooter className="flex-col gap-2 px-0">
-                      <Link
-                        className="h-12 text-white w-full flex justify-center items-center body01m rounded-md transition-colors"
-                        style={{ backgroundColor: "#0047BB" }}
-                        target="_blank"
+                      <ApplyButton
                         href={href}
-                      >
-                        {t.applyBtn}
-                      </Link>
+                        label={t.applyBtn}
+                        dialogTitle={t.privacyDialogTitle}
+                        dialogDesc={t.privacyDialogDesc}
+                        dialogDetail={t.privacyDialogDetail}
+                        agreeLabel={t.privacyAgreeLabel}
+                        confirmBtn={t.privacyConfirmBtn}
+                        cancelBtn={t.privacyCancelBtn}
+                      />
                     </CardFooter>
                   </Card>
                 </li>

@@ -120,6 +120,14 @@ export const content = {
         `버튼을 누르면 ${name} 교구 DID 신청을 합니다.`,
       rateLabel: "신청률",
       applyBtn: "신청하기",
+      privacyDialogTitle: "개인정보 수집·이용 동의",
+      privacyDialogDesc:
+        "DID 신청을 위해 아래 내용을 확인하시고 동의해 주세요.",
+      privacyDialogDetail:
+        "1. 수집 항목: 성명, 연락처(휴대전화번호), 이메일, 소속 교구, 생년월일\n2. 수집 목적: 2027 서울 세계청년대회 교구대회(DID) 신청 접수 및 안내\n3. 보유·이용 기간: 행사 종료 후 3개월까지 보유 후 파기\n4. 동의 거부 시 불이익: 동의를 거부하실 수 있으나, 거부 시 DID 신청이 불가합니다.",
+      privacyAgreeLabel: "위 개인정보 수집·이용에 동의합니다.",
+      privacyConfirmBtn: "신청 페이지로 이동",
+      privacyCancelBtn: "취소",
     },
     statusPage: {
       heroAlt: "서브페이지 배경",
@@ -254,6 +262,14 @@ export const content = {
       cardDesc: (name: string) => `Click the button to apply for ${name} DID.`,
       rateLabel: "Application Rate",
       applyBtn: "Apply",
+      privacyDialogTitle: "Consent to Collection and Use of Personal Information",
+      privacyDialogDesc:
+        "Please review and agree to the following before applying for DID.",
+      privacyDialogDetail:
+        "1. Items Collected: Name, phone number, email, diocese affiliation, date of birth\n2. Purpose: Processing and communicating about your 2027 WYD Seoul DID application\n3. Retention Period: Retained until 3 months after the event, then destroyed\n4. Right to Refuse: You may refuse consent; however, your DID application cannot be processed without consent.",
+      privacyAgreeLabel: "I agree to the collection and use of my personal information as described above.",
+      privacyConfirmBtn: "Go to Application",
+      privacyCancelBtn: "Cancel",
     },
     statusPage: {
       heroAlt: "Sub page background",
