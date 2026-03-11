@@ -65,7 +65,7 @@ export default function ApplyButton({
       </button>
 
       <Dialog open={open} onOpenChange={handleOpenChange}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="max-w-md max-h-100 overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{dialogTitle}</DialogTitle>
             <DialogDescription>{dialogDesc}</DialogDescription>
