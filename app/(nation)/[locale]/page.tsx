@@ -36,7 +36,7 @@ export default async function Home({
       <FightPage locale={locale} />
 
       <div
-        className="w-screen min-h-[80dvh] bg-white px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12"
+        className="w-full min-h-[80dvh] bg-white px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12"
         id="section"
       >
         <div className="max-w-[1400px] mx-auto">
@@ -45,7 +45,7 @@ export default async function Home({
       </div>
       <ApplyCtaSection locale={locale} />
       <div
-        className="w-screen bg-white px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12"
+        className="w-full bg-white px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12"
         id="map"
       >
         <div className="max-w-[1400px] mx-auto">
@@ -53,7 +53,7 @@ export default async function Home({
         </div>
       </div>
       <div
-        className="w-screen h-fit bg-gray-100 px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12 scroll-mt-20"
+        className="w-full h-fit bg-gray-100 px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12 scroll-mt-20"
         id="sponsor"
       >
         <div className="max-w-[1400px] mx-auto">
@@ -61,7 +61,7 @@ export default async function Home({
         </div>
       </div>
       <div
-        className="w-screen h-[70dvh] max-[1079px]:h-auto bg-white px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12 bg-fixed bg-center bg-cover relative flex justify-center items-center gap-y-8 flex-col"
+        className="w-full h-[70dvh] max-[1079px]:h-auto bg-white px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12 bg-fixed bg-center bg-cover relative flex justify-center items-center gap-y-8 flex-col"
         style={{ backgroundImage: `url('${IMAGE_BASE}/did/main/main05.jpeg')` }}
       >
         <div className="max-w-[1400px] mx-auto w-full flex flex-col items-center gap-y-8">

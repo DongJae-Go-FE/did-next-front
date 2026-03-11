@@ -5,7 +5,7 @@ export default function ApplyCtaSection({ locale = "kr" }: { locale?: Locale }) 
   const t = content[locale].applyCta;
 
   return (
-    <section className="w-screen bg-[#F3F4F6] px-12 py-20 max-[767px]:px-5">
+    <section className="w-full bg-[#F3F4F6] px-12 py-20 max-[767px]:px-5">
       <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between gap-8 border-y border-[#D9DEE7] py-8 max-[1079px]:flex-col max-[1079px]:items-start">
         <div className="flex items-start gap-4 max-[767px]:gap-3">
           <div className="mt-1 h-12 w-1 rounded-full bg-[#0047BB] max-[767px]:h-10" />

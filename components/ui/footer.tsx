@@ -6,7 +6,7 @@ export default function Footer({ locale = "kr" }: { locale?: Locale }) {
   const t = content[locale].footer;
 
   return (
-    <footer className="w-dvw bg-[#222] px-12 py-12 max-[767px]:px-5 text-white">
+    <footer className="w-full bg-[#222] px-12 py-12 max-[767px]:px-5 text-white">
       <div className="max-w-[1400px] mx-auto w-full flex justify-between max-[1079px]:flex-wrap max-[1079px]:gap-y-8">
       <div className="flex flex-col">
         <h3 className="mb-6">

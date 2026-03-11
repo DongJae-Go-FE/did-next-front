@@ -141,7 +141,7 @@ export default function DioceseCardSlider({
         slidesPerView={1.15}
         centeredSlides
         pagination={{
-          clickable: true,
+          type: "fraction",
           el: ".diocese-pagination",
         }}
         onSwiper={(swiper) => {
@@ -176,7 +176,7 @@ export default function DioceseCardSlider({
           <ChevronRight className="w-5 h-5" strokeWidth={1.5} />
         </button>
 
-        <div className="diocese-pagination flex items-center gap-x-1.5 justify-center ml-2" />
+        <span className="diocese-pagination text-sm font-semibold text-gray-600 ml-2" />
       </div>
     </div>
   );
