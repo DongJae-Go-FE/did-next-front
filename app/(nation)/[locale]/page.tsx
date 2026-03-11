@@ -37,7 +37,7 @@ export default async function Home({
         <IntroPage locale={locale} />
       </div>
       <ApplyCtaSection locale={locale} />
-      <div className="w-screen min-h-screen bg-white px-8 py-16" id="map">
+      <div className="w-screen bg-white px-8 py-16" id="map">
         <MapPage locale={locale} />
       </div>
       <div

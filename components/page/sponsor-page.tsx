@@ -53,12 +53,8 @@ export default function SponsorPage({ locale = "kr" }: { locale?: Locale }) {
       {isMobile ? (
         <Swiper
           modules={[Pagination]}
-          spaceBetween={8}
-          slidesPerView={1.5}
-          breakpoints={{
-            640: { slidesPerView: 2.5 },
-            768: { slidesPerView: 3.5 },
-          }}
+          spaceBetween={0}
+          slidesPerView={1}
           pagination={{ clickable: true }}
           className="sponsor-swiper pb-8 did-swiper"
         >
@@ -83,7 +79,9 @@ export default function SponsorPage({ locale = "kr" }: { locale?: Locale }) {
       )}
 
       <div className="h-100 max-[1079px]:h-60 max-[767px]:h-44 bg-white w-full mt-2 border border-gray-200 rounded-sm flex justify-center items-center flex-col gap-y-2">
-        <h2 className="heading01b text-[clamp(18px,3dvw,40px)]">{t.inquiryTitle}</h2>
+        <h2 className="heading01b text-[clamp(18px,3dvw,40px)]">
+          {t.inquiryTitle}
+        </h2>
         <a href="#none">
           <GradientText
             colors={[

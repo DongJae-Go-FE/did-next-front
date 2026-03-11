@@ -1,3 +1,5 @@
+import { label } from "motion/react-client";
+
 export type Locale = "kr" | "en";
 
 export const locales: Locale[] = ["kr", "en"];
@@ -26,11 +28,8 @@ export const content = {
       phone: "032-765-6960",
       hours: "운영시간: 10:00 ~ 18:00",
       links: [
+        { label: "WYD2027SEOUL", href: "https://wydseoul.org/" },
         { label: "인천교구청", href: "http://www.caincheon.or.kr/" },
-        {
-          label: "인천교구 청소년 사목국",
-          href: "https://youth.caincheon.or.kr/",
-        },
       ],
       copyright: "Copyright ⓒ WYD2027 SEOUL DID All rights reserved",
     },
@@ -171,6 +170,7 @@ export const content = {
       phone: "+82-32-765-6960",
       hours: "Hours: 10:00 AM ~ 6:00 PM (KST)",
       links: [
+        { label: "WYD2027SEOUL", href: "https://wydseoul.org/" },
         { label: "Diocese of Incheon", href: "http://www.caincheon.or.kr/" },
         {
           label: "Incheon Youth Ministry",
@@ -200,9 +200,7 @@ export const content = {
         },
         {
           title: "PARTICIPATE",
-          items: [
-            { label: "DID Application", href: "/en/apply" },
-          ],
+          items: [{ label: "DID Application", href: "/en/apply" }],
         },
       ],
     },
@@ -254,20 +252,20 @@ export const content = {
       heroTitle: "DID Application",
       breadcrumb: ["Participate /", "Apply"],
       leftMenuTitle: "Participate",
-      leftMenuItems: [
-        { label: "DID Application", href: "/en/apply" },
-      ],
+      leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
       pageTitle: "DID Application",
       cardTitle: (name: string) => `${name} DID Application`,
       cardDesc: (name: string) => `Click the button to apply for ${name} DID.`,
       rateLabel: "Application Rate",
       applyBtn: "Apply",
-      privacyDialogTitle: "Consent to Collection and Use of Personal Information",
+      privacyDialogTitle:
+        "Consent to Collection and Use of Personal Information",
       privacyDialogDesc:
         "Please review and agree to the following before applying for DID.",
       privacyDialogDetail:
         "1. Items Collected: Name, phone number, email, diocese affiliation, date of birth\n2. Purpose: Processing and communicating about your 2027 WYD Seoul DID application\n3. Retention Period: Retained until 3 months after the event, then destroyed\n4. Right to Refuse: You may refuse consent; however, your DID application cannot be processed without consent.",
-      privacyAgreeLabel: "I agree to the collection and use of my personal information as described above.",
+      privacyAgreeLabel:
+        "I agree to the collection and use of my personal information as described above.",
       privacyConfirmBtn: "Go to Application",
       privacyCancelBtn: "Cancel",
     },
@@ -276,9 +274,7 @@ export const content = {
       heroTitle: "Application Status",
       breadcrumb: ["Participate /", "Status"],
       leftMenuTitle: "Participate",
-      leftMenuItems: [
-        { label: "DID Application", href: "/en/apply" },
-      ],
+      leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
       pageTitle: "Application Status",
     },
     slider: {
