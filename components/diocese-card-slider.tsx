@@ -17,7 +17,7 @@ const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 
 const dioceseImageMap: Record<string, string> = {
   서울대교구: `${IMAGE_BASE}/did/apply/seoul.webp`,
-  인천교구: `${IMAGE_BASE}/did/apply/incheon.webp`,
+  인천교구: `${IMAGE_BASE}/did/apply/incheon.jpg`,
   수원교구: `${IMAGE_BASE}/did/apply/suwon.webp`,
   의정부교구: `${IMAGE_BASE}/did/apply/uijeongbu.webp`,
   춘천교구: `${IMAGE_BASE}/did/apply/chuncheon.webp`,
