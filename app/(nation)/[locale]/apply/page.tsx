@@ -87,7 +87,7 @@ const dioceseData = [
   {
     krName: "인천교구",
     enName: "Diocese of Incheon",
-    image: `${IMAGE_BASE}/did/apply/incheon.webp`,
+    image: `${IMAGE_BASE}/did/apply/incheon.jpg`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 45,
     total: 120,
