@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
-import GradientText from "../gradient-text";
+//import GradientText from "../gradient-text";
 import { content, type Locale } from "@/app/(nation)/_lib/content";
 
 import "swiper/css";

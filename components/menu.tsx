@@ -45,8 +45,8 @@ export default function Menu({ locale = "kr" }: { locale?: Locale }) {
           <DialogTitle>{t.dialogTitle}</DialogTitle>
           <DialogDescription>{t.dialogDescription}</DialogDescription>
         </DialogHeader>
-        <div className="px-8 flex-1 overflow-y-auto">
-          <div className="w-full h-30 flex justify-between items-center flex-shrink-0 max-[1079px]:border-b max-[1079px]:border-gray-800">
+        <div className="px-12 max-[767px]:px-5 flex-1 overflow-y-auto">
+          <div className="max-w-[1400px] mx-auto w-full h-30 flex justify-between items-center flex-shrink-0 max-[1079px]:border-b max-[1079px]:border-gray-800">
             <h2>
               <DialogClose asChild>
                 <Link href={t.logoHref}>
@@ -67,7 +67,7 @@ export default function Menu({ locale = "kr" }: { locale?: Locale }) {
               </button>
             </DialogClose>
           </div>
-          <nav className="w-full flex text-white py-8 max-[1079px]:flex-col max-[1079px]:gap-y-5 max-[1079px]:overflow-y-auto h-[calc(100dvh-120px)]">
+          <nav className="max-w-[1400px] mx-auto w-full flex text-white py-8 max-[1079px]:flex-col max-[1079px]:gap-y-5 max-[1079px]:overflow-y-auto h-[calc(100dvh-120px)]">
             {t.sections.map((section, sectionIdx) => (
               <MenuContainer
                 key={section.title}

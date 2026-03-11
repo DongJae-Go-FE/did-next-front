@@ -1,5 +1,3 @@
-import { label } from "motion/react-client";
-
 export type Locale = "kr" | "en";
 
 export const locales: Locale[] = ["kr", "en"];

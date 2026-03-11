@@ -14,6 +14,7 @@ import ChartPage from "@/components/page/chart-page";
 import { getDioceseChartData } from "@/lib/notion-status";
 import { content, locales, type Locale } from "../../_lib/content";
 
+const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 const SITE_URL = "https://wyd2027did.org";
 const OG_IMAGE = "/logo.svg";
 
@@ -81,7 +82,7 @@ export default async function Page({
     <div className="pt-30">
       <div className="w-full h-75 relative overflow-hidden flex justify-center items-center">
         <Image
-          src="/visual.png"
+          src={`${IMAGE_BASE}/did/visual.png`}
           sizes="100vw"
           fill
           alt={t.heroAlt}

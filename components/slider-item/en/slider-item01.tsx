@@ -9,6 +9,8 @@ import {
   SlideText,
 } from "../../ui/slide-text";
 
+const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
+
 export default function SliderItem01En() {
   return (
     <div
@@ -18,7 +20,7 @@ export default function SliderItem01En() {
       )}
     >
       <Image
-        src="/main/main01.jpeg"
+        src={`${IMAGE_BASE}/did/main/main01.jpeg`}
         alt="WYD 2027 DID Main Image 1"
         fill
         priority

@@ -12,6 +12,8 @@ import "swiper/css/pagination";
 
 import { content, type Locale } from "@/app/(nation)/_lib/content";
 
+const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
+
 type ItemType =
   | {
       type: "link";
@@ -73,15 +75,15 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
     {
       type: "link",
       href: "/",
-      src: "/main/fight/f1.png",
+      src: `${IMAGE_BASE}/did/main/fight/f1.png`,
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
       label: t.personLabel as unknown as string[],
     },
-    { type: "coming", src: "/main/main04.png", alt: "ComingSoon" },
-    { type: "coming", src: "/main/main04.png", alt: "ComingSoon" },
-    { type: "coming", src: "/main/main04.png", alt: "ComingSoon" },
+    { type: "coming", src: `${IMAGE_BASE}/did/main/main04.png`, alt: "ComingSoon" },
+    { type: "coming", src: `${IMAGE_BASE}/did/main/main04.png`, alt: "ComingSoon" },
+    { type: "coming", src: `${IMAGE_BASE}/did/main/main04.png`, alt: "ComingSoon" },
   ];
 
   const desktopItems = items.slice(0, 3);

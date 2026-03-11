@@ -23,6 +23,7 @@ import SliderBackdrop from "@/components/ui/slider-backdrop";
 import ApplyButton from "@/components/apply-button";
 import { content, locales, type Locale } from "../../_lib/content";
 
+const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 const SITE_URL = "https://wyd2027did.org";
 const OG_IMAGE = "/logo.svg";
 
@@ -30,7 +31,7 @@ const dioceseData = [
   {
     krName: "안동교구",
     enName: "Diocese of Andong",
-    image: "/apply/andong.webp",
+    image: `${IMAGE_BASE}/did/apply/andong.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 10,
     total: 50,
@@ -38,7 +39,7 @@ const dioceseData = [
   {
     krName: "부산교구",
     enName: "Diocese of Busan",
-    image: "/apply/busan.webp",
+    image: `${IMAGE_BASE}/did/apply/busan.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 90,
     total: 170,
@@ -46,7 +47,7 @@ const dioceseData = [
   {
     krName: "청주교구",
     enName: "Diocese of Cheongju",
-    image: "/apply/cheongju.webp",
+    image: `${IMAGE_BASE}/did/apply/cheongju.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 25,
     total: 90,
@@ -54,7 +55,7 @@ const dioceseData = [
   {
     krName: "춘천교구",
     enName: "Diocese of Chuncheon",
-    image: "/apply/chuncheon.webp",
+    image: `${IMAGE_BASE}/did/apply/chuncheon.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 20,
     total: 80,
@@ -62,7 +63,7 @@ const dioceseData = [
   {
     krName: "대구대교구",
     enName: "Archdiocese of Daegu",
-    image: "/apply/daegu.webp",
+    image: `${IMAGE_BASE}/did/apply/daegu.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 70,
     total: 160,
@@ -70,7 +71,7 @@ const dioceseData = [
   {
     krName: "대전교구",
     enName: "Diocese of Daejeon",
-    image: "/apply/daejeon.webp",
+    image: `${IMAGE_BASE}/did/apply/daejeon.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 55,
     total: 130,
@@ -78,7 +79,7 @@ const dioceseData = [
   {
     krName: "광주대교구",
     enName: "Archdiocese of Gwangju",
-    image: "/apply/gwangju.webp",
+    image: `${IMAGE_BASE}/did/apply/gwangju.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 60,
     total: 140,
@@ -86,7 +87,7 @@ const dioceseData = [
   {
     krName: "인천교구",
     enName: "Diocese of Incheon",
-    image: "/apply/incheon.jpg",
+    image: `${IMAGE_BASE}/did/apply/incheon.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 45,
     total: 120,
@@ -94,7 +95,7 @@ const dioceseData = [
   {
     krName: "제주교구",
     enName: "Diocese of Jeju",
-    image: "/apply/jeju.webp",
+    image: `${IMAGE_BASE}/did/apply/jeju.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 12,
     total: 40,
@@ -102,7 +103,7 @@ const dioceseData = [
   {
     krName: "전주교구",
     enName: "Diocese of Jeonju",
-    image: "/apply/jeonju.webp",
+    image: `${IMAGE_BASE}/did/apply/jeonju.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 35,
     total: 110,
@@ -110,7 +111,7 @@ const dioceseData = [
   {
     krName: "마산교구",
     enName: "Diocese of Masan",
-    image: "/apply/masan.webp",
+    image: `${IMAGE_BASE}/did/apply/masan.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 18,
     total: 70,
@@ -118,7 +119,7 @@ const dioceseData = [
   {
     krName: "군종교구",
     enName: "Military Ordinariate",
-    image: "/apply/gun.webp",
+    image: `${IMAGE_BASE}/did/apply/gun.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 40,
     total: 100,
@@ -126,7 +127,7 @@ const dioceseData = [
   {
     krName: "수원교구",
     enName: "Diocese of Suwon",
-    image: "/apply/suwon.webp",
+    image: `${IMAGE_BASE}/did/apply/suwon.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 80,
     total: 150,
@@ -134,7 +135,7 @@ const dioceseData = [
   {
     krName: "의정부교구",
     enName: "Diocese of Uijeongbu",
-    image: "/apply/uijeongbu.webp",
+    image: `${IMAGE_BASE}/did/apply/uijeongbu.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 30,
     total: 100,
@@ -142,7 +143,7 @@ const dioceseData = [
   {
     krName: "원주교구",
     enName: "Diocese of Wonju",
-    image: "/apply/wonju.webp",
+    image: `${IMAGE_BASE}/did/apply/wonju.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 15,
     total: 60,
@@ -212,7 +213,7 @@ export default async function Page({
     <div className="pt-30">
       <div className="w-full h-80 relative overflow-hidden flex justify-center items-center">
         <Image
-          src="/visual.png"
+          src={`${IMAGE_BASE}/did/visual.png`}
           sizes="100vw"
           fill
           alt={t.heroAlt}

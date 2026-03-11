@@ -2,6 +2,14 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "r2-image-server.masterforce999.workers.dev",
+      },
+    ],
+  },
   async headers() {
     return [
       {

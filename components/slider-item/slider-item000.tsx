@@ -1,10 +1,12 @@
 import Image from "next/image";
 
+const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
+
 export default function SliderItem000() {
   return (
     <div className="relative h-full w-full overflow-hidden">
       <Image
-        src="/main/main00.jpeg"
+        src={`${IMAGE_BASE}/did/main/main00.jpeg`}
         className="w-full h-full object-cover"
         fill
         sizes="100vw"

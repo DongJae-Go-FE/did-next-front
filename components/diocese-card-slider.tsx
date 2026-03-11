@@ -13,23 +13,25 @@ import type { Locale } from "@/app/(nation)/_lib/content";
 import "swiper/css";
 import "swiper/css/pagination";
 
+const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
+
 const dioceseImageMap: Record<string, string> = {
-  서울대교구: "/apply/seoul.webp",
-  인천교구: "/apply/incheon.webp",
-  수원교구: "/apply/suwon.webp",
-  의정부교구: "/apply/uijeongbu.webp",
-  춘천교구: "/apply/chuncheon.webp",
-  원주교구: "/apply/wonju.webp",
-  대전교구: "/apply/daejeon.webp",
-  청주교구: "/apply/cheongju.webp",
-  대구대교구: "/apply/daegu.webp",
-  부산교구: "/apply/busan.webp",
-  마산교구: "/apply/masan.webp",
-  안동교구: "/apply/andong.webp",
-  광주대교구: "/apply/gwangju.webp",
-  전주교구: "/apply/jeonju.webp",
-  제주교구: "/apply/jeju.webp",
-  군종교구: "/apply/gun.webp",
+  서울대교구: `${IMAGE_BASE}/did/apply/seoul.webp`,
+  인천교구: `${IMAGE_BASE}/did/apply/incheon.webp`,
+  수원교구: `${IMAGE_BASE}/did/apply/suwon.webp`,
+  의정부교구: `${IMAGE_BASE}/did/apply/uijeongbu.webp`,
+  춘천교구: `${IMAGE_BASE}/did/apply/chuncheon.webp`,
+  원주교구: `${IMAGE_BASE}/did/apply/wonju.webp`,
+  대전교구: `${IMAGE_BASE}/did/apply/daejeon.webp`,
+  청주교구: `${IMAGE_BASE}/did/apply/cheongju.webp`,
+  대구대교구: `${IMAGE_BASE}/did/apply/daegu.webp`,
+  부산교구: `${IMAGE_BASE}/did/apply/busan.webp`,
+  마산교구: `${IMAGE_BASE}/did/apply/masan.webp`,
+  안동교구: `${IMAGE_BASE}/did/apply/andong.webp`,
+  광주대교구: `${IMAGE_BASE}/did/apply/gwangju.webp`,
+  전주교구: `${IMAGE_BASE}/did/apply/jeonju.webp`,
+  제주교구: `${IMAGE_BASE}/did/apply/jeju.webp`,
+  군종교구: `${IMAGE_BASE}/did/apply/gun.webp`,
 };
 
 const dioceseNameMap: Record<string, string> = {
@@ -79,7 +81,7 @@ function DioceseCard({ name, locale }: { name: string; locale: Locale }) {
     <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
       <div className="relative w-full aspect-[16/9]">
         <Image
-          src={dioceseImageMap[name] || "/apply/seoul.webp"}
+          src={dioceseImageMap[name] || `${IMAGE_BASE}/apply/seoul.webp`}
           fill
           className="object-cover"
           alt={isEn ? `${displayName} image` : `${displayName} 이미지`}
@@ -160,7 +162,7 @@ export default function DioceseCardSlider({
           type="button"
           onClick={() => swiperRef.current?.slidePrev()}
           disabled={isFirst}
-          className="w-11 h-11 aspect-square shrink-0 flex items-center justify-center rounded-full border border-gray-300 bg-white transition-all disabled:opacity-40 disabled:cursor-not-allowed text-gray-500"
+          className="w-11 h-11 aspect-square shrink-0 flex items-center justify-center rounded-full border-[1.5px] border-gray-700 bg-white transition-all disabled:opacity-40 disabled:border-gray-300 disabled:cursor-not-allowed text-gray-700"
         >
           <ChevronLeft className="w-5 h-5" strokeWidth={1.5} />
         </button>

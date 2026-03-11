@@ -7,11 +7,13 @@ import {
   SlideText,
 } from "../../ui/slide-text";
 
+const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
+
 export default function SliderItem02En() {
   return (
     <div className="w-full h-full bg-gray-900 overflow-hidden relative">
       <Image
-        src="/main/main02.jpeg"
+        src={`${IMAGE_BASE}/did/main/main02.jpeg`}
         className="w-full h-full animate-pan-zoom bg-cover bg-left-bottom object-cover object-center"
         fill
         sizes="100vw"

@@ -9,6 +9,8 @@ import MapPage from "@/components/page/map-page";
 import SponsorPage from "@/components/page/sponsor-page";
 import PrayPage from "@/components/page/pray-page";
 
+const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
+
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
@@ -60,7 +62,7 @@ export default async function Home({
       </div>
       <div
         className="w-screen h-[70dvh] max-[1079px]:h-auto bg-white px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12 bg-fixed bg-center bg-cover relative flex justify-center items-center gap-y-8 flex-col"
-        style={{ backgroundImage: "url('/main/main05.jpeg')" }}
+        style={{ backgroundImage: `url('${IMAGE_BASE}/did/main/main05.jpeg')` }}
       >
         <div className="max-w-[1400px] mx-auto w-full flex flex-col items-center gap-y-8">
           <PrayPage locale={locale} />
