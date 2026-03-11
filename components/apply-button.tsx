@@ -65,13 +65,13 @@ export default function ApplyButton({
       </button>
 
       <Dialog open={open} onOpenChange={handleOpenChange}>
-        <DialogContent className="max-w-md max-h-100 overflow-y-auto">
-          <DialogHeader>
+        <DialogContent className="max-w-md max-h-[85vh] flex flex-col">
+          <DialogHeader className="shrink-0">
             <DialogTitle>{dialogTitle}</DialogTitle>
             <DialogDescription>{dialogDesc}</DialogDescription>
           </DialogHeader>
 
-          <div className="rounded-md bg-gray-50 p-3 text-sm text-gray-700 max-h-40 overflow-y-auto border whitespace-pre-line">
+          <div className="rounded-md bg-gray-50 p-3 text-sm text-gray-700 min-h-0 flex-1 overflow-y-auto border whitespace-pre-line">
             {dialogDetail}
           </div>
 
