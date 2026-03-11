@@ -94,43 +94,45 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
   }, []);
 
   return (
-    <section className="w-full px-8 py-6 max-[767px]:px-4">
-      <h2 className="mb-6 leading-none font-bold tracking-tight text-[clamp(18px,2.35vw,34px)]">
-        {t.titleParts.map((part, i) => (
-          <span key={i} style={{ color: part.color }}>
-            {part.text}
-          </span>
-        ))}
-      </h2>
+    <section className="w-full px-12 py-10 max-[767px]:px-5 bg-gray-200">
+      <div className="max-w-[1400px] mx-auto">
+        <h2 className="mb-8 leading-none font-bold tracking-tight text-[clamp(18px,2.35vw,34px)]">
+          {t.titleParts.map((part, i) => (
+            <span key={i} style={{ color: part.color }}>
+              {part.text}
+            </span>
+          ))}
+        </h2>
 
-      {isMobile ? (
-        <Swiper
-          modules={[Pagination]}
-          spaceBetween={10}
-          slidesPerView={1.15}
-          pagination={{ clickable: true }}
-          className="fight-swiper did-swiper"
-        >
-          {items.map((item, i) => (
-            <SwiperSlide key={i}>
-              <div className="relative aspect-[16/6] overflow-hidden bg-neutral-200">
+        {isMobile ? (
+          <Swiper
+            modules={[Pagination]}
+            spaceBetween={10}
+            slidesPerView={1.15}
+            pagination={{ clickable: true }}
+            className="fight-swiper did-swiper"
+          >
+            {items.map((item, i) => (
+              <SwiperSlide key={i}>
+                <div className="relative aspect-[16/6] overflow-hidden bg-neutral-200">
+                  <CardItem item={item} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <ul className="grid grid-cols-3 gap-6">
+            {desktopItems.map((item, i) => (
+              <li
+                key={i}
+                className="relative aspect-[16/5.45] rounded-xl overflow-hidden bg-neutral-200"
+              >
                 <CardItem item={item} />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      ) : (
-        <ul className="grid grid-cols-3 gap-8">
-          {desktopItems.map((item, i) => (
-            <li
-              key={i}
-              className="relative aspect-[16/5.45] overflow-hidden bg-neutral-200"
-            >
-              <CardItem item={item} />
-            </li>
-          ))}
-        </ul>
-      )}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </section>
   );
 }

@@ -26,7 +26,7 @@ export default function SliderItem01() {
         sizes="100vw"
         className="object-cover object-center"
       />
-      <div className="text-white heading01b absolute top-[30dvh] z-40 pl-8 flex flex-col gap-y-1">
+      <div className="text-white heading01b absolute top-[30dvh] z-40 pl-12 max-[767px]:pl-5 flex flex-col gap-y-1 w-full max-w-[1400px] left-1/2 -translate-x-1/2">
         <SlideTextContainer>
           <SlideText style={{ animationDelay: "1.2s" }}>
             용기를 내어라.

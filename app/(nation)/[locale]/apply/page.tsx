@@ -210,7 +210,7 @@ export default async function Page({
 
   return (
     <div className="pt-30">
-      <div className="w-full h-75 relative overflow-hidden flex justify-center items-center">
+      <div className="w-full h-80 relative overflow-hidden flex justify-center items-center">
         <Image
           src="/visual.png"
           sizes="100vw"

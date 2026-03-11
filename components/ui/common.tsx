@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 function SubLayout({ className, children, ...props }: ComponentProps<"div">) {
   return (
     <div
-      className={cn("w-full min-h-[calc(100dvh-360px)] flex", className)}
+      className={cn("w-full min-h-[calc(100dvh-360px)] flex max-w-[1400px] mx-auto", className)}
       {...props}
     >
       {children}
@@ -19,7 +19,7 @@ function SubContentContainer({
 }: ComponentProps<"div">) {
   return (
     <div
-      className={cn("w-[calc(100%-240px)] p-10 max-[767px]:w-full", className)}
+      className={cn("w-[calc(100%-240px)] px-12 py-10 max-[767px]:w-full max-[767px]:px-5", className)}
       {...props}
     >
       {children}

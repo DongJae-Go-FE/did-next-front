@@ -17,7 +17,7 @@ export default function SliderItem02En() {
         sizes="100vw"
         alt="WYD 2027 DID Main Image 2"
       />
-      <div className="text-white heading01b absolute top-[30dvh] z-40 pl-8 pr-4 flex flex-col gap-y-2">
+      <div className="text-white heading01b absolute top-[30dvh] z-40 pl-12 max-[767px]:pl-5 pr-4 flex flex-col gap-y-2 w-full max-w-[1400px] left-1/2 -translate-x-1/2">
         <div className="h-[clamp(30px,9dvw,90px)] overflow-hidden">
           <SlideText style={{ animationDelay: "1.2s" }} className="text-[clamp(20px,6dvw,60px)]">
             Take courage.

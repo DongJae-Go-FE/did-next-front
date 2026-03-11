@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 
 function SponsorItem({ index, locale }: { index: number; locale: Locale }) {
   return (
-    <li className="bg-white h-30 border border-gray-200 rounded-sm hover:bg-gray-50 transition-colors duration-100">
+    <li className="bg-white h-30 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors duration-100">
       <Link
         href="https://www.cbck.or.kr/"
         target="_blank"
@@ -46,7 +46,7 @@ export default function SponsorPage({ locale = "kr" }: { locale?: Locale }) {
 
   return (
     <>
-      <h2 className="heading02b mb-8 max-[1079px]:text-[24px] max-[767px]:text-[18px]">
+      <h2 className="heading02b mb-10 max-[1079px]:text-[24px] max-[767px]:text-[18px]">
         {t.title}
       </h2>
 
@@ -69,7 +69,7 @@ export default function SponsorPage({ locale = "kr" }: { locale?: Locale }) {
           className="grid w-full gap-2"
           style={{
             gridTemplateColumns:
-              "repeat(auto-fill, minmax(min(500px,100%), 1fr))",
+              "repeat(auto-fill, minmax(min(400px,100%), 1fr))",
           }}
         >
           {[...Array(9)].map((_, index) => (
@@ -78,7 +78,7 @@ export default function SponsorPage({ locale = "kr" }: { locale?: Locale }) {
         </ul>
       )}
 
-      <div className="h-100 max-[1079px]:h-60 max-[767px]:h-44 bg-white w-full mt-2 border border-gray-200 rounded-sm flex justify-center items-center flex-col gap-y-2">
+      {/* <div className="h-100 max-[1079px]:h-60 max-[767px]:h-44 bg-white w-full mt-6 border border-gray-200 rounded-xl flex justify-center items-center flex-col gap-y-2">
         <h2 className="heading01b text-[clamp(18px,3dvw,40px)]">
           {t.inquiryTitle}
         </h2>
@@ -99,7 +99,7 @@ export default function SponsorPage({ locale = "kr" }: { locale?: Locale }) {
             wyd2027@naver.com
           </GradientText>
         </a>
-      </div>
+      </div> */}
     </>
   );
 }
