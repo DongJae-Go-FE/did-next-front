@@ -10,27 +10,29 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-import { MapPin, ExternalLink, Map } from "lucide-react";
+import { MapPin, ExternalLink } from "lucide-react";
 import dioceseData from "@/public/data";
 import type { Locale } from "@/app/(nation)/_lib/content";
 
+const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
+
 const dioceseImageMap: Record<string, string> = {
-  서울대교구: "/apply/seoul.webp",
-  인천교구: "/apply/incheon.webp",
-  수원교구: "/apply/suwon.webp",
-  의정부교구: "/apply/uijeongbu.webp",
-  춘천교구: "/apply/chuncheon.webp",
-  원주교구: "/apply/wonju.webp",
-  대전교구: "/apply/daejeon.webp",
-  청주교구: "/apply/cheongju.webp",
-  대구대교구: "/apply/daegu.webp",
-  부산교구: "/apply/busan.webp",
-  마산교구: "/apply/masan.webp",
-  안동교구: "/apply/andong.webp",
-  광주대교구: "/apply/gwangju.webp",
-  전주교구: "/apply/jeonju.webp",
-  제주교구: "/apply/jeju.webp",
-  군종교구: "/apply/gun.webp",
+  서울대교구: `${IMAGE_BASE}/did/apply/seoul.webp`,
+  인천교구: `${IMAGE_BASE}/did/apply/incheon.webp`,
+  수원교구: `${IMAGE_BASE}/did/apply/suwon.webp`,
+  의정부교구: `${IMAGE_BASE}/did/apply/uijeongbu.webp`,
+  춘천교구: `${IMAGE_BASE}/did/apply/chuncheon.webp`,
+  원주교구: `${IMAGE_BASE}/did/apply/wonju.webp`,
+  대전교구: `${IMAGE_BASE}/did/apply/daejeon.webp`,
+  청주교구: `${IMAGE_BASE}/did/apply/cheongju.webp`,
+  대구대교구: `${IMAGE_BASE}/did/apply/daegu.webp`,
+  부산교구: `${IMAGE_BASE}/did/apply/busan.webp`,
+  마산교구: `${IMAGE_BASE}/did/apply/masan.webp`,
+  안동교구: `${IMAGE_BASE}/did/apply/andong.webp`,
+  광주대교구: `${IMAGE_BASE}/did/apply/gwangju.webp`,
+  전주교구: `${IMAGE_BASE}/did/apply/jeonju.webp`,
+  제주교구: `${IMAGE_BASE}/did/apply/jeju.webp`,
+  군종교구: `${IMAGE_BASE}/did/apply/gun.webp`,
 };
 
 const dioceseNameMap: Record<string, string> = {
@@ -83,17 +85,6 @@ export default function Marker({
   const address = diocese?.address || "";
   const displayName = isEn ? (dioceseNameMap[name] || name) : name;
   const url = dioceseUrlMap[name];
-  const lat = diocese?.latitude2;
-  const lng = diocese?.longitude2;
-
-  const googleMapsUrl =
-    lat && lng
-      ? `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`
-      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
-  const appleMapsUrl =
-    lat && lng
-      ? `https://maps.apple.com/?ll=${lat},${lng}&q=${encodeURIComponent(displayName)}`
-      : `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
 
   return (
     <Dialog>
@@ -123,7 +114,7 @@ export default function Marker({
         <div className="w-full flex flex-col">
           <div className="relative w-full aspect-[16/9] overflow-hidden">
             <Image
-              src={dioceseImageMap[name] || "/apply/seoul.webp"}
+              src={dioceseImageMap[name] || `${IMAGE_BASE}/apply/seoul.webp`}
               fill
               className="object-cover scale-105"
               priority
@@ -139,34 +130,14 @@ export default function Marker({
 
           <div className="px-5 pt-4 pb-5 flex flex-col gap-y-4">
             {address && (
-              <div className="flex items-start gap-x-2.5 bg-gray-50 rounded-xl px-3.5 py-3 max-[767px]:flex-col max-[767px]:gap-y-3">
+              <div className="flex items-start gap-x-2.5 bg-gray-50 rounded-xl px-3.5 py-3">
                 <MapPin
                   className="w-4 h-4 mt-0.5 flex-shrink-0"
                   style={{ color: "#0047BB" }}
                 />
-                <span className="text-sm text-gray-600 leading-relaxed flex-1 max-[767px]:w-full">
+                <span className="text-sm text-gray-600 leading-relaxed">
                   {address}
                 </span>
-                <div className="flex items-center gap-1.5 flex-shrink-0 ml-1 max-[767px]:ml-0 max-[767px]:w-full max-[767px]:flex-wrap">
-                  <Link
-                    href={googleMapsUrl}
-                    target="_blank"
-                    title={isEn ? "View on Google Maps" : "구글맵으로 보기"}
-                    className="flex items-center gap-x-1.5 px-2.5 py-1.5 rounded-lg bg-white border border-gray-300 text-xs font-semibold text-gray-600 hover:border-gray-400 hover:text-gray-800 transition-colors shadow-sm max-[767px]:flex-1 max-[767px]:justify-center"
-                  >
-                    <Map className="w-3.5 h-3.5" />
-                    Google Map
-                  </Link>
-                  <Link
-                    href={appleMapsUrl}
-                    target="_blank"
-                    title={isEn ? "View on Apple Maps" : "애플맵으로 보기"}
-                    className="flex items-center gap-x-1.5 px-2.5 py-1.5 rounded-lg bg-white border border-gray-300 text-xs font-semibold text-gray-600 hover:border-gray-400 hover:text-gray-800 transition-colors shadow-sm max-[767px]:flex-1 max-[767px]:justify-center"
-                  >
-                    <Map className="w-3.5 h-3.5" />
-                    Apple Map
-                  </Link>
-                </div>
               </div>
             )}
 

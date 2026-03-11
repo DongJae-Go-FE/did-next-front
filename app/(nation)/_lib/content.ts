@@ -1,5 +1,3 @@
-import { label } from "motion/react-client";
-
 export type Locale = "kr" | "en";
 
 export const locales: Locale[] = ["kr", "en"];
@@ -27,6 +25,8 @@ export const content = {
       email: "이메일 : wyd2027did@cbck.kr",
       phone: "032-765-6960",
       hours: "운영시간: 10:00 ~ 18:00",
+      sponsorInquiry: "후원 문의",
+      sponsorEmail: "wyd2027@naver.com",
       links: [
         { label: "WYD2027SEOUL", href: "https://wydseoul.org/" },
         { label: "인천교구청", href: "http://www.caincheon.or.kr/" },
@@ -169,6 +169,8 @@ export const content = {
       email: "Email: wyd2027did@cbck.kr",
       phone: "+82-32-765-6960",
       hours: "Hours: 10:00 AM ~ 6:00 PM (KST)",
+      sponsorInquiry: "Sponsorship Inquiry",
+      sponsorEmail: "wyd2027@naver.com",
       links: [
         { label: "WYD2027SEOUL", href: "https://wydseoul.org/" },
         { label: "Diocese of Incheon", href: "http://www.caincheon.or.kr/" },

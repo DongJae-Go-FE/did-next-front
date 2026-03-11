@@ -18,9 +18,9 @@ export default function PrayPage({ locale = "kr" }: { locale?: Locale }) {
       </h2>
       <div className="w-full h-auto flex items-center justify-center gap-x-2 relative z-50 max-[1079px]:flex-col max-[1079px]:gap-y-2">
         <Link
-          href=""
+          href="https://wydseoul.org/participation/rosary"
           target="_blank"
-          className="flex-1 w-full block border border-gray-100 rounded-sm p-6 text-white h-50 transition-all hover:bg-white hover:text-black duration-300 relative group"
+          className="flex-1 w-full block border border-gray-100 rounded-xl p-8 text-white h-50 transition-all hover:bg-white hover:text-black duration-300 relative group"
         >
           <h3 className="heading03b text-[clamp(24px,3dvw,36px)] mb-2">
             {t.groupTitle}
@@ -37,9 +37,9 @@ export default function PrayPage({ locale = "kr" }: { locale?: Locale }) {
           />
         </Link>
         <Link
-          href=""
+          href="https://wydseoul.org/participation/rosary"
           target="_blank"
-          className="flex-1 w-full block border border-gray-100 rounded-sm p-6 text-white h-50 transition-all hover:bg-white hover:text-black duration-300 relative group"
+          className="flex-1 w-full block border border-gray-100 rounded-xl p-8 text-white h-50 transition-all hover:bg-white hover:text-black duration-300 relative group"
         >
           <h3 className="heading03b text-[clamp(24px,3dvw,36px)] mb-2">
             {t.individualTitle}

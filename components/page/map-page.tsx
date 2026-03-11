@@ -18,7 +18,7 @@ export default function MapPage({ locale = "kr" }: { locale?: Locale }) {
 
   return (
     <div className="w-full h-full">
-      <h2 className="heading02b mb-8 max-[1079px]:text-[24px] max-[767px]:text-[18px]">
+      <h2 className="heading02b mb-10 max-[1079px]:text-[24px] max-[767px]:text-[18px]">
         {t.title}
         {!isMobile && (
           <span className="body02m">{t.subtitle}</span>

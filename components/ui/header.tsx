@@ -79,7 +79,7 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
   return (
     <header
       className={cn(
-        "w-full h-30 flex items-center px-8 fixed top-0 left-0 z-5000 justify-between transition-colors duration-300",
+        "w-full h-30 flex items-center px-12 max-[767px]:px-5 fixed top-0 left-0 z-5000 justify-between transition-colors duration-300",
 
         isRootPage && !isScrolled && "bg-transparent text-white border-none",
         isRootPage &&
@@ -89,47 +89,49 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
         !isRootPage && "bg-white text-black border-b border-gray-200",
       )}
     >
-      <h1>
-        <Link href={locale === "kr" ? "/" : `/${locale}`}>
-          <Image
-            src="/logo.svg"
-            alt="wyd logo"
-            width={60}
-            height={40}
-            className="w-auto h-18"
-            priority
-          />
-        </Link>
-      </h1>
+      <div className="max-w-[1400px] mx-auto w-full flex items-center justify-between">
+        <h1>
+          <Link href={locale === "kr" ? "/" : `/${locale}`}>
+            <Image
+              src="/logo.svg"
+              alt="wyd logo"
+              width={60}
+              height={40}
+              className="w-auto h-18"
+              priority
+            />
+          </Link>
+        </h1>
 
-      <ul className="flex items-center gap-x-1">
-        <li>
-          <Select value={value} onValueChange={handleLanguageChange}>
-            <SelectTrigger className="border-none font-black text-lg" size="lg">
-              <SelectValue className="placeholder:text-white data-[placeholder]:text-white" />
-            </SelectTrigger>
-            <SelectContent size="lg" className="font-black">
-              <SelectItem value="kr" size="lg">
-                KR
-              </SelectItem>
-              <SelectItem value="en" size="lg">
-                ENG
-              </SelectItem>
-            </SelectContent>
-          </Select>
-        </li>
+        <ul className="flex items-center gap-x-1">
+          <li>
+            <Select value={value} onValueChange={handleLanguageChange}>
+              <SelectTrigger className="border-none font-black text-lg" size="lg">
+                <SelectValue className="placeholder:text-white data-[placeholder]:text-white" />
+              </SelectTrigger>
+              <SelectContent size="lg" className="font-black">
+                <SelectItem value="kr" size="lg">
+                  KR
+                </SelectItem>
+                <SelectItem value="en" size="lg">
+                  ENG
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          </li>
 
-        <li
-          className={cn(
-            "transition-colors duration-500",
-            shouldShowWhiteBg
-              ? "[&_svg_path]:fill-black"
-              : "[&_svg_path]:fill-white",
-          )}
-        >
-          <Menu locale={locale} />
-        </li>
-      </ul>
+          <li
+            className={cn(
+              "transition-colors duration-500",
+              shouldShowWhiteBg
+                ? "[&_svg_path]:fill-black"
+                : "[&_svg_path]:fill-white",
+            )}
+          >
+            <Menu locale={locale} />
+          </li>
+        </ul>
+      </div>
     </header>
   );
 }

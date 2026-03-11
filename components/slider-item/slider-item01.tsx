@@ -11,6 +11,8 @@ import {
   SlideTextContainer,
 } from "../ui/slide-text";
 
+const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
+
 export default function SliderItem01() {
   return (
     <div
@@ -20,13 +22,13 @@ export default function SliderItem01() {
       )}
     >
       <Image
-        src="/main/main01.jpeg"
+        src={`${IMAGE_BASE}/did/main/main01.jpeg`}
         alt="WYD 2027 DID 메인 이미지 첫번째"
         fill
         sizes="100vw"
         className="object-cover object-center"
       />
-      <div className="text-white heading01b absolute top-[30dvh] z-40 pl-8 flex flex-col gap-y-1">
+      <div className="text-white heading01b absolute top-[30dvh] z-40 pl-12 max-[767px]:pl-5 flex flex-col gap-y-1 w-full max-w-[1400px] left-1/2 -translate-x-1/2">
         <SlideTextContainer>
           <SlideText style={{ animationDelay: "1.2s" }}>
             용기를 내어라.
