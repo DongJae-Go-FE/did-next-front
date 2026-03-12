@@ -69,6 +69,7 @@ const dioceseUrlMap: Record<string, string> = {
   청주교구: "https://www.wyd2027did-cdcj.org",
   수원교구: "https://www.wyd2027did-suwon.org",
   인천교구: "https://www.wyd2027did-incheon.org",
+  대전교구: "https://www.wyd2027did-daejeon.org",
 };
 
 export default function Marker({
