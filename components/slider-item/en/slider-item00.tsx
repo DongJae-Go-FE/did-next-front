@@ -6,7 +6,7 @@ export default function SliderItem00En() {
   return (
     <div className="relative h-full w-full overflow-hidden">
       <Image
-        src={`${IMAGE_BASE}/main/main00.jpeg`}
+        src={`${IMAGE_BASE}/did/main/main00.jpeg`}
         className="h-full w-full object-cover animate-pan-zoom-center"
         fill
         sizes="100vw"
