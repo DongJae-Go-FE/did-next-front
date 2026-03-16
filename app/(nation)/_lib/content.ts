@@ -48,7 +48,7 @@ export const content = {
         {
           title: "NOTICE",
           items: [
-            { label: "공지사항", href: "" },
+            { label: "공지사항", href: "/kr/notice" },
             { label: "후원사 소개", href: "/kr#sponsor" },
           ],
         },
@@ -139,6 +139,25 @@ export const content = {
       ],
       pageTitle: "교구별 신청 현황",
     },
+    noticePage: {
+      heroAlt: "서브페이지 배경",
+      heroTitle: "공지사항",
+      breadcrumb: ["NOTICE /", "공지사항"],
+      leftMenuTitle: "NOTICE",
+      leftMenuItems: [
+        { label: "공지사항", href: "/kr/notice" },
+        { label: "후원사 소개", href: "/kr#sponsor" },
+      ],
+      pageTitle: "공지사항",
+      noItems: "등록된 공지가 없습니다.",
+      prevPage: "이전",
+      nextPage: "다음",
+      orderLabel: "번호",
+      titleLabel: "제목",
+      authorLabel: "작성자",
+      dateLabel: "작성일",
+      backToList: "목록으로",
+    },
     slider: {
       pauseTitle: "일시정지 버튼",
       playTitle: "재생 버튼",
@@ -196,7 +215,7 @@ export const content = {
         {
           title: "NOTICE",
           items: [
-            { label: "Announcements", href: "" },
+            { label: "Announcements", href: "/en/notice" },
             { label: "Sponsors", href: "/en#sponsor" },
           ],
         },
@@ -278,6 +297,25 @@ export const content = {
       leftMenuTitle: "Participate",
       leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
       pageTitle: "Application Status",
+    },
+    noticePage: {
+      heroAlt: "Sub page background",
+      heroTitle: "Announcements",
+      breadcrumb: ["NOTICE /", "Announcements"],
+      leftMenuTitle: "NOTICE",
+      leftMenuItems: [
+        { label: "Announcements", href: "/en/notice" },
+        { label: "Sponsors", href: "/en#sponsor" },
+      ],
+      pageTitle: "Announcements",
+      noItems: "No announcements yet.",
+      prevPage: "Prev",
+      nextPage: "Next",
+      orderLabel: "No.",
+      titleLabel: "Title",
+      authorLabel: "Author",
+      dateLabel: "Date",
+      backToList: "Back to List",
     },
     slider: {
       pauseTitle: "Pause",
