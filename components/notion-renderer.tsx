@@ -19,7 +19,19 @@ function renderRichText(richTexts?: RichText[]) {
   return richTexts.map((text, i) => {
     const { bold, italic, strikethrough, underline, code } =
       text.annotations ?? {};
-    let el: React.ReactNode = text.plain_text ?? "";
+
+    // 줄바꿈(\n)을 <br />로 변환
+    const plainText = text.plain_text ?? "";
+    const parts = plainText.split("\n");
+    let el: React.ReactNode =
+      parts.length > 1
+        ? parts.map((part, idx) => (
+            <span key={idx}>
+              {part}
+              {idx < parts.length - 1 && <br />}
+            </span>
+          ))
+        : plainText;
 
     if (code) el = <code key={i} className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">{el}</code>;
     if (bold) el = <strong key={i}>{el}</strong>;
