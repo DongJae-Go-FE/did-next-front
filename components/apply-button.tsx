@@ -15,6 +15,7 @@ interface ApplyButtonProps {
   dialogTitle: string;
   dialogDesc: string;
   dialogDetail: string;
+  dialogWarning?: string;
   agreeLabel: string;
   confirmBtn: string;
   cancelBtn: string;
@@ -26,6 +27,7 @@ export default function ApplyButton({
   dialogTitle,
   dialogDesc,
   dialogDetail,
+  dialogWarning,
   agreeLabel,
   confirmBtn,
   cancelBtn,
@@ -74,6 +76,12 @@ export default function ApplyButton({
           <div className="rounded-md bg-gray-50 p-3 text-sm text-gray-700 min-h-0 flex-1 overflow-y-auto border whitespace-pre-line">
             {dialogDetail}
           </div>
+
+          {dialogWarning && (
+            <div className="rounded-md bg-red-50 border-2 border-red-500 p-4 text-sm text-red-700 font-bold">
+              {dialogWarning}
+            </div>
+          )}
 
           <label className="flex items-start gap-2 cursor-pointer select-none">
             <input

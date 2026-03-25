@@ -301,6 +301,7 @@ export default async function Page({
                         dialogTitle={t.privacyDialogTitle}
                         dialogDesc={t.privacyDialogDesc}
                         dialogDetail={t.privacyDialogDetail}
+                        dialogWarning={t.privacyWarning}
                         agreeLabel={t.privacyAgreeLabel}
                         confirmBtn={t.privacyConfirmBtn}
                         cancelBtn={t.privacyCancelBtn}
