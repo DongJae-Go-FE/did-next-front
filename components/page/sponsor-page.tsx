@@ -19,7 +19,7 @@ const sponsors = [
   { image: "/sponsor/s2.svg", url: "https://www.everland.com/" },
   { image: `${IMAGE_BASE}/s3.png`, url: "http://sparklewater.net/" },
   { image: "/sponsor/s4.svg", url: "https://www.koreanfolk.co.kr/" },
-  { image: "/sponsor/s5.svg", url: "https://www.gogocorp.co.kr/" },
+  { image: "/sponsor/s5.svg", url: "https://www.gogocorp.co.kr/", scale: 0.7 },
   { image: "/sponsor/s6.svg", url: "http://holyspots.kr/" },
   { image: "/sponsor/s7.svg", url: "https://www.catholictimes.org/" },
   { image: "/sponsor/s8.svg", url: "https://www.cpbc.co.kr/" },
@@ -41,6 +41,7 @@ function SponsorItem({ index, locale }: { index: number; locale: Locale }) {
           width={200}
           height={80}
           className="w-auto h-auto max-h-24 max-w-[80%] object-contain"
+          style={sponsor.scale ? { transform: `scale(${sponsor.scale})` } : undefined}
           priority
         />
       </Link>
