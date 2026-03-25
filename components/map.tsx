@@ -45,24 +45,25 @@ const results: unknown[] = [
   resionJson17,
 ];
 
+// 고급스러운 딥톤 팔레트 (선명하면서도 세련된 색감)
 const regionColors = [
-  "#FF6B9D",
-  "#C44569",
-  "#A55EEA",
-  "#4B7BEC",
-  "#45AAF2",
-  "#26C6DA",
-  "#20BF6B",
-  "#26DE81",
-  "#A5D6A7",
-  "#FED330",
-  "#F7B731",
-  "#FA8231",
-  "#FC5C65",
-  "#EB3B5A",
-  "#8854D0",
-  "#778CA3",
-  "#4B6584",
+  "#3D5A80", // 딥 네이비
+  "#5B8C5A", // 포레스트 그린
+  "#8B5A8C", // 플럼 퍼플
+  "#C4785B", // 테라코타
+  "#4A7C8C", // 틸 블루
+  "#7B6B8C", // 더스티 퍼플
+  "#6B8E6B", // 세이지 그린
+  "#9C6B6B", // 로즈우드
+  "#5C7C9C", // 스틸 블루
+  "#8C7B5C", // 브론즈
+  "#6B7C8C", // 슬레이트
+  "#7C8B6B", // 올리브
+  "#8C6B7C", // 모브
+  "#5C8C7C", // 씨그린
+  "#7C6B5C", // 웜 브라운
+  "#6B5C7C", // 딥 라벤더
+  "#5C6B8C", // 인디고
 ];
 
 export type NaverMap = naver.maps.Map;
@@ -157,18 +158,28 @@ export default function Map({ locale = "kr" }: { locale?: Locale }) {
         map,
         paths,
         fillColor: color,
-        fillOpacity: 0.3,
-        strokeColor: color,
-        strokeOpacity: 0.6,
-        strokeWeight: 2,
+        fillOpacity: 0.5,
+        strokeColor: "#FFFFFF",
+        strokeOpacity: 0.9,
+        strokeWeight: 1.5,
         clickable: true,
       });
 
       window.naver.maps.Event.addListener(polygon, "mouseover", () => {
-        polygon.setOptions({ fillOpacity: 0.6, strokeWeight: 3 } as naver.maps.PolygonOptions);
+        polygon.setOptions({
+          fillOpacity: 0.7,
+          strokeColor: "#FFFFFF",
+          strokeOpacity: 1,
+          strokeWeight: 2.5,
+        } as naver.maps.PolygonOptions);
       });
       window.naver.maps.Event.addListener(polygon, "mouseout", () => {
-        polygon.setOptions({ fillOpacity: 0.3, strokeWeight: 2 } as naver.maps.PolygonOptions);
+        polygon.setOptions({
+          fillOpacity: 0.5,
+          strokeColor: "#FFFFFF",
+          strokeOpacity: 0.9,
+          strokeWeight: 1.5,
+        } as naver.maps.PolygonOptions);
       });
 
       return polygon;
