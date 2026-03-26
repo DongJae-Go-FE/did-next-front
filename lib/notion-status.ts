@@ -8,23 +8,56 @@ export interface DioceseChartDatum {
   color: string;
 }
 
+// 교구별 공식 색상
+const DIOCESE_COLORS: Record<string, string> = {
+  광주교구: "#D92E16",
+  광주: "#D92E16",
+  군종교구: "#446B33",
+  군종: "#446B33",
+  대구교구: "#AE0042",
+  대구: "#AE0042",
+  대전교구: "#870023",
+  대전: "#870023",
+  마산교구: "#50B14A",
+  마산: "#50B14A",
+  부산교구: "#6C6E72",
+  부산: "#6C6E72",
+  수원교구: "#0092D4",
+  수원: "#0092D4",
+  안동교구: "#0B76B8",
+  안동: "#0B76B8",
+  원주교구: "#7E1A37",
+  원주: "#7E1A37",
+  의정부교구: "#1D2974",
+  의정부: "#1D2974",
+  인천교구: "#EE7836",
+  인천: "#EE7836",
+  전주교구: "#AE2243",
+  전주: "#AE2243",
+  제주교구: "#AC995E",
+  제주: "#AC995E",
+  청주교구: "#005BAC",
+  청주: "#005BAC",
+  춘천교구: "#CE6D4E",
+  춘천: "#CE6D4E",
+};
+
 const FALLBACK_DATA: DioceseChartDatum[] = [
-  { name: "서울", 현재인원: 8700, 목표인원: 10000, color: "#8884d8" },
-  { name: "인천", 현재인원: 3200, 목표인원: 5000, color: "#82ca9d" },
-  { name: "수원", 현재인원: 4600, 목표인원: 5000, color: "#ffc658" },
-  { name: "청주", 현재인원: 2340, 목표인원: 3000, color: "#ff8042" },
-  { name: "대전", 현재인원: 3300, 목표인원: 6000, color: "#a4de6c" },
-  { name: "전주", 현재인원: 2130, 목표인원: 3000, color: "#d0ed57" },
-  { name: "광주", 현재인원: 4450, 목표인원: 5000, color: "#83a6ed" },
-  { name: "제주", 현재인원: 860, 목표인원: 2000, color: "#8dd1e1" },
-  { name: "의정부", 현재인원: 2880, 목표인원: 3000, color: "#d084d0" },
-  { name: "춘천", 현재인원: 1700, 목표인원: 2500, color: "#ffb6c1" },
-  { name: "원주", 현재인원: 2460, 목표인원: 3000, color: "#ffa07a" },
-  { name: "안동", 현재인원: 1180, 목표인원: 2000, color: "#98d8c8" },
-  { name: "대구", 현재인원: 5460, 목표인원: 6000, color: "#f7b7a3" },
-  { name: "부산", 현재인원: 6000, 목표인원: 8000, color: "#c9a0dc" },
-  { name: "마산", 현재인원: 2520, 목표인원: 3000, color: "#ffcc99" },
-  { name: "군종", 현재인원: 1860, 목표인원: 3000, color: "#aed6f1" },
+  { name: "광주교구", 현재인원: 4450, 목표인원: 5000, color: "#D92E16" },
+  { name: "군종교구", 현재인원: 1860, 목표인원: 3000, color: "#446B33" },
+  { name: "대구교구", 현재인원: 5460, 목표인원: 6000, color: "#AE0042" },
+  { name: "대전교구", 현재인원: 3300, 목표인원: 6000, color: "#870023" },
+  { name: "마산교구", 현재인원: 2520, 목표인원: 3000, color: "#50B14A" },
+  { name: "부산교구", 현재인원: 6000, 목표인원: 8000, color: "#6C6E72" },
+  { name: "수원교구", 현재인원: 4600, 목표인원: 5000, color: "#0092D4" },
+  { name: "안동교구", 현재인원: 1180, 목표인원: 2000, color: "#0B76B8" },
+  { name: "원주교구", 현재인원: 2460, 목표인원: 3000, color: "#7E1A37" },
+  { name: "의정부교구", 현재인원: 2880, 목표인원: 3000, color: "#1D2974" },
+  { name: "인천교구", 현재인원: 3200, 목표인원: 5000, color: "#EE7836" },
+  { name: "전주교구", 현재인원: 2130, 목표인원: 3000, color: "#AE2243" },
+  { name: "제주교구", 현재인원: 860, 목표인원: 2000, color: "#AC995E" },
+  { name: "청주교구", 현재인원: 2340, 목표인원: 3000, color: "#005BAC" },
+  { name: "춘천교구", 현재인원: 1700, 목표인원: 2500, color: "#CE6D4E" },
 ];
 
 const DEFAULT_COLORS = [
@@ -178,6 +211,21 @@ function pickByKeys<T>(
   return undefined;
 }
 
+function getDioceseColor(name: string): string | undefined {
+  // 정확히 일치하는 경우
+  if (DIOCESE_COLORS[name]) return DIOCESE_COLORS[name];
+
+  // 교구명에서 "교구" 제거하고 매칭
+  const shortName = name.replace("교구", "");
+  if (DIOCESE_COLORS[shortName]) return DIOCESE_COLORS[shortName];
+
+  // 교구명에 "교구" 추가하고 매칭
+  const fullName = name + "교구";
+  if (DIOCESE_COLORS[fullName]) return DIOCESE_COLORS[fullName];
+
+  return undefined;
+}
+
 function parsePage(page: NotionPage, index: number): (DioceseChartDatum & { order: number }) | null {
   const props = page.properties ?? {};
   const name =
@@ -192,7 +240,10 @@ function parsePage(page: NotionPage, index: number): (DioceseChartDatum & { orde
   const order =
     pickByKeys(props, ORDER_KEYS, numberFromProperty) ??
     index;
+
+  // 교구명 기반 색상 우선, 그 다음 Notion 색상, 마지막으로 기본 색상
   const color =
+    (name ? getDioceseColor(name) : undefined) ??
     pickByKeys(props, COLOR_KEYS, colorFromProperty) ??
     DEFAULT_COLORS[index % DEFAULT_COLORS.length];
 
