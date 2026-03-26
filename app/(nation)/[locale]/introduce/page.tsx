@@ -102,39 +102,41 @@ export default async function Page({
         <SubContentContainer>
           <SubContentTitle>{t.pageTitle}</SubContentTitle>
 
-          <div className="w-full mt-8">
-            <div className="bg-[#0047BB] text-white text-center py-4 text-lg font-bold rounded-t-lg">
-              {t.scheduleTitle}
-            </div>
-
-            <div className="border border-[#0047BB] border-t-0 rounded-b-lg overflow-hidden">
-              <div className="grid grid-cols-5 border-b border-gray-200">
-                {t.scheduleHeaders.map((header, index) => (
-                  <div
-                    key={index}
-                    className="py-4 text-center font-medium text-gray-800 border-r border-gray-200 last:border-r-0"
-                  >
-                    {header}
-                  </div>
-                ))}
+          <div className="w-full mt-8 overflow-x-auto">
+            <div className="min-w-[500px]">
+              <div className="bg-[#0047BB] text-white text-center py-3 md:py-4 text-base md:text-lg font-bold rounded-t-lg">
+                {t.scheduleTitle}
               </div>
 
-              <div className="grid grid-cols-5">
-                <div className="py-6 text-center font-medium text-gray-700 border-r border-gray-200 flex items-center justify-center">
-                  {t.scheduleWelcome}
+              <div className="border border-[#0047BB] border-t-0 rounded-b-lg overflow-hidden">
+                <div className="grid grid-cols-5 border-b border-gray-200">
+                  {t.scheduleHeaders.map((header, index) => (
+                    <div
+                      key={index}
+                      className="py-2 md:py-4 text-center text-xs md:text-base font-medium text-gray-800 border-r border-gray-200 last:border-r-0"
+                    >
+                      {header}
+                    </div>
+                  ))}
                 </div>
 
-                <div className="col-span-3 py-6 text-center border-r border-gray-200 flex flex-col items-center justify-center">
-                  <span className="font-medium text-gray-800">
-                    {t.scheduleProgram}
-                  </span>
-                  <span className="text-sm text-gray-500 mt-1">
-                    {t.scheduleProgramSub}
-                  </span>
-                </div>
+                <div className="grid grid-cols-5">
+                  <div className="py-4 md:py-6 text-center text-xs md:text-base font-medium text-gray-700 border-r border-gray-200 flex items-center justify-center">
+                    {t.scheduleWelcome}
+                  </div>
 
-                <div className="py-6 text-center font-medium text-gray-700 flex items-center justify-center">
-                  {t.scheduleFarewell}
+                  <div className="col-span-3 py-4 md:py-6 text-center border-r border-gray-200 flex flex-col items-center justify-center px-2">
+                    <span className="font-medium text-gray-800 text-xs md:text-base">
+                      {t.scheduleProgram}
+                    </span>
+                    <span className="text-[10px] md:text-sm text-gray-500 mt-1">
+                      {t.scheduleProgramSub}
+                    </span>
+                  </div>
+
+                  <div className="py-4 md:py-6 text-center text-xs md:text-base font-medium text-gray-700 flex items-center justify-center">
+                    {t.scheduleFarewell}
+                  </div>
                 </div>
               </div>
             </div>
