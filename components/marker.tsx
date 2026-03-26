@@ -56,6 +56,7 @@ const dioceseNameMap: Record<string, string> = {
 };
 
 const dioceseUrlMap: Record<string, string> = {
+  서울대교구: "https://wydseoul.org/",
   부산교구: "https://www.wyd2027did-busan.org",
   안동교구: "https://www.wyd2027did-andong.org",
   춘천교구: "https://www.wyd2027did-cccatholic.org",
