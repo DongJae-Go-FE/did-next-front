@@ -135,7 +135,7 @@ export default function DioceseCardSlider({
   const isLast = activeIndex === dioceseData.length - 1;
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <Swiper
         modules={[Pagination]}
         spaceBetween={12}
@@ -149,7 +149,8 @@ export default function DioceseCardSlider({
           swiperRef.current = swiper;
         }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-        className="diocese-swiper did-swiper"
+        className="diocese-swiper did-swiper !overflow-visible"
+        style={{ padding: "8px 0" }}
       >
         {dioceseData.map((diocese) => (
           <SwiperSlide key={diocese.name}>

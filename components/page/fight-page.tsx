@@ -98,7 +98,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
   return (
     <section className="w-full px-12 py-10 max-[767px]:px-5 bg-gray-200">
       <div className="max-w-[1400px] mx-auto">
-        <h2 className="mb-8 leading-none font-bold tracking-tight text-[clamp(18px,2.35vw,34px)]">
+        <h2 className="mb-8 font-bold tracking-tight text-[clamp(18px,2.35vw,34px)]">
           {t.titleParts.map((part, i) => (
             <span key={i} style={{ color: part.color }}>
               {part.text}
@@ -109,14 +109,15 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
         {isMobile ? (
           <Swiper
             modules={[Pagination]}
-            spaceBetween={10}
-            slidesPerView={1.15}
+            spaceBetween={16}
+            slidesPerView={1}
+            centeredSlides
             pagination={{ clickable: true }}
             className="fight-swiper did-swiper"
           >
             {items.map((item, i) => (
               <SwiperSlide key={i}>
-                <div className="relative aspect-[16/6] overflow-hidden bg-neutral-200">
+                <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-neutral-200">
                   <CardItem item={item} />
                 </div>
               </SwiperSlide>

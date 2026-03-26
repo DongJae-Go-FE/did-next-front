@@ -47,15 +47,15 @@ export default function IntroPage({ locale = "kr" }: { locale?: Locale }) {
   return (
     <>
       <div
-        style={{ height: "100px", position: "relative", overflow: "hidden" }}
-        className="flex items-center"
+        style={{ position: "relative", overflow: "hidden" }}
+        className="flex items-center h-[60px] md:h-[100px]"
       >
         <LogoLoop
           logos={techLogos}
-          speed={120}
+          speed={100}
           direction="left"
-          logoHeight={48}
-          gap={40}
+          logoHeight={28}
+          gap={20}
           pauseOnHover
           scaleOnHover
           fadeOut
@@ -63,10 +63,10 @@ export default function IntroPage({ locale = "kr" }: { locale?: Locale }) {
           ariaLabel={t.logoAriaLabel}
         />
       </div>
-      <div className="flex justify-center items-center w-full h-[calc(80dvh-200px)] flex-col gap-y-2">
+      <div className="flex justify-center items-center w-full h-auto md:h-[calc(80dvh-200px)] flex-col gap-y-2 py-10 md:py-0">
         <SplitText
           text={t.welcomeText}
-          className="heading01b text-[clamp(18px,3dvw,40px)] text-center font-black"
+          className="heading01b text-[clamp(14px,4vw,40px)] text-center font-black px-4"
           delay={100}
           duration={1}
           ease="power3.out"
@@ -79,7 +79,7 @@ export default function IntroPage({ locale = "kr" }: { locale?: Locale }) {
         />
         <SplitText
           text="DAY OF THE EVENT"
-          className="heading01b text-[clamp(18px,3dvw,40px)] text-center font-black"
+          className="heading01b text-[clamp(14px,4vw,40px)] text-center font-black"
           delay={100}
           duration={1}
           ease="power3.out"
@@ -93,15 +93,15 @@ export default function IntroPage({ locale = "kr" }: { locale?: Locale }) {
         <CountDay />
       </div>
       <div
-        style={{ height: "100px", position: "relative", overflow: "hidden" }}
-        className="flex items-center"
+        style={{ position: "relative", overflow: "hidden" }}
+        className="flex items-center h-[60px] md:h-[100px]"
       >
         <LogoLoop
           logos={techLogos}
-          speed={120}
+          speed={100}
           direction="right"
-          logoHeight={48}
-          gap={40}
+          logoHeight={28}
+          gap={20}
           pauseOnHover
           scaleOnHover
           fadeOut

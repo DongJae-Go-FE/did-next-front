@@ -36,7 +36,7 @@ export default async function Home({
       <FightPage locale={locale} />
 
       <div
-        className="w-full min-h-[80dvh] bg-white px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12"
+        className="w-full min-h-[80dvh] max-[767px]:min-h-0 bg-white px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-8"
         id="section"
       >
         <div className="max-w-[1400px] mx-auto">
