@@ -41,7 +41,7 @@ export const content = {
         {
           title: "2027 DID",
           items: [
-            { label: "교구대회 소개", href: "" },
+            { label: "교구대회 소개", href: "/kr/introduce" },
             { label: "교구 소개", href: "/kr#map" },
           ],
         },
@@ -160,6 +160,24 @@ export const content = {
       dateLabel: "작성일",
       backToList: "목록으로",
     },
+    introducePage: {
+      heroAlt: "서브페이지 배경",
+      heroTitle: "교구대회 소개",
+      breadcrumb: ["2027 DID /", "교구대회 소개"],
+      leftMenuTitle: "2027 DID",
+      leftMenuItems: [
+        { label: "교구대회 소개", href: "/kr/introduce" },
+        { label: "교구 소개", href: "/kr#map" },
+      ],
+      pageTitle: "2027 WYD 교구대회 소개",
+      scheduleTitle: "2027 WYD 교구대회 일정",
+      scheduleHeaders: ["7/29(목)", "7/30(금)", "7/31(토)", "8/1(일)", "8/2(월)"],
+      scheduleWelcome: "환영",
+      scheduleProgram: "교구별 교구대회 프로그램 참여",
+      scheduleProgramSub: "(전례, 교리교육, 지역 탐방 등)",
+      scheduleFarewell: "환송",
+      dioceseNames: ["SUWON", "INCHEON", "DAEJEON", "JEJU"],
+    },
     slider: {
       pauseTitle: "일시정지 버튼",
       playTitle: "재생 버튼",
@@ -210,7 +228,7 @@ export const content = {
         {
           title: "2027 DID",
           items: [
-            { label: "About DID", href: "" },
+            { label: "About DID", href: "/en/introduce" },
             { label: "Diocese Info & Apply", href: "/en#map" },
           ],
         },
@@ -320,6 +338,24 @@ export const content = {
       authorLabel: "Author",
       dateLabel: "Date",
       backToList: "Back to List",
+    },
+    introducePage: {
+      heroAlt: "Sub page background",
+      heroTitle: "About DID",
+      breadcrumb: ["2027 DID /", "About DID"],
+      leftMenuTitle: "2027 DID",
+      leftMenuItems: [
+        { label: "About DID", href: "/en/introduce" },
+        { label: "Diocese Info", href: "/en#map" },
+      ],
+      pageTitle: "2027 WYD Days in Diocese",
+      scheduleTitle: "2027 WYD DID Schedule",
+      scheduleHeaders: ["7/29(Thu)", "7/30(Fri)", "7/31(Sat)", "8/1(Sun)", "8/2(Mon)"],
+      scheduleWelcome: "Welcome",
+      scheduleProgram: "Diocesan Program Participation",
+      scheduleProgramSub: "(Liturgy, Catechesis, Local Tours, etc.)",
+      scheduleFarewell: "Farewell",
+      dioceseNames: ["SUWON", "INCHEON", "DAEJEON", "JEJU"],
     },
     slider: {
       pauseTitle: "Pause",
