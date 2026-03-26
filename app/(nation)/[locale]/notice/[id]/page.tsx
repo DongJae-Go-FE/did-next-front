@@ -113,9 +113,7 @@ export default async function Page({
               {detail.title}
             </h3>
             <div className="flex items-center gap-3 text-sm text-gray-500">
-              {detail.author && (
-                <span>{detail.author}</span>
-              )}
+              {detail.author && <span>{detail.author}</span>}
               <span>{formatDate(detail.date, locale)}</span>
             </div>
           </div>
@@ -126,7 +124,7 @@ export default async function Page({
           </div>
 
           {/* Back to list */}
-          <div className="flex justify-end mt-4 mb-8">
+          <div className="flex justify-end mt-4 mb-8 border-t border-t-gray-200 pt-4">
             <Link
               href={`/${locale}/notice`}
               className="px-6 py-2.5 bg-[#0047BB] hover:bg-[#003a9e] text-white rounded-md text-sm font-medium transition-colors"
