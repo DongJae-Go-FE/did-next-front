@@ -39,8 +39,8 @@ export async function generateMetadata({
     alternates: {
       canonical: `${SITE_URL}/${locale}/introduce`,
       languages: {
-        ko: `${SITE_URL}/kr/introduce`,
-        en: `${SITE_URL}/en/introduce`,
+        "ko-KR": `${SITE_URL}/kr/introduce`,
+        "en-US": `${SITE_URL}/en/introduce`,
         "x-default": `${SITE_URL}/kr/introduce`,
       },
     },
@@ -51,10 +51,15 @@ export async function generateMetadata({
       siteName: "2027 WYD SEOUL DID",
       locale: base.ogLocale,
       type: "website",
-      images: [{ url: OG_IMAGE, alt: "2027 WYD SEOUL DID logo" }],
+      images: [
+        {
+          url: OG_IMAGE,
+          alt: "2027 WYD SEOUL DID",
+        },
+      ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: `${t.heroTitle} | 2027 WYD SEOUL DID`,
       description: base.description,
       images: [OG_IMAGE],

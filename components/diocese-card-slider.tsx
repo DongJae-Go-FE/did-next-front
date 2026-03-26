@@ -24,14 +24,14 @@ const dioceseImageMap: Record<string, string> = {
   원주교구: `${IMAGE_BASE}/did/apply/wonju.webp`,
   대전교구: `${IMAGE_BASE}/did/apply/daejeon.webp`,
   청주교구: `${IMAGE_BASE}/did/apply/cheongju.webp`,
-  대구대교구: `${IMAGE_BASE}/did/apply/daegu.webp`,
-  부산교구: `${IMAGE_BASE}/did/apply/busan.webp`,
-  마산교구: `${IMAGE_BASE}/did/apply/masan.webp`,
-  안동교구: `${IMAGE_BASE}/did/apply/andong.webp`,
-  광주대교구: `${IMAGE_BASE}/did/apply/gwangju.webp`,
-  전주교구: `${IMAGE_BASE}/did/apply/jeonju.webp`,
-  제주교구: `${IMAGE_BASE}/did/apply/jeju.webp`,
-  군종교구: `${IMAGE_BASE}/did/apply/gun.webp`,
+  대구대교구: `${IMAGE_BASE}/did/apply/daegu.jpg`,
+  부산교구: `${IMAGE_BASE}/did/apply/busan.jpg`,
+  마산교구: `${IMAGE_BASE}/did/apply/masan.jpg`,
+  안동교구: `${IMAGE_BASE}/did/apply/andong.jpg`,
+  광주대교구: `${IMAGE_BASE}/did/apply/gwangju.png`,
+  전주교구: `${IMAGE_BASE}/did/apply/jeonju.jpg`,
+  제주교구: `${IMAGE_BASE}/did/apply/jeju.png`,
+  군종교구: `${IMAGE_BASE}/did/apply/gun.png`,
 };
 
 const dioceseNameMap: Record<string, string> = {

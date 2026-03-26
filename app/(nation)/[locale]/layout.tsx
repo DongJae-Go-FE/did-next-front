@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import "../../globals.css";
 
 import Header from "@/components/ui/header";
@@ -79,8 +80,8 @@ export async function generateMetadata({
     alternates: {
       canonical: `${SITE_URL}/${locale}`,
       languages: {
-        "ko": `${SITE_URL}/kr`,
-        "en": `${SITE_URL}/en`,
+        "ko-KR": `${SITE_URL}/kr`,
+        "en-US": `${SITE_URL}/en`,
         "x-default": `${SITE_URL}/kr`,
       },
     },
@@ -92,10 +93,15 @@ export async function generateMetadata({
       locale: t.ogLocale,
       alternateLocale: locale === "kr" ? "en_US" : "ko_KR",
       type: "website",
-      images: [{ url: OG_IMAGE, alt: "2027 WYD SEOUL DID logo" }],
+      images: [
+        {
+          url: OG_IMAGE,
+          alt: "2027 WYD SEOUL DID",
+        },
+      ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: t.title,
       description: t.description,
       images: [OG_IMAGE],
@@ -130,9 +136,44 @@ export default async function LocaleLayout({
   }
 
   const lang = content[locale].lang;
+  const t = content[locale].metadata;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: locale === "kr" ? "2027 세계청년대회 교구대회" : "2027 World Youth Day Diocesan Day",
+    description: t.description,
+    image: `${SITE_URL}/logo.svg`,
+    startDate: "2027-07-29",
+    endDate: "2027-08-02",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "Place",
+      name: "Seoul, South Korea",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "KR",
+        addressRegion: "Seoul",
+      },
+    },
+    organizer: {
+      "@type": "Organization",
+      name: "2027 WYD SEOUL DID",
+      url: SITE_URL,
+    },
+    inLanguage: locale === "kr" ? "ko" : "en",
+  };
 
   return (
     <html lang={lang} className="lenis lenis-smooth">
+      <head>
+        <Script
+          id="json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={pretendard.className}>
         <Header locale={locale} />
         <SmoothScrolling>{children}</SmoothScrolling>

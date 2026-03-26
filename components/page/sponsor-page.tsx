@@ -15,29 +15,32 @@ import "swiper/css/pagination";
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 
 const sponsors = [
-  { image: "/sponsor/s1.svg", url: "https://www.byn.kr/" },
-  { image: "/sponsor/s2.svg", url: "https://www.everland.com/" },
-  { image: `${IMAGE_BASE}/s3.png`, url: "http://sparklewater.net/" },
-  { image: "/sponsor/s4.svg", url: "https://www.koreanfolk.co.kr/" },
-  { image: "/sponsor/s5.svg", url: "https://www.gogocorp.co.kr/", scale: 0.7 },
-  { image: "/sponsor/s6.svg", url: "http://holyspots.kr/" },
-  { image: "/sponsor/s7.svg", url: "https://www.catholictimes.org/" },
-  { image: "/sponsor/s8.svg", url: "https://www.cpbc.co.kr/" },
-  { image: "/sponsor/s9.svg", url: "https://www.cbck.or.kr/" },
+  { name: "BYN", nameEn: "BYN", image: "/sponsor/s1.svg", url: "https://www.byn.kr/" },
+  { name: "에버랜드", nameEn: "Everland", image: "/sponsor/s2.svg", url: "https://www.everland.com/" },
+  { name: "스파클", nameEn: "Sparkle", image: `${IMAGE_BASE}/s3.png`, url: "http://sparklewater.net/" },
+  { name: "한국민속촌", nameEn: "Korean Folk Village", image: "/sponsor/s4.svg", url: "https://www.koreanfolk.co.kr/" },
+  { name: "고고코퍼레이션", nameEn: "GoGo Corporation", image: "/sponsor/s5.svg", url: "https://www.gogocorp.co.kr/", scale: 0.7 },
+  { name: "홀리스팟", nameEn: "HolySpots", image: "/sponsor/s6.svg", url: "http://holyspots.kr/" },
+  { name: "가톨릭신문", nameEn: "Catholic Times", image: "/sponsor/s7.svg", url: "https://www.catholictimes.org/" },
+  { name: "가톨릭평화방송", nameEn: "CPBC", image: "/sponsor/s8.svg", url: "https://www.cpbc.co.kr/" },
+  { name: "한국천주교주교회의", nameEn: "CBCK", image: "/sponsor/s9.svg", url: "https://www.cbck.or.kr/" },
 ];
 
 function SponsorItem({ index, locale }: { index: number; locale: Locale }) {
   const sponsor = sponsors[index];
+  const sponsorName = locale === "kr" ? sponsor.name : sponsor.nameEn;
   return (
     <li className="bg-white h-36 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors duration-100">
       <Link
         href={sponsor.url}
         target="_blank"
+        rel="noopener noreferrer"
+        aria-label={locale === "kr" ? `${sponsorName} 홈페이지 (새 창)` : `${sponsorName} website (opens in new tab)`}
         className="flex w-full h-full justify-center items-center p-4"
       >
         <Image
           src={sponsor.image}
-          alt={locale === "kr" ? `스폰서${index + 1}` : `Sponsor ${index + 1}`}
+          alt={locale === "kr" ? `${sponsorName} 로고` : `${sponsorName} logo`}
           width={200}
           height={80}
           className="w-auto h-auto max-h-24 max-w-[80%] object-contain"

@@ -31,7 +31,7 @@ const dioceseData = [
   {
     krName: "안동교구",
     enName: "Diocese of Andong",
-    image: `${IMAGE_BASE}/did/apply/andong.webp`,
+    image: `${IMAGE_BASE}/did/apply/andong.jpg`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 10,
     total: 50,
@@ -39,7 +39,7 @@ const dioceseData = [
   {
     krName: "부산교구",
     enName: "Diocese of Busan",
-    image: `${IMAGE_BASE}/did/apply/busan.webp`,
+    image: `${IMAGE_BASE}/did/apply/busan.jpg`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 90,
     total: 170,
@@ -63,7 +63,7 @@ const dioceseData = [
   {
     krName: "대구대교구",
     enName: "Archdiocese of Daegu",
-    image: `${IMAGE_BASE}/did/apply/daegu.webp`,
+    image: `${IMAGE_BASE}/did/apply/daegu.jpg`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 70,
     total: 160,
@@ -79,7 +79,7 @@ const dioceseData = [
   {
     krName: "광주대교구",
     enName: "Archdiocese of Gwangju",
-    image: `${IMAGE_BASE}/did/apply/gwangju.webp`,
+    image: `${IMAGE_BASE}/did/apply/gwangju.png`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 60,
     total: 140,
@@ -95,7 +95,7 @@ const dioceseData = [
   {
     krName: "제주교구",
     enName: "Diocese of Jeju",
-    image: `${IMAGE_BASE}/did/apply/jeju.webp`,
+    image: `${IMAGE_BASE}/did/apply/jeju.png`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 12,
     total: 40,
@@ -103,7 +103,7 @@ const dioceseData = [
   {
     krName: "전주교구",
     enName: "Diocese of Jeonju",
-    image: `${IMAGE_BASE}/did/apply/jeonju.webp`,
+    image: `${IMAGE_BASE}/did/apply/jeonju.jpg`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 35,
     total: 110,
@@ -111,7 +111,7 @@ const dioceseData = [
   {
     krName: "마산교구",
     enName: "Diocese of Masan",
-    image: `${IMAGE_BASE}/did/apply/masan.webp`,
+    image: `${IMAGE_BASE}/did/apply/masan.jpg`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 18,
     total: 70,
@@ -119,7 +119,7 @@ const dioceseData = [
   {
     krName: "군종교구",
     enName: "Military Ordinariate",
-    image: `${IMAGE_BASE}/did/apply/gun.webp`,
+    image: `${IMAGE_BASE}/did/apply/gun.png`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 40,
     total: 100,
@@ -172,8 +172,8 @@ export async function generateMetadata({
     alternates: {
       canonical: `${SITE_URL}/${locale}/apply`,
       languages: {
-        ko: `${SITE_URL}/kr/apply`,
-        en: `${SITE_URL}/en/apply`,
+        "ko-KR": `${SITE_URL}/kr/apply`,
+        "en-US": `${SITE_URL}/en/apply`,
         "x-default": `${SITE_URL}/kr/apply`,
       },
     },
@@ -184,10 +184,15 @@ export async function generateMetadata({
       siteName: "2027 WYD SEOUL DID",
       locale: base.ogLocale,
       type: "website",
-      images: [{ url: OG_IMAGE, alt: "2027 WYD SEOUL DID logo" }],
+      images: [
+        {
+          url: OG_IMAGE,
+          alt: "2027 WYD SEOUL DID",
+        },
+      ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: `${t.heroTitle} | 2027 WYD SEOUL DID`,
       description: base.description,
       images: [OG_IMAGE],
@@ -241,76 +246,78 @@ export default async function Page({
                 "repeat(auto-fill, minmax(min(300px,100%), 1fr))",
             }}
           >
-            {dioceseData.map(({ krName, enName, href, image, applied, total }) => {
-              const name = locale === "kr" ? krName : enName;
-              const key = name.replace(/\s/g, "");
-              const rate = Math.round((applied / total) * 100);
-              return (
-                <li key={krName}>
-                  <Card className="w-full max-w-full px-4">
-                    <CardContent className="relative h-44 overflow-hidden">
-                      <Image
-                        src={image}
-                        fill
-                        className="object-cover"
-                        priority
-                        alt={name}
-                      />
-                    </CardContent>
-                    <CardHeader className="px-0">
-                      <CardTitle title={t.cardTitle(name)}>
-                        {t.cardTitle(name)}
-                      </CardTitle>
-                      <CardDescription
-                        className="truncate"
-                        title={t.cardDesc(name)}
-                      >
-                        {t.cardDesc(name)}
-                      </CardDescription>
-                      <div className="mt-1">
-                        <div className="flex justify-between items-center mb-1">
-                          <span className="text-xs font-medium text-gray-600">
-                            {t.rateLabel}
-                          </span>
-                          <span className="text-xs font-semibold text-gray-800">
-                            {rate}% ({applied}/{total})
-                          </span>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
-                          <style>{`
+            {dioceseData.map(
+              ({ krName, enName, href, image, applied, total }) => {
+                const name = locale === "kr" ? krName : enName;
+                const key = name.replace(/\s/g, "");
+                const rate = Math.round((applied / total) * 100);
+                return (
+                  <li key={krName}>
+                    <Card className="w-full max-w-full px-4">
+                      <CardContent className="relative h-44 overflow-hidden">
+                        <Image
+                          src={image}
+                          fill
+                          className="object-cover"
+                          priority
+                          alt={name}
+                        />
+                      </CardContent>
+                      <CardHeader className="px-0">
+                        <CardTitle title={t.cardTitle(name)}>
+                          {t.cardTitle(name)}
+                        </CardTitle>
+                        <CardDescription
+                          className="truncate"
+                          title={t.cardDesc(name)}
+                        >
+                          {t.cardDesc(name)}
+                        </CardDescription>
+                        <div className="mt-1">
+                          <div className="flex justify-between items-center mb-1">
+                            <span className="text-xs font-medium text-gray-600">
+                              {t.rateLabel}
+                            </span>
+                            <span className="text-xs font-semibold text-gray-800">
+                              {rate}% ({applied}/{total})
+                            </span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
+                            <style>{`
                             @keyframes fill-${key} {
                               from { width: 0%; }
                               to { width: ${rate}%; }
                             }
                           `}</style>
-                          <div
-                            className="h-1.5 rounded-full"
-                            style={{
-                              backgroundColor: "#0047BB",
-                              animation: `fill-${key} 1s ease-out forwards`,
-                            }}
-                          />
+                            <div
+                              className="h-1.5 rounded-full"
+                              style={{
+                                backgroundColor: "#0047BB",
+                                animation: `fill-${key} 1s ease-out forwards`,
+                              }}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    </CardHeader>
+                      </CardHeader>
 
-                    <CardFooter className="flex-col gap-2 px-0">
-                      <ApplyButton
-                        href={href}
-                        label={t.applyBtn}
-                        dialogTitle={t.privacyDialogTitle}
-                        dialogDesc={t.privacyDialogDesc}
-                        dialogDetail={t.privacyDialogDetail}
-                        dialogWarning={t.privacyWarning}
-                        agreeLabel={t.privacyAgreeLabel}
-                        confirmBtn={t.privacyConfirmBtn}
-                        cancelBtn={t.privacyCancelBtn}
-                      />
-                    </CardFooter>
-                  </Card>
-                </li>
-              );
-            })}
+                      <CardFooter className="flex-col gap-2 px-0">
+                        <ApplyButton
+                          href={href}
+                          label={t.applyBtn}
+                          dialogTitle={t.privacyDialogTitle}
+                          dialogDesc={t.privacyDialogDesc}
+                          dialogDetail={t.privacyDialogDetail}
+                          dialogWarning={t.privacyWarning}
+                          agreeLabel={t.privacyAgreeLabel}
+                          confirmBtn={t.privacyConfirmBtn}
+                          cancelBtn={t.privacyCancelBtn}
+                        />
+                      </CardFooter>
+                    </Card>
+                  </li>
+                );
+              },
+            )}
           </ul>
         </SubContentContainer>
       </SubLayout>

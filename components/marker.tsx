@@ -8,9 +8,10 @@ import {
   DialogTrigger,
   DialogHeader,
   DialogDescription,
+  DialogClose,
 } from "@/components/ui/dialog";
 
-import { MapPin, ExternalLink } from "lucide-react";
+import { MapPin, ExternalLink, X } from "lucide-react";
 import dioceseData from "@/public/data";
 import type { Locale } from "@/app/(nation)/_lib/content";
 
@@ -25,14 +26,14 @@ const dioceseImageMap: Record<string, string> = {
   원주교구: `${IMAGE_BASE}/did/apply/wonju.webp`,
   대전교구: `${IMAGE_BASE}/did/apply/daejeon.webp`,
   청주교구: `${IMAGE_BASE}/did/apply/cheongju.webp`,
-  대구대교구: `${IMAGE_BASE}/did/apply/daegu.webp`,
-  부산교구: `${IMAGE_BASE}/did/apply/busan.webp`,
-  마산교구: `${IMAGE_BASE}/did/apply/masan.webp`,
-  안동교구: `${IMAGE_BASE}/did/apply/andong.webp`,
-  광주대교구: `${IMAGE_BASE}/did/apply/gwangju.webp`,
-  전주교구: `${IMAGE_BASE}/did/apply/jeonju.webp`,
-  제주교구: `${IMAGE_BASE}/did/apply/jeju.webp`,
-  군종교구: `${IMAGE_BASE}/did/apply/gun.webp`,
+  대구대교구: `${IMAGE_BASE}/did/apply/daegu.jpg`,
+  부산교구: `${IMAGE_BASE}/did/apply/busan.jpg`,
+  마산교구: `${IMAGE_BASE}/did/apply/masan.jpg`,
+  안동교구: `${IMAGE_BASE}/did/apply/andong.jpg`,
+  광주대교구: `${IMAGE_BASE}/did/apply/gwangju.png`,
+  전주교구: `${IMAGE_BASE}/did/apply/jeonju.jpg`,
+  제주교구: `${IMAGE_BASE}/did/apply/jeju.png`,
+  군종교구: `${IMAGE_BASE}/did/apply/gun.png`,
 };
 
 const dioceseNameMap: Record<string, string> = {
@@ -84,7 +85,7 @@ export default function Marker({
   const isEn = locale === "en";
   const diocese = dioceseData.find((d) => d.name === name);
   const address = diocese?.address || "";
-  const displayName = isEn ? (dioceseNameMap[name] || name) : name;
+  const displayName = isEn ? dioceseNameMap[name] || name : name;
   const url = dioceseUrlMap[name];
 
   return (
@@ -97,14 +98,17 @@ export default function Marker({
         >
           <div className="w-5.5 h-5.5 bg-white rounded-full flex items-center justify-center relative">
             <MapPin width={18} height={18} fill="#fff" />
-            <span
-              className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 bg-[#0047BB] transition-colors duration-150 group-hover:bg-[#0A57D0]"
-            />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 bg-[#0047BB] transition-colors duration-150 group-hover:bg-[#0A57D0]" />
           </div>
-          <div className="body03m text-white whitespace-nowrap">{displayName}</div>
+          <div className="body03m text-white whitespace-nowrap">
+            {displayName}
+          </div>
         </button>
       </DialogTrigger>
-      <DialogContent className="w-[min(92vw,520px)] bg-white p-0 overflow-hidden rounded-2xl shadow-2xl border-0">
+      <DialogContent
+        showCloseButton={false}
+        className="w-[min(92vw,600px)] sm:max-w-[600px] bg-white p-0 overflow-hidden rounded-2xl shadow-2xl border-0"
+      >
         <DialogHeader className="sr-only">
           <DialogTitle>{displayName}</DialogTitle>
           <DialogDescription>
@@ -113,15 +117,19 @@ export default function Marker({
         </DialogHeader>
 
         <div className="w-full flex flex-col">
-          <div className="relative w-full aspect-[16/9] overflow-hidden">
+          <div className="relative w-full aspect-[2/1] overflow-hidden">
             <Image
               src={dioceseImageMap[name] || `${IMAGE_BASE}/apply/seoul.webp`}
               fill
-              className="object-cover scale-105"
+              className="object-fill"
               priority
               alt={isEn ? `${displayName} image` : `${displayName} 이미지`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <DialogClose className="absolute top-3 right-3 w-9 h-9 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/60 transition-colors cursor-pointer">
+              <X className="w-5 h-5 text-white" />
+              <span className="sr-only">닫기</span>
+            </DialogClose>
             <div className="absolute bottom-0 left-0 right-0 p-5">
               <h2 className="text-white text-xl font-bold leading-tight">
                 {displayName}
@@ -149,7 +157,9 @@ export default function Marker({
                 className="group flex items-center justify-center gap-x-2 px-4 py-3 transition-colors rounded-xl text-white text-sm font-semibold w-full"
                 style={{ backgroundColor: "#0047BB" }}
               >
-                {isEn ? "Visit Diocese DID Website" : "교구 DID 홈페이지 바로가기"}
+                {isEn
+                  ? "Visit Diocese DID Website"
+                  : "교구 DID 홈페이지 바로가기"}
                 <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
             ) : (
