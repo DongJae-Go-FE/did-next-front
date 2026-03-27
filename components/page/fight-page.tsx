@@ -74,16 +74,28 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
   const items: ItemType[] = [
     {
       type: "link",
-      href: "/",
+      href: "https://youtu.be/imkFMm4ZbBc",
       src: `${IMAGE_BASE}/did/main/fight/f1.png`,
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
       label: t.personLabel as unknown as string[],
     },
-    { type: "coming", src: `${IMAGE_BASE}/did/main/main04.png`, alt: "ComingSoon" },
-    { type: "coming", src: `${IMAGE_BASE}/did/main/main04.png`, alt: "ComingSoon" },
-    { type: "coming", src: `${IMAGE_BASE}/did/main/main04.png`, alt: "ComingSoon" },
+    {
+      type: "coming",
+      src: `${IMAGE_BASE}/did/main/main04.png`,
+      alt: "ComingSoon",
+    },
+    {
+      type: "coming",
+      src: `${IMAGE_BASE}/did/main/main04.png`,
+      alt: "ComingSoon",
+    },
+    {
+      type: "coming",
+      src: `${IMAGE_BASE}/did/main/main04.png`,
+      alt: "ComingSoon",
+    },
   ];
 
   const desktopItems = items.slice(0, 3);

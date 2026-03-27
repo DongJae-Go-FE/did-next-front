@@ -88,7 +88,7 @@ const dioceseData = [
     krName: "인천교구",
     enName: "Diocese of Incheon",
     image: `${IMAGE_BASE}/did/apply/incheon.jpg`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://forms.gle/aYJsg2TCdpCdMgF5A",
     applied: 45,
     total: 120,
   },
@@ -115,14 +115,6 @@ const dioceseData = [
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
     applied: 18,
     total: 70,
-  },
-  {
-    krName: "군종교구",
-    enName: "Military Ordinariate",
-    image: `${IMAGE_BASE}/did/apply/gun.png`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 40,
-    total: 100,
   },
   {
     krName: "수원교구",
