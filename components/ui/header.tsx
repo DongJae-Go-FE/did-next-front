@@ -120,7 +120,7 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
             </Select>
           </li>
 
-          <li
+          {/* <li
             className={cn(
               "transition-colors duration-500",
               shouldShowWhiteBg
@@ -129,7 +129,7 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
             )}
           >
             <Menu locale={locale} />
-          </li>
+          </li> */}
         </ul>
       </div>
     </header>
