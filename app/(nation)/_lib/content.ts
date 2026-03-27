@@ -213,10 +213,6 @@ export const content = {
       links: [
         { label: "WYD2027SEOUL", href: "https://wydseoul.org/" },
         { label: "Diocese of Incheon", href: "http://www.caincheon.or.kr/" },
-        {
-          label: "Incheon Youth Ministry",
-          href: "https://youth.caincheon.or.kr/",
-        },
       ],
       copyright: "Copyright ⓒ WYD2027 SEOUL DID All rights reserved",
     },
