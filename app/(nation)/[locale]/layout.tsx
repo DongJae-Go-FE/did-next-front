@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import "../../globals.css";
 
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
@@ -12,30 +10,6 @@ import { content, locales, type Locale } from "../_lib/content";
 
 const SITE_URL = "https://wyd2027did.org";
 const OG_IMAGE = "/logo.svg";
-
-const pretendard = localFont({
-  src: [
-    {
-      path: "../../fonts/Pretendard-Regular.subset.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../fonts/Pretendard-Medium.subset.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../fonts/Pretendard-Bold.subset.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  display: "swap",
-  preload: true,
-  variable: "--font-pretendard",
-  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-});
 
 function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
@@ -135,7 +109,6 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const lang = content[locale].lang;
   const t = content[locale].metadata;
 
   const jsonLd = {
@@ -166,19 +139,15 @@ export default async function LocaleLayout({
   };
 
   return (
-    <html lang={lang} className="lenis lenis-smooth">
-      <head>
-        <Script
-          id="json-ld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body className={pretendard.className}>
-        <Header locale={locale} />
-        <SmoothScrolling>{children}</SmoothScrolling>
-        <Footer locale={locale} />
-      </body>
-    </html>
+    <>
+      <Script
+        id="json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Header locale={locale} />
+      <SmoothScrolling>{children}</SmoothScrolling>
+      <Footer locale={locale} />
+    </>
   );
 }

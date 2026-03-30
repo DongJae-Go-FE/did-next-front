@@ -12,4 +12,3 @@ export const notion = new Client({
 });
 
 export const DATABASE_ID = process.env.NOTION_DATABASE_ID?.trim();
-

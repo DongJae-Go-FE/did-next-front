@@ -22,6 +22,7 @@ import {
 import SliderBackdrop from "@/components/ui/slider-backdrop";
 import ApplyButton from "@/components/apply-button";
 import { content, locales, type Locale } from "../../_lib/content";
+import { getDioceseChartData } from "@/lib/notion-status";
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 const SITE_URL = "https://wyd2027did.org";
@@ -33,112 +34,84 @@ const dioceseData = [
     enName: "Diocese of Andong",
     image: `${IMAGE_BASE}/did/apply/andong.jpg`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 10,
-    total: 50,
   },
   {
     krName: "부산교구",
     enName: "Diocese of Busan",
     image: `${IMAGE_BASE}/did/apply/busan.jpg`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 90,
-    total: 170,
   },
   {
     krName: "청주교구",
     enName: "Diocese of Cheongju",
     image: `${IMAGE_BASE}/did/apply/cheongju.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 25,
-    total: 90,
   },
   {
     krName: "춘천교구",
     enName: "Diocese of Chuncheon",
     image: `${IMAGE_BASE}/did/apply/chuncheon.webp`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 20,
-    total: 80,
   },
   {
     krName: "대구대교구",
     enName: "Archdiocese of Daegu",
     image: `${IMAGE_BASE}/did/apply/daegu.jpg`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 70,
-    total: 160,
   },
   {
     krName: "대전교구",
     enName: "Diocese of Daejeon",
-    image: `${IMAGE_BASE}/did/apply/daejeon.webp`,
+    image: `${IMAGE_BASE}/did/apply/daejeon.png`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 55,
-    total: 130,
   },
   {
     krName: "광주대교구",
     enName: "Archdiocese of Gwangju",
     image: `${IMAGE_BASE}/did/apply/gwangju.png`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 60,
-    total: 140,
   },
   {
     krName: "인천교구",
     enName: "Diocese of Incheon",
     image: `${IMAGE_BASE}/did/apply/incheon.jpg`,
     href: "https://forms.gle/aYJsg2TCdpCdMgF5A",
-    applied: 45,
-    total: 120,
   },
   {
     krName: "제주교구",
     enName: "Diocese of Jeju",
     image: `${IMAGE_BASE}/did/apply/jeju.png`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 12,
-    total: 40,
   },
   {
     krName: "전주교구",
     enName: "Diocese of Jeonju",
     image: `${IMAGE_BASE}/did/apply/jeonju.jpg`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 35,
-    total: 110,
   },
   {
     krName: "마산교구",
     enName: "Diocese of Masan",
     image: `${IMAGE_BASE}/did/apply/masan.jpg`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 18,
-    total: 70,
   },
   {
     krName: "수원교구",
     enName: "Diocese of Suwon",
-    image: `${IMAGE_BASE}/did/apply/suwon.webp`,
+    image: `${IMAGE_BASE}/did/apply/suwon.png`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 80,
-    total: 150,
   },
   {
     krName: "의정부교구",
     enName: "Diocese of Uijeongbu",
-    image: `${IMAGE_BASE}/did/apply/uijeongbu.webp`,
+    image: `${IMAGE_BASE}/did/apply/uijeongbu.png`,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 30,
-    total: 100,
   },
   {
     krName: "원주교구",
     enName: "Diocese of Wonju",
-    image: `${IMAGE_BASE}/did/apply/wonju.webp`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
-    applied: 15,
-    total: 60,
+    image: `${IMAGE_BASE}/did/apply/wonju.jpg`,
+    href: "https://docs.google.com/forms/d/1CdCodr8pIA4dQy_XBqt_FaAB0BxiDl2W1EosYzc1zXo/edit",
   },
 ];
 
@@ -206,6 +179,24 @@ export default async function Page({
   const locale = localeStr as Locale;
   const t = content[locale].applyPage;
 
+  const chartData = await getDioceseChartData();
+  const notionMap = new Map(
+    chartData.map((d) => [d.name, { applied: d.현재인원, total: d.목표인원 }]),
+  );
+
+  function findNotionData(krName: string) {
+    if (notionMap.has(krName)) return notionMap.get(krName)!;
+
+    const simplified = krName.replace("대교구", "교구");
+    if (notionMap.has(simplified)) return notionMap.get(simplified)!;
+
+    const short = krName.replace(/대?교구$/, "");
+    for (const [key, value] of notionMap) {
+      if (key.replace(/대?교구$/, "") === short) return value;
+    }
+    return { applied: 0, total: 1 };
+  }
+
   return (
     <div className="pt-30">
       <div className="w-full h-80 relative overflow-hidden flex justify-center items-center">
@@ -238,78 +229,77 @@ export default async function Page({
                 "repeat(auto-fill, minmax(min(300px,100%), 1fr))",
             }}
           >
-            {dioceseData.map(
-              ({ krName, enName, href, image, applied, total }) => {
-                const name = locale === "kr" ? krName : enName;
-                const key = name.replace(/\s/g, "");
-                const rate = Math.round((applied / total) * 100);
-                return (
-                  <li key={krName}>
-                    <Card className="w-full max-w-full px-4">
-                      <CardContent className="relative h-44 overflow-hidden">
-                        <Image
-                          src={image}
-                          fill
-                          className="object-cover"
-                          priority
-                          alt={name}
-                        />
-                      </CardContent>
-                      <CardHeader className="px-0">
-                        <CardTitle title={t.cardTitle(name)}>
-                          {t.cardTitle(name)}
-                        </CardTitle>
-                        <CardDescription
-                          className="truncate"
-                          title={t.cardDesc(name)}
-                        >
-                          {t.cardDesc(name)}
-                        </CardDescription>
-                        <div className="mt-1">
-                          <div className="flex justify-between items-center mb-1">
-                            <span className="text-xs font-medium text-gray-600">
-                              {t.rateLabel}
-                            </span>
-                            <span className="text-xs font-semibold text-gray-800">
-                              {rate}% ({applied}/{total})
-                            </span>
-                          </div>
-                          <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
-                            <style>{`
+            {dioceseData.map(({ krName, enName, href, image }) => {
+              const { applied, total } = findNotionData(krName);
+              const name = locale === "kr" ? krName : enName;
+              const key = name.replace(/\s/g, "");
+              const rate = Math.round((applied / total) * 100);
+              return (
+                <li key={krName}>
+                  <Card className="w-full max-w-full px-4">
+                    <CardContent className="relative h-44 overflow-hidden">
+                      <Image
+                        src={image}
+                        fill
+                        className="object-cover"
+                        priority
+                        alt={name}
+                      />
+                    </CardContent>
+                    <CardHeader className="px-0">
+                      <CardTitle title={t.cardTitle(name)}>
+                        {t.cardTitle(name)}
+                      </CardTitle>
+                      {/* <CardDescription
+                        className="truncate"
+                        title={t.cardDesc(name)}
+                      >
+                        {t.cardDesc(name)}
+                      </CardDescription>
+                      <div className="mt-1">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-xs font-medium text-gray-600">
+                            {t.rateLabel}
+                          </span>
+                          <span className="text-xs font-semibold text-gray-800">
+                            {rate}% ({applied}/{total})
+                          </span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
+                          <style>{`
                             @keyframes fill-${key} {
                               from { width: 0%; }
                               to { width: ${rate}%; }
                             }
                           `}</style>
-                            <div
-                              className="h-1.5 rounded-full"
-                              style={{
-                                backgroundColor: "#0047BB",
-                                animation: `fill-${key} 1s ease-out forwards`,
-                              }}
-                            />
-                          </div>
+                          <div
+                            className="h-1.5 rounded-full"
+                            style={{
+                              backgroundColor: "#0047BB",
+                              animation: `fill-${key} 1s ease-out forwards`,
+                            }}
+                          />
                         </div>
-                      </CardHeader>
+                      </div> */}
+                    </CardHeader>
 
-                      <CardFooter className="flex-col gap-2 px-0">
-                        <ApplyButton
-                          href={href}
-                          label={t.applyBtn}
-                          dialogTitle={t.privacyDialogTitle}
-                          dialogDesc={t.privacyDialogDesc}
-                          dialogDetail={t.privacyDialogDetail}
-                          dialogWarning={t.privacyWarning}
-                          agreeLabel={t.privacyAgreeLabel}
-                          confirmBtn={t.privacyConfirmBtn}
-                          cancelBtn={t.privacyCancelBtn}
-                        />
-                      </CardFooter>
-                    </Card>
-                  </li>
-                );
-              },
-            )}
+                    {/* <CardFooter className="flex-col gap-2 px-0">
+                      <ApplyButton
+                        href={href}
+                        label={t.applyBtn}
+                        dialogTitle={t.privacyDialogTitle}
+                        dialogDesc={t.privacyDialogDesc}
+                        dialogDetail={t.privacyDialogDetail}
+                        dialogWarning={t.privacyWarning}
+                        agreeLabel={t.privacyAgreeLabel}
+                        confirmBtn={t.privacyConfirmBtn}
+                        cancelBtn={t.privacyCancelBtn}
+                      />
+                    </CardFooter> */}
+                  </Card>
+                </li>
+              );
+            })}
           </ul>
         </SubContentContainer>
       </SubLayout>
