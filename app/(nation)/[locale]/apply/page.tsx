@@ -99,7 +99,7 @@ const dioceseData = [
     krName: "수원교구",
     enName: "Diocese of Suwon",
     image: `${IMAGE_BASE}/did/apply/suwon.png`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSdtMnx0BWhPVb7YriKYjROjU0UKKAzrTvY1DkjZZ3Lx6fT_ww/viewform",
   },
   {
     krName: "의정부교구",
