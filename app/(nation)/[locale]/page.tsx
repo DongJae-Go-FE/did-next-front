@@ -44,14 +44,14 @@ export default async function Home({
         </div>
       </div>
       {/* <ApplyCtaSection locale={locale} /> */}
-      {/* <div
+      <div
         className="w-full bg-white px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12"
         id="map"
       >
         <div className="max-w-[1400px] mx-auto">
           <MapPage locale={locale} />
         </div>
-      </div> */}
+      </div>
       {/* <div
         className="w-full h-fit bg-gray-100 px-12 py-24 max-[1079px]:px-8 max-[1079px]:py-16 max-[767px]:px-5 max-[767px]:py-12 scroll-mt-20"
         id="sponsor"

@@ -33,7 +33,7 @@ const dioceseData = [
     krName: "안동교구",
     enName: "Diocese of Andong",
     image: `${IMAGE_BASE}/did/apply/andong.jpg`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://forms.gle/vdmVvsfDaDeXGdNE6",
   },
   {
     krName: "부산교구",
@@ -81,7 +81,7 @@ const dioceseData = [
     krName: "제주교구",
     enName: "Diocese of Jeju",
     image: `${IMAGE_BASE}/did/apply/jeju.png`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://forms.gle/BGyxRicjoq7jyfXF8",
   },
   {
     krName: "전주교구",
