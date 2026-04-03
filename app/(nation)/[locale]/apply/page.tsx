@@ -281,6 +281,13 @@ export default async function Page({
                           />
                         </div>
                       </div> */}
+
+                      <CardDescription
+                        className="truncate"
+                        title={t.cardDesc(name)}
+                      >
+                        {t.cardDesc(name)}
+                      </CardDescription>
                     </CardHeader>
 
                     {/* <CardFooter className="flex-col gap-2 px-0">

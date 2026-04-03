@@ -22,7 +22,7 @@ export default function SliderItem000En() {
 Registration is available only through this page,
 and individual applications are not accepted.
 
-Registration is scheduled to open in May,
+Registration is scheduled to open on June 1st,
 and detailed dates will be announced later.`}</p>
       </div>
       <div className="absolute top-0 left-0 z-10 h-full w-full backdrop-brightness-30" />

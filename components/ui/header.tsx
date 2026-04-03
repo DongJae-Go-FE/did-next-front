@@ -106,7 +106,10 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
         <ul className="flex items-center gap-x-1">
           <li>
             <Select value={value} onValueChange={handleLanguageChange}>
-              <SelectTrigger className="border-none font-black text-lg" size="lg">
+              <SelectTrigger
+                className="border-none font-black text-lg"
+                size="lg"
+              >
                 <SelectValue className="placeholder:text-white data-[placeholder]:text-white" />
               </SelectTrigger>
               <SelectContent size="lg" className="font-black">
@@ -120,7 +123,7 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
             </Select>
           </li>
 
-          {/* <li
+          <li
             className={cn(
               "transition-colors duration-500",
               shouldShowWhiteBg
@@ -129,7 +132,7 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
             )}
           >
             <Menu locale={locale} />
-          </li> */}
+          </li>
         </ul>
       </div>
     </header>

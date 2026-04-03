@@ -116,7 +116,7 @@ export const content = {
       pageTitle: "DID 신청",
       cardTitle: (name: string) => `${name} 교구 DID 신청`,
       cardDesc: (name: string) =>
-        `버튼을 누르면 ${name} 교구 DID 신청을 합니다.`,
+        `6월 1일부터 신청 가능합니다.`,
       rateLabel: "신청률",
       applyBtn: "신청하기",
       privacyDialogTitle: "개인정보 수집·이용 동의",
@@ -292,7 +292,7 @@ export const content = {
       leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
       pageTitle: "DID Application",
       cardTitle: (name: string) => `${name} DID Application`,
-      cardDesc: (name: string) => `Click the button to apply for ${name} DID.`,
+      cardDesc: (name: string) => `Applications open from June 1st.`,
       rateLabel: "Application Rate",
       applyBtn: "Apply",
       privacyDialogTitle:

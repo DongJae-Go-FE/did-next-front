@@ -19,7 +19,7 @@ export default function SliderItem000() {
         <p className="whitespace-pre-line w-full body01b text-3xl max-[1080px]:text-2xl max-[769px]:text-xl">{`본 페이지는 교구대회 참가 신청을 위한 전용 페이지로, 
         교구대회 신청은 본 페이지를 통해서만 가능하며 
         개별 신청은 받지 않습니다.
-신청 접수는 5월 중 진행될 예정이며, 
+신청 접수는 6월 1일부터 시작될 예정이며,
 세부 일정은 추후 공지드릴 예정입니다.`}</p>
       </div>
       <div className="absolute top-0 left-0 z-10 h-full w-full backdrop-brightness-30" />
