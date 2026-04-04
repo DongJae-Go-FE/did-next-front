@@ -28,7 +28,11 @@ type ItemType =
 function CardItem({ item }: { item: ItemType }) {
   if (item.type === "link") {
     return (
-      <Link href={item.href} className="group block h-full w-full relative">
+      <Link
+        href={item.href}
+        className="group block h-full w-full relative"
+        target="_blank"
+      >
         <Image
           src={item.src}
           alt={item.alt}

@@ -18,12 +18,8 @@ export default function SliderItem000En() {
         <h2 className="heading02b w-full text-5xl max-[1080px]:text-4xl max-[769px]:text-3xl">
           Notice
         </h2>
-        <p className="body01b w-full whitespace-pre-line text-3xl max-[1080px]:text-2xl max-[769px]:text-xl">{`This page is dedicated to diocesan event registration.
-Registration is available only through this page,
-and individual applications are not accepted.
-
-Registration is scheduled to open on June 1st,
-and detailed dates will be announced later.`}</p>
+        <p className="body01b w-full whitespace-pre-line text-3xl max-[1080px]:text-2xl max-[769px]:text-xl">{`The DID site opening, originally scheduled for April 5th, has been postponed at the request of the diocesan event organizers.
+The new opening date will be announced at a later time.`}</p>
       </div>
       <div className="absolute top-0 left-0 z-10 h-full w-full backdrop-brightness-30" />
     </div>
