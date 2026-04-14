@@ -86,9 +86,13 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
       label: t.personLabel as unknown as string[],
     },
     {
-      type: "coming",
-      src: `${IMAGE_BASE}/did/main/main04.png`,
-      alt: "ComingSoon",
+      type: "link",
+      href: "https://www.youtube.com/watch?v=oZFuDfvdoIs",
+      src: `${IMAGE_BASE}/did/main/fight/f2.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      label: t.personLabel2 as unknown as string[],
     },
     {
       type: "coming",

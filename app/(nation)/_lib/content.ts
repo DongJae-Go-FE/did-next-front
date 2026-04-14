@@ -102,6 +102,7 @@ export const content = {
         { text: "DID!", color: "#E54A47" },
       ],
       personLabel: ["손석희", "마르첼리노", "아나운서"],
+      personLabel2: ["정승제", "안토니오", "선생님"],
       personAlt: "손석희 아나운서 응원영상",
     },
     applyPage: {
@@ -282,6 +283,7 @@ export const content = {
         { text: "DID!", color: "#E54A47" },
       ],
       personLabel: ["Son Suk-hee", "Marcellino", "Announcer"],
+      personLabel2: ["Jung Seung-je", "Antonio", "Teacher"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
