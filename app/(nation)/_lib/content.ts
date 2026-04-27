@@ -29,7 +29,7 @@ export const content = {
       sponsorEmail: "wyd2027@naver.com",
       links: [
         { label: "WYD2027SEOUL", href: "https://wydseoul.org/" },
-        { label: "인천교구청", href: "http://www.caincheon.or.kr/" },
+        { label: "한국천주교주교회의", href: "https://www.cbck.or.kr" },
       ],
       copyright: "Copyright ⓒ WYD2027 SEOUL DID All rights reserved",
     },
@@ -103,6 +103,8 @@ export const content = {
       ],
       personLabel: ["손석희", "마르첼리노", "아나운서"],
       personLabel2: ["정승제", "안토니오", "선생님"],
+      personLabel3: ["이보영", "클라라", "선생님"],
+      personLabel4: ["크라잉넛"],
       personAlt: "손석희 아나운서 응원영상",
     },
     applyPage: {
@@ -213,7 +215,7 @@ export const content = {
       sponsorEmail: "wyd2027@naver.com",
       links: [
         { label: "WYD2027SEOUL", href: "https://wydseoul.org/" },
-        { label: "Diocese of Incheon", href: "http://www.caincheon.or.kr/" },
+        { label: "Catholic Bishops' Conference of Korea", href: "https://www.cbck.or.kr" },
       ],
       copyright: "Copyright ⓒ WYD2027 SEOUL DID All rights reserved",
     },
@@ -284,6 +286,8 @@ export const content = {
       ],
       personLabel: ["Son Suk-hee", "Marcellino", "Announcer"],
       personLabel2: ["Jung Seung-je", "Antonio", "Teacher"],
+      personLabel3: ["Lee Bo-young", "Clara", "Teacher"],
+      personLabel4: ["Crying Nut"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
