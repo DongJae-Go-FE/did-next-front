@@ -20,8 +20,8 @@ export const content = {
     footer: {
       logoAlt: "DID 로고",
       homeHref: "/",
-      address: "도로명 주소 : 인천광역시 동구 박문로1 (송림동 103-25)",
-      address2: "지번 주소 : 인천광역시 동구 송림동 103-8",
+      address:
+        "도로명 주소 : 서울 광진구 면목로 74, 한국천주교중앙협의회, 04918",
       email: "이메일 : wyd2027did@cbck.kr",
       phone: "032-765-6960",
       hours: "운영시간: 10:00 ~ 18:00",
@@ -211,8 +211,8 @@ export const content = {
     footer: {
       logoAlt: "DID Logo",
       homeHref: "/en",
-      address: "Address: 1 Bakmun-ro, Dong-gu, Incheon, Republic of Korea",
-      address2: "",
+      address:
+        "Address: Catholic Bishops' Conference of Korea, 74 Myeonmok-ro, Gwangjin-gu, Seoul 04918, Republic of Korea",
       email: "Email: wyd2027did@cbck.kr",
       phone: "+82-32-765-6960",
       hours: "Hours: 10:00 AM ~ 6:00 PM (KST)",

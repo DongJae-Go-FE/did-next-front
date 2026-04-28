@@ -24,7 +24,6 @@ export default function Footer({ locale = "kr" }: { locale?: Locale }) {
           <address className="not-italic">
             <ul className="flex flex-col gap-y-2 body02R">
               <li>{t.address}</li>
-              {t.address2 && <li>{t.address2}</li>}
               <li>{t.email}</li>
             </ul>
           </address>
