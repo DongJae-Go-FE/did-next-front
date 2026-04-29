@@ -14,11 +14,11 @@ export const content = {
       ogLocale: "ko_KR",
     },
     header: {
-      logoAlt: "wyd logo",
+      logoAlt: "wyd did",
       homeHref: "/",
     },
     footer: {
-      logoAlt: "DID 로고",
+      logoAlt: "DID",
       homeHref: "/",
       address:
         "도로명 주소 : 서울 광진구 면목로 74, 한국천주교중앙협의회, 04918",
@@ -205,11 +205,11 @@ export const content = {
       ogLocale: "en_US",
     },
     header: {
-      logoAlt: "wyd logo",
+      logoAlt: "wyd did",
       homeHref: "/en",
     },
     footer: {
-      logoAlt: "DID Logo",
+      logoAlt: "DID",
       homeHref: "/en",
       address:
         "Address: Catholic Bishops' Conference of Korea, 74 Myeonmok-ro, Gwangjin-gu, Seoul 04918, Republic of Korea",
