@@ -105,7 +105,9 @@ export const content = {
       personLabel2: ["정승제", "안토니오", "선생님"],
       personLabel3: ["이보영", "클라라", "선생님"],
       personLabel4: ["크라잉넛"],
-      personAlt: "손석희 아나운서 응원영상",
+      personLabel5: ["이해인", "클라우디아", "수녀님"],
+      personLabel6: ["알베르토", "몬디"],
+      personAlt: "wyd did 응원영상",
     },
     applyPage: {
       heroAlt: "서브페이지 배경",
@@ -296,6 +298,8 @@ export const content = {
       personLabel2: ["Jung Seung-je", "Antonio", "Teacher"],
       personLabel3: ["Lee Bo-young", "Clara", "Teacher"],
       personLabel4: ["Crying Nut"],
+      personLabel5: ["Lee Hae-in", "Claudia", "Sister"],
+      personLabel6: ["Alberto", "Mondi"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
