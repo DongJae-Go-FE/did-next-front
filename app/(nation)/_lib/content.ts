@@ -20,11 +20,8 @@ export const content = {
     footer: {
       logoAlt: "DID",
       homeHref: "/",
-      address:
-        "도로명 주소 : 서울 광진구 면목로 74, 한국천주교중앙협의회, 04918",
-      email: "이메일 : wyd2027did@cbck.kr",
-      phone: "032-765-6960",
-      hours: "운영시간: 10:00 ~ 18:00",
+      address: "서울 광진구 면목로 74, 한국천주교중앙협의회, 04918",
+      email: "wyd2027did@cbck.kr",
       sponsorInquiry: "후원 문의",
       sponsorEmail: "wyd2027did@cbck.kr",
       links: [
@@ -52,13 +49,13 @@ export const content = {
             { label: "후원사 소개", href: "/kr#sponsor" },
           ],
         },
-        {
-          title: "참여",
-          items: [
-            { label: "DID 신청", href: "/kr/apply" },
-            { label: "교구별 신청 현황", href: "/kr/status" },
-          ],
-        },
+        // {
+        //   title: "참여",
+        //   items: [
+        //     { label: "DID 신청", href: "/kr/apply" },
+        //     { label: "교구별 신청 현황", href: "/kr/status" },
+        //   ],
+        // },
       ],
     },
     intro: {
@@ -107,6 +104,7 @@ export const content = {
       personLabel4: ["크라잉넛"],
       personLabel5: ["이해인", "클라우디아", "수녀님"],
       personLabel6: ["알베르토", "몬디"],
+      personLabel7: ["손숙", "헬레나", "배우"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -215,9 +213,7 @@ export const content = {
       homeHref: "/en",
       address:
         "Address: Catholic Bishops' Conference of Korea, 74 Myeonmok-ro, Gwangjin-gu, Seoul 04918, Republic of Korea",
-      email: "Email: wyd2027did@cbck.kr",
-      phone: "+82-32-765-6960",
-      hours: "Hours: 10:00 AM ~ 6:00 PM (KST)",
+      email: "wyd2027did@cbck.kr",
       sponsorInquiry: "Sponsorship Inquiry",
       sponsorEmail: "wyd2027did@cbck.kr",
       links: [
@@ -248,10 +244,10 @@ export const content = {
             { label: "Sponsors", href: "/en#sponsor" },
           ],
         },
-        {
-          title: "PARTICIPATE",
-          items: [{ label: "DID Application", href: "/en/apply" }],
-        },
+        // {
+        //   title: "PARTICIPATE",
+        //   items: [{ label: "DID Application", href: "/en/apply" }],
+        // },
       ],
     },
     intro: {
@@ -300,6 +296,7 @@ export const content = {
       personLabel4: ["Crying Nut"],
       personLabel5: ["Lee Hae-in", "Claudia", "Sister"],
       personLabel6: ["Alberto", "Mondi"],
+      personLabel7: ["Son Sook", "Helena", "Actress"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {

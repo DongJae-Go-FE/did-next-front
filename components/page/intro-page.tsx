@@ -9,21 +9,21 @@ import CountDay from "../count-day";
 import { content, type Locale } from "@/app/(nation)/_lib/content";
 
 const dioceseLogo = [
-  { src: "/logo/logo-andong.svg", krName: "안동교구", enName: "Diocese of Andong", href: "https://www.acatholic.or.kr", w: 0, h: 0 },
-  { src: "/logo/logo-busan.svg", krName: "부산교구", enName: "Diocese of Busan", href: "http://www.catholicbusan.or.kr", w: 0, h: 0 },
-  { src: "/logo/logo-cheongju.svg", krName: "청주교구", enName: "Diocese of Cheongju", href: "https://www.cdcj.or.kr", w: 0, h: 0 },
-  { src: "/logo/logo-chuncheon.svg", krName: "춘천교구", enName: "Diocese of Chuncheon", href: "https://www.cccatholic.or.kr", w: 0, h: 0 },
-  { src: "/logo/logo-daegu.svg", krName: "대구교구", enName: "Archdiocese of Daegu", href: "https://www.daegu-archdiocese.or.kr", w: 0, h: 0 },
-  { src: "/logo/logo-daejeon.svg", krName: "대전교구", enName: "Diocese of Daejeon", href: "https://www.djcatholic.or.kr/home", w: 0, h: 0 },
-  { src: "/logo/logo-gwangju.svg", krName: "광주교구", enName: "Archdiocese of Gwangju", href: "https://www.gjcatholic.or.kr", w: 0, h: 0 },
-  { src: "/logo/logo-incheon.svg", krName: "인천교구", enName: "Diocese of Incheon", href: "http://www.caincheon.or.kr", w: 0, h: 0 },
-  { src: "/logo/logo-jeju.svg", krName: "제주교구", enName: "Diocese of Jeju", href: "https://www.diocesejeju.or.kr", w: 0, h: 0 },
-  { src: "/logo/logo-jeonju.svg", krName: "전주교구", enName: "Diocese of Jeonju", href: "https://www.jcatholic.or.kr", w: 0, h: 0 },
-  { src: "/logo/logo-masan.svg", krName: "마산교구", enName: "Diocese of Masan", href: "https://cathms.kr", w: 0, h: 0 },
-  { src: "/logo/logo-militury.svg", krName: "군종교구", enName: "Military Ordinariate", href: "https://www.gunjong.or.kr", w: 200, h: 120 },
-  { src: "/logo/logo-suwon.svg", krName: "수원교구", enName: "Diocese of Suwon", href: "https://www.casuwon.or.kr", w: 0, h: 0 },
-  { src: "/logo/logo-uijeongbu.svg", krName: "의정부교구", enName: "Diocese of Uijeongbu", href: "http://ucatholic.or.kr", w: 0, h: 0 },
-  { src: "/logo/logo-wonju.svg", krName: "원주교구", enName: "Diocese of Wonju", href: "http://www.wjcatholic.or.kr", w: 0, h: 0 },
+  { src: "/logo/logo-andong.svg", krName: "안동교구", enName: "Diocese of Andong", href: "https://www.wyd2027did-andong.org", w: 0, h: 0 },
+  { src: "/logo/logo-busan.svg", krName: "부산교구", enName: "Diocese of Busan", href: "https://www.wyd2027did-busan.org", w: 0, h: 0 },
+  { src: "/logo/logo-cheongju.svg", krName: "청주교구", enName: "Diocese of Cheongju", href: "https://www.wyd2027did-cdcj.org", w: 0, h: 0 },
+  { src: "/logo/logo-chuncheon.svg", krName: "춘천교구", enName: "Diocese of Chuncheon", href: "https://www.wyd2027did-cccatholic.org", w: 0, h: 0 },
+  { src: "/logo/logo-daegu.svg", krName: "대구교구", enName: "Archdiocese of Daegu", href: "https://www.wyd2027did-daegu.org", w: 0, h: 0 },
+  { src: "/logo/logo-daejeon.svg", krName: "대전교구", enName: "Diocese of Daejeon", href: "https://www.wyd2027did-daejeon.org", w: 0, h: 0 },
+  { src: "/logo/logo-gwangju.svg", krName: "광주교구", enName: "Archdiocese of Gwangju", href: "https://www.wyd2027did-gwangju.org", w: 0, h: 0 },
+  { src: "/logo/logo-incheon.svg", krName: "인천교구", enName: "Diocese of Incheon", href: "https://www.wyd2027did-incheon.org", w: 0, h: 0 },
+  { src: "/logo/logo-jeju.svg", krName: "제주교구", enName: "Diocese of Jeju", href: "https://www.wyd2027did-jeju.org", w: 0, h: 0 },
+  { src: "/logo/logo-jeonju.svg", krName: "전주교구", enName: "Diocese of Jeonju", href: "https://www.wyd2027did-jeonju.org", w: 0, h: 0 },
+  { src: "/logo/logo-masan.svg", krName: "마산교구", enName: "Diocese of Masan", href: "https://www.wyd2027did-masan.org", w: 0, h: 0 },
+  { src: "/logo/logo-militury.svg", krName: "군종교구", enName: "Military Ordinariate", href: "https://www.wyd2027did-gunjong.org", w: 200, h: 120 },
+  { src: "/logo/logo-suwon.svg", krName: "수원교구", enName: "Diocese of Suwon", href: "https://www.wyd2027did-suwon.org", w: 0, h: 0 },
+  { src: "/logo/logo-uijeongbu.svg", krName: "의정부교구", enName: "Diocese of Uijeongbu", href: "https://www.wyd2027did-uijeongbu.org", w: 0, h: 0 },
+  { src: "/logo/logo-wonju.svg", krName: "원주교구", enName: "Diocese of Wonju", href: "https://www.wyd2027did-wonju.org", w: 0, h: 0 },
 ];
 
 export default function IntroPage({ locale = "kr" }: { locale?: Locale }) {

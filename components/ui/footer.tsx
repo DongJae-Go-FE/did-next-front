@@ -29,8 +29,6 @@ export default function Footer({ locale = "kr" }: { locale?: Locale }) {
           </address>
         </div>
         <div>
-          <h3 className="heading03B">{t.phone}</h3>
-          <p className="body02R">{t.hours}</p>
           <div className="mt-4 mb-4">
             <p className="body02R text-white">{t.sponsorInquiry}</p>
             <a
