@@ -76,7 +76,10 @@ function DioceseCard({ name, locale }: { name: string; locale: Locale }) {
   const diocese = dioceseData.find((d) => d.name === name);
   const address = diocese?.address || "";
   const displayName = isEn ? dioceseNameMap[name] || name : name;
-  const url = dioceseUrlMap[name];
+  const baseUrl = dioceseUrlMap[name];
+  const url = baseUrl
+    ? `${baseUrl}/${isEn ? "en" : "kr"}`
+    : undefined;
 
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">

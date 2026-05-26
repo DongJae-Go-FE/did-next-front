@@ -105,6 +105,7 @@ export const content = {
       personLabel5: ["이해인", "클라우디아", "수녀님"],
       personLabel6: ["알베르토", "몬디"],
       personLabel7: ["손숙", "헬레나", "배우"],
+      personLabel8: ["크리스티나", "콘팔로니에리"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -297,6 +298,7 @@ export const content = {
       personLabel5: ["Lee Hae-in", "Claudia", "Sister"],
       personLabel6: ["Alberto", "Mondi"],
       personLabel7: ["Son Sook", "Helena", "Actress"],
+      personLabel8: ["Christina", "Confalonieri"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {

@@ -163,6 +163,16 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
       label: t.personLabel7 as unknown as string[],
       labelClassName: LABEL_RIGHT,
     },
+    {
+      type: "link",
+      href: "https://www.youtube.com/watch?v=ajIQN5gMrFw",
+      src: `${IMAGE_BASE}/did/main/fight/f8.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      label: t.personLabel8 as unknown as string[],
+      labelClassName: LABEL_RIGHT,
+    },
   ];
 
   const desktopItems = items;
