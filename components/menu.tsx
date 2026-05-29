@@ -36,7 +36,7 @@ export default function Menu({ locale = "kr" }: { locale?: Locale }) {
         showCloseButton={false}
         data-lenis-prevent
         className={cn(
-          "w-screen h-screen sm:max-w-full rounded-none bg-black p-0 gap-0 border-none max-w-full",
+          "w-full h-dvh sm:max-w-full rounded-none bg-black p-0 gap-0 border-none max-w-full",
           "data-[state=open]:animate-slide-down data-[state=closed]:animate-slide-up",
           "flex flex-col",
         )}

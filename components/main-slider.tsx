@@ -143,7 +143,7 @@ export default function MainSlider({ locale = "kr" }: { locale?: Locale }) {
   return (
     <div
       ref={flickingRef}
-      className="flicking-viewport relative h-[90dvh] w-screen flicking-hidden"
+      className="flicking-viewport relative h-[90dvh] w-full flicking-hidden"
     >
       <div className="flicking-camera">
         {isKr ? (

@@ -1,0 +1,823 @@
+- generic:
+  - banner:
+    - generic:
+      - heading [level=1]:
+        - link:
+          - /url: /
+          - img
+      - list:
+        - listitem:
+          - combobox:
+            - generic: KR
+            - img
+        - listitem:
+          - button [expanded]:
+            - img
+  - main:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - img
+                - generic:
+                  - generic:
+                    - paragraph: 용기를 내어라.
+                  - generic:
+                    - paragraph: 내가 세상을 이겼다.
+                  - generic:
+                    - paragraph: (요한 16,33)
+                - heading [level=2]: DAYS IN DIOCESE
+        - generic:
+          - button:
+            - img
+          - button:
+            - img
+          - generic: 02 / 03
+          - button:
+            - img
+    - generic:
+      - generic:
+        - heading [level=2]: 2027 WYD 와 교구대회를 응원합니다! CHEER UP 2027 WYD & DID!
+        - list:
+          - listitem:
+            - link:
+              - /url: https://youtu.be/imkFMm4ZbBc
+              - img
+              - generic:
+                - text: 손석희
+                - generic: 마르첼리노
+                - generic: 아나운서
+          - listitem:
+            - link:
+              - /url: https://www.youtube.com/watch?v=oZFuDfvdoIs
+              - img
+              - generic:
+                - text: 정승제
+                - generic: 안토니오
+                - generic: 선생님
+          - listitem:
+            - link:
+              - /url: https://www.youtube.com/watch?v=H2x_ZZFW5so
+              - img
+              - generic:
+                - text: 이보영
+                - generic: 클라라
+                - generic: 선생님
+          - listitem:
+            - link:
+              - /url: https://www.youtube.com/watch?v=6YkrDOfUQXw
+              - img
+              - generic: 크라잉넛
+          - listitem:
+            - link:
+              - /url: https://www.youtube.com/watch?v=FqiCdbjvuVM
+              - img
+              - generic:
+                - text: 이해인
+                - generic: 클라우디아
+                - generic: 수녀님
+          - listitem:
+            - link:
+              - /url: https://www.youtube.com/watch?v=5fCIKQvKkSA
+              - img
+              - generic:
+                - text: 알베르토
+                - generic: 몬디
+          - listitem:
+            - link:
+              - /url: https://www.youtube.com/watch?v=j71e-K_NukE
+              - img
+              - generic:
+                - text: 손숙
+                - generic: 헬레나
+                - generic: 배우
+          - listitem:
+            - link:
+              - /url: https://www.youtube.com/watch?v=ajIQN5gMrFw
+              - img
+              - generic:
+                - text: 크리스티나
+                - generic: 콘팔로니에리
+    - generic:
+      - generic:
+        - generic:
+          - region:
+            - generic:
+              - list:
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-andong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-busan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cdcj.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cccatholic.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daegu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daejeon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gwangju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-incheon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeonju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-masan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gunjong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-suwon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-uijeongbu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-wonju.org
+                    - generic:
+                      - img
+              - list:
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-andong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-busan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cdcj.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cccatholic.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daegu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daejeon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gwangju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-incheon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeonju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-masan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gunjong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-suwon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-uijeongbu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-wonju.org
+                    - generic:
+                      - img
+              - list:
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-andong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-busan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cdcj.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cccatholic.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daegu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daejeon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gwangju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-incheon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeonju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-masan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gunjong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-suwon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-uijeongbu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-wonju.org
+                    - generic:
+                      - img
+        - generic:
+          - paragraph:
+            - generic: WYD
+            - generic: "2027"
+            - generic: SEOUL
+            - generic: DID
+            - generic: 페이지에
+            - generic: 오신걸
+            - generic: 환영합니다.
+          - paragraph:
+            - generic: DAY
+            - generic: OF
+            - generic: THE
+            - generic: EVENT
+          - generic: D - 0
+        - generic:
+          - region:
+            - generic:
+              - list:
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-andong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-busan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cdcj.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cccatholic.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daegu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daejeon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gwangju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-incheon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeonju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-masan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gunjong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-suwon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-uijeongbu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-wonju.org
+                    - generic:
+                      - img
+              - list:
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-andong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-busan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cdcj.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cccatholic.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daegu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daejeon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gwangju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-incheon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeonju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-masan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gunjong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-suwon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-uijeongbu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-wonju.org
+                    - generic:
+                      - img
+              - list:
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-andong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-busan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cdcj.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-cccatholic.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daegu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-daejeon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gwangju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-incheon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-jeonju.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-masan.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-gunjong.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-suwon.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-uijeongbu.org
+                    - generic:
+                      - img
+                - listitem:
+                  - link:
+                    - /url: https://www.wyd2027did-wonju.org
+                    - generic:
+                      - img
+    - generic:
+      - generic:
+        - generic:
+          - heading [level=2]: 교구 소개(마커를 클릭해주세요)
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 서울대교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 인천교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 수원교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 대전교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 대구대교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 광주대교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 부산교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 안동교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 청주교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 전주교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 제주교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 춘천교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 의정부교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 원주교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 마산교구
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic:
+                            - img
+                          - generic: 군종교구
+                - generic [ref=e1168]: 50km
+                - generic:
+                  - link [ref=e1177] [cursor=pointer]:
+                    - /url: https://ssl.pstatic.net/static/maps/mantle/notice/legal.html
+                    - img [ref=e1178]
+                  - generic:
+                    - generic:
+                      - generic: © NAVER Corp.
+                      - link [ref=e1179] [cursor=pointer]:
+                        - /url: http://www.openstreetmap.org/copyright
+                        - text: /OpenStreetMap
+                - generic [ref=e1173]: 50km
+                - generic:
+                  - link [ref=e1180] [cursor=pointer]:
+                    - /url: https://ssl.pstatic.net/static/maps/mantle/notice/legal.html
+                    - img [ref=e1181]
+                  - generic:
+                    - generic:
+                      - generic: © NAVER Corp.
+                      - link [ref=e1182] [cursor=pointer]:
+                        - /url: http://www.openstreetmap.org/copyright
+                        - text: /OpenStreetMap
+    - generic:
+      - generic:
+        - heading [level=2]: 공식 후원사
+        - list:
+          - listitem:
+            - link:
+              - /url: https://www.byn.kr/
+              - img
+          - listitem:
+            - link:
+              - /url: https://www.everland.com/
+              - img
+          - listitem:
+            - link:
+              - /url: http://sparklewater.net/
+              - img
+          - listitem:
+            - link:
+              - /url: https://www.koreanfolk.co.kr/
+              - img
+          - listitem:
+            - link:
+              - /url: https://www.gogocorp.co.kr/
+              - img
+          - listitem:
+            - link:
+              - /url: http://holyspots.kr/
+              - img
+          - listitem:
+            - link:
+              - /url: https://www.catholictimes.org/
+              - img
+          - listitem:
+            - link:
+              - /url: https://www.cpbc.co.kr/
+              - img
+          - listitem:
+            - link:
+              - /url: https://www.cbck.or.kr/
+              - img
+    - generic:
+      - generic:
+        - heading [level=2]: 2027 서울 세계청년대회 묵주기도 10억단 바치기
+        - generic:
+          - link:
+            - /url: https://wydseoul.org/participation/rosary
+            - heading [level=3]: 단체 참여
+            - paragraph: 단체 소속으로 WYD 홈페이지를 통해 봉헌 운동에 참여할 수 있습니다.
+            - img
+          - link:
+            - /url: https://wydseoul.org/participation/rosary
+            - heading [level=3]: 개인 참여
+            - paragraph: 개인 누구나 쉽게 봉헌 운동에 참여할 수 있습니다.
+            - img
+  - contentinfo:
+    - generic:
+      - generic:
+        - heading [level=3]:
+          - link:
+            - /url: /
+            - img
+        - generic:
+          - list:
+            - listitem: 서울 광진구 면목로 74, 한국천주교중앙협의회, 04918
+            - listitem: wyd2027did@cbck.kr
+      - generic:
+        - generic:
+          - paragraph: 후원 문의
+          - link:
+            - /url: mailto:wyd2027did@cbck.kr
+            - text: wyd2027did@cbck.kr
+        - list:
+          - listitem:
+            - link:
+              - /url: https://wydseoul.org/
+              - text: WYD2027SEOUL
+          - listitem:
+            - link:
+              - /url: https://www.cbck.or.kr
+              - text: 한국천주교주교회의
+        - paragraph: Copyright ⓒ WYD2027 SEOUL DID All rights reserved
+  - button "Open Next.js Dev Tools" [ref=e842] [cursor=pointer]:
+    - img [ref=e843]
+  - alert
+  - dialog "DID 메뉴" [ref=e1184]:
+    - generic [ref=e1185]:
+      - heading "DID 메뉴" [level=2] [ref=e1186]
+      - paragraph [ref=e1187]: DID 메뉴입니다.
+    - generic [ref=e1188]:
+      - generic [ref=e1189]:
+        - heading "wyd logo" [level=2] [ref=e1190]:
+          - link "wyd logo" [ref=e1191] [cursor=pointer]:
+            - /url: /
+            - img "wyd logo" [ref=e1192]
+        - button [active] [ref=e1193] [cursor=pointer]:
+          - img [ref=e1194]
+      - navigation [ref=e1197]:
+        - generic [ref=e1198]:
+          - heading "2027 DID" [level=3] [ref=e1199]
+          - list [ref=e1200]:
+            - listitem [ref=e1201]:
+              - link "교구대회 소개" [ref=e1202] [cursor=pointer]:
+                - /url: /kr/introduce
+            - listitem [ref=e1203]:
+              - link "교구 소개" [ref=e1204] [cursor=pointer]:
+                - /url: /kr#map
+        - generic [ref=e1205]:
+          - heading "NOTICE" [level=3] [ref=e1206]
+          - list [ref=e1207]:
+            - listitem [ref=e1208]:
+              - link "공지사항" [ref=e1209] [cursor=pointer]:
+                - /url: /kr/notice
+            - listitem [ref=e1210]:
+              - link "후원사 소개" [ref=e1211] [cursor=pointer]:
+                - /url: /kr#sponsor
