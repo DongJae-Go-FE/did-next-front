@@ -49,13 +49,13 @@ export const content = {
             { label: "후원사 소개", href: "/kr#sponsor" },
           ],
         },
-        // {
-        //   title: "참여",
-        //   items: [
-        //     { label: "DID 신청", href: "/kr/apply" },
-        //     { label: "교구별 신청 현황", href: "/kr/status" },
-        //   ],
-        // },
+        {
+          title: "참여",
+          items: [
+            { label: "DID 신청", href: "/kr/apply" },
+            { label: "교구별 신청 현황", href: "/kr/status" },
+          ],
+        },
       ],
     },
     intro: {
@@ -245,10 +245,10 @@ export const content = {
             { label: "Sponsors", href: "/en#sponsor" },
           ],
         },
-        // {
-        //   title: "PARTICIPATE",
-        //   items: [{ label: "DID Application", href: "/en/apply" }],
-        // },
+        {
+          title: "PARTICIPATE",
+          items: [{ label: "DID Application", href: "/en/apply" }],
+        },
       ],
     },
     intro: {
