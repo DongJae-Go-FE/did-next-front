@@ -21,13 +21,14 @@ type ItemType =
       src: string;
       alt: string;
       imageClassName: string;
+      mobileImageClassName?: string;
       label: string[];
       labelClassName?: string;
     }
   | { type: "coming"; src: string; alt: string };
 
 const LABEL_BASE =
-  "absolute z-30 heading03b text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[1.25] max-[1279px]:text-[clamp(22px,2vw,32px)] max-[1079px]:leading-[1.15] whitespace-nowrap";
+  "absolute z-30 heading03b text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[1.25] max-[1279px]:text-[clamp(22px,2vw,32px)] max-[1079px]:text-[20px] max-[1079px]:leading-[1.15] whitespace-nowrap";
 
 const LABEL_MOBILE =
   "max-[767px]:top-1/2 max-[767px]:bottom-auto max-[767px]:left-1/2 max-[767px]:right-auto max-[767px]:w-auto max-[767px]:-translate-x-1/2 max-[767px]:-translate-y-1/2 max-[767px]:text-center max-[767px]:text-[26px]";
@@ -41,8 +42,19 @@ const LABEL_RIGHT =
 const LABEL_BOTTOM_CENTER =
   "bottom-[8%] left-1/2 w-auto -translate-x-1/2 text-center";
 
-function CardItem({ item }: { item: ItemType }) {
+function CardItem({
+  item,
+  isMobile = false,
+}: {
+  item: ItemType;
+  isMobile?: boolean;
+}) {
   if (item.type === "link") {
+    const imageClassName =
+      isMobile && item.mobileImageClassName
+        ? item.mobileImageClassName
+        : item.imageClassName;
+
     return (
       <Link
         href={item.href}
@@ -54,7 +66,7 @@ function CardItem({ item }: { item: ItemType }) {
           alt={item.alt}
           fill
           sizes="(max-width: 767px) 90vw, 33vw"
-          className={`object-cover transition-transform duration-300 group-hover:scale-[1.02] ${item.imageClassName}`}
+          className={`object-cover transition-transform duration-300 group-hover:scale-[1.02] ${imageClassName}`}
         />
         <span
           className={`${LABEL_BASE} ${item.labelClassName ?? LABEL_DEFAULT} ${LABEL_MOBILE}`}
@@ -160,6 +172,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      mobileImageClassName: "object-[50%_50%]",
       label: t.personLabel7 as unknown as string[],
       labelClassName: LABEL_RIGHT,
     },
@@ -171,6 +184,17 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
       label: t.personLabel8 as unknown as string[],
+      labelClassName: LABEL_RIGHT,
+    },
+    {
+      type: "link",
+      href: "https://www.youtube.com/watch?v=92YTmsDam_c",
+      src: `${IMAGE_BASE}/did/main/fight/f9.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      mobileImageClassName: "object-[50%_50%]",
+      label: t.personLabel9 as unknown as string[],
       labelClassName: LABEL_RIGHT,
     },
   ];
@@ -207,7 +231,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
             {items.map((item, i) => (
               <SwiperSlide key={i}>
                 <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-neutral-200">
-                  <CardItem item={item} />
+                  <CardItem item={item} isMobile />
                 </div>
               </SwiperSlide>
             ))}

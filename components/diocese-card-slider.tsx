@@ -136,6 +136,8 @@ export default function DioceseCardSlider({
   const [activeIndex, setActiveIndex] = useState(0);
   const isFirst = activeIndex === 0;
   const isLast = activeIndex === dioceseData.length - 1;
+  const prevLabel = locale === "en" ? "Previous diocese" : "이전 교구";
+  const nextLabel = locale === "en" ? "Next diocese" : "다음 교구";
 
   return (
     <div className="relative overflow-hidden">
@@ -162,26 +164,31 @@ export default function DioceseCardSlider({
         ))}
       </Swiper>
 
-      <div className="flex items-center gap-x-2.5 mt-5 pl-4">
-        <button
-          type="button"
-          onClick={() => swiperRef.current?.slidePrev()}
-          disabled={isFirst}
-          className="w-11 h-11 aspect-square shrink-0 flex items-center justify-center rounded-full border-[1.5px] border-gray-700 bg-white transition-all disabled:opacity-40 disabled:border-gray-300 disabled:cursor-not-allowed text-gray-700"
-        >
-          <ChevronLeft className="w-5 h-5" strokeWidth={1.5} />
-        </button>
+      <div className="mt-5 flex items-center justify-between gap-3 rounded-full border border-[#D8E0EE] bg-white/90 p-1.5 shadow-sm">
+        <span className="diocese-pagination min-w-16 pl-3 text-sm font-bold text-[#0047BB]" />
+        <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            aria-label={prevLabel}
+            title={prevLabel}
+            onClick={() => swiperRef.current?.slidePrev()}
+            disabled={isFirst}
+            className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#C7D2E5] bg-white text-[#0047BB] transition-colors hover:border-[#0047BB] hover:bg-[#0047BB] hover:text-white disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-300 disabled:cursor-not-allowed"
+          >
+            <ChevronLeft className="size-5" strokeWidth={1.8} />
+          </button>
 
-        <button
-          type="button"
-          onClick={() => swiperRef.current?.slideNext()}
-          disabled={isLast}
-          className="w-11 h-11 aspect-square shrink-0 flex items-center justify-center rounded-full border-[1.5px] border-gray-700 bg-white transition-all disabled:opacity-40 disabled:border-gray-300 disabled:cursor-not-allowed text-gray-700"
-        >
-          <ChevronRight className="w-5 h-5" strokeWidth={1.5} />
-        </button>
-
-        <span className="diocese-pagination text-sm font-semibold text-gray-600 ml-2" />
+          <button
+            type="button"
+            aria-label={nextLabel}
+            title={nextLabel}
+            onClick={() => swiperRef.current?.slideNext()}
+            disabled={isLast}
+            className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#C7D2E5] bg-white text-[#0047BB] transition-colors hover:border-[#0047BB] hover:bg-[#0047BB] hover:text-white disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-300 disabled:cursor-not-allowed"
+          >
+            <ChevronRight className="size-5" strokeWidth={1.8} />
+          </button>
+        </div>
       </div>
     </div>
   );

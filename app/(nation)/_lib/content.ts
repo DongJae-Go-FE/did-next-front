@@ -62,6 +62,13 @@ export const content = {
       welcomeText: "WYD 2027 SEOUL DID 페이지에 오신걸 환영합니다.",
       logoAriaLabel: "교구 로고 모음",
     },
+    mainNoticePopup: {
+      title: "교구대회 신청 안내",
+      description:
+        "해당 교구대회 신청은 교황청 승인 이후 이뤄질 예정입니다.",
+      hideToday: "오늘 하루 보지 않기",
+      close: "닫기",
+    },
     mapPage: {
       title: "교구 소개",
       subtitle: "(마커를 클릭해주세요)",
@@ -106,6 +113,7 @@ export const content = {
       personLabel6: ["알베르토", "몬디"],
       personLabel7: ["손숙", "헬레나", "배우"],
       personLabel8: ["크리스티나", "콘팔로니에리"],
+      personLabel9: ["바다", "최성희", "비비안나"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -122,6 +130,7 @@ export const content = {
       cardDesc: (name: string) => `6월 1일부터 신청 가능합니다.`,
       rateLabel: "신청률",
       applyBtn: "신청하기",
+      applyUnavailable: "아직 신청 기간이 아닙니다.",
       privacyDialogTitle: "개인정보 수집·이용 동의",
       privacyDialogDesc:
         "DID 신청을 위해 아래 내용을 확인하시고 동의해 주세요.",
@@ -255,6 +264,13 @@ export const content = {
       welcomeText: "Welcome to WYD 2027 SEOUL DID.",
       logoAriaLabel: "Diocese logos",
     },
+    mainNoticePopup: {
+      title: "DID Application Notice",
+      description:
+        "Applications for Days in Diocese will open after approval from the Holy See.",
+      hideToday: "Do not show today",
+      close: "Close",
+    },
     mapPage: {
       title: "Diocese Info",
       subtitle: "(Click on a marker)",
@@ -299,6 +315,7 @@ export const content = {
       personLabel6: ["Alberto", "Mondi"],
       personLabel7: ["Son Sook", "Helena", "Actress"],
       personLabel8: ["Christina", "Confalonieri"],
+      personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
@@ -312,6 +329,7 @@ export const content = {
       cardDesc: (name: string) => `Applications open from June 1st.`,
       rateLabel: "Application Rate",
       applyBtn: "Apply",
+      applyUnavailable: "Applications are not open yet.",
       privacyDialogTitle:
         "Consent to Collection and Use of Personal Information",
       privacyDialogDesc:

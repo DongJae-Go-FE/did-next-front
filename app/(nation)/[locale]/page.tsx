@@ -8,6 +8,7 @@ import IntroPage from "@/components/page/intro-page";
 import MapPage from "@/components/page/map-page";
 import SponsorPage from "@/components/page/sponsor-page";
 import PrayPage from "@/components/page/pray-page";
+import MainNoticePopup from "@/components/main-notice-popup";
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 
@@ -30,6 +31,7 @@ export default async function Home({
 
   return (
     <main className="w-full">
+      <MainNoticePopup locale={locale} />
       <div className="relative bg-black">
         <MainSlider locale={locale} />
       </div>

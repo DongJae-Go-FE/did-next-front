@@ -20,7 +20,6 @@ import {
 } from "@/components/ui/card";
 
 import SliderBackdrop from "@/components/ui/slider-backdrop";
-import ApplyButton from "@/components/apply-button";
 import { content, locales, type Locale } from "../../_lib/content";
 import { getDioceseChartData } from "@/lib/notion-status";
 
@@ -229,7 +228,7 @@ export default async function Page({
                 "repeat(auto-fill, minmax(min(300px,100%), 1fr))",
             }}
           >
-            {dioceseData.map(({ krName, enName, href, image }) => {
+            {dioceseData.map(({ krName, enName, image }) => {
               const { applied, total } = findNotionData(krName);
               const name = locale === "kr" ? krName : enName;
               const key = name.replace(/\s/g, "");
@@ -247,17 +246,20 @@ export default async function Page({
                       />
                     </CardContent>
                     <CardHeader className="px-0">
-                      <CardTitle title={t.cardTitle(name)}>
+                      <CardTitle
+                        className="leading-snug break-keep"
+                        title={t.cardTitle(name)}
+                      >
                         {t.cardTitle(name)}
                       </CardTitle>
                       <CardDescription
-                        className="truncate"
+                        className="whitespace-normal leading-normal break-keep"
                         title={t.cardDesc(name)}
                       >
                         {t.cardDesc(name)}
                       </CardDescription>
                       <div className="mt-1">
-                        <div className="flex justify-between items-center mb-1">
+                        <div className="flex flex-wrap justify-between items-center gap-x-2 gap-y-1 mb-1">
                           <span className="text-xs font-medium text-gray-600">
                             {t.rateLabel}
                           </span>
@@ -283,18 +285,10 @@ export default async function Page({
                       </div>
                     </CardHeader>
 
-                    <CardFooter className="flex-col gap-2 px-0">
-                      <ApplyButton
-                        href={href}
-                        label={t.applyBtn}
-                        dialogTitle={t.privacyDialogTitle}
-                        dialogDesc={t.privacyDialogDesc}
-                        dialogDetail={t.privacyDialogDetail}
-                        dialogWarning={t.privacyWarning}
-                        agreeLabel={t.privacyAgreeLabel}
-                        confirmBtn={t.privacyConfirmBtn}
-                        cancelBtn={t.privacyCancelBtn}
-                      />
+                    <CardFooter className="px-0">
+                      <p className="flex min-h-12 w-full items-center justify-center rounded-md border border-gray-200 bg-gray-100 px-4 py-3 text-center body01m text-gray-500">
+                        {t.applyUnavailable}
+                      </p>
                     </CardFooter>
                   </Card>
                 </li>
