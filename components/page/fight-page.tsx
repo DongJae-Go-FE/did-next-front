@@ -24,36 +24,90 @@ type ItemType =
       mobileImageClassName?: string;
       label: string[];
       labelClassName?: string;
+      labelClassNameEn?: string;
+      singleLineLabelEn?: boolean;
     }
   | { type: "coming"; src: string; alt: string };
 
-const LABEL_BASE =
+const LABEL_BASE_KR =
   "absolute z-30 heading03b text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[1.25] max-[1279px]:text-[clamp(22px,2vw,32px)] max-[1079px]:text-[20px] max-[1079px]:leading-[1.15] whitespace-nowrap";
 
-const LABEL_MOBILE =
+const LABEL_BASE_EN =
+  "absolute z-30 heading03b text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[1.25] max-[1279px]:text-[clamp(22px,2vw,32px)] max-[1079px]:text-[20px] max-[1079px]:leading-[1.15] whitespace-normal break-words";
+
+const LABEL_BASE_EN_SINGLE_LINE =
+  "absolute z-30 heading03b text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[1.25] max-[1279px]:text-[clamp(22px,2vw,32px)] max-[1079px]:text-[20px] max-[1079px]:leading-[1.15] whitespace-nowrap";
+
+const LABEL_MOBILE_KR =
   "max-[767px]:top-1/2 max-[767px]:bottom-auto max-[767px]:left-1/2 max-[767px]:right-auto max-[767px]:w-auto max-[767px]:-translate-x-1/2 max-[767px]:-translate-y-1/2 max-[767px]:text-center max-[767px]:text-[26px]";
+
+const LABEL_MOBILE_EN =
+  "max-[767px]:top-1/2 max-[767px]:bottom-auto max-[767px]:left-1/2 max-[767px]:right-auto max-[767px]:w-[calc(100%-2rem)] max-[767px]:max-w-[320px] max-[767px]:-translate-x-1/2 max-[767px]:-translate-y-1/2 max-[767px]:text-center max-[767px]:text-[26px]";
 
 const LABEL_DEFAULT =
   "top-1/2 right-[8%] w-[30%] -translate-y-1/2 text-left max-[1279px]:w-[34%] max-[1079px]:right-[3.5%] max-[1079px]:w-[40%]";
 
+const LABEL_DEFAULT_EN =
+  "top-1/2 right-[5%] w-[38%] -translate-y-1/2 text-left max-[1279px]:w-[42%] max-[1079px]:right-[3.5%] max-[1079px]:w-[46%]";
+
 const LABEL_RIGHT =
   "top-1/2 right-0 w-[30%] -translate-y-1/2 text-left max-[1279px]:w-[34%] max-[1079px]:w-[40%]";
+
+const LABEL_RIGHT_EN =
+  "top-1/2 right-[5%] w-[38%] -translate-y-1/2 text-left max-[1279px]:w-[42%] max-[1079px]:right-[3.5%] max-[1079px]:w-[46%]";
+
+const LABEL_RIGHT_NUDGED_EN =
+  "top-1/2 right-0 w-[38%] -translate-y-1/2 text-left max-[1279px]:w-[42%] max-[1079px]:w-[46%]";
 
 const LABEL_BOTTOM_CENTER =
   "bottom-[8%] left-1/2 w-auto -translate-x-1/2 text-center";
 
+const LABEL_BOTTOM_CENTER_EN =
+  "bottom-[8%] left-1/2 w-[calc(100%-2rem)] -translate-x-1/2 text-center";
+
+function getLabelClassName(
+  locale: Locale,
+  labelClassName?: string,
+  labelClassNameEn?: string,
+  singleLineLabelEn?: boolean
+) {
+  if (locale !== "en") {
+    return `${LABEL_BASE_KR} ${labelClassName ?? LABEL_DEFAULT} ${LABEL_MOBILE_KR}`;
+  }
+
+  const desktopClassName = labelClassNameEn
+    ? labelClassNameEn
+    : labelClassName === LABEL_RIGHT
+      ? LABEL_RIGHT_EN
+      : labelClassName === LABEL_BOTTOM_CENTER
+        ? LABEL_BOTTOM_CENTER_EN
+        : LABEL_DEFAULT_EN;
+
+  const baseClassName = singleLineLabelEn
+    ? LABEL_BASE_EN_SINGLE_LINE
+    : LABEL_BASE_EN;
+
+  return `${baseClassName} ${desktopClassName} ${LABEL_MOBILE_EN}`;
+}
+
 function CardItem({
   item,
   isMobile = false,
+  locale,
 }: {
   item: ItemType;
   isMobile?: boolean;
+  locale: Locale;
 }) {
   if (item.type === "link") {
     const imageClassName =
       isMobile && item.mobileImageClassName
         ? item.mobileImageClassName
         : item.imageClassName;
+    const label =
+      locale === "en" && item.singleLineLabelEn
+        ? [item.label.join(" ")]
+        : item.label;
 
     return (
       <Link
@@ -69,9 +123,14 @@ function CardItem({
           className={`object-cover transition-transform duration-300 group-hover:scale-[1.02] ${imageClassName}`}
         />
         <span
-          className={`${LABEL_BASE} ${item.labelClassName ?? LABEL_DEFAULT} ${LABEL_MOBILE}`}
+          className={getLabelClassName(
+            locale,
+            item.labelClassName,
+            item.labelClassNameEn,
+            item.singleLineLabelEn
+          )}
         >
-          {item.label.map((line, i) => (
+          {label.map((line, i) => (
             <span key={i}>
               {i > 0 && <br />}
               {line}
@@ -124,6 +183,8 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
       label: t.personLabel2 as unknown as string[],
       labelClassName: LABEL_RIGHT,
+      labelClassNameEn: LABEL_BOTTOM_CENTER_EN,
+      singleLineLabelEn: true,
     },
     {
       type: "link",
@@ -164,6 +225,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
       label: t.personLabel6 as unknown as string[],
       labelClassName: LABEL_RIGHT,
+      labelClassNameEn: LABEL_RIGHT_NUDGED_EN,
     },
     {
       type: "link",
@@ -175,6 +237,8 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
       mobileImageClassName: "object-[50%_50%]",
       label: t.personLabel7 as unknown as string[],
       labelClassName: LABEL_RIGHT,
+      labelClassNameEn: LABEL_BOTTOM_CENTER_EN,
+      singleLineLabelEn: true,
     },
     {
       type: "link",
@@ -185,6 +249,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
       label: t.personLabel8 as unknown as string[],
       labelClassName: LABEL_RIGHT,
+      labelClassNameEn: LABEL_RIGHT_NUDGED_EN,
     },
     {
       type: "link",
@@ -196,6 +261,8 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
       mobileImageClassName: "object-[50%_50%]",
       label: t.personLabel9 as unknown as string[],
       labelClassName: LABEL_RIGHT,
+      labelClassNameEn: LABEL_BOTTOM_CENTER_EN,
+      singleLineLabelEn: true,
     },
   ];
 
@@ -231,7 +298,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
             {items.map((item, i) => (
               <SwiperSlide key={i}>
                 <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-neutral-200">
-                  <CardItem item={item} isMobile />
+                  <CardItem item={item} isMobile locale={locale} />
                 </div>
               </SwiperSlide>
             ))}
@@ -243,7 +310,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
                 key={i}
                 className="relative aspect-[16/5.45] rounded-xl overflow-hidden bg-neutral-200"
               >
-                <CardItem item={item} />
+                <CardItem item={item} locale={locale} />
               </li>
             ))}
           </ul>
