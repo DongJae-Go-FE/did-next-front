@@ -65,7 +65,7 @@ export const content = {
     mainNoticePopup: {
       title: "교구대회 신청 안내",
       description:
-        "해당 교구대회 신청은 교황청 승인 이후 이뤄질 예정입니다.",
+        "해당 교구대회 신청은 교황청 평신도가정생명부(Dicastery for the Laity, Family and Life) 승인 이후 이뤄질 예정입니다.",
       hideToday: "오늘 하루 보지 않기",
       close: "닫기",
     },
@@ -267,7 +267,7 @@ export const content = {
     mainNoticePopup: {
       title: "DID Application Notice",
       description:
-        "Applications for Days in Diocese will open after approval from the Holy See.",
+        "Applications for Days in Diocese will open after approval from the Dicastery for the Laity, Family and Life.",
       hideToday: "Do not show today",
       close: "Close",
     },
