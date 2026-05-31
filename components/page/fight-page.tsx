@@ -148,7 +148,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
     {
       type: "link",
       href: "https://www.youtube.com/watch?v=FqiCdbjvuVM",
-      src: `${IMAGE_BASE}/did/main/fight/f5.png`,
+      src: `${IMAGE_BASE}/did/main/fight/f5-v2.png`,
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
@@ -158,7 +158,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
     {
       type: "link",
       href: "https://www.youtube.com/watch?v=5fCIKQvKkSA",
-      src: `${IMAGE_BASE}/did/main/fight/f6.png`,
+      src: `${IMAGE_BASE}/did/main/fight/f6-v2.png`,
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
@@ -168,7 +168,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
     {
       type: "link",
       href: "https://www.youtube.com/watch?v=j71e-K_NukE",
-      src: `${IMAGE_BASE}/did/main/fight/f7.png`,
+      src: `${IMAGE_BASE}/did/main/fight/f7-v2.png`,
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
@@ -179,7 +179,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
     {
       type: "link",
       href: "https://www.youtube.com/watch?v=ajIQN5gMrFw",
-      src: `${IMAGE_BASE}/did/main/fight/f8.png`,
+      src: `${IMAGE_BASE}/did/main/fight/f8-v2.png`,
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
