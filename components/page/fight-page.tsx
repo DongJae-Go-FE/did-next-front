@@ -168,7 +168,7 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
   const items: ItemType[] = [
     {
       type: "link",
-      href: "https://www.youtube.com/watch?v=92YTmsDam_c",
+      href: "https://youtu.be/s8gQXleubn8",
       src: `${IMAGE_BASE}/did/main/fight/f9.png`,
       alt: t.personAlt,
       imageClassName:
