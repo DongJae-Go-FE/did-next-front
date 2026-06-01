@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+
+export const metadata: Metadata = {
+  verification: {
+    google: "1NdUck-rAwlfvjPBoje9zV7mPKhKZW3_hOKadqP0fIE",
+    other: {
+      "naver-site-verification": "388cc9a0438eea2cc6d95cd1e6d5d235ce15ddcb",
+    },
+  },
+};
 
 const pretendard = localFont({
   src: [

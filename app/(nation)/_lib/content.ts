@@ -8,7 +8,7 @@ export const content = {
     metadata: {
       title: "2027 WYD SEOUL DID",
       description:
-        "2027 서울 세계청년대회(WYD) 교구대회(DID) 공식 웹사이트. 전국 16개 교구 신청 정보, 교구 소개, 일정 안내 및 신청 방법을 확인하세요.",
+        "2027 서울 세계청년대회(WYD) 교구대회(DID) 공식 웹사이트. 전국 16개 교구 신청 정보와 일정을 확인하세요.",
       keywords:
         "2027 세계청년대회, WYD 2027, WYD Seoul 2027, 서울 세계청년대회, 교구대회, DID, Days in Diocese, 가톨릭, 천주교, 세계청년대회 신청, 교구 신청, 인천교구, 서울대교구, 수원교구, 의정부교구, 춘천교구, 원주교구, 대전교구, 청주교구, 대구대교구, 부산교구, 마산교구, 안동교구, 광주대교구, 전주교구, 제주교구, 군종교구, GMG, JMJ, 한국 천주교",
       ogLocale: "ko_KR",
@@ -209,7 +209,7 @@ export const content = {
     metadata: {
       title: "2027 WYD SEOUL DID",
       description:
-        "Official website for 2027 World Youth Day Seoul. Explore 16 Catholic dioceses across Korea, find diocese information, schedules, and apply for your DID experience.",
+        "Official 2027 World Youth Day Seoul DID site. Apply and explore 16 Catholic dioceses across Korea.",
       keywords:
         "2027 World Youth Day, WYD 2027, WYD Seoul 2027, Days in Diocese, DID, Catholic, Korea, Diocese of Incheon, Archdiocese of Seoul, Diocese of Suwon, Diocese of Uijeongbu, Diocese of Chuncheon, Diocese of Wonju, Diocese of Daejeon, Diocese of Cheongju, Archdiocese of Daegu, Diocese of Busan, Diocese of Masan, Diocese of Andong, Archdiocese of Gwangju, Diocese of Jeonju, Diocese of Jeju, Military Ordinariate, GMG, JMJ, GMG Séoul 2027, JMJ Seúl 2027, JMJ Séoul 2027, Korean Catholic Church, WYD Diocese",
       ogLocale: "en_US",
