@@ -164,66 +164,29 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
   const [isMobile, setIsMobile] = useState(false);
   const t = content[locale].fightPage;
 
+  // 최신순 정렬: 새로 추가하는 항목은 이 배열의 맨 앞에 넣으면 됩니다.
   const items: ItemType[] = [
     {
       type: "link",
-      href: "https://youtu.be/imkFMm4ZbBc",
-      src: `${IMAGE_BASE}/did/main/fight/f1.png`,
+      href: "https://www.youtube.com/watch?v=92YTmsDam_c",
+      src: `${IMAGE_BASE}/did/main/fight/f9.png`,
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
-      label: t.personLabel as unknown as string[],
-    },
-    {
-      type: "link",
-      href: "https://www.youtube.com/watch?v=oZFuDfvdoIs",
-      src: `${IMAGE_BASE}/did/main/fight/f2.png`,
-      alt: t.personAlt,
-      imageClassName:
-        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
-      label: t.personLabel2 as unknown as string[],
+      mobileImageClassName: "object-[50%_50%]",
+      label: t.personLabel9 as unknown as string[],
       labelClassName: LABEL_RIGHT,
       labelClassNameEn: LABEL_BOTTOM_CENTER_EN,
       singleLineLabelEn: true,
     },
     {
       type: "link",
-      href: "https://www.youtube.com/watch?v=H2x_ZZFW5so",
-      src: `${IMAGE_BASE}/did/main/fight/f3.jpeg`,
+      href: "https://www.youtube.com/watch?v=ajIQN5gMrFw",
+      src: `${IMAGE_BASE}/did/main/fight/f8-v2.png`,
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
-      label: t.personLabel3 as unknown as string[],
-      labelClassName: LABEL_RIGHT,
-    },
-    {
-      type: "link",
-      href: "https://www.youtube.com/watch?v=6YkrDOfUQXw",
-      src: `${IMAGE_BASE}/did/main/fight/f4.jpeg`,
-      alt: t.personAlt,
-      imageClassName:
-        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
-      label: t.personLabel4 as unknown as string[],
-      labelClassName: LABEL_BOTTOM_CENTER,
-    },
-    {
-      type: "link",
-      href: "https://www.youtube.com/watch?v=FqiCdbjvuVM",
-      src: `${IMAGE_BASE}/did/main/fight/f5-v2.png`,
-      alt: t.personAlt,
-      imageClassName:
-        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
-      label: t.personLabel5 as unknown as string[],
-      labelClassName: LABEL_RIGHT,
-    },
-    {
-      type: "link",
-      href: "https://www.youtube.com/watch?v=5fCIKQvKkSA",
-      src: `${IMAGE_BASE}/did/main/fight/f6-v2.png`,
-      alt: t.personAlt,
-      imageClassName:
-        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
-      label: t.personLabel6 as unknown as string[],
+      label: t.personLabel8 as unknown as string[],
       labelClassName: LABEL_RIGHT,
       labelClassNameEn: LABEL_RIGHT_NUDGED_EN,
     },
@@ -242,27 +205,65 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
     },
     {
       type: "link",
-      href: "https://www.youtube.com/watch?v=ajIQN5gMrFw",
-      src: `${IMAGE_BASE}/did/main/fight/f8-v2.png`,
+      href: "https://www.youtube.com/watch?v=5fCIKQvKkSA",
+      src: `${IMAGE_BASE}/did/main/fight/f6-v2.png`,
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
-      label: t.personLabel8 as unknown as string[],
+      label: t.personLabel6 as unknown as string[],
       labelClassName: LABEL_RIGHT,
       labelClassNameEn: LABEL_RIGHT_NUDGED_EN,
     },
     {
       type: "link",
-      href: "https://www.youtube.com/watch?v=92YTmsDam_c",
-      src: `${IMAGE_BASE}/did/main/fight/f9.png`,
+      href: "https://www.youtube.com/watch?v=FqiCdbjvuVM",
+      src: `${IMAGE_BASE}/did/main/fight/f5-v2.png`,
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
-      mobileImageClassName: "object-[50%_50%]",
-      label: t.personLabel9 as unknown as string[],
+      label: t.personLabel5 as unknown as string[],
+      labelClassName: LABEL_RIGHT,
+    },
+    {
+      type: "link",
+      href: "https://www.youtube.com/watch?v=6YkrDOfUQXw",
+      src: `${IMAGE_BASE}/did/main/fight/f4.jpeg`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      label: t.personLabel4 as unknown as string[],
+      labelClassName: LABEL_BOTTOM_CENTER,
+    },
+    {
+      type: "link",
+      href: "https://www.youtube.com/watch?v=H2x_ZZFW5so",
+      src: `${IMAGE_BASE}/did/main/fight/f3.jpeg`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      label: t.personLabel3 as unknown as string[],
+      labelClassName: LABEL_RIGHT,
+    },
+    {
+      type: "link",
+      href: "https://www.youtube.com/watch?v=oZFuDfvdoIs",
+      src: `${IMAGE_BASE}/did/main/fight/f2.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      label: t.personLabel2 as unknown as string[],
       labelClassName: LABEL_RIGHT,
       labelClassNameEn: LABEL_BOTTOM_CENTER_EN,
       singleLineLabelEn: true,
+    },
+    {
+      type: "link",
+      href: "https://youtu.be/imkFMm4ZbBc",
+      src: `${IMAGE_BASE}/did/main/fight/f1.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      label: t.personLabel as unknown as string[],
     },
   ];
 

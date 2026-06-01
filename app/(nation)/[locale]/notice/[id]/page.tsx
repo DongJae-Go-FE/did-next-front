@@ -17,7 +17,6 @@ import { content, locales, type Locale } from "../../../_lib/content";
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 const SITE_URL = "https://wyd2027did.org";
-const OG_IMAGE = "/logo.svg";
 
 export async function generateMetadata({
   params,
@@ -36,6 +35,11 @@ export async function generateMetadata({
     description: base.description,
     alternates: {
       canonical: `${SITE_URL}/${locale}/notice/${id}`,
+      languages: {
+        "ko-KR": `${SITE_URL}/kr/notice/${id}`,
+        "en-US": `${SITE_URL}/en/notice/${id}`,
+        "x-default": `${SITE_URL}/kr/notice/${id}`,
+      },
     },
     openGraph: {
       title: `${title} | 2027 WYD SEOUL DID`,
@@ -44,7 +48,6 @@ export async function generateMetadata({
       siteName: "2027 WYD SEOUL DID",
       locale: base.ogLocale,
       type: "article",
-      images: [{ url: OG_IMAGE, alt: "2027 WYD SEOUL DID logo" }],
     },
   };
 }

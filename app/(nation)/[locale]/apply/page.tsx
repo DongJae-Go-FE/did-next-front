@@ -25,7 +25,6 @@ import { getDioceseChartData } from "@/lib/notion-status";
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 const SITE_URL = "https://wyd2027did.org";
-const OG_IMAGE = "/logo.svg";
 
 const dioceseData = [
   {
@@ -148,18 +147,11 @@ export async function generateMetadata({
       siteName: "2027 WYD SEOUL DID",
       locale: base.ogLocale,
       type: "website",
-      images: [
-        {
-          url: OG_IMAGE,
-          alt: "2027 WYD SEOUL DID",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${t.heroTitle} | 2027 WYD SEOUL DID`,
       description: base.description,
-      images: [OG_IMAGE],
     },
   };
 }
