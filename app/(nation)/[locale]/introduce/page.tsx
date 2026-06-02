@@ -11,7 +11,9 @@ import {
 import LeftMenu from "@/components/ui/left-menu";
 import SliderBackdrop from "@/components/ui/slider-backdrop";
 import IntroduceDioceseBanner from "@/components/introduce-diocese-banner";
+import JsonLd from "@/components/json-ld";
 import { content, locales, type Locale } from "../../_lib/content";
+import { createBreadcrumbJsonLd } from "@/lib/structured-data";
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 const SITE_URL = "https://wyd2027did.org";
@@ -77,9 +79,15 @@ export default async function Page({
 
   const locale = localeStr as Locale;
   const t = content[locale].introducePage;
+  const breadcrumbJsonLd = createBreadcrumbJsonLd([
+    { name: locale === "kr" ? "홈" : "Home", url: `${SITE_URL}/${locale}` },
+    { name: t.heroTitle, url: `${SITE_URL}/${locale}/introduce` },
+  ]);
 
   return (
-    <div className="pt-30">
+    <>
+      <JsonLd id="breadcrumb-json-ld" data={breadcrumbJsonLd} />
+      <div className="pt-30">
       <div className="w-full h-80 relative overflow-hidden flex justify-center items-center">
         <Image
           src={`${IMAGE_BASE}/did/visula2.jpeg`}
@@ -147,6 +155,7 @@ export default async function Page({
           <IntroduceDioceseBanner locale={locale} />
         </SubContentContainer>
       </SubLayout>
-    </div>
+      </div>
+    </>
   );
 }

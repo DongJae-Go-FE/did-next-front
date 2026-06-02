@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -41,13 +42,20 @@ const pretendard = localFont({
   fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
 });
 
-export default function RootLayout({
+function getRequestLang(locale: string | null): "ko" | "en" {
+  return locale === "en" ? "en" : "ko";
+}
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = await headers();
+  const lang = getRequestLang(headersList.get("x-site-locale"));
+
   return (
-    <html lang="ko" className="lenis lenis-smooth">
+    <html lang={lang} className="lenis lenis-smooth">
       <body className={pretendard.className}>{children}</body>
     </html>
   );

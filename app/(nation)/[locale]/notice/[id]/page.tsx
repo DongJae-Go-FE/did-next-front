@@ -12,8 +12,13 @@ import {
 import LeftMenu from "@/components/ui/left-menu";
 import SliderBackdrop from "@/components/ui/slider-backdrop";
 import NotionRenderer from "@/components/notion-renderer";
+import JsonLd from "@/components/json-ld";
 import { getNoticeDetail } from "@/lib/notion-notice";
 import { content, locales, type Locale } from "../../../_lib/content";
+import {
+  createArticleJsonLd,
+  createBreadcrumbJsonLd,
+} from "@/lib/structured-data";
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 const SITE_URL = "https://wyd2027did.org";
@@ -91,8 +96,27 @@ export default async function Page({
     notFound();
   }
 
+  const noticeUrl = `${SITE_URL}/${locale}/notice/${id}`;
+  const description = t.detailDescription(detail.title);
+  const breadcrumbJsonLd = createBreadcrumbJsonLd([
+    { name: locale === "kr" ? "홈" : "Home", url: `${SITE_URL}/${locale}` },
+    { name: t.heroTitle, url: `${SITE_URL}/${locale}/notice` },
+    { name: detail.title, url: noticeUrl },
+  ]);
+  const articleJsonLd = createArticleJsonLd({
+    author: detail.author,
+    date: detail.date,
+    description,
+    locale,
+    title: detail.title,
+    url: noticeUrl,
+  });
+
   return (
-    <div className="pt-30">
+    <>
+      <JsonLd id="breadcrumb-json-ld" data={breadcrumbJsonLd} />
+      <JsonLd id="article-json-ld" data={articleJsonLd} />
+      <div className="pt-30">
       <div className="w-full h-75 relative overflow-hidden flex justify-center items-center">
         <Image
           src={`${IMAGE_BASE}/did/visual.png`}
@@ -144,6 +168,7 @@ export default async function Page({
           </div>
         </SubContentContainer>
       </SubLayout>
-    </div>
+      </div>
+    </>
   );
 }

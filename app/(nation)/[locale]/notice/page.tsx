@@ -12,8 +12,10 @@ import {
 import LeftMenu from "@/components/ui/left-menu";
 import SliderBackdrop from "@/components/ui/slider-backdrop";
 import NoticeList from "@/components/notice-list";
+import JsonLd from "@/components/json-ld";
 import { getNoticeList } from "@/lib/notion-notice";
 import { content, locales, type Locale } from "../../_lib/content";
+import { createBreadcrumbJsonLd } from "@/lib/structured-data";
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 const SITE_URL = "https://wyd2027did.org";
@@ -81,12 +83,18 @@ export default async function Page({
 
   const locale = localeStr as Locale;
   const t = content[locale].noticePage;
+  const breadcrumbJsonLd = createBreadcrumbJsonLd([
+    { name: locale === "kr" ? "홈" : "Home", url: `${SITE_URL}/${locale}` },
+    { name: t.heroTitle, url: `${SITE_URL}/${locale}/notice` },
+  ]);
   const sp = await searchParams;
   const page = Math.max(1, parseInt(sp.page ?? "1", 10) || 1);
   const result = await getNoticeList(page, locale);
 
   return (
-    <div className="pt-30">
+    <>
+      <JsonLd id="breadcrumb-json-ld" data={breadcrumbJsonLd} />
+      <div className="pt-30">
       <div className="w-full h-75 relative overflow-hidden flex justify-center items-center">
         <Image
           src={`${IMAGE_BASE}/did/visual.png`}
@@ -133,6 +141,7 @@ export default async function Page({
           </Suspense>
         </SubContentContainer>
       </SubLayout>
-    </div>
+      </div>
+    </>
   );
 }
