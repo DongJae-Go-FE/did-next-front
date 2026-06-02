@@ -32,7 +32,7 @@ export async function generateMetadata({
   const base = content[locale].metadata;
 
   return {
-    title: `${t.heroTitle} | 2027 WYD SEOUL DID`,
+    title: `${t.heroTitle} | ${base.title}`,
     description: base.description,
     keywords: base.keywords,
     alternates: {
@@ -44,16 +44,16 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${t.heroTitle} | 2027 WYD SEOUL DID`,
+      title: `${t.heroTitle} | ${base.title}`,
       description: base.description,
       url: `${SITE_URL}/${locale}/introduce`,
-      siteName: "2027 WYD SEOUL DID",
+      siteName: base.title,
       locale: base.ogLocale,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${t.heroTitle} | 2027 WYD SEOUL DID`,
+      title: `${t.heroTitle} | ${base.title}`,
       description: base.description,
     },
   };

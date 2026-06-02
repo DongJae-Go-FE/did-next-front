@@ -31,8 +31,9 @@ export async function generateMetadata({
   const title = detail?.title ?? content[locale].noticePage.heroTitle;
 
   return {
-    title: `${title} | 2027 WYD SEOUL DID`,
+    title: `${title} | ${base.title}`,
     description: base.description,
+    keywords: base.keywords,
     alternates: {
       canonical: `${SITE_URL}/${locale}/notice/${id}`,
       languages: {
@@ -42,10 +43,10 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${title} | 2027 WYD SEOUL DID`,
+      title: `${title} | ${base.title}`,
       description: base.description,
       url: `${SITE_URL}/${locale}/notice/${id}`,
-      siteName: "2027 WYD SEOUL DID",
+      siteName: base.title,
       locale: base.ogLocale,
       type: "article",
     },

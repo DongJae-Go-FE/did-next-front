@@ -10,7 +10,17 @@ import LangSync from "@/components/lang-sync";
 import { content, locales, type Locale } from "../_lib/content";
 
 const SITE_URL = "https://wyd2027did.org";
-const SITE_NAME = "2027 WYD SEOUL DID";
+const SITE_NAME = "WYD 2027 SEOUL DID";
+const SEARCH_ALIASES = [
+  "WYD",
+  "wyd",
+  "WYD2027",
+  "wyd2027",
+  "WYD 2027",
+  "wyd 2027",
+  "2027 WYD",
+  "2027 WYD SEOUL DID",
+];
 
 function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
@@ -101,6 +111,7 @@ export default async function LocaleLayout({
     "@context": "https://schema.org",
     "@type": "Event",
     name: locale === "kr" ? "2027 세계청년대회 교구대회" : "2027 World Youth Day Diocesan Day",
+    alternateName: SEARCH_ALIASES,
     description: t.description,
     image: `${SITE_URL}/opengraph-image`,
     startDate: "2027-07-29",
@@ -120,6 +131,10 @@ export default async function LocaleLayout({
       "@type": "Organization",
       name: SITE_NAME,
       url: SITE_URL,
+    },
+    offers: {
+      "@type": "Offer",
+      url: `${SITE_URL}/${locale}/apply`,
     },
     inLanguage: locale === "kr" ? "ko" : "en",
   };

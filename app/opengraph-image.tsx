@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 // 루트 세그먼트에 두면 모든 하위 라우트에 og:image 가 자동 주입됩니다.
-export const alt = "2027 WYD SEOUL DID";
+export const alt = "WYD 2027 SEOUL DID";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
