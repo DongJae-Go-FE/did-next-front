@@ -119,6 +119,8 @@ export const content = {
     applyPage: {
       heroAlt: "서브페이지 배경",
       heroTitle: "DID 신청",
+      metaDescription:
+        "WYD 2027 서울 세계청년대회 교구대회(DID) 신청 페이지. 교구별 신청 가능 여부, 신청률, 개인정보 동의 안내를 확인하세요.",
       breadcrumb: ["참여 /", "신청"],
       leftMenuTitle: "참여",
       leftMenuItems: [
@@ -127,7 +129,7 @@ export const content = {
       ],
       pageTitle: "DID 신청",
       cardTitle: (name: string) => `${name} 교구 DID 신청`,
-      cardDesc: (name: string) => `6월 1일부터 신청 가능합니다.`,
+      cardDesc: () => `6월 1일부터 신청 가능합니다.`,
       rateLabel: "신청률",
       applyBtn: "신청하기",
       applyUnavailable: "아직 신청 기간이 아닙니다.",
@@ -145,6 +147,8 @@ export const content = {
     statusPage: {
       heroAlt: "서브페이지 배경",
       heroTitle: "교구별 신청 현황",
+      metaDescription:
+        "WYD 2027 서울 교구대회(DID) 교구별 신청 현황 페이지. 전국 교구의 신청률과 진행 상황을 확인하세요.",
       breadcrumb: ["참여 /", "신청 현황"],
       leftMenuTitle: "참여",
       leftMenuItems: [
@@ -156,6 +160,10 @@ export const content = {
     noticePage: {
       heroAlt: "서브페이지 배경",
       heroTitle: "공지사항",
+      metaDescription:
+        "WYD 2027 서울 교구대회(DID) 공지사항. 신청 일정, 운영 안내, 후원 및 교구대회 소식을 확인하세요.",
+      detailDescription: (title: string) =>
+        `WYD 2027 서울 교구대회(DID) 공지사항: ${title}. 신청 일정과 교구대회 운영 안내를 확인하세요.`,
       breadcrumb: ["NOTICE /", "공지사항"],
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
@@ -175,6 +183,8 @@ export const content = {
     introducePage: {
       heroAlt: "서브페이지 배경",
       heroTitle: "교구대회 소개",
+      metaDescription:
+        "WYD 2027 서울 세계청년대회 교구대회(DID) 소개. 일정, 교구별 프로그램, 한국 16개 교구 정보를 안내합니다.",
       breadcrumb: ["2027 DID /", "교구대회 소개"],
       leftMenuTitle: "2027 DID",
       leftMenuItems: [
@@ -321,12 +331,14 @@ export const content = {
     applyPage: {
       heroAlt: "Sub page background",
       heroTitle: "DID Application",
+      metaDescription:
+        "Apply for WYD 2027 Seoul Days in Diocese (DID). Check available dioceses, application status, and consent information.",
       breadcrumb: ["Participate /", "Apply"],
       leftMenuTitle: "Participate",
       leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
       pageTitle: "DID Application",
       cardTitle: (name: string) => `${name} DID Application`,
-      cardDesc: (name: string) => `Applications open from June 1st.`,
+      cardDesc: () => `Applications open from June 1st.`,
       rateLabel: "Application Rate",
       applyBtn: "Apply",
       applyUnavailable: "Applications are not open yet.",
@@ -346,6 +358,8 @@ export const content = {
     statusPage: {
       heroAlt: "Sub page background",
       heroTitle: "Application Status",
+      metaDescription:
+        "View the WYD 2027 Seoul DID application status by diocese and check participation progress across Korea.",
       breadcrumb: ["Participate /", "Status"],
       leftMenuTitle: "Participate",
       leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
@@ -354,6 +368,10 @@ export const content = {
     noticePage: {
       heroAlt: "Sub page background",
       heroTitle: "Announcements",
+      metaDescription:
+        "Official WYD 2027 Seoul DID announcements for application schedules, event operations, sponsors, and diocesan updates.",
+      detailDescription: (title: string) =>
+        `WYD 2027 Seoul DID announcement: ${title}. Read official application and event operation updates.`,
       breadcrumb: ["NOTICE /", "Announcements"],
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
@@ -373,6 +391,8 @@ export const content = {
     introducePage: {
       heroAlt: "Sub page background",
       heroTitle: "About DID",
+      metaDescription:
+        "Learn about WYD 2027 Seoul Days in Diocese, including the DID schedule, diocesan programs, and Catholic dioceses in Korea.",
       breadcrumb: ["2027 DID /", "About DID"],
       leftMenuTitle: "2027 DID",
       leftMenuItems: [

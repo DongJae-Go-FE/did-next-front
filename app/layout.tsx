@@ -3,6 +3,12 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://wyd2027did.org"),
+  alternates: {
+    types: {
+      "application/rss+xml": "https://wyd2027did.org/rss.xml",
+    },
+  },
   verification: {
     google: "1NdUck-rAwlfvjPBoje9zV7mPKhKZW3_hOKadqP0fIE",
     other: {

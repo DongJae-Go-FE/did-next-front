@@ -27,12 +27,15 @@ export async function generateMetadata({
   if (!locales.includes(localeStr as Locale)) return {};
   const locale = localeStr as Locale;
   const base = content[locale].metadata;
+  const noticePage = content[locale].noticePage;
   const detail = await getNoticeDetail(id);
-  const title = detail?.title ?? content[locale].noticePage.heroTitle;
+  const title = detail?.title ?? noticePage.heroTitle;
+  const description = noticePage.detailDescription(title);
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: `${title} | ${base.title}`,
-    description: base.description,
+    description,
     keywords: base.keywords,
     alternates: {
       canonical: `${SITE_URL}/${locale}/notice/${id}`,
@@ -41,10 +44,13 @@ export async function generateMetadata({
         "en-US": `${SITE_URL}/en/notice/${id}`,
         "x-default": `${SITE_URL}/kr/notice/${id}`,
       },
+      types: {
+        "application/rss+xml": `${SITE_URL}/rss.xml`,
+      },
     },
     openGraph: {
       title: `${title} | ${base.title}`,
-      description: base.description,
+      description,
       url: `${SITE_URL}/${locale}/notice/${id}`,
       siteName: base.title,
       locale: base.ogLocale,

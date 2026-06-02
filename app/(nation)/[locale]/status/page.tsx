@@ -31,10 +31,12 @@ export async function generateMetadata({
   const locale = localeStr as Locale;
   const t = content[locale].statusPage;
   const base = content[locale].metadata;
+  const description = t.metaDescription;
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: `${t.heroTitle} | ${base.title}`,
-    description: base.description,
+    description,
     keywords: base.keywords,
     alternates: {
       canonical: `${SITE_URL}/${locale}/status`,
@@ -43,10 +45,13 @@ export async function generateMetadata({
         "en-US": `${SITE_URL}/en/status`,
         "x-default": `${SITE_URL}/kr/status`,
       },
+      types: {
+        "application/rss+xml": `${SITE_URL}/rss.xml`,
+      },
     },
     openGraph: {
       title: `${t.heroTitle} | ${base.title}`,
-      description: base.description,
+      description,
       url: `${SITE_URL}/${locale}/status`,
       siteName: base.title,
       locale: base.ogLocale,
@@ -55,7 +60,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${t.heroTitle} | ${base.title}`,
-      description: base.description,
+      description,
     },
   };
 }

@@ -68,6 +68,9 @@ export async function generateMetadata({
         "en-US": `${SITE_URL}/en`,
         "x-default": `${SITE_URL}/kr`,
       },
+      types: {
+        "application/rss+xml": `${SITE_URL}/rss.xml`,
+      },
     },
     openGraph: {
       title: t.title,
@@ -110,9 +113,12 @@ export default async function LocaleLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Event",
+    "@id": `${SITE_URL}/${locale}#event`,
     name: locale === "kr" ? "2027 세계청년대회 교구대회" : "2027 World Youth Day Diocesan Day",
     alternateName: SEARCH_ALIASES,
     description: t.description,
+    url: `${SITE_URL}/${locale}`,
+    mainEntityOfPage: `${SITE_URL}/${locale}`,
     image: `${SITE_URL}/opengraph-image`,
     startDate: "2027-07-29",
     endDate: "2027-08-02",
@@ -129,12 +135,16 @@ export default async function LocaleLayout({
     },
     organizer: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       url: SITE_URL,
+      sameAs: ["https://wydseoul.org/", "https://www.cbck.or.kr"],
     },
     offers: {
       "@type": "Offer",
+      name: locale === "kr" ? "DID 신청" : "DID Application",
       url: `${SITE_URL}/${locale}/apply`,
+      validFrom: "2026-06-01T00:00:00+09:00",
     },
     inLanguage: locale === "kr" ? "ko" : "en",
   };

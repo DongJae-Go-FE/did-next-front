@@ -127,10 +127,12 @@ export async function generateMetadata({
   const locale = localeStr as Locale;
   const t = content[locale].applyPage;
   const base = content[locale].metadata;
+  const description = t.metaDescription;
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: `${t.heroTitle} | ${base.title}`,
-    description: base.description,
+    description,
     keywords: base.keywords,
     alternates: {
       canonical: `${SITE_URL}/${locale}/apply`,
@@ -139,10 +141,13 @@ export async function generateMetadata({
         "en-US": `${SITE_URL}/en/apply`,
         "x-default": `${SITE_URL}/kr/apply`,
       },
+      types: {
+        "application/rss+xml": `${SITE_URL}/rss.xml`,
+      },
     },
     openGraph: {
       title: `${t.heroTitle} | ${base.title}`,
-      description: base.description,
+      description,
       url: `${SITE_URL}/${locale}/apply`,
       siteName: base.title,
       locale: base.ogLocale,
@@ -151,7 +156,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${t.heroTitle} | ${base.title}`,
-      description: base.description,
+      description,
     },
   };
 }
@@ -246,9 +251,9 @@ export default async function Page({
                       </CardTitle>
                       <CardDescription
                         className="whitespace-normal leading-normal break-keep"
-                        title={t.cardDesc(name)}
+                        title={t.cardDesc()}
                       >
-                        {t.cardDesc(name)}
+                        {t.cardDesc()}
                       </CardDescription>
                       <div className="mt-1">
                         <div className="flex flex-wrap justify-between items-center gap-x-2 gap-y-1 mb-1">
