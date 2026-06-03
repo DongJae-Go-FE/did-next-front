@@ -8,7 +8,7 @@ export const content = {
     metadata: {
       title: "WYD 2027 세계청년대회 교구대회",
       description:
-        "WYD 2027 SEOUL DID 공식 웹사이트. 2027 서울 세계청년대회(WYD, WYD2027) 교구대회(DID) 전국 16개 교구 신청 정보와 일정을 확인하세요.",
+        "WYD 2027 서울 세계청년대회 교구대회(DID) 공식 사이트. 전국 16개 교구 신청 정보와 일정을 안내합니다.",
       keywords:
         "WYD, wyd, WYD2027, wyd2027, WYD 2027, wyd 2027, 2027 WYD, 2027 세계청년대회, WYD Seoul 2027, 서울 세계청년대회, 교구대회, DID, Days in Diocese, 가톨릭, 천주교, 세계청년대회 신청, 교구 신청, 인천교구, 서울대교구, 수원교구, 의정부교구, 춘천교구, 원주교구, 대전교구, 청주교구, 대구대교구, 부산교구, 마산교구, 안동교구, 광주대교구, 전주교구, 제주교구, 군종교구, GMG, JMJ, 한국 천주교",
       ogLocale: "ko_KR",
