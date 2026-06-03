@@ -6,7 +6,7 @@ export const content = {
   kr: {
     lang: "ko",
     metadata: {
-      title: "WYD 2027 세계청년대회 교구대회",
+      title: "WYD 2027 세계청년대회 교구대회 공식 홈페이지",
       description:
         "WYD 2027 서울 세계청년대회 교구대회(DID) 공식 사이트. 전국 16개 교구 신청 정보와 일정을 안내합니다.",
       keywords:
@@ -217,7 +217,7 @@ export const content = {
   en: {
     lang: "en",
     metadata: {
-      title: "WYD 2027 SEOUL DID",
+      title: "WYD 2027 SEOUL DID Official Website",
       description:
         "Official WYD 2027 SEOUL DID site for 2027 World Youth Day Seoul (WYD, WYD2027). Apply and explore 16 Catholic dioceses across Korea.",
       keywords:
