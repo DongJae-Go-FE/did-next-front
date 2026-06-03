@@ -15,11 +15,11 @@ export const content = {
     },
     header: {
       logoAlt: "wyd did",
-      homeHref: "/",
+      homeHref: "/kr",
     },
     footer: {
       logoAlt: "DID",
-      homeHref: "/",
+      homeHref: "/kr",
       address: "서울 광진구 면목로 74, 한국천주교중앙협의회, 04918",
       email: "wyd2027did@cbck.kr",
       sponsorInquiry: "후원 문의",
@@ -33,7 +33,7 @@ export const content = {
     menu: {
       dialogTitle: "DID 메뉴",
       dialogDescription: "DID 메뉴입니다.",
-      logoHref: "/",
+      logoHref: "/kr",
       sections: [
         {
           title: "2027 DID",

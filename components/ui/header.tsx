@@ -17,11 +17,12 @@ import {
 } from "@/components/ui/select";
 
 import Menu from "../menu";
-import type { Locale } from "@/app/(nation)/_lib/content";
+import { content, type Locale } from "@/app/(nation)/_lib/content";
 
 export default function Header({ locale = "kr" }: { locale?: Locale }) {
   const { push } = useRouter();
   const pathname = usePathname();
+  const t = content[locale].header;
   const [value, setValue] = useState<string>(locale);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -91,10 +92,10 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
     >
       <div className="max-w-[1400px] mx-auto w-full flex items-center justify-between">
         <h1>
-          <Link href={locale === "kr" ? "/" : `/${locale}`}>
+          <Link href={t.homeHref}>
             <Image
               src="/logo.svg"
-              alt="wyd logo"
+              alt={t.logoAlt}
               width={60}
               height={40}
               className="w-auto h-18"
