@@ -108,7 +108,7 @@ export function getSiteName(locale: SiteLocale) {
   return SITE_NAME_BY_LOCALE[locale];
 }
 
-export function getMetaDescription(description: string, maxLength: number = 80) {
+export function getMetaDescription(description: string, maxLength: number = 160) {
   const normalizedDescription = description.trim().replace(/\s+/g, " ");
   const chars = Array.from(normalizedDescription);
 
