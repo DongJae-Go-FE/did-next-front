@@ -19,9 +19,16 @@ import {
   createArticleJsonLd,
   createBreadcrumbJsonLd,
 } from "@/lib/structured-data";
+import {
+  SITE_URL,
+  getCanonicalUrl,
+  getLanguageAlternates,
+  getMetaDescription,
+  getPageTitle,
+  getSiteName,
+} from "@/lib/seo";
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
-const SITE_URL = "https://wyd2027did.org";
 
 export async function generateMetadata({
   params,
@@ -35,29 +42,27 @@ export async function generateMetadata({
   const noticePage = content[locale].noticePage;
   const detail = await getNoticeDetail(id);
   const title = detail?.title ?? noticePage.heroTitle;
-  const description = noticePage.detailDescription(title);
+  const description = getMetaDescription(noticePage.detailDescription(title));
+  const pageTitle = getPageTitle(locale, title);
+  const siteName = getSiteName(locale);
+  const noticePath = `/notice/${id}`;
 
   return {
     metadataBase: new URL(SITE_URL),
-    title: `${title} | ${base.title}`,
+    title: pageTitle,
     description,
-    keywords: base.keywords,
     alternates: {
-      canonical: `${SITE_URL}/${locale}/notice/${id}`,
-      languages: {
-        "ko-KR": `${SITE_URL}/kr/notice/${id}`,
-        "en-US": `${SITE_URL}/en/notice/${id}`,
-        "x-default": `${SITE_URL}/kr/notice/${id}`,
-      },
+      canonical: getCanonicalUrl(locale, noticePath),
+      languages: getLanguageAlternates(noticePath),
       types: {
         "application/rss+xml": `${SITE_URL}/rss.xml`,
       },
     },
     openGraph: {
-      title: `${title} | ${base.title}`,
+      title: pageTitle,
       description,
-      url: `${SITE_URL}/${locale}/notice/${id}`,
-      siteName: base.title,
+      url: getCanonicalUrl(locale, noticePath),
+      siteName,
       locale: base.ogLocale,
       type: "article",
     },
@@ -97,7 +102,7 @@ export default async function Page({
   }
 
   const noticeUrl = `${SITE_URL}/${locale}/notice/${id}`;
-  const description = t.detailDescription(detail.title);
+  const description = getMetaDescription(t.detailDescription(detail.title));
   const breadcrumbJsonLd = createBreadcrumbJsonLd([
     { name: locale === "kr" ? "홈" : "Home", url: `${SITE_URL}/${locale}` },
     { name: t.heroTitle, url: `${SITE_URL}/${locale}/notice` },

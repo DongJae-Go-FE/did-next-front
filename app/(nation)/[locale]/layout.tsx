@@ -8,19 +8,20 @@ import SmoothScrolling from "@/components/smooth-scroll";
 import LangSync from "@/components/lang-sync";
 
 import { content, locales, type Locale } from "../_lib/content";
-
-const SITE_URL = "https://wyd2027did.org";
-const SITE_NAME = "WYD 2027 SEOUL DID";
-const SEARCH_ALIASES = [
-  "WYD",
-  "wyd",
-  "WYD2027",
-  "wyd2027",
-  "WYD 2027",
-  "wyd 2027",
-  "2027 WYD",
-  "2027 WYD SEOUL DID",
-];
+import {
+  EVENT_NAME_BY_LOCALE,
+  SEARCH_ALIASES_BY_LOCALE,
+  SITE_ALIASES_BY_LOCALE,
+  SITE_URL,
+  getAlternateOpenGraphLocale,
+  getCanonicalUrl,
+  getLanguageAlternates,
+  getLocaleLanguage,
+  getMetaDescription,
+  getOpenGraphLocale,
+  getPageTitle,
+  getSiteName,
+} from "@/lib/seo";
 
 function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
@@ -39,15 +40,17 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
 
   const t = content[locale].metadata;
+  const pageTitle = getPageTitle(locale);
+  const siteName = getSiteName(locale);
+  const description = getMetaDescription(t.description);
 
   return {
     metadataBase: new URL(SITE_URL),
-    title: t.title,
-    description: t.description,
-    keywords: t.keywords,
-    applicationName: SITE_NAME,
-    creator: SITE_NAME,
-    publisher: SITE_NAME,
+    title: pageTitle,
+    description,
+    applicationName: siteName,
+    creator: siteName,
+    publisher: siteName,
     referrer: "origin-when-cross-origin",
     robots: {
       index: true,
@@ -62,29 +65,25 @@ export async function generateMetadata({
     },
     category: "event",
     alternates: {
-      canonical: `${SITE_URL}/${locale}`,
-      languages: {
-        "ko-KR": `${SITE_URL}/kr`,
-        "en-US": `${SITE_URL}/en`,
-        "x-default": `${SITE_URL}/kr`,
-      },
+      canonical: getCanonicalUrl(locale),
+      languages: getLanguageAlternates(),
       types: {
         "application/rss+xml": `${SITE_URL}/rss.xml`,
       },
     },
     openGraph: {
-      title: t.title,
-      description: t.description,
-      siteName: SITE_NAME,
-      url: `${SITE_URL}/${locale}`,
-      locale: t.ogLocale,
-      alternateLocale: locale === "kr" ? "en_US" : "ko_KR",
+      title: pageTitle,
+      description,
+      siteName,
+      url: getCanonicalUrl(locale),
+      locale: getOpenGraphLocale(locale),
+      alternateLocale: getAlternateOpenGraphLocale(locale),
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: t.title,
-      description: t.description,
+      title: pageTitle,
+      description,
     },
     other: {
       "geo.region": "KR-41",
@@ -109,45 +108,68 @@ export default async function LocaleLayout({
   }
 
   const t = content[locale].metadata;
+  const siteName = getSiteName(locale);
+  const localeLanguage = getLocaleLanguage(locale);
+  const description = getMetaDescription(t.description);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "@id": `${SITE_URL}/${locale}#event`,
-    name: locale === "kr" ? "2027 세계청년대회 교구대회" : "2027 World Youth Day Diocesan Day",
-    alternateName: SEARCH_ALIASES,
-    description: t.description,
-    url: `${SITE_URL}/${locale}`,
-    mainEntityOfPage: `${SITE_URL}/${locale}`,
-    image: `${SITE_URL}/opengraph-image`,
-    startDate: "2027-07-29",
-    endDate: "2027-08-02",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    eventStatus: "https://schema.org/EventScheduled",
-    location: {
-      "@type": "Place",
-      name: "Seoul, South Korea",
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "KR",
-        addressRegion: "Seoul",
-      },
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: siteName,
+      alternateName: SITE_ALIASES_BY_LOCALE[locale],
+      inLanguage: localeLanguage,
     },
-    organizer: {
+    {
+      "@context": "https://schema.org",
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: SITE_NAME,
+      name: siteName,
+      alternateName: SITE_ALIASES_BY_LOCALE[locale],
       url: SITE_URL,
       sameAs: ["https://wydseoul.org/", "https://www.cbck.or.kr"],
     },
-    offers: {
-      "@type": "Offer",
-      name: locale === "kr" ? "DID 신청" : "DID Application",
-      url: `${SITE_URL}/${locale}/apply`,
-      validFrom: "2026-06-01T00:00:00+09:00",
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "@id": `${SITE_URL}/${locale}#event`,
+      name: EVENT_NAME_BY_LOCALE[locale],
+      alternateName: SEARCH_ALIASES_BY_LOCALE[locale],
+      description,
+      url: getCanonicalUrl(locale),
+      mainEntityOfPage: getCanonicalUrl(locale),
+      image: `${SITE_URL}/opengraph-image`,
+      startDate: "2027-07-29",
+      endDate: "2027-08-02",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      eventStatus: "https://schema.org/EventScheduled",
+      location: {
+        "@type": "Place",
+        name: "Seoul, South Korea",
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "KR",
+          addressRegion: "Seoul",
+        },
+      },
+      organizer: {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        name: siteName,
+        url: SITE_URL,
+        sameAs: ["https://wydseoul.org/", "https://www.cbck.or.kr"],
+      },
+      offers: {
+        "@type": "Offer",
+        name: locale === "kr" ? "DID 신청" : "DID Application",
+        url: `${SITE_URL}/${locale}/apply`,
+        validFrom: "2026-06-01T00:00:00+09:00",
+      },
+      inLanguage: localeLanguage,
     },
-    inLanguage: locale === "kr" ? "ko" : "en",
-  };
+  ];
 
   return (
     <>

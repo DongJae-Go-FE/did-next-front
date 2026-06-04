@@ -15,9 +15,16 @@ import JsonLd from "@/components/json-ld";
 import { getDioceseChartData } from "@/lib/notion-status";
 import { content, locales, type Locale } from "../../_lib/content";
 import { createBreadcrumbJsonLd } from "@/lib/structured-data";
+import {
+  SITE_URL,
+  getCanonicalUrl,
+  getLanguageAlternates,
+  getMetaDescription,
+  getPageTitle,
+  getSiteName,
+} from "@/lib/seo";
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
-const SITE_URL = "https://wyd2027did.org";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -33,35 +40,32 @@ export async function generateMetadata({
   const locale = localeStr as Locale;
   const t = content[locale].statusPage;
   const base = content[locale].metadata;
-  const description = t.metaDescription;
+  const description = getMetaDescription(t.metaDescription);
+  const pageTitle = getPageTitle(locale, t.heroTitle);
+  const siteName = getSiteName(locale);
 
   return {
     metadataBase: new URL(SITE_URL),
-    title: `${t.heroTitle} | ${base.title}`,
+    title: pageTitle,
     description,
-    keywords: base.keywords,
     alternates: {
-      canonical: `${SITE_URL}/${locale}/status`,
-      languages: {
-        "ko-KR": `${SITE_URL}/kr/status`,
-        "en-US": `${SITE_URL}/en/status`,
-        "x-default": `${SITE_URL}/kr/status`,
-      },
+      canonical: getCanonicalUrl(locale, "/status"),
+      languages: getLanguageAlternates("/status"),
       types: {
         "application/rss+xml": `${SITE_URL}/rss.xml`,
       },
     },
     openGraph: {
-      title: `${t.heroTitle} | ${base.title}`,
+      title: pageTitle,
       description,
-      url: `${SITE_URL}/${locale}/status`,
-      siteName: base.title,
+      url: getCanonicalUrl(locale, "/status"),
+      siteName,
       locale: base.ogLocale,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${t.heroTitle} | ${base.title}`,
+      title: pageTitle,
       description,
     },
   };

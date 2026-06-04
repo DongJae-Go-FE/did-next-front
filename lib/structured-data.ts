@@ -1,5 +1,4 @@
-const SITE_URL = "https://wyd2027did.org";
-const SITE_NAME = "WYD 2027 SEOUL DID";
+import { SITE_URL, getSiteName } from "@/lib/seo";
 
 export type StructuredDataLocale = "kr" | "en";
 
@@ -34,6 +33,7 @@ export function createArticleJsonLd({
   url: string;
 }) {
   const authorName = author?.trim();
+  const siteName = getSiteName(locale);
 
   return {
     "@context": "https://schema.org",
@@ -57,13 +57,13 @@ export function createArticleJsonLd({
         }
       : {
           "@type": "Organization",
-          name: SITE_NAME,
+          name: siteName,
           url: SITE_URL,
         },
     publisher: {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: SITE_NAME,
+      name: siteName,
       url: SITE_URL,
     },
   };

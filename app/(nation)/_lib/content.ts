@@ -8,9 +8,7 @@ export const content = {
     metadata: {
       title: "WYD 2027 세계청년대회 교구대회 공식 홈페이지",
       description:
-        "WYD 2027 서울 세계청년대회 교구대회(DID) 공식 사이트. 전국 16개 교구 신청 정보와 일정을 안내합니다.",
-      keywords:
-        "WYD, wyd, WYD2027, wyd2027, WYD 2027, wyd 2027, 2027 WYD, 2027 세계청년대회, WYD Seoul 2027, 서울 세계청년대회, 교구대회, DID, Days in Diocese, 가톨릭, 천주교, 세계청년대회 신청, 교구 신청, 인천교구, 서울대교구, 수원교구, 의정부교구, 춘천교구, 원주교구, 대전교구, 청주교구, 대구대교구, 부산교구, 마산교구, 안동교구, 광주대교구, 전주교구, 제주교구, 군종교구, GMG, JMJ, 한국 천주교",
+        "WYD 2027 서울 세계청년대회 교구대회 공식 사이트. 일정과 신청 정보를 안내합니다.",
       ogLocale: "ko_KR",
     },
     header: {
@@ -28,7 +26,8 @@ export const content = {
         { label: "WYD2027SEOUL", href: "https://wydseoul.org/" },
         { label: "한국천주교주교회의", href: "https://www.cbck.or.kr" },
       ],
-      copyright: "Copyright ⓒ WYD2027 SEOUL DID All rights reserved",
+      copyright:
+        "Copyright ⓒ WYD 2027 세계청년대회 교구대회 All rights reserved",
     },
     menu: {
       dialogTitle: "DID 메뉴",
@@ -59,7 +58,7 @@ export const content = {
       ],
     },
     intro: {
-      welcomeText: "WYD 2027 SEOUL DID 페이지에 오신걸 환영합니다.",
+      welcomeText: "WYD 2027 세계청년대회 교구대회 페이지에 오신 걸 환영합니다.",
       logoAriaLabel: "교구 로고 모음",
     },
     mainNoticePopup: {
@@ -120,7 +119,7 @@ export const content = {
       heroAlt: "서브페이지 배경",
       heroTitle: "DID 신청",
       metaDescription:
-        "WYD 2027 서울 세계청년대회 교구대회(DID) 신청 페이지. 교구별 신청 가능 여부, 신청률, 개인정보 동의 안내를 확인하세요.",
+        "WYD 2027 서울 DID 신청 안내. 교구별 신청 가능 여부와 현황을 확인하세요.",
       breadcrumb: ["참여 /", "신청"],
       leftMenuTitle: "참여",
       leftMenuItems: [
@@ -148,7 +147,7 @@ export const content = {
       heroAlt: "서브페이지 배경",
       heroTitle: "교구별 신청 현황",
       metaDescription:
-        "WYD 2027 서울 교구대회(DID) 교구별 신청 현황 페이지. 전국 교구의 신청률과 진행 상황을 확인하세요.",
+        "WYD 2027 서울 DID 교구별 신청 현황과 참여 진행 상황을 확인하세요.",
       breadcrumb: ["참여 /", "신청 현황"],
       leftMenuTitle: "참여",
       leftMenuItems: [
@@ -161,7 +160,7 @@ export const content = {
       heroAlt: "서브페이지 배경",
       heroTitle: "공지사항",
       metaDescription:
-        "WYD 2027 서울 교구대회(DID) 공지사항. 신청 일정, 운영 안내, 후원 및 교구대회 소식을 확인하세요.",
+        "WYD 2027 서울 DID 공지사항. 신청 일정과 운영 안내를 확인하세요.",
       detailDescription: (title: string) =>
         `WYD 2027 서울 교구대회(DID) 공지사항: ${title}. 신청 일정과 교구대회 운영 안내를 확인하세요.`,
       breadcrumb: ["NOTICE /", "공지사항"],
@@ -184,7 +183,7 @@ export const content = {
       heroAlt: "서브페이지 배경",
       heroTitle: "교구대회 소개",
       metaDescription:
-        "WYD 2027 서울 세계청년대회 교구대회(DID) 소개. 일정, 교구별 프로그램, 한국 16개 교구 정보를 안내합니다.",
+        "WYD 2027 서울 DID 소개. 일정과 한국 16개 교구 정보를 안내합니다.",
       breadcrumb: ["2027 DID /", "교구대회 소개"],
       leftMenuTitle: "2027 DID",
       leftMenuItems: [
@@ -217,11 +216,9 @@ export const content = {
   en: {
     lang: "en",
     metadata: {
-      title: "WYD 2027 SEOUL DID Official Website",
+      title: "WYD 2027 Seoul DID Official Website",
       description:
-        "Official WYD 2027 SEOUL DID site for 2027 World Youth Day Seoul (WYD, WYD2027). Apply and explore 16 Catholic dioceses across Korea.",
-      keywords:
-        "WYD, wyd, WYD2027, wyd2027, WYD 2027, wyd 2027, 2027 WYD, 2027 World Youth Day, WYD Seoul 2027, Days in Diocese, DID, Catholic, Korea, Diocese of Incheon, Archdiocese of Seoul, Diocese of Suwon, Diocese of Uijeongbu, Diocese of Chuncheon, Diocese of Wonju, Diocese of Daejeon, Diocese of Cheongju, Archdiocese of Daegu, Diocese of Busan, Diocese of Masan, Diocese of Andong, Archdiocese of Gwangju, Diocese of Jeonju, Diocese of Jeju, Military Ordinariate, GMG, JMJ, GMG Séoul 2027, JMJ Seúl 2027, JMJ Séoul 2027, Korean Catholic Church, WYD Diocese",
+        "Official site for WYD 2027 Seoul DID with schedules and diocesan applications.",
       ogLocale: "en_US",
     },
     header: {
@@ -243,7 +240,8 @@ export const content = {
           href: "https://www.cbck.or.kr",
         },
       ],
-      copyright: "Copyright ⓒ WYD2027 SEOUL DID All rights reserved",
+      copyright:
+        "Copyright ⓒ WYD 2027 Seoul DID Official Website All rights reserved",
     },
     menu: {
       dialogTitle: "DID Menu",
@@ -271,7 +269,7 @@ export const content = {
       ],
     },
     intro: {
-      welcomeText: "Welcome to WYD 2027 SEOUL DID.",
+      welcomeText: "Welcome to the WYD 2027 Seoul DID Official Website.",
       logoAriaLabel: "Diocese logos",
     },
     mainNoticePopup: {
@@ -332,7 +330,7 @@ export const content = {
       heroAlt: "Sub page background",
       heroTitle: "DID Application",
       metaDescription:
-        "Apply for WYD 2027 Seoul Days in Diocese (DID). Check available dioceses, application status, and consent information.",
+        "Apply for WYD 2027 Seoul DID and check diocesan application status.",
       breadcrumb: ["Participate /", "Apply"],
       leftMenuTitle: "Participate",
       leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
@@ -359,7 +357,7 @@ export const content = {
       heroAlt: "Sub page background",
       heroTitle: "Application Status",
       metaDescription:
-        "View the WYD 2027 Seoul DID application status by diocese and check participation progress across Korea.",
+        "View WYD 2027 Seoul DID application status by diocese.",
       breadcrumb: ["Participate /", "Status"],
       leftMenuTitle: "Participate",
       leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
@@ -369,7 +367,7 @@ export const content = {
       heroAlt: "Sub page background",
       heroTitle: "Announcements",
       metaDescription:
-        "Official WYD 2027 Seoul DID announcements for application schedules, event operations, sponsors, and diocesan updates.",
+        "Official WYD 2027 Seoul DID notices for schedules and event updates.",
       detailDescription: (title: string) =>
         `WYD 2027 Seoul DID announcement: ${title}. Read official application and event operation updates.`,
       breadcrumb: ["NOTICE /", "Announcements"],
@@ -392,7 +390,7 @@ export const content = {
       heroAlt: "Sub page background",
       heroTitle: "About DID",
       metaDescription:
-        "Learn about WYD 2027 Seoul Days in Diocese, including the DID schedule, diocesan programs, and Catholic dioceses in Korea.",
+        "Learn about WYD 2027 Seoul DID schedules and diocesan programs.",
       breadcrumb: ["2027 DID /", "About DID"],
       leftMenuTitle: "2027 DID",
       leftMenuItems: [

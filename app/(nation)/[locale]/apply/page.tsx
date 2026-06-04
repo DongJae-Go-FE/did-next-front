@@ -24,9 +24,16 @@ import JsonLd from "@/components/json-ld";
 import { content, locales, type Locale } from "../../_lib/content";
 import { getDioceseChartData } from "@/lib/notion-status";
 import { createBreadcrumbJsonLd } from "@/lib/structured-data";
+import {
+  SITE_URL,
+  getCanonicalUrl,
+  getLanguageAlternates,
+  getMetaDescription,
+  getPageTitle,
+  getSiteName,
+} from "@/lib/seo";
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
-const SITE_URL = "https://wyd2027did.org";
 
 const dioceseData = [
   {
@@ -129,35 +136,32 @@ export async function generateMetadata({
   const locale = localeStr as Locale;
   const t = content[locale].applyPage;
   const base = content[locale].metadata;
-  const description = t.metaDescription;
+  const description = getMetaDescription(t.metaDescription);
+  const pageTitle = getPageTitle(locale, t.heroTitle);
+  const siteName = getSiteName(locale);
 
   return {
     metadataBase: new URL(SITE_URL),
-    title: `${t.heroTitle} | ${base.title}`,
+    title: pageTitle,
     description,
-    keywords: base.keywords,
     alternates: {
-      canonical: `${SITE_URL}/${locale}/apply`,
-      languages: {
-        "ko-KR": `${SITE_URL}/kr/apply`,
-        "en-US": `${SITE_URL}/en/apply`,
-        "x-default": `${SITE_URL}/kr/apply`,
-      },
+      canonical: getCanonicalUrl(locale, "/apply"),
+      languages: getLanguageAlternates("/apply"),
       types: {
         "application/rss+xml": `${SITE_URL}/rss.xml`,
       },
     },
     openGraph: {
-      title: `${t.heroTitle} | ${base.title}`,
+      title: pageTitle,
       description,
-      url: `${SITE_URL}/${locale}/apply`,
-      siteName: base.title,
+      url: getCanonicalUrl(locale, "/apply"),
+      siteName,
       locale: base.ogLocale,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${t.heroTitle} | ${base.title}`,
+      title: pageTitle,
       description,
     },
   };
