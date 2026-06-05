@@ -50,6 +50,7 @@ export default function MainNoticePopup({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent
+        data-nosnippet
         showCloseButton={false}
         className="w-[min(calc(100%-2rem),560px)] border-0 bg-transparent p-0 shadow-none"
       >

@@ -31,7 +31,6 @@ export default async function Home({
 
   return (
     <main className="w-full">
-      <MainNoticePopup locale={locale} />
       <div className="relative bg-black">
         <MainSlider locale={locale} />
       </div>
@@ -70,6 +69,7 @@ export default async function Home({
           <PrayPage locale={locale} />
         </div>
       </div>
+      <MainNoticePopup locale={locale} />
     </main>
   );
 }

@@ -11,13 +11,11 @@ export default function SliderItem00En() {
         fill
         sizes="100vw"
         priority
-        alt="WYD 2027 DID main image first slide"
+        alt="WYD2027 Seoul DID main image"
       />
-      <h2 className="heading02b text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 text-center text-7xl max-[1080px]:text-5xl max-[769px]:text-3xl animate-bottomUp opacity-0 w-full">
-        2027 WYD DID
-        <br />
-        COMING SOON
-      </h2>
+      <h1 className="heading02b text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 text-center text-7xl max-[1080px]:text-5xl max-[769px]:text-3xl animate-bottomUp opacity-0 w-full">
+        WYD2027 · WYD 2027 Seoul DID
+      </h1>
       <div className="absolute top-0 left-0 z-10 h-full w-full animate-fadeIn2 backdrop-brightness-30 opacity-0" />
     </div>
   );

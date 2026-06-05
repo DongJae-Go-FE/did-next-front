@@ -3,22 +3,27 @@ export type SiteLocale = "kr" | "en";
 export const SITE_URL = "https://wyd2027did.org";
 
 export const SITE_NAME_BY_LOCALE = {
-  kr: "WYD 2027 세계청년대회 교구대회 공식 홈페이지",
-  en: "WYD 2027 Seoul DID Official Website",
+  kr: "WYD2027 · WYD 2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
+  en: "WYD2027 · WYD 2027 Seoul DID Official Website",
 } as const satisfies Record<SiteLocale, string>;
 
 export const SITE_TITLE_BY_LOCALE = {
-  kr: "WYD 2027 세계청년대회 교구대회 공식 홈페이지",
-  en: "WYD 2027 Seoul DID Official Website",
+  kr: "WYD2027 · WYD 2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
+  en: "WYD2027 · WYD 2027 Seoul DID Official Website",
 } as const satisfies Record<SiteLocale, string>;
 
 export const EVENT_NAME_BY_LOCALE = {
-  kr: "2027 서울 세계청년대회 교구대회",
-  en: "2027 World Youth Day Seoul Days in Diocese",
+  kr: "WYD2027 서울 세계청년대회 교구대회(DID)",
+  en: "WYD2027 Seoul Days in Diocese",
 } as const satisfies Record<SiteLocale, string>;
 
 export const SITE_ALIASES_BY_LOCALE = {
   kr: [
+    "WYD",
+    "WYD 2027",
+    "WYD2027",
+    "WYD2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
+    "WYD2027 서울 교구대회 DID",
     "WYD 2027 세계청년대회 교구대회 공식 홈페이지",
     "WYD 2027 세계청년대회 교구대회",
     "WYD Seoul DID",
@@ -29,6 +34,11 @@ export const SITE_ALIASES_BY_LOCALE = {
     "서울 세계청년대회 교구대회",
   ],
   en: [
+    "WYD",
+    "WYD 2027",
+    "WYD2027",
+    "WYD2027 Seoul DID Official Website",
+    "WYD2027 Seoul Days in Diocese",
     "WYD 2027 Seoul DID Official Website",
     "WYD 2027 Seoul DID Official Site",
     "WYD 2027 Seoul DID",
@@ -44,6 +54,11 @@ export const SEARCH_ALIASES_BY_LOCALE = {
     "WYD",
     "WYD 2027",
     "WYD2027",
+    "WYD2027 교구대회",
+    "WYD2027 DID",
+    "WYD2027 서울 DID",
+    "WYD2027 서울 교구대회",
+    "WYD2027 세계청년대회 교구대회",
     "2027 서울 세계청년대회",
     "서울 세계청년대회",
     "교구대회",
@@ -55,6 +70,9 @@ export const SEARCH_ALIASES_BY_LOCALE = {
     "WYD",
     "WYD 2027",
     "WYD2027",
+    "WYD2027 DID",
+    "WYD2027 Seoul DID",
+    "WYD2027 Days in Diocese",
     "WYD Seoul 2027",
     "WYD 2027 Seoul DID",
     "2027 World Youth Day Seoul",

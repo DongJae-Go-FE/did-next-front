@@ -48,6 +48,7 @@ export async function generateMetadata({
     metadataBase: new URL(SITE_URL),
     title: pageTitle,
     description,
+    keywords: Array.from(SEARCH_ALIASES_BY_LOCALE[locale]),
     applicationName: siteName,
     creator: siteName,
     publisher: siteName,

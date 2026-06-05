@@ -6,9 +6,10 @@ export const content = {
   kr: {
     lang: "ko",
     metadata: {
-      title: "WYD 2027 세계청년대회 교구대회 공식 홈페이지",
+      title:
+        "WYD2027 · WYD 2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
       description:
-        "WYD 2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지입니다. 교구대회 일정, 교구 소개, 참가 신청, 신청 현황, 공지사항과 후원 정보를 확인하세요.",
+        "WYD2027, WYD 2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지입니다. 교구대회 일정, 교구 소개, 참가 신청, 신청 현황, 공지사항과 후원 정보를 확인하세요.",
       ogLocale: "ko_KR",
     },
     header: {
@@ -58,7 +59,8 @@ export const content = {
       ],
     },
     intro: {
-      welcomeText: "WYD 2027 세계청년대회 교구대회 페이지에 오신 걸 환영합니다.",
+      welcomeText:
+        "WYD2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지에 오신 걸 환영합니다.",
       logoAriaLabel: "교구 로고 모음",
     },
     mainNoticePopup: {
@@ -119,7 +121,7 @@ export const content = {
       heroAlt: "서브페이지 배경",
       heroTitle: "DID 신청",
       metaDescription:
-        "WYD 2027 서울 교구대회(DID) 참가 신청 안내 페이지입니다. 교구별 신청 가능 여부와 신청 링크를 확인하고, 참여 가능한 교구의 DID 신청 페이지로 이동하세요.",
+        "WYD2027 서울 교구대회(DID) 참가 신청 안내 페이지입니다. 교구별 신청 가능 여부와 신청 링크를 확인하고, 참여 가능한 교구의 DID 신청 페이지로 이동하세요.",
       breadcrumb: ["참여 /", "신청"],
       leftMenuTitle: "참여",
       leftMenuItems: [
@@ -147,7 +149,7 @@ export const content = {
       heroAlt: "서브페이지 배경",
       heroTitle: "교구별 신청 현황",
       metaDescription:
-        "WYD 2027 서울 교구대회(DID) 교구별 신청 현황 페이지입니다. 각 교구의 목표 인원, 현재 신청 인원, 신청률과 참여 진행 상황을 확인하세요.",
+        "WYD2027 서울 교구대회(DID) 교구별 신청 현황 페이지입니다. 각 교구의 목표 인원, 현재 신청 인원, 신청률과 참여 진행 상황을 확인하세요.",
       breadcrumb: ["참여 /", "신청 현황"],
       leftMenuTitle: "참여",
       leftMenuItems: [
@@ -160,9 +162,9 @@ export const content = {
       heroAlt: "서브페이지 배경",
       heroTitle: "공지사항",
       metaDescription:
-        "WYD 2027 서울 교구대회(DID) 공식 공지사항입니다. 신청 일정, 운영 안내, 교구대회 소식과 주요 업데이트를 확인하세요.",
+        "WYD2027 서울 교구대회(DID) 공식 공지사항입니다. 신청 일정, 운영 안내, 교구대회 소식과 주요 업데이트를 확인하세요.",
       detailDescription: (title: string) =>
-        `WYD 2027 서울 교구대회(DID) 공지사항: ${title}. 신청 일정, 운영 안내, 교구대회 소식과 주요 업데이트를 확인하세요.`,
+        `WYD2027 서울 교구대회(DID) 공지사항: ${title}. 신청 일정, 운영 안내, 교구대회 소식과 주요 업데이트를 확인하세요.`,
       breadcrumb: ["NOTICE /", "공지사항"],
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
@@ -183,7 +185,7 @@ export const content = {
       heroAlt: "서브페이지 배경",
       heroTitle: "교구대회 소개",
       metaDescription:
-        "WYD 2027 서울 교구대회(DID) 소개 페이지입니다. Days in Diocese 일정, 한국 교구 프로그램, 교구 소개와 행사 흐름을 확인하세요.",
+        "WYD2027 서울 교구대회(DID) 소개 페이지입니다. Days in Diocese 일정, 한국 교구 프로그램, 교구 소개와 행사 흐름을 확인하세요.",
       breadcrumb: ["2027 DID /", "교구대회 소개"],
       leftMenuTitle: "2027 DID",
       leftMenuItems: [
@@ -216,9 +218,9 @@ export const content = {
   en: {
     lang: "en",
     metadata: {
-      title: "WYD 2027 Seoul DID Official Website",
+      title: "WYD2027 · WYD 2027 Seoul DID Official Website",
       description:
-        "Official website for WYD 2027 Seoul Days in Diocese. Find DID schedules, diocese information, application links, application status, notices, and sponsorship information.",
+        "Official website for WYD2027 and WYD 2027 Seoul Days in Diocese. Find DID schedules, diocese information, application links, application status, notices, and sponsorship information.",
       ogLocale: "en_US",
     },
     header: {
@@ -269,7 +271,7 @@ export const content = {
       ],
     },
     intro: {
-      welcomeText: "Welcome to the WYD 2027 Seoul DID Official Website.",
+      welcomeText: "Welcome to the WYD2027 Seoul DID Official Website.",
       logoAriaLabel: "Diocese logos",
     },
     mainNoticePopup: {
@@ -330,7 +332,7 @@ export const content = {
       heroAlt: "Sub page background",
       heroTitle: "DID Application",
       metaDescription:
-        "DID application guide for WYD 2027 Seoul Days in Diocese. Check available dioceses, application links, and how to move to each diocesan application page.",
+        "DID application guide for WYD2027 Seoul Days in Diocese. Check available dioceses, application links, and how to move to each diocesan application page.",
       breadcrumb: ["Participate /", "Apply"],
       leftMenuTitle: "Participate",
       leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
@@ -357,7 +359,7 @@ export const content = {
       heroAlt: "Sub page background",
       heroTitle: "Application Status",
       metaDescription:
-        "WYD 2027 Seoul Days in Diocese application status by diocese. Check target numbers, current applicants, application rates, and participation progress.",
+        "WYD2027 Seoul Days in Diocese application status by diocese. Check target numbers, current applicants, application rates, and participation progress.",
       breadcrumb: ["Participate /", "Status"],
       leftMenuTitle: "Participate",
       leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
@@ -367,9 +369,9 @@ export const content = {
       heroAlt: "Sub page background",
       heroTitle: "Announcements",
       metaDescription:
-        "Official notices for WYD 2027 Seoul Days in Diocese. Check application schedules, operation guides, DID news, and important updates.",
+        "Official notices for WYD2027 Seoul Days in Diocese. Check application schedules, operation guides, DID news, and important updates.",
       detailDescription: (title: string) =>
-        `WYD 2027 Seoul Days in Diocese announcement: ${title}. Read application schedules, operation guides, DID news, and important updates.`,
+        `WYD2027 Seoul Days in Diocese announcement: ${title}. Read application schedules, operation guides, DID news, and important updates.`,
       breadcrumb: ["NOTICE /", "Announcements"],
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
@@ -390,7 +392,7 @@ export const content = {
       heroAlt: "Sub page background",
       heroTitle: "About DID",
       metaDescription:
-        "About WYD 2027 Seoul Days in Diocese. Learn about DID schedules, Korean diocesan programs, diocese information, and the event flow.",
+        "About WYD2027 Seoul Days in Diocese. Learn about DID schedules, Korean diocesan programs, diocese information, and the event flow.",
       breadcrumb: ["2027 DID /", "About DID"],
       leftMenuTitle: "2027 DID",
       leftMenuItems: [
