@@ -91,7 +91,7 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
       )}
     >
       <div className="max-w-[1400px] mx-auto w-full flex items-center justify-between">
-        <h1>
+        <div>
           <Link href={t.homeHref}>
             <Image
               src="/logo.svg"
@@ -102,12 +102,15 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
               priority
             />
           </Link>
-        </h1>
+        </div>
 
         <ul className="flex items-center gap-x-1">
           <li>
             <Select value={value} onValueChange={handleLanguageChange}>
               <SelectTrigger
+                aria-label={
+                  locale === "kr" ? "언어 선택" : "Select language"
+                }
                 className="border-none font-black text-lg"
                 size="lg"
               >

@@ -28,7 +28,11 @@ export default function Menu({ locale = "kr" }: { locale?: Locale }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button type="button" className="cursor-pointer">
+        <button
+          type="button"
+          aria-label={locale === "kr" ? "메뉴 열기" : "Open menu"}
+          className="cursor-pointer"
+        >
           <MenuIcon width={40} height={40} />
         </button>
       </DialogTrigger>
@@ -62,7 +66,11 @@ export default function Menu({ locale = "kr" }: { locale?: Locale }) {
               </DialogClose>
             </h2>
             <DialogClose asChild>
-              <button type="button" className="cursor-pointer">
+              <button
+                type="button"
+                aria-label={locale === "kr" ? "메뉴 닫기" : "Close menu"}
+                className="cursor-pointer"
+              >
                 <X width={40} height={40} fill="#fff" className="text-white" />
               </button>
             </DialogClose>

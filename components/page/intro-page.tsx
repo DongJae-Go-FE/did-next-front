@@ -67,6 +67,7 @@ export default function IntroPage({ locale = "kr" }: { locale?: Locale }) {
         <SplitText
           text={t.welcomeText}
           className="heading01b text-[clamp(14px,4vw,40px)] text-center font-black px-4"
+          tag="h2"
           delay={100}
           duration={1}
           ease="power3.out"
@@ -80,6 +81,7 @@ export default function IntroPage({ locale = "kr" }: { locale?: Locale }) {
         <SplitText
           text="DAY OF THE EVENT"
           className="heading01b text-[clamp(14px,4vw,40px)] text-center font-black"
+          tag="h2"
           delay={100}
           duration={1}
           ease="power3.out"

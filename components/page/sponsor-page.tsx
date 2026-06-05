@@ -26,11 +26,21 @@ const sponsors = [
   { name: "한국천주교주교회의", nameEn: "CBCK", image: "/sponsor/s9.svg", url: "https://www.cbck.or.kr/" },
 ];
 
-function SponsorItem({ index, locale }: { index: number; locale: Locale }) {
+function SponsorItem({
+  index,
+  locale,
+  asListItem = true,
+}: {
+  index: number;
+  locale: Locale;
+  asListItem?: boolean;
+}) {
   const sponsor = sponsors[index];
   const sponsorName = locale === "kr" ? sponsor.name : sponsor.nameEn;
+  const Wrapper = asListItem ? "li" : "div";
+
   return (
-    <li className="bg-white h-36 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors duration-100">
+    <Wrapper className="bg-white h-36 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors duration-100">
       <Link
         href={sponsor.url}
         target="_blank"
@@ -48,7 +58,7 @@ function SponsorItem({ index, locale }: { index: number; locale: Locale }) {
           priority
         />
       </Link>
-    </li>
+    </Wrapper>
   );
 }
 
@@ -79,7 +89,7 @@ export default function SponsorPage({ locale = "kr" }: { locale?: Locale }) {
         >
           {[...Array(9)].map((_, index) => (
             <SwiperSlide key={index}>
-              <SponsorItem index={index} locale={locale} />
+              <SponsorItem index={index} locale={locale} asListItem={false} />
             </SwiperSlide>
           ))}
         </Swiper>
