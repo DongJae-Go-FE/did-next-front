@@ -1,4 +1,4 @@
-import { SITE_URL, getSiteName } from "@/lib/seo";
+import { OG_IMAGE, SITE_URL, getSiteName } from "@/lib/seo";
 
 export type StructuredDataLocale = "kr" | "en";
 
@@ -47,7 +47,7 @@ export function createArticleJsonLd({
       "@type": "WebPage",
       "@id": url,
     },
-    image: `${SITE_URL}/opengraph-image.png`,
+    image: OG_IMAGE.url,
     datePublished: date,
     dateModified: date,
     author: authorName

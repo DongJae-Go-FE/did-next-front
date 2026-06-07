@@ -2,11 +2,14 @@ export type SiteLocale = "kr" | "en";
 
 export const SITE_URL = "https://wyd2027did.org";
 
-// 루트 app/opengraph-image.png 정적 OG 이미지 (로고).
-// 하위 페이지의 generateMetadata 가 openGraph 를 통째로 덮어쓰면
-// 파일 컨벤션 이미지가 사라지므로 명시적으로 images 에 넣어준다.
+// 공유(OG) 이미지 — R2 이미지 서버에 올려둔 로고 PNG.
+// 사이트 배포 상태와 무관하게 항상 같은 이미지가 노출되도록 외부 CDN URL 을 쓴다.
+const IMAGE_BASE =
+  process.env.NEXT_PUBLIC_IMAGE_BASE_URL ||
+  "https://r2-image-server.masterforce999.workers.dev";
+
 export const OG_IMAGE = {
-  url: `${SITE_URL}/opengraph-image.png`,
+  url: `${IMAGE_BASE}/og.png`,
   width: 1000,
   height: 1000,
   alt: "WYD2027 서울 세계청년대회 교구대회 DID 공식 홈페이지",

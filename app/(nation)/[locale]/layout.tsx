@@ -10,6 +10,7 @@ import LangSync from "@/components/lang-sync";
 import { content, locales, type Locale } from "../_lib/content";
 import {
   EVENT_NAME_BY_LOCALE,
+  OG_IMAGE,
   OG_IMAGES,
   SEARCH_ALIASES_BY_LOCALE,
   SITE_ALIASES_BY_LOCALE,
@@ -134,7 +135,7 @@ export default async function LocaleLayout({
       alternateName: SITE_ALIASES_BY_LOCALE[locale],
       url: SITE_URL,
       logo: `${SITE_URL}/logo.svg`,
-      image: `${SITE_URL}/opengraph-image.png`,
+      image: OG_IMAGE.url,
       sameAs: ["https://wydseoul.org/", "https://www.cbck.or.kr"],
     },
     {
@@ -146,7 +147,7 @@ export default async function LocaleLayout({
       description,
       url: getCanonicalUrl(locale),
       mainEntityOfPage: getCanonicalUrl(locale),
-      image: `${SITE_URL}/opengraph-image.png`,
+      image: OG_IMAGE.url,
       startDate: "2027-07-29",
       endDate: "2027-08-02",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
