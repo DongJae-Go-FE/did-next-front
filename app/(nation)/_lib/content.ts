@@ -115,6 +115,7 @@ export const content = {
       personLabel7: ["손숙", "헬레나", "배우"],
       personLabel8: ["크리스티나", "콘팔로니에리"],
       personLabel9: ["바다", "최성희", "비비안나"],
+      personLabel10: ["아키바 리에", "클라라"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -326,6 +327,7 @@ export const content = {
       personLabel7: ["Son Sook", "Helena", "Actress"],
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
+      personLabel10: ["Akiba Rie", "Clara"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {

@@ -36,7 +36,8 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
   }, [pathname, supportedLangs]);
 
   useEffect(() => {
-    const targetElement = document.querySelector("#section");
+    const targetElement =
+      document.querySelector("#fight") ?? document.querySelector("#section");
 
     if (!targetElement) return;
 

@@ -82,7 +82,7 @@ export default function SponsorPage({ locale = "kr" }: { locale?: Locale }) {
       {isMobile ? (
         <Swiper
           modules={[Pagination]}
-          spaceBetween={0}
+          spaceBetween={16}
           slidesPerView={1}
           pagination={{ clickable: true }}
           className="sponsor-swiper pb-8 did-swiper"

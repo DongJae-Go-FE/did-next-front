@@ -30,34 +30,34 @@ type ItemType =
   | { type: "coming"; src: string; alt: string };
 
 const LABEL_BASE_KR =
-  "absolute z-30 heading03b text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[1.25] max-[1279px]:text-[clamp(22px,2vw,32px)] max-[1079px]:text-[20px] max-[1079px]:leading-[1.15] whitespace-nowrap";
+  "absolute z-30 heading03b text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[1.25] whitespace-nowrap";
 
 const LABEL_BASE_EN =
-  "absolute z-30 heading03b text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[1.25] max-[1279px]:text-[clamp(22px,2vw,32px)] max-[1079px]:text-[20px] max-[1079px]:leading-[1.15] whitespace-normal break-words";
+  "absolute z-30 heading03b text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[1.25] whitespace-normal break-words";
 
 const LABEL_BASE_EN_SINGLE_LINE =
-  "absolute z-30 heading03b text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[1.25] max-[1279px]:text-[clamp(22px,2vw,32px)] max-[1079px]:text-[20px] max-[1079px]:leading-[1.15] whitespace-nowrap";
+  "absolute z-30 heading03b text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[1.25] whitespace-nowrap";
 
 const LABEL_MOBILE_KR =
-  "max-[767px]:top-1/2 max-[767px]:bottom-auto max-[767px]:left-1/2 max-[767px]:right-auto max-[767px]:w-auto max-[767px]:-translate-x-1/2 max-[767px]:-translate-y-1/2 max-[767px]:text-center max-[767px]:text-[26px]";
+  "max-[1279px]:top-1/2 max-[1279px]:bottom-auto max-[1279px]:left-1/2 max-[1279px]:right-auto max-[1279px]:w-auto max-[1279px]:-translate-x-1/2 max-[1279px]:-translate-y-1/2 max-[1279px]:text-center max-[1279px]:text-[26px]";
 
 const LABEL_MOBILE_EN =
-  "max-[767px]:top-1/2 max-[767px]:bottom-auto max-[767px]:left-1/2 max-[767px]:right-auto max-[767px]:w-[calc(100%-2rem)] max-[767px]:max-w-[320px] max-[767px]:-translate-x-1/2 max-[767px]:-translate-y-1/2 max-[767px]:text-center max-[767px]:text-[26px]";
+  "max-[1279px]:top-1/2 max-[1279px]:bottom-auto max-[1279px]:left-1/2 max-[1279px]:right-auto max-[1279px]:w-[calc(100%-2rem)] max-[1279px]:max-w-[320px] max-[1279px]:-translate-x-1/2 max-[1279px]:-translate-y-1/2 max-[1279px]:text-center max-[1279px]:text-[26px]";
 
 const LABEL_DEFAULT =
-  "top-1/2 right-[8%] w-[30%] -translate-y-1/2 text-left max-[1279px]:w-[34%] max-[1079px]:right-[3.5%] max-[1079px]:w-[40%]";
+  "top-1/2 right-[8%] w-[30%] -translate-y-1/2 text-left";
 
 const LABEL_DEFAULT_EN =
-  "top-1/2 right-[5%] w-[38%] -translate-y-1/2 text-left max-[1279px]:w-[42%] max-[1079px]:right-[3.5%] max-[1079px]:w-[46%]";
+  "top-1/2 right-[5%] w-[38%] -translate-y-1/2 text-left";
 
 const LABEL_RIGHT =
-  "top-1/2 right-0 w-[30%] -translate-y-1/2 text-left max-[1279px]:w-[34%] max-[1079px]:w-[40%]";
+  "top-1/2 right-0 w-[30%] -translate-y-1/2 text-left";
 
 const LABEL_RIGHT_EN =
-  "top-1/2 right-[5%] w-[38%] -translate-y-1/2 text-left max-[1279px]:w-[42%] max-[1079px]:right-[3.5%] max-[1079px]:w-[46%]";
+  "top-1/2 right-[5%] w-[38%] -translate-y-1/2 text-left";
 
 const LABEL_RIGHT_NUDGED_EN =
-  "top-1/2 right-0 w-[38%] -translate-y-1/2 text-left max-[1279px]:w-[42%] max-[1079px]:w-[46%]";
+  "top-1/2 right-0 w-[38%] -translate-y-1/2 text-left";
 
 const LABEL_BOTTOM_CENTER =
   "bottom-[8%] left-1/2 w-auto -translate-x-1/2 text-center";
@@ -105,7 +105,7 @@ function CardItem({
         ? item.mobileImageClassName
         : item.imageClassName;
     const label =
-      locale === "en" && item.singleLineLabelEn
+      locale === "en" && item.singleLineLabelEn && !isMobile
         ? [item.label.join(" ")]
         : item.label;
 
@@ -119,7 +119,7 @@ function CardItem({
           src={item.src}
           alt={item.alt}
           fill
-          sizes="(max-width: 767px) 90vw, 33vw"
+          sizes="(max-width: 1279px) 90vw, 33vw"
           className={`object-cover transition-transform duration-300 group-hover:scale-[1.02] ${imageClassName}`}
         />
         <span
@@ -147,10 +147,10 @@ function CardItem({
         src={item.src}
         alt={item.alt}
         fill
-        sizes="(max-width: 767px) 90vw, 33vw"
+        sizes="(max-width: 1279px) 90vw, 33vw"
         className="object-cover object-center"
       />
-      <span className="absolute inset-0 z-30 flex items-center justify-center text-center heading02b leading-[0.95] text-white max-[767px]:text-[28px]">
+      <span className="absolute inset-0 z-30 flex items-center justify-center text-center heading02b leading-[0.95] text-white max-[1279px]:text-[28px]">
         COMING
         <br />
         SOON
@@ -166,6 +166,17 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
 
   // 최신순 정렬: 새로 추가하는 항목은 이 배열의 맨 앞에 넣으면 됩니다.
   const items: ItemType[] = [
+    {
+      type: "link",
+      href: "https://youtu.be/qNQMy8LnhrU",
+      src: `${IMAGE_BASE}/did/main/fight/f10.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      label: t.personLabel10 as unknown as string[],
+      labelClassName: LABEL_RIGHT,
+      labelClassNameEn: LABEL_RIGHT_NUDGED_EN,
+    },
     {
       type: "link",
       href: "https://youtu.be/s8gQXleubn8",
@@ -270,14 +281,14 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
   const desktopItems = items;
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => setIsMobile(window.innerWidth < 1280);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   return (
-    <section className="w-full px-12 py-10 max-[767px]:px-5 bg-gray-200">
+    <section id="fight" className="w-full px-12 py-10 max-[767px]:px-5 bg-gray-200">
       <div className="max-w-[1400px] mx-auto">
         <h2 className="mb-8 font-bold tracking-tight text-[clamp(18px,2.35vw,34px)]">
           {t.titleParts.map((part, i) => (
