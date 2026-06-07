@@ -9,9 +9,9 @@ const IMAGE_BASE =
   "https://r2-image-server.masterforce999.workers.dev";
 
 export const OG_IMAGE = {
-  url: `${IMAGE_BASE}/og.png`,
-  width: 1000,
-  height: 1000,
+  url: `${IMAGE_BASE}/opengraph-image.png`,
+  width: 1200,
+  height: 630,
   alt: "WYD2027 서울 세계청년대회 교구대회 DID 공식 홈페이지",
 } as const;
 

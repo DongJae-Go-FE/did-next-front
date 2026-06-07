@@ -162,7 +162,7 @@ export async function generateMetadata({
       images: OG_IMAGES,
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: pageTitle,
       description,
       images: OG_IMAGES,
