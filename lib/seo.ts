@@ -18,13 +18,13 @@ export const OG_IMAGE = {
 export const OG_IMAGES = [OG_IMAGE];
 
 export const SITE_NAME_BY_LOCALE = {
-  kr: "WYD2027 · WYD 2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
-  en: "WYD2027 · WYD 2027 Seoul DID Official Website",
+  kr: "WYD2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
+  en: "WYD2027 Seoul DID Official Website",
 } as const satisfies Record<SiteLocale, string>;
 
 export const SITE_TITLE_BY_LOCALE = {
-  kr: "WYD2027 · WYD 2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
-  en: "WYD2027 · WYD 2027 Seoul DID Official Website",
+  kr: "WYD2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
+  en: "WYD2027 Seoul DID Official Website",
 } as const satisfies Record<SiteLocale, string>;
 
 export const EVENT_NAME_BY_LOCALE = {

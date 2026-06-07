@@ -7,9 +7,9 @@ export const content = {
     lang: "ko",
     metadata: {
       title:
-        "WYD2027 · WYD 2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
+        "WYD2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
       description:
-        "WYD2027, WYD 2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지입니다. 교구대회 일정, 교구 소개, 참가 신청, 신청 현황, 공지사항과 후원 정보를 확인하세요.",
+        "WYD2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지. 일정, 교구 소개, 참가 신청과 현황, 공지사항, 후원 정보를 확인하세요.",
       ogLocale: "ko_KR",
     },
     header: {
@@ -219,9 +219,9 @@ export const content = {
   en: {
     lang: "en",
     metadata: {
-      title: "WYD2027 · WYD 2027 Seoul DID Official Website",
+      title: "WYD2027 Seoul DID Official Website",
       description:
-        "Official website for WYD2027 and WYD 2027 Seoul Days in Diocese. Find DID schedules, diocese information, application links, application status, notices, and sponsorship information.",
+        "WYD2027 Seoul DID official website. Schedules, application, notices.",
       ogLocale: "en_US",
     },
     header: {
