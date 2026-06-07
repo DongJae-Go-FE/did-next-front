@@ -22,11 +22,16 @@ export default function GlobalError({
   let locale: "kr" | "en" = "kr";
   if (typeof window !== "undefined") {
     const path = window.location.pathname;
-    if (path.startsWith("/en")) {
+    const firstSegment = path.split("/")[1];
+    if (
+      ["en", "es", "fr", "pt", "it", "pl", "de", "zh", "zh-tw", "fil", "ja", "vi"].includes(
+        firstSegment,
+      )
+    ) {
       locale = "en";
-    } else if (!path.startsWith("/kr")) {
+    } else if (firstSegment !== "kr") {
       const lang = navigator.language || navigator.languages?.[0] || "";
-      if (lang.startsWith("en")) locale = "en";
+      if (!lang.startsWith("ko")) locale = "en";
     }
   }
   const isEn = locale === "en";

@@ -1,6 +1,12 @@
-import { OG_IMAGE, SITE_URL, getSiteName } from "@/lib/seo";
+import {
+  OG_IMAGE,
+  SITE_URL,
+  getLocaleLanguage,
+  getSiteName,
+  type SiteLocale,
+} from "@/lib/seo";
 
-export type StructuredDataLocale = "kr" | "en";
+export type StructuredDataLocale = SiteLocale;
 
 export function createBreadcrumbJsonLd(
   items: Array<{ name: string; url: string }>
@@ -41,7 +47,7 @@ export function createArticleJsonLd({
     "@id": `${url}#article`,
     headline: title,
     description,
-    inLanguage: locale === "kr" ? "ko" : "en",
+    inLanguage: getLocaleLanguage(locale),
     url,
     mainEntityOfPage: {
       "@type": "WebPage",

@@ -9,69 +9,55 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // "방금 수정됨"으로 보이지 않도록 안정적인 날짜를 사용한다.
   const contentUpdated = new Date("2026-02-24T12:00:00+09:00");
 
-  // 정적 페이지
-  const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: `${SITE_URL}/kr`,
-      lastModified: contentUpdated,
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${SITE_URL}/en`,
-      lastModified: contentUpdated,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/kr/apply`,
-      lastModified: contentUpdated,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/en/apply`,
-      lastModified: contentUpdated,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/kr/status`,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/en/status`,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/kr/introduce`,
-      lastModified: contentUpdated,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${SITE_URL}/en/introduce`,
-      lastModified: contentUpdated,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${SITE_URL}/kr/notice`,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/en/notice`,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
+  // 정적 페이지 — 모든 로케일에 대해 생성
+  const siteLocales = [
+    "kr",
+    "en",
+    "es",
+    "fr",
+    "pt",
+    "it",
+    "pl",
+    "de",
+    "zh",
+    "zh-tw",
+    "fil",
+    "ja",
+    "vi",
   ];
+
+  const staticPages: MetadataRoute.Sitemap = siteLocales.flatMap((locale) => [
+    {
+      url: `${SITE_URL}/${locale}`,
+      lastModified: contentUpdated,
+      changeFrequency: "monthly" as const,
+      priority: locale === "kr" ? 1 : 0.9,
+    },
+    {
+      url: `${SITE_URL}/${locale}/apply`,
+      lastModified: contentUpdated,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/${locale}/status`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/${locale}/introduce`,
+      lastModified: contentUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/${locale}/notice`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+    },
+  ]);
 
   // 공지사항 동적 페이지
   const noticePages: MetadataRoute.Sitemap = [];

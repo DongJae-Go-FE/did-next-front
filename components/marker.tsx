@@ -83,7 +83,7 @@ export default function Marker({
   name: string;
   locale?: Locale;
 }) {
-  const isEn = locale === "en";
+  const isEn = locale !== "kr";
   const diocese = dioceseData.find((d) => d.name === name);
   const address = diocese?.address || "";
   const displayName = isEn ? dioceseNameMap[name] || name : name;

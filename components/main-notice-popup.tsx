@@ -57,7 +57,7 @@ export default function MainNoticePopup({
         <div className="overflow-hidden rounded-lg border border-[#D9DEE7] bg-white shadow-2xl">
           <div className="flex items-center justify-between bg-[#0047BB] px-6 py-4 text-white max-[767px]:px-5">
             <p className="text-xs font-bold tracking-[0.18em]">
-              2027 WYD SEOUL DID
+              {t.brand}
             </p>
             <button
               type="button"

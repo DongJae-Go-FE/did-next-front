@@ -71,7 +71,7 @@ function getLabelClassName(
   labelClassNameEn?: string,
   singleLineLabelEn?: boolean
 ) {
-  if (locale !== "en") {
+  if (locale === "kr") {
     return `${LABEL_BASE_KR} ${labelClassName ?? LABEL_DEFAULT} ${LABEL_MOBILE_KR}`;
   }
 
@@ -105,7 +105,7 @@ function CardItem({
         ? item.mobileImageClassName
         : item.imageClassName;
     const label =
-      locale === "en" && item.singleLineLabelEn && !isMobile
+      locale !== "kr" && item.singleLineLabelEn && !isMobile
         ? [item.label.join(" ")]
         : item.label;
 

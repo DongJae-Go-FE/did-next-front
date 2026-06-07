@@ -45,8 +45,27 @@ const pretendard = localFont({
   fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
 });
 
-function getRequestLang(locale: string | null): "ko" | "en" {
-  return locale === "en" ? "en" : "ko";
+const SUPPORTED_LANGS = [
+  "ko",
+  "en",
+  "es",
+  "fr",
+  "pt",
+  "it",
+  "pl",
+  "de",
+  "zh-Hans",
+  "zh-Hant",
+  "fil",
+  "ja",
+  "vi",
+] as const;
+type SupportedLang = (typeof SUPPORTED_LANGS)[number];
+
+function getRequestLang(locale: string | null): SupportedLang {
+  return SUPPORTED_LANGS.includes(locale as SupportedLang)
+    ? (locale as SupportedLang)
+    : "ko";
 }
 
 export default async function RootLayout({

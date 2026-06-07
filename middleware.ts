@@ -1,7 +1,24 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-function getLocale(pathname: string): "ko" | "en" {
-  return pathname.startsWith("/en") ? "en" : "ko";
+const LANG_BY_LOCALE: Record<string, string> = {
+  kr: "ko",
+  en: "en",
+  es: "es",
+  fr: "fr",
+  pt: "pt",
+  it: "it",
+  pl: "pl",
+  de: "de",
+  zh: "zh-Hans",
+  "zh-tw": "zh-Hant",
+  fil: "fil",
+  ja: "ja",
+  vi: "vi",
+};
+
+function getLocale(pathname: string): string {
+  const firstSegment = pathname.split("/")[1];
+  return LANG_BY_LOCALE[firstSegment] ?? "ko";
 }
 
 export function middleware(request: NextRequest) {

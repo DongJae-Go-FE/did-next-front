@@ -7,7 +7,8 @@ const NOTICE_DATABASE_ID_EN =
   process.env.NOTION_NOTICE_EN_DATABASE_ID?.trim() ?? "";
 
 function getNoticeDatabaseId(locale: string): string {
-  return locale === "en" ? NOTICE_DATABASE_ID_EN : NOTICE_DATABASE_ID_KR;
+  // kr 외 로케일(en/es/fr/pt/it)은 영어 공지 DB를 사용한다.
+  return locale === "kr" ? NOTICE_DATABASE_ID_KR : NOTICE_DATABASE_ID_EN;
 }
 
 export interface NoticeItem {

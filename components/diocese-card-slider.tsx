@@ -54,6 +54,7 @@ const dioceseNameMap: Record<string, string> = {
 };
 
 const dioceseUrlMap: Record<string, string> = {
+  서울대교구: "https://wydseoul.org",
   부산교구: "https://www.wyd2027did-busan.org",
   안동교구: "https://www.wyd2027did-andong.org",
   춘천교구: "https://www.wyd2027did-cccatholic.org",
@@ -72,17 +73,19 @@ const dioceseUrlMap: Record<string, string> = {
 };
 
 function DioceseCard({ name, locale }: { name: string; locale: Locale }) {
-  const isEn = locale === "en";
+  const isEn = locale !== "kr";
   const diocese = dioceseData.find((d) => d.name === name);
   const address = diocese?.address || "";
   const displayName = isEn ? dioceseNameMap[name] || name : name;
   const baseUrl = dioceseUrlMap[name];
   const url = baseUrl
-    ? `${baseUrl}/${isEn ? "en" : "kr"}`
+    ? name === "서울대교구"
+      ? baseUrl
+      : `${baseUrl}/${isEn ? "en" : "kr"}`
     : undefined;
 
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+    <div className="flex h-full flex-col bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
       <div className="relative w-full aspect-[16/9]">
         <Image
           src={dioceseImageMap[name] || `${IMAGE_BASE}/apply/seoul.webp`}
@@ -96,7 +99,7 @@ function DioceseCard({ name, locale }: { name: string; locale: Locale }) {
         </div>
       </div>
 
-      <div className="px-4 pt-3 pb-4 flex flex-col gap-y-3">
+      <div className="flex-1 px-4 pt-3 pb-4 flex flex-col gap-y-3">
         {address && (
           <div className="flex items-start gap-x-2 text-sm text-gray-600">
             <MapPin
@@ -111,14 +114,14 @@ function DioceseCard({ name, locale }: { name: string; locale: Locale }) {
           <Link
             href={url}
             target="_blank"
-            className="flex items-center justify-center gap-x-2 px-4 py-2.5 rounded-xl text-white text-sm font-semibold w-full transition-colors"
+            className="mt-auto flex items-center justify-center gap-x-2 px-4 py-2.5 rounded-xl text-white text-sm font-semibold w-full transition-colors"
             style={{ backgroundColor: "#0047BB" }}
           >
             {isEn ? "Visit Diocese DID Website" : "교구 DID 홈페이지 바로가기"}
             <ExternalLink className="w-3.5 h-3.5" />
           </Link>
         ) : (
-          <div className="flex items-center justify-center px-4 py-2.5 bg-gray-100 rounded-xl text-gray-400 text-sm w-full">
+          <div className="mt-auto flex items-center justify-center px-4 py-2.5 bg-gray-100 rounded-xl text-gray-400 text-sm w-full">
             {isEn ? "Website coming soon" : "홈페이지 준비 중입니다"}
           </div>
         )}
@@ -136,8 +139,8 @@ export default function DioceseCardSlider({
   const [activeIndex, setActiveIndex] = useState(0);
   const isFirst = activeIndex === 0;
   const isLast = activeIndex === dioceseData.length - 1;
-  const prevLabel = locale === "en" ? "Previous diocese" : "이전 교구";
-  const nextLabel = locale === "en" ? "Next diocese" : "다음 교구";
+  const prevLabel = locale === "kr" ? "이전 교구" : "Previous diocese";
+  const nextLabel = locale === "kr" ? "다음 교구" : "Next diocese";
 
   return (
     <div className="relative overflow-hidden">
@@ -158,7 +161,7 @@ export default function DioceseCardSlider({
         style={{ padding: "8px 0" }}
       >
         {dioceseData.map((diocese) => (
-          <SwiperSlide key={diocese.name}>
+          <SwiperSlide key={diocese.name} className="!h-auto">
             <DioceseCard name={diocese.name} locale={locale} />
           </SwiperSlide>
         ))}

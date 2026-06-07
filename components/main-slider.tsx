@@ -23,7 +23,6 @@ import SliderItem00 from "./slider-item/slider-item00";
 //import SliderItem000 from "./slider-item/slider-item000";
 import SliderItem01 from "./slider-item/slider-item01";
 import SliderItem02 from "./slider-item/slider-item02";
-import SliderItem00En from "./slider-item/en/slider-item00";
 //import SliderItem000En from "./slider-item/en/slider-item000";
 import SliderItem01En from "./slider-item/en/slider-item01";
 import SliderItem02En from "./slider-item/en/slider-item02";
@@ -149,7 +148,7 @@ export default function MainSlider({ locale = "kr" }: { locale?: Locale }) {
         {isKr ? (
           <>
             <Panel>
-              <SliderItem00 />
+              <SliderItem00 locale={locale} />
             </Panel>
             {/* <Panel>
               <SliderItem000 />
@@ -164,16 +163,16 @@ export default function MainSlider({ locale = "kr" }: { locale?: Locale }) {
         ) : (
           <>
             <Panel>
-              <SliderItem00En />
+              <SliderItem00 locale={locale} />
             </Panel>
             {/* <Panel>
               <SliderItem000En />
             </Panel> */}
             <Panel>
-              <SliderItem01En />
+              <SliderItem01En locale={locale} />
             </Panel>
             <Panel>
-              <SliderItem02En />
+              <SliderItem02En locale={locale} />
             </Panel>
           </>
         )}

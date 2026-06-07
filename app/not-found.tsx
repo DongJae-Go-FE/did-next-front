@@ -15,14 +15,86 @@ const t = {
     desc: "The page you requested does not exist or has been moved.",
     btn: "Go to Home",
   },
+  es: {
+    title: "Página no encontrada",
+    desc: "La página solicitada no existe o ha sido movida.",
+    btn: "Volver al inicio",
+  },
+  fr: {
+    title: "Page introuvable",
+    desc: "La page demandée n'existe pas ou a été déplacée.",
+    btn: "Retour à l'accueil",
+  },
+  pt: {
+    title: "Página não encontrada",
+    desc: "A página solicitada não existe ou foi movida.",
+    btn: "Voltar ao início",
+  },
+  it: {
+    title: "Pagina non trovata",
+    desc: "La pagina richiesta non esiste o è stata spostata.",
+    btn: "Torna alla home",
+  },
+  pl: {
+    title: "Nie znaleziono strony",
+    desc: "Żądana strona nie istnieje lub została przeniesiona.",
+    btn: "Wróć do strony głównej",
+  },
+  de: {
+    title: "Seite nicht gefunden",
+    desc: "Die angeforderte Seite existiert nicht oder wurde verschoben.",
+    btn: "Zur Startseite",
+  },
+  zh: {
+    title: "找不到页面",
+    desc: "您请求的页面不存在或已被移动。",
+    btn: "返回首页",
+  },
+  "zh-tw": {
+    title: "找不到頁面",
+    desc: "您請求的頁面不存在或已被移動。",
+    btn: "返回首頁",
+  },
+  fil: {
+    title: "Hindi Mahanap ang Pahina",
+    desc: "Ang hiniling na pahina ay hindi umiiral o inilipat na.",
+    btn: "Bumalik sa Home",
+  },
+  ja: {
+    title: "ページが見つかりません",
+    desc: "お探しのページは存在しないか、移動しました。",
+    btn: "ホームへ戻る",
+  },
+  vi: {
+    title: "Không tìm thấy trang",
+    desc: "Trang bạn yêu cầu không tồn tại hoặc đã được di chuyển.",
+    btn: "Về trang chủ",
+  },
 };
 
-function detectLocale(pathname: string | null): "kr" | "en" {
-  if (pathname?.startsWith("/en")) return "en";
-  if (pathname?.startsWith("/kr")) return "kr";
+type NotFoundLocale = keyof typeof t;
+
+const NOT_FOUND_LOCALES = Object.keys(t) as NotFoundLocale[];
+
+function detectLocale(pathname: string | null): NotFoundLocale {
+  const firstSegment = pathname?.split("/")[1] ?? "";
+  if (NOT_FOUND_LOCALES.includes(firstSegment as NotFoundLocale)) {
+    return firstSegment as NotFoundLocale;
+  }
   if (typeof navigator !== "undefined") {
     const lang = navigator.language || navigator.languages?.[0] || "";
     if (lang.startsWith("ko")) return "kr";
+    if (lang.startsWith("es")) return "es";
+    if (lang.startsWith("fr")) return "fr";
+    if (lang.startsWith("pt")) return "pt";
+    if (lang.startsWith("it")) return "it";
+    if (lang.startsWith("pl")) return "pl";
+    if (lang.startsWith("de")) return "de";
+    if (lang.startsWith("zh"))
+      return /TW|HK|MO|Hant/i.test(lang) ? "zh-tw" : "zh";
+    if (lang.startsWith("fil") || lang.startsWith("tl")) return "fil";
+    if (lang.startsWith("ja")) return "ja";
+    if (lang.startsWith("vi")) return "vi";
     if (lang.startsWith("en")) return "en";
   }
   return "kr";

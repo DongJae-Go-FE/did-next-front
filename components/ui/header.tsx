@@ -17,7 +17,12 @@ import {
 } from "@/components/ui/select";
 
 import Menu from "../menu";
-import { content, type Locale } from "@/app/(nation)/_lib/content";
+import {
+  content,
+  locales,
+  localeLabels,
+  type Locale,
+} from "@/app/(nation)/_lib/content";
 
 export default function Header({ locale = "kr" }: { locale?: Locale }) {
   const { push } = useRouter();
@@ -27,7 +32,7 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const supportedLangs = useMemo(() => {
-    return ["kr", "en"];
+    return locales as string[];
   }, []);
 
   const isRootPage = useMemo(() => {
@@ -118,12 +123,11 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
                 <SelectValue className="placeholder:text-white data-[placeholder]:text-white" />
               </SelectTrigger>
               <SelectContent size="lg" className="font-black">
-                <SelectItem value="kr" size="lg">
-                  KR
-                </SelectItem>
-                <SelectItem value="en" size="lg">
-                  ENG
-                </SelectItem>
+                {locales.map((lang) => (
+                  <SelectItem key={lang} value={lang} size="lg">
+                    {localeLabels[lang]}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </li>
