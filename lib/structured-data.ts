@@ -47,7 +47,7 @@ export function createArticleJsonLd({
       "@type": "WebPage",
       "@id": url,
     },
-    image: `${SITE_URL}/opengraph-image`,
+    image: `${SITE_URL}/opengraph-image.png`,
     datePublished: date,
     dateModified: date,
     author: authorName

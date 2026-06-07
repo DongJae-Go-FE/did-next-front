@@ -84,7 +84,7 @@ export async function generateMetadata({
       images: OG_IMAGES,
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title: pageTitle,
       description,
       images: OG_IMAGES,
@@ -134,7 +134,7 @@ export default async function LocaleLayout({
       alternateName: SITE_ALIASES_BY_LOCALE[locale],
       url: SITE_URL,
       logo: `${SITE_URL}/logo.svg`,
-      image: `${SITE_URL}/opengraph-image`,
+      image: `${SITE_URL}/opengraph-image.png`,
       sameAs: ["https://wydseoul.org/", "https://www.cbck.or.kr"],
     },
     {
@@ -146,7 +146,7 @@ export default async function LocaleLayout({
       description,
       url: getCanonicalUrl(locale),
       mainEntityOfPage: getCanonicalUrl(locale),
-      image: `${SITE_URL}/opengraph-image`,
+      image: `${SITE_URL}/opengraph-image.png`,
       startDate: "2027-07-29",
       endDate: "2027-08-02",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
