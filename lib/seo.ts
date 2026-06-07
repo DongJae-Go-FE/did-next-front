@@ -2,6 +2,18 @@ export type SiteLocale = "kr" | "en";
 
 export const SITE_URL = "https://wyd2027did.org";
 
+// 루트 app/opengraph-image.tsx 가 생성하는 OG 이미지 (logo.svg → PNG 렌더링).
+// 하위 페이지의 generateMetadata 가 openGraph 를 통째로 덮어쓰면
+// 파일 컨벤션 이미지가 사라지므로 명시적으로 images 에 넣어준다.
+export const OG_IMAGE = {
+  url: `${SITE_URL}/opengraph-image`,
+  width: 1200,
+  height: 630,
+  alt: "WYD2027 서울 세계청년대회 교구대회 DID 공식 홈페이지",
+} as const;
+
+export const OG_IMAGES = [OG_IMAGE];
+
 export const SITE_NAME_BY_LOCALE = {
   kr: "WYD2027 · WYD 2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
   en: "WYD2027 · WYD 2027 Seoul DID Official Website",

@@ -10,6 +10,7 @@ import LangSync from "@/components/lang-sync";
 import { content, locales, type Locale } from "../_lib/content";
 import {
   EVENT_NAME_BY_LOCALE,
+  OG_IMAGES,
   SEARCH_ALIASES_BY_LOCALE,
   SITE_ALIASES_BY_LOCALE,
   SITE_URL,
@@ -80,11 +81,13 @@ export async function generateMetadata({
       locale: getOpenGraphLocale(locale),
       alternateLocale: getAlternateOpenGraphLocale(locale),
       type: "website",
+      images: OG_IMAGES,
     },
     twitter: {
       card: "summary_large_image",
       title: pageTitle,
       description,
+      images: OG_IMAGES,
     },
     other: {
       "geo.region": "KR-41",
@@ -130,6 +133,8 @@ export default async function LocaleLayout({
       name: siteName,
       alternateName: SITE_ALIASES_BY_LOCALE[locale],
       url: SITE_URL,
+      logo: `${SITE_URL}/logo.svg`,
+      image: `${SITE_URL}/opengraph-image`,
       sameAs: ["https://wydseoul.org/", "https://www.cbck.or.kr"],
     },
     {

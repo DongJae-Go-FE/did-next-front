@@ -31,6 +31,7 @@ import {
   getMetaDescription,
   getPageTitle,
   getSiteName,
+  OG_IMAGES,
 } from "@/lib/seo";
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
@@ -158,11 +159,13 @@ export async function generateMetadata({
       siteName,
       locale: base.ogLocale,
       type: "website",
+      images: OG_IMAGES,
     },
     twitter: {
       card: "summary_large_image",
       title: pageTitle,
       description,
+      images: OG_IMAGES,
     },
   };
 }
