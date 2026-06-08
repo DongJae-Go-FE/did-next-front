@@ -5,9 +5,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wyd2027did.org"),
-  title: "WYD2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
+  title: "WYD DID | 2027 서울 세계청년대회 교구대회 공식 홈페이지",
   description:
-    "WYD2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지. 일정, 교구 소개, 참가 신청과 현황, 공지사항, 후원 정보를 확인하세요.",
+    "WYD DID 공식 홈페이지. 2027 서울 세계청년대회 교구대회 일정, 신청, 공지사항을 확인하세요.",
   alternates: {
     types: {
       "application/rss+xml": "https://wyd2027did.org/rss.xml",

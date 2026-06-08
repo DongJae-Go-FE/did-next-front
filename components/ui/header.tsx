@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 
 import { useState, useEffect, useMemo } from "react";
+import { Languages } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -117,9 +118,14 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
                 aria-label={
                   locale === "kr" ? "언어 선택" : "Select language"
                 }
-                className="border-none font-black text-lg"
+                className="border-none font-black text-lg gap-x-2"
                 size="lg"
               >
+                <Languages
+                  className="size-5 shrink-0"
+                  strokeWidth={1.8}
+                  aria-hidden="true"
+                />
                 <SelectValue className="placeholder:text-white data-[placeholder]:text-white" />
               </SelectTrigger>
               <SelectContent size="lg" className="font-black">

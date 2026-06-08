@@ -14,65 +14,12 @@ import {
 import { MapPin, ExternalLink, X } from "lucide-react";
 import dioceseData from "@/public/data";
 import type { Locale } from "@/app/(nation)/_lib/content";
-
-const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
-
-const dioceseImageMap: Record<string, string> = {
-  서울대교구: `${IMAGE_BASE}/did/apply/seoul.webp`,
-  인천교구: `${IMAGE_BASE}/did/apply/incheon.jpg`,
-  수원교구: `${IMAGE_BASE}/did/apply/suwon.png`,
-  의정부교구: `${IMAGE_BASE}/did/apply/uijeongbu.png`,
-  춘천교구: `${IMAGE_BASE}/did/apply/chuncheon.webp`,
-  원주교구: `${IMAGE_BASE}/did/apply/wonju.jpg`,
-  대전교구: `${IMAGE_BASE}/did/apply/daejeon.png`,
-  청주교구: `${IMAGE_BASE}/did/apply/cheongju.webp`,
-  대구대교구: `${IMAGE_BASE}/did/apply/daegu.jpg`,
-  부산교구: `${IMAGE_BASE}/did/apply/busan.jpg`,
-  마산교구: `${IMAGE_BASE}/did/apply/masan.jpg`,
-  안동교구: `${IMAGE_BASE}/did/apply/andong.jpg`,
-  광주대교구: `${IMAGE_BASE}/did/apply/gwangju.png`,
-  전주교구: `${IMAGE_BASE}/did/apply/jeonju.jpg`,
-  제주교구: `${IMAGE_BASE}/did/apply/jeju.png`,
-  군종교구: `${IMAGE_BASE}/did/apply/gun.png`,
-};
-
-const dioceseNameMap: Record<string, string> = {
-  서울대교구: "Archdiocese of Seoul",
-  인천교구: "Diocese of Incheon",
-  수원교구: "Diocese of Suwon",
-  의정부교구: "Diocese of Uijeongbu",
-  춘천교구: "Diocese of Chuncheon",
-  원주교구: "Diocese of Wonju",
-  대전교구: "Diocese of Daejeon",
-  청주교구: "Diocese of Cheongju",
-  대구대교구: "Archdiocese of Daegu",
-  부산교구: "Diocese of Busan",
-  마산교구: "Diocese of Masan",
-  안동교구: "Diocese of Andong",
-  광주대교구: "Archdiocese of Gwangju",
-  전주교구: "Diocese of Jeonju",
-  제주교구: "Diocese of Jeju",
-  군종교구: "Military Ordinariate",
-};
-
-const dioceseUrlMap: Record<string, string> = {
-  서울대교구: "https://wydseoul.org/",
-  부산교구: "https://www.wyd2027did-busan.org",
-  안동교구: "https://www.wyd2027did-andong.org",
-  춘천교구: "https://www.wyd2027did-cccatholic.org",
-  대구대교구: "https://www.wyd2027did-daegu.org",
-  군종교구: "https://www.wyd2027did-gunjong.org",
-  광주대교구: "https://www.wyd2027did-gwangju.org",
-  제주교구: "https://www.wyd2027did-jeju.org",
-  전주교구: "https://www.wyd2027did-jeonju.org",
-  마산교구: "https://www.wyd2027did-masan.org",
-  의정부교구: "https://www.wyd2027did-uijeongbu.org",
-  원주교구: "https://www.wyd2027did-wonju.org",
-  청주교구: "https://www.wyd2027did-cdcj.org",
-  수원교구: "https://www.wyd2027did-suwon.org",
-  인천교구: "https://www.wyd2027did-incheon.org",
-  대전교구: "https://www.wyd2027did-daejeon.org",
-};
+import {
+  DIOCESE_IMAGE_BY_NAME,
+  getDioceseAddress,
+  getDioceseDisplayName,
+  getDioceseWebsiteUrl,
+} from "@/lib/diocese-display";
 
 export default function Marker({
   onClick,
@@ -85,9 +32,9 @@ export default function Marker({
 }) {
   const isEn = locale !== "kr";
   const diocese = dioceseData.find((d) => d.name === name);
-  const address = diocese?.address || "";
-  const displayName = isEn ? dioceseNameMap[name] || name : name;
-  const url = dioceseUrlMap[name];
+  const address = getDioceseAddress(diocese, locale);
+  const displayName = getDioceseDisplayName(name, locale);
+  const url = getDioceseWebsiteUrl(name, locale);
 
   return (
     <Dialog>
@@ -120,7 +67,10 @@ export default function Marker({
         <div className="w-full flex flex-col">
           <div className="relative w-full aspect-[2/1] overflow-hidden">
             <Image
-              src={dioceseImageMap[name] || `${IMAGE_BASE}/apply/seoul.webp`}
+              src={
+                DIOCESE_IMAGE_BY_NAME[name] ||
+                DIOCESE_IMAGE_BY_NAME["서울대교구"]
+              }
               fill
               className="object-fill"
               priority

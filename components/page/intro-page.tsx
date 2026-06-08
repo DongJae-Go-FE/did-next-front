@@ -78,21 +78,7 @@ export default function IntroPage({ locale = "kr" }: { locale?: Locale }) {
           rootMargin="-100px"
           textAlign="center"
         />
-        <SplitText
-          text="DAY OF THE EVENT"
-          className="heading01b text-[clamp(14px,4vw,40px)] text-center font-black"
-          tag="h2"
-          delay={100}
-          duration={1}
-          ease="power3.out"
-          splitType="words"
-          from={{ opacity: 0, y: 40 }}
-          to={{ opacity: 1, y: 0 }}
-          threshold={0.1}
-          rootMargin="-100px"
-          textAlign="center"
-        />
-        <CountDay />
+        <CountDay locale={locale} />
       </div>
       <div
         style={{ position: "relative", overflow: "hidden" }}

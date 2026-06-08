@@ -17,7 +17,9 @@ export const SITE_URL = "https://wyd2027did.org";
 
 // 공유(OG) 이미지 — R2 이미지 서버에 올려둔 로고 PNG.
 // 사이트 배포 상태와 무관하게 항상 같은 이미지가 노출되도록 외부 CDN URL 을 쓴다.
-const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL;
+const IMAGE_BASE =
+  process.env.NEXT_PUBLIC_IMAGE_BASE_URL ||
+  "https://r2-image-server.masterforce999.workers.dev";
 
 export const OG_IMAGE = {
   url: `${IMAGE_BASE}/opengraph-image.png`,
@@ -29,8 +31,8 @@ export const OG_IMAGE = {
 export const OG_IMAGES = [OG_IMAGE];
 
 export const SITE_NAME_BY_LOCALE = {
-  kr: "WYD2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
-  en: "WYD2027 Seoul DID Official Website",
+  kr: "WYD DID | 2027 서울 세계청년대회 교구대회 공식 홈페이지",
+  en: "WYD DID | 2027 Seoul Days in Diocese",
   es: "Sitio web oficial del DID de la JMJ 2027 Seúl",
   fr: "Site officiel du DID des JMJ 2027 Séoul",
   pt: "Site oficial do DID da JMJ 2027 Seul",
@@ -45,8 +47,8 @@ export const SITE_NAME_BY_LOCALE = {
 } as const satisfies Record<SiteLocale, string>;
 
 export const SITE_TITLE_BY_LOCALE = {
-  kr: "WYD2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
-  en: "WYD2027 Seoul DID Official Website",
+  kr: "WYD DID | 2027 서울 세계청년대회 교구대회 공식 홈페이지",
+  en: "WYD DID | 2027 Seoul Days in Diocese",
   es: "Sitio web oficial del DID de la JMJ 2027 Seúl",
   fr: "Site officiel du DID des JMJ 2027 Séoul",
   pt: "Site oficial do DID da JMJ 2027 Seul",
@@ -79,6 +81,7 @@ export const EVENT_NAME_BY_LOCALE = {
 export const SITE_ALIASES_BY_LOCALE = {
   kr: [
     "WYD",
+    "WYD DID",
     "WYD 2027",
     "WYD2027",
     "WYD2027 서울 세계청년대회 교구대회(DID) 공식 홈페이지",
@@ -94,6 +97,7 @@ export const SITE_ALIASES_BY_LOCALE = {
   ],
   en: [
     "WYD",
+    "WYD DID",
     "WYD 2027",
     "WYD2027",
     "WYD2027 Seoul DID Official Website",
@@ -108,6 +112,7 @@ export const SITE_ALIASES_BY_LOCALE = {
   ],
   es: [
     "WYD",
+    "WYD DID",
     "WYD 2027",
     "WYD2027",
     "JMJ 2027",
@@ -119,6 +124,7 @@ export const SITE_ALIASES_BY_LOCALE = {
   ],
   fr: [
     "WYD",
+    "WYD DID",
     "WYD 2027",
     "WYD2027",
     "JMJ 2027",
@@ -229,6 +235,7 @@ export const SITE_ALIASES_BY_LOCALE = {
 export const SEARCH_ALIASES_BY_LOCALE = {
   kr: [
     "WYD",
+    "WYD DID",
     "WYD 2027",
     "WYD2027",
     "WYD2027 교구대회",
@@ -245,6 +252,7 @@ export const SEARCH_ALIASES_BY_LOCALE = {
   ],
   en: [
     "WYD",
+    "WYD DID",
     "WYD 2027",
     "WYD2027",
     "WYD2027 DID",
