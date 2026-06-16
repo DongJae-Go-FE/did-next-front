@@ -44,17 +44,14 @@ const LABEL_MOBILE_KR =
 const LABEL_MOBILE_EN =
   "max-[1279px]:top-1/2 max-[1279px]:bottom-auto max-[1279px]:left-1/2 max-[1279px]:right-auto max-[1279px]:w-[calc(100%-2rem)] max-[1279px]:max-w-[320px] max-[1279px]:-translate-x-1/2 max-[1279px]:-translate-y-1/2 max-[1279px]:text-center max-[1279px]:text-[26px]";
 
-const LABEL_DEFAULT =
-  "top-1/2 right-[8%] w-[30%] -translate-y-1/2 text-left";
+const LABEL_DEFAULT = "top-1/2 right-[8%] w-[30%] -translate-y-1/2 text-left";
 
 const LABEL_DEFAULT_EN =
   "top-1/2 right-[5%] w-[38%] -translate-y-1/2 text-left";
 
-const LABEL_RIGHT =
-  "top-1/2 right-0 w-[30%] -translate-y-1/2 text-left";
+const LABEL_RIGHT = "top-1/2 right-0 w-[30%] -translate-y-1/2 text-left";
 
-const LABEL_RIGHT_EN =
-  "top-1/2 right-[5%] w-[38%] -translate-y-1/2 text-left";
+const LABEL_RIGHT_EN = "top-1/2 right-[5%] w-[38%] -translate-y-1/2 text-left";
 
 const LABEL_RIGHT_NUDGED_EN =
   "top-1/2 right-0 w-[38%] -translate-y-1/2 text-left";
@@ -69,7 +66,7 @@ function getLabelClassName(
   locale: Locale,
   labelClassName?: string,
   labelClassNameEn?: string,
-  singleLineLabelEn?: boolean
+  singleLineLabelEn?: boolean,
 ) {
   if (locale === "kr") {
     return `${LABEL_BASE_KR} ${labelClassName ?? LABEL_DEFAULT} ${LABEL_MOBILE_KR}`;
@@ -127,7 +124,7 @@ function CardItem({
             locale,
             item.labelClassName,
             item.labelClassNameEn,
-            item.singleLineLabelEn
+            item.singleLineLabelEn,
           )}
         >
           {label.map((line, i) => (
@@ -166,6 +163,16 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
 
   // 최신순 정렬: 새로 추가하는 항목은 이 배열의 맨 앞에 넣으면 됩니다.
   const items: ItemType[] = [
+    {
+      type: "link",
+      href: "https://www.youtube.com/watch?v=fdSsPycbONM",
+      src: `${IMAGE_BASE}/did/main/fight/f11-1.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      label: t.personLabel11 as unknown as string[],
+      labelClassName: LABEL_BOTTOM_CENTER,
+    },
     {
       type: "link",
       href: "https://youtu.be/qNQMy8LnhrU",
@@ -288,7 +295,10 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
   }, []);
 
   return (
-    <section id="fight" className="w-full px-12 py-10 max-[767px]:px-5 bg-gray-200">
+    <section
+      id="fight"
+      className="w-full px-12 py-10 max-[767px]:px-5 bg-gray-200"
+    >
       <div className="max-w-[1400px] mx-auto">
         <h2 className="mb-8 font-bold tracking-tight text-[clamp(18px,2.35vw,34px)]">
           {t.titleParts.map((part, i) => (

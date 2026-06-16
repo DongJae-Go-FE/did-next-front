@@ -166,6 +166,7 @@ export const content = {
       personLabel8: ["크리스티나", "콘팔로니에리"],
       personLabel9: ["바다", "최성희", "비비안나"],
       personLabel10: ["아키바 리에", "클라라"],
+      personLabel11: ["강태선", "(BYN 블랙야크 회장)"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -385,6 +386,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["Kang Tae-sun", "(Chairman of BYN Black Yak)"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
@@ -601,6 +603,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["Kang Tae-sun", "(Presidente de BYN Black Yak)"],
       personAlt: "Video de apoyo a la JMJ 2027",
     },
     applyPage: {
@@ -817,6 +820,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["Kang Tae-sun", "(Président de BYN Black Yak)"],
       personAlt: "Vidéo de soutien aux JMJ 2027",
     },
     applyPage: {
@@ -1033,6 +1037,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["Kang Tae-sun", "(Presidente da BYN Black Yak)"],
       personAlt: "Vídeo de apoio à JMJ 2027",
     },
     applyPage: {
@@ -1249,6 +1254,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["Kang Tae-sun", "(Presidente di BYN Black Yak)"],
       personAlt: "Video di sostegno alla GMG 2027",
     },
     applyPage: {
@@ -1465,6 +1471,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["Kang Tae-sun", "(Prezes BYN Black Yak)"],
       personAlt: "Wideo wsparcia ŚDM 2027",
     },
     applyPage: {
@@ -1681,6 +1688,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["Kang Tae-sun", "(Vorsitzender von BYN Black Yak)"],
       personAlt: "Unterstützungsvideo zum WJT 2027",
     },
     applyPage: {
@@ -1894,6 +1902,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["姜泰善", "(BYN BlackYak 会长)"],
       personAlt: "2027世青应援视频",
     },
     applyPage: {
@@ -2104,6 +2113,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["姜泰善", "(BYN BlackYak 會長)"],
       personAlt: "2027世青應援影片",
     },
     applyPage: {
@@ -2317,6 +2327,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["Kang Tae-sun", "(Chairman ng BYN Black Yak)"],
       personAlt: "Video ng suporta sa WYD 2027",
     },
     applyPage: {
@@ -2530,6 +2541,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["カン・テソン", "(BYN ブラックヤク会長)"],
       personAlt: "WYD 2027 応援動画",
     },
     applyPage: {
@@ -2744,6 +2756,7 @@ export const content = {
       personLabel8: ["Christina", "Confalonieri"],
       personLabel9: ["Bada", "Choi Sung-hee", "Vivianna"],
       personLabel10: ["Akiba Rie", "Clara"],
+      personLabel11: ["Kang Tae-sun", "(Chủ tịch BYN Black Yak)"],
       personAlt: "Video cổ vũ ĐHGTTG 2027",
     },
     applyPage: {
