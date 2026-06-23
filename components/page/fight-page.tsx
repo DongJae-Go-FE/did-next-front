@@ -26,6 +26,7 @@ type ItemType =
       labelClassName?: string;
       labelClassNameEn?: string;
       singleLineLabelEn?: boolean;
+      singleLineLabel?: boolean;
     }
   | { type: "coming"; src: string; alt: string };
 
@@ -67,6 +68,7 @@ function getLabelClassName(
   labelClassName?: string,
   labelClassNameEn?: string,
   singleLineLabelEn?: boolean,
+  singleLineLabel?: boolean,
 ) {
   if (locale === "kr") {
     return `${LABEL_BASE_KR} ${labelClassName ?? LABEL_DEFAULT} ${LABEL_MOBILE_KR}`;
@@ -80,9 +82,10 @@ function getLabelClassName(
         ? LABEL_BOTTOM_CENTER_EN
         : LABEL_DEFAULT_EN;
 
-  const baseClassName = singleLineLabelEn
-    ? LABEL_BASE_EN_SINGLE_LINE
-    : LABEL_BASE_EN;
+  const baseClassName =
+    singleLineLabelEn || singleLineLabel
+      ? LABEL_BASE_EN_SINGLE_LINE
+      : LABEL_BASE_EN;
 
   return `${baseClassName} ${desktopClassName} ${LABEL_MOBILE_EN}`;
 }
@@ -102,7 +105,8 @@ function CardItem({
         ? item.mobileImageClassName
         : item.imageClassName;
     const label =
-      locale !== "kr" && item.singleLineLabelEn && !isMobile
+      (item.singleLineLabel || (locale !== "kr" && item.singleLineLabelEn)) &&
+      !isMobile
         ? [item.label.join(" ")]
         : item.label;
 
@@ -125,6 +129,7 @@ function CardItem({
             item.labelClassName,
             item.labelClassNameEn,
             item.singleLineLabelEn,
+            item.singleLineLabel,
           )}
         >
           {label.map((line, i) => (
@@ -165,11 +170,24 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
   const items: ItemType[] = [
     {
       type: "link",
+      href: "https://youtu.be/naKyxy7jDKs",
+      src: `${IMAGE_BASE}/did/main/fight/f12.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      mobileImageClassName: "object-[50%_50%]",
+      label: t.personLabel12 as unknown as string[],
+      labelClassName: LABEL_BOTTOM_CENTER,
+      singleLineLabel: true,
+    },
+    {
+      type: "link",
       href: "https://www.youtube.com/watch?v=fdSsPycbONM",
       src: `${IMAGE_BASE}/did/main/fight/f11-1.png`,
       alt: t.personAlt,
       imageClassName:
         "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      mobileImageClassName: "object-[50%_50%]",
       label: t.personLabel11 as unknown as string[],
       labelClassName: LABEL_BOTTOM_CENTER,
     },

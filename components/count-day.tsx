@@ -2,7 +2,7 @@ import CountUp from "@/components/count-up";
 import type { Locale } from "@/app/(nation)/_lib/content";
 
 const COUNTDOWN_COPY: Record<Locale, { prefix: string; suffix: string }> = {
-  kr: { prefix: "행사까지 D-", suffix: "" },
+  kr: { prefix: "D-", suffix: "" },
   en: { prefix: "D-", suffix: " until the event" },
   es: { prefix: "D-", suffix: " para el evento" },
   fr: { prefix: "J-", suffix: " avant l'événement" },
