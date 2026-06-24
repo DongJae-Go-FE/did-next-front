@@ -10,9 +10,9 @@ import { MapPin, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import dioceseData from "@/public/data";
 import type { Locale } from "@/app/(nation)/_lib/content";
 import {
-  DIOCESE_IMAGE_BY_NAME,
   getDioceseAddress,
   getDioceseDisplayName,
+  getDioceseImageUrl,
   getDioceseWebsiteUrl,
 } from "@/lib/diocese-display";
 
@@ -24,16 +24,14 @@ function DioceseCard({ name, locale }: { name: string; locale: Locale }) {
   const diocese = dioceseData.find((d) => d.name === name);
   const address = getDioceseAddress(diocese, locale);
   const displayName = getDioceseDisplayName(name, locale);
+  const imageUrl = getDioceseImageUrl(name, locale);
   const url = getDioceseWebsiteUrl(name, locale);
 
   return (
     <div className="flex h-full flex-col bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
       <div className="relative w-full aspect-[16/9]">
         <Image
-          src={
-            DIOCESE_IMAGE_BY_NAME[name] ||
-            DIOCESE_IMAGE_BY_NAME["서울대교구"]
-          }
+          src={imageUrl}
           fill
           className="object-cover"
           alt={isEn ? `${displayName} image` : `${displayName} 이미지`}

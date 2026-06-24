@@ -22,6 +22,7 @@ import {
 import SliderBackdrop from "@/components/ui/slider-backdrop";
 import JsonLd from "@/components/json-ld";
 import { content, locales, type Locale } from "../../_lib/content";
+import { getDioceseImageUrl } from "@/lib/diocese-display";
 import { getDioceseChartData } from "@/lib/notion-status";
 import { createBreadcrumbJsonLd } from "@/lib/structured-data";
 import {
@@ -82,7 +83,7 @@ const dioceseData = [
   {
     krName: "인천교구",
     enName: "Diocese of Incheon",
-    image: `${IMAGE_BASE}/did/apply/incheon.jpg`,
+    image: `${IMAGE_BASE}/did/apply/incheon-kr.jpeg`,
     href: "https://forms.gle/aYJsg2TCdpCdMgF5A",
   },
   {
@@ -243,6 +244,10 @@ export default async function Page({
             {dioceseData.map(({ krName, enName, image }) => {
               const { applied, total } = findNotionData(krName);
               const name = locale === "kr" ? krName : enName;
+              const imageSrc =
+                krName === "인천교구"
+                  ? getDioceseImageUrl(krName, locale)
+                  : image;
               const key = name.replace(/\s/g, "");
               const rate = Math.round((applied / total) * 100);
               return (
@@ -250,7 +255,7 @@ export default async function Page({
                   <Card className="w-full max-w-full px-4">
                     <CardContent className="relative h-44 overflow-hidden">
                       <Image
-                        src={image}
+                        src={imageSrc}
                         fill
                         className="object-cover"
                         priority

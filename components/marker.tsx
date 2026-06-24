@@ -15,9 +15,9 @@ import { MapPin, ExternalLink, X } from "lucide-react";
 import dioceseData from "@/public/data";
 import type { Locale } from "@/app/(nation)/_lib/content";
 import {
-  DIOCESE_IMAGE_BY_NAME,
   getDioceseAddress,
   getDioceseDisplayName,
+  getDioceseImageUrl,
   getDioceseWebsiteUrl,
 } from "@/lib/diocese-display";
 
@@ -34,6 +34,7 @@ export default function Marker({
   const diocese = dioceseData.find((d) => d.name === name);
   const address = getDioceseAddress(diocese, locale);
   const displayName = getDioceseDisplayName(name, locale);
+  const imageUrl = getDioceseImageUrl(name, locale);
   const url = getDioceseWebsiteUrl(name, locale);
 
   return (
@@ -67,10 +68,7 @@ export default function Marker({
         <div className="w-full flex flex-col">
           <div className="relative w-full aspect-[2/1] overflow-hidden">
             <Image
-              src={
-                DIOCESE_IMAGE_BY_NAME[name] ||
-                DIOCESE_IMAGE_BY_NAME["서울대교구"]
-              }
+              src={imageUrl}
               fill
               className="object-fill"
               priority

@@ -4,7 +4,7 @@ const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 
 export const DIOCESE_IMAGE_BY_NAME: Record<string, string> = {
   서울대교구: `${IMAGE_BASE}/did/apply/seoul.webp`,
-  인천교구: `${IMAGE_BASE}/did/apply/incheon.jpg`,
+  인천교구: `${IMAGE_BASE}/did/apply/incheon-kr.jpeg`,
   수원교구: `${IMAGE_BASE}/did/apply/suwon.png`,
   의정부교구: `${IMAGE_BASE}/did/apply/uijeongbu.png`,
   춘천교구: `${IMAGE_BASE}/did/apply/chuncheon.webp`,
@@ -20,6 +20,15 @@ export const DIOCESE_IMAGE_BY_NAME: Record<string, string> = {
   제주교구: `${IMAGE_BASE}/did/apply/jeju.png`,
   군종교구: `${IMAGE_BASE}/did/apply/gun.png`,
 };
+
+export function getDioceseImageUrl(name: string, locale: Locale) {
+  if (name === "인천교구") {
+    const fileName = locale === "kr" ? "incheon-kr.jpeg" : "incheon-en.jpeg";
+    return `${IMAGE_BASE}/did/apply/${fileName}`;
+  }
+
+  return DIOCESE_IMAGE_BY_NAME[name] || DIOCESE_IMAGE_BY_NAME["서울대교구"];
+}
 
 export const DIOCESE_EN_NAME_BY_NAME: Record<string, string> = {
   서울대교구: "Archdiocese of Seoul",
