@@ -69,7 +69,7 @@ export default async function Home({
           <PrayPage locale={locale} />
         </div>
       </div>
-      <MainNoticePopup locale={locale} />
+      {/* <MainNoticePopup locale={locale} /> */}
     </main>
   );
 }

@@ -48,79 +48,79 @@ const dioceseData = [
     krName: "부산교구",
     enName: "Diocese of Busan",
     image: `${IMAGE_BASE}/did/apply/busan.jpg`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSeB4CIKL3a4Rsl_bUQfkIzOQaNhtF-YERsFpia_QrOsEbXO2Q/viewform",
   },
   {
     krName: "청주교구",
     enName: "Diocese of Cheongju",
     image: `${IMAGE_BASE}/did/apply/cheongju.webp`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSfiF8NE4C21xfcBi2yw-bHUKNomGfTKtWxiWn2kAPwv20efNQ/viewform?usp=dialog",
   },
   {
     krName: "춘천교구",
     enName: "Diocese of Chuncheon",
     image: `${IMAGE_BASE}/did/apply/chuncheon.webp`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://forms.gle/TkPQatCrLhXHmtvCA",
   },
   {
     krName: "대구대교구",
     enName: "Archdiocese of Daegu",
     image: `${IMAGE_BASE}/did/apply/daegu.jpg`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://forms.gle/J7qUotGMWMy9WdPNA",
   },
   {
     krName: "대전교구",
     enName: "Diocese of Daejeon",
     image: `${IMAGE_BASE}/did/apply/daejeon.png`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://forms.cloud.microsoft/r/vAnC2j6k8m",
   },
   {
     krName: "광주대교구",
     enName: "Archdiocese of Gwangju",
     image: `${IMAGE_BASE}/did/apply/gwangju.png`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSeSiBEecp9GYn0p2lk4z-VMDFLa7eAgEqdZsRRXtFTQaKU19g/viewform?usp=publish-editor",
   },
   {
     krName: "인천교구",
     enName: "Diocese of Incheon",
     image: `${IMAGE_BASE}/did/apply/incheon-kr.jpeg`,
-    href: "https://forms.gle/aYJsg2TCdpCdMgF5A",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSdOAPX5xEBnVe4Qvj8nNgApefH0vpXptdMS7gNhOcy3ee4y8Q/viewform?usp=dialog",
   },
   {
     krName: "제주교구",
     enName: "Diocese of Jeju",
     image: `${IMAGE_BASE}/did/apply/jeju.png`,
-    href: "https://forms.gle/BGyxRicjoq7jyfXF8",
+    href: "https://forms.gle/5KzaykxhdBaqyX7M8",
   },
   {
     krName: "전주교구",
     enName: "Diocese of Jeonju",
     image: `${IMAGE_BASE}/did/apply/jeonju.jpg`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://forms.gle/Geue9NeuNJgxrCcJ8",
   },
   {
     krName: "마산교구",
     enName: "Diocese of Masan",
     image: `${IMAGE_BASE}/did/apply/masan.jpg`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSffFJItjzzTarMnof-OhCZg2qaMZHPeeuJ7pAL6ldocHtzwlA/viewform",
   },
   {
     krName: "수원교구",
     enName: "Diocese of Suwon",
     image: `${IMAGE_BASE}/did/apply/suwon.png`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSdtMnx0BWhPVb7YriKYjROjU0UKKAzrTvY1DkjZZ3Lx6fT_ww/viewform",
+    href: "https://forms.gle/FsfmtqHcPzvJLaZR7",
   },
   {
     krName: "의정부교구",
     enName: "Diocese of Uijeongbu",
     image: `${IMAGE_BASE}/did/apply/uijeongbu.png`,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfYQXg8ml6O5xeZG6AZqpeMehqAYcNqkowahRNR1LI1k6DHiA/viewform?usp=sharing&ouid=103729609757395706973",
+    href: "https://forms.gle/VgpQaxQYX71GRgtY8",
   },
   {
     krName: "원주교구",
     enName: "Diocese of Wonju",
     image: `${IMAGE_BASE}/did/apply/wonju.jpg`,
-    href: "https://docs.google.com/forms/d/1CdCodr8pIA4dQy_XBqt_FaAB0BxiDl2W1EosYzc1zXo/edit",
+    href: "https://forms.gle/wTQwWY2z2gq2qVYr8",
   },
 ];
 
@@ -241,7 +241,7 @@ export default async function Page({
                 "repeat(auto-fill, minmax(min(300px,100%), 1fr))",
             }}
           >
-            {dioceseData.map(({ krName, enName, image }) => {
+            {dioceseData.map(({ krName, enName, image, href }) => {
               const { applied, total } = findNotionData(krName);
               const name = locale === "kr" ? krName : enName;
               const imageSrc =
@@ -270,12 +270,12 @@ export default async function Page({
                         {t.cardTitle(name)}
                       </CardTitle>
                       <CardDescription
-                        className="whitespace-normal leading-normal break-keep"
+                        className="whitespace-normal leading-normal break-keep sr-only"
                         title={t.cardDesc()}
                       >
                         {t.cardDesc()}
                       </CardDescription>
-                      <div className="mt-1">
+                      {/* <div className="mt-1">
                         <div className="flex flex-wrap justify-between items-center gap-x-2 gap-y-1 mb-1">
                           <span className="text-xs font-medium text-gray-600">
                             {t.rateLabel}
@@ -299,13 +299,18 @@ export default async function Page({
                             }}
                           />
                         </div>
-                      </div>
+                      </div> */}
                     </CardHeader>
 
                     <CardFooter className="px-0">
-                      <p className="flex min-h-12 w-full items-center justify-center rounded-md border border-gray-200 bg-gray-100 px-4 py-3 text-center body01m text-gray-500">
-                        {t.applyUnavailable}
-                      </p>
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex min-h-12 w-full items-center justify-center rounded-md bg-[#0047BB] px-4 py-3 text-center body01m text-white transition-colors hover:bg-[#003a99]"
+                      >
+                        {t.applyBtn}
+                      </a>
                     </CardFooter>
                   </Card>
                 </li>
