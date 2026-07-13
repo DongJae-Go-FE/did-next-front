@@ -169,6 +169,8 @@ export const content = {
       personLabel11: ["강태선", "(BYN 블랙야크 회장)"],
       personLabel12: ["우디", "김상우 베드로"],
       personLabel13: ["이국종", "블라시오"],
+      personLabel14: ["이기우", "요셉"],
+      personLabel15: ["밀라논나 장명숙", "안젤라"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -391,6 +393,8 @@ export const content = {
       personLabel11: ["Kang Tae-sun", "(Chairman of BYN Black Yak)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
@@ -610,6 +614,8 @@ export const content = {
       personLabel11: ["Kang Tae-sun", "(Presidente de BYN Black Yak)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "Video de apoyo a la JMJ 2027",
     },
     applyPage: {
@@ -829,6 +835,8 @@ export const content = {
       personLabel11: ["Kang Tae-sun", "(Président de BYN Black Yak)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "Vidéo de soutien aux JMJ 2027",
     },
     applyPage: {
@@ -1048,6 +1056,8 @@ export const content = {
       personLabel11: ["Kang Tae-sun", "(Presidente da BYN Black Yak)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "Vídeo de apoio à JMJ 2027",
     },
     applyPage: {
@@ -1267,6 +1277,8 @@ export const content = {
       personLabel11: ["Kang Tae-sun", "(Presidente di BYN Black Yak)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "Video di sostegno alla GMG 2027",
     },
     applyPage: {
@@ -1486,6 +1498,8 @@ export const content = {
       personLabel11: ["Kang Tae-sun", "(Prezes BYN Black Yak)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "Wideo wsparcia ŚDM 2027",
     },
     applyPage: {
@@ -1705,6 +1719,8 @@ export const content = {
       personLabel11: ["Kang Tae-sun", "(Vorsitzender von BYN Black Yak)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "Unterstützungsvideo zum WJT 2027",
     },
     applyPage: {
@@ -1921,6 +1937,8 @@ export const content = {
       personLabel11: ["姜泰善", "(BYN BlackYak 会长)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "2027世青应援视频",
     },
     applyPage: {
@@ -2134,6 +2152,8 @@ export const content = {
       personLabel11: ["姜泰善", "(BYN BlackYak 會長)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "2027世青應援影片",
     },
     applyPage: {
@@ -2350,6 +2370,8 @@ export const content = {
       personLabel11: ["Kang Tae-sun", "(Chairman ng BYN Black Yak)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "Video ng suporta sa WYD 2027",
     },
     applyPage: {
@@ -2566,6 +2588,8 @@ export const content = {
       personLabel11: ["カン・テソン", "(BYN ブラックヤク会長)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "WYD 2027 応援動画",
     },
     applyPage: {
@@ -2783,6 +2807,8 @@ export const content = {
       personLabel11: ["Kang Tae-sun", "(Chủ tịch BYN Black Yak)"],
       personLabel12: ["Woody", "Kim Sang-woo Peter"],
       personLabel13: ["Lee Kook-jong", "Blaise"],
+      personLabel14: ["Lee Gi-woo", "Joseph"],
+      personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personAlt: "Video cổ vũ ĐHGTTG 2027",
     },
     applyPage: {
