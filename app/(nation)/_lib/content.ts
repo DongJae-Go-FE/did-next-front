@@ -322,7 +322,10 @@ export const content = {
         },
         {
           title: "PARTICIPATE",
-          items: [{ label: "DID Application", href: "/en/apply" }],
+          items: [
+            { label: "DID Application", href: "/en/apply" },
+            { label: "Application Status", href: "/en/status" },
+          ],
         },
       ],
     },
@@ -404,7 +407,10 @@ export const content = {
         "DID application guide for WYD2027 Seoul Days in Diocese. Check available dioceses, application links, and how to move to each diocesan application page.",
       breadcrumb: ["Participate /", "Apply"],
       leftMenuTitle: "Participate",
-      leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
+      leftMenuItems: [
+        { label: "DID Application", href: "/en/apply" },
+        { label: "Application Status", href: "/en/status" },
+      ],
       pageTitle: "DID Application",
       cardTitle: (name: string) => `${name} DID Application`,
       cardDesc: () => `Applications are open.`,
@@ -431,7 +437,10 @@ export const content = {
         "WYD2027 Seoul Days in Diocese application status by diocese. Check target numbers, current applicants, application rates, and participation progress.",
       breadcrumb: ["Participate /", "Status"],
       leftMenuTitle: "Participate",
-      leftMenuItems: [{ label: "DID Application", href: "/en/apply" }],
+      leftMenuItems: [
+        { label: "DID Application", href: "/en/apply" },
+        { label: "Application Status", href: "/en/status" },
+      ],
       pageTitle: "Application Status",
     },
     noticePage: {
@@ -542,7 +551,10 @@ export const content = {
         },
         {
           title: "PARTICIPAR",
-          items: [{ label: "Inscripción al DID", href: "/es/apply" }],
+          items: [
+            { label: "Inscripción al DID", href: "/es/apply" },
+            { label: "Estado de las inscripciones", href: "/es/status" },
+          ],
         },
       ],
     },
@@ -625,7 +637,10 @@ export const content = {
         "Guía de inscripción al DID de la JMJ 2027 Seúl (Days in Diocese). Consulte las diócesis disponibles, los enlaces de inscripción y cómo acceder a la página de cada diócesis.",
       breadcrumb: ["Participar /", "Inscripción"],
       leftMenuTitle: "Participar",
-      leftMenuItems: [{ label: "Inscripción al DID", href: "/es/apply" }],
+      leftMenuItems: [
+        { label: "Inscripción al DID", href: "/es/apply" },
+        { label: "Estado de las inscripciones", href: "/es/status" },
+      ],
       pageTitle: "Inscripción al DID",
       cardTitle: (name: string) => `Inscripción al DID — ${name}`,
       cardDesc: () => `Inscripciones abiertas.`,
@@ -652,7 +667,10 @@ export const content = {
         "Estado de las inscripciones al DID de la JMJ 2027 Seúl por diócesis. Consulte las plazas objetivo, los inscritos actuales y el progreso de la participación.",
       breadcrumb: ["Participar /", "Estado"],
       leftMenuTitle: "Participar",
-      leftMenuItems: [{ label: "Inscripción al DID", href: "/es/apply" }],
+      leftMenuItems: [
+        { label: "Inscripción al DID", href: "/es/apply" },
+        { label: "Estado de las inscripciones", href: "/es/status" },
+      ],
       pageTitle: "Estado de las inscripciones",
     },
     noticePage: {
@@ -763,7 +781,10 @@ export const content = {
         },
         {
           title: "PARTICIPER",
-          items: [{ label: "Inscription au DID", href: "/fr/apply" }],
+          items: [
+            { label: "Inscription au DID", href: "/fr/apply" },
+            { label: "État des inscriptions", href: "/fr/status" },
+          ],
         },
       ],
     },
@@ -846,7 +867,10 @@ export const content = {
         "Guide d'inscription au DID des JMJ 2027 Séoul (Days in Diocese). Consultez les diocèses disponibles, les liens d'inscription et l'accès à la page de chaque diocèse.",
       breadcrumb: ["Participer /", "Inscription"],
       leftMenuTitle: "Participer",
-      leftMenuItems: [{ label: "Inscription au DID", href: "/fr/apply" }],
+      leftMenuItems: [
+        { label: "Inscription au DID", href: "/fr/apply" },
+        { label: "État des inscriptions", href: "/fr/status" },
+      ],
       pageTitle: "Inscription au DID",
       cardTitle: (name: string) => `Inscription au DID — ${name}`,
       cardDesc: () => `Inscriptions ouvertes.`,
@@ -873,7 +897,10 @@ export const content = {
         "État des inscriptions au DID des JMJ 2027 Séoul par diocèse. Consultez les objectifs, les inscrits actuels et l'avancement de la participation.",
       breadcrumb: ["Participer /", "État"],
       leftMenuTitle: "Participer",
-      leftMenuItems: [{ label: "Inscription au DID", href: "/fr/apply" }],
+      leftMenuItems: [
+        { label: "Inscription au DID", href: "/fr/apply" },
+        { label: "État des inscriptions", href: "/fr/status" },
+      ],
       pageTitle: "État des inscriptions",
     },
     noticePage: {
@@ -984,7 +1011,10 @@ export const content = {
         },
         {
           title: "PARTICIPAR",
-          items: [{ label: "Inscrição no DID", href: "/pt/apply" }],
+          items: [
+            { label: "Inscrição no DID", href: "/pt/apply" },
+            { label: "Status das inscrições", href: "/pt/status" },
+          ],
         },
       ],
     },
@@ -1067,7 +1097,10 @@ export const content = {
         "Guia de inscrição no DID da JMJ 2027 Seul (Days in Diocese). Confira as dioceses disponíveis, os links de inscrição e como acessar a página de cada diocese.",
       breadcrumb: ["Participar /", "Inscrição"],
       leftMenuTitle: "Participar",
-      leftMenuItems: [{ label: "Inscrição no DID", href: "/pt/apply" }],
+      leftMenuItems: [
+        { label: "Inscrição no DID", href: "/pt/apply" },
+        { label: "Status das inscrições", href: "/pt/status" },
+      ],
       pageTitle: "Inscrição no DID",
       cardTitle: (name: string) => `Inscrição no DID — ${name}`,
       cardDesc: () => `Inscrições abertas.`,
@@ -1094,7 +1127,10 @@ export const content = {
         "Status das inscrições no DID da JMJ 2027 Seul por diocese. Confira as metas, os inscritos atuais e o progresso da participação.",
       breadcrumb: ["Participar /", "Status"],
       leftMenuTitle: "Participar",
-      leftMenuItems: [{ label: "Inscrição no DID", href: "/pt/apply" }],
+      leftMenuItems: [
+        { label: "Inscrição no DID", href: "/pt/apply" },
+        { label: "Status das inscrições", href: "/pt/status" },
+      ],
       pageTitle: "Status das inscrições",
     },
     noticePage: {
@@ -1205,7 +1241,10 @@ export const content = {
         },
         {
           title: "PARTECIPA",
-          items: [{ label: "Iscrizione al DID", href: "/it/apply" }],
+          items: [
+            { label: "Iscrizione al DID", href: "/it/apply" },
+            { label: "Stato delle iscrizioni", href: "/it/status" },
+          ],
         },
       ],
     },
@@ -1288,7 +1327,10 @@ export const content = {
         "Guida all'iscrizione al DID della GMG 2027 Seoul (Days in Diocese). Controlla le diocesi disponibili, i link di iscrizione e come accedere alla pagina di ogni diocesi.",
       breadcrumb: ["Partecipa /", "Iscrizione"],
       leftMenuTitle: "Partecipa",
-      leftMenuItems: [{ label: "Iscrizione al DID", href: "/it/apply" }],
+      leftMenuItems: [
+        { label: "Iscrizione al DID", href: "/it/apply" },
+        { label: "Stato delle iscrizioni", href: "/it/status" },
+      ],
       pageTitle: "Iscrizione al DID",
       cardTitle: (name: string) => `Iscrizione al DID — ${name}`,
       cardDesc: () => `Iscrizioni aperte.`,
@@ -1315,7 +1357,10 @@ export const content = {
         "Stato delle iscrizioni al DID della GMG 2027 Seoul per diocesi. Controlla gli obiettivi, gli iscritti attuali e l'avanzamento della partecipazione.",
       breadcrumb: ["Partecipa /", "Stato"],
       leftMenuTitle: "Partecipa",
-      leftMenuItems: [{ label: "Iscrizione al DID", href: "/it/apply" }],
+      leftMenuItems: [
+        { label: "Iscrizione al DID", href: "/it/apply" },
+        { label: "Stato delle iscrizioni", href: "/it/status" },
+      ],
       pageTitle: "Stato delle iscrizioni",
     },
     noticePage: {
@@ -1426,7 +1471,10 @@ export const content = {
         },
         {
           title: "UDZIAŁ",
-          items: [{ label: "Zapisy na DID", href: "/pl/apply" }],
+          items: [
+            { label: "Zapisy na DID", href: "/pl/apply" },
+            { label: "Stan zapisów", href: "/pl/status" },
+          ],
         },
       ],
     },
@@ -1509,7 +1557,10 @@ export const content = {
         "Przewodnik po zapisach na DID ŚDM 2027 w Seulu (Days in Diocese). Sprawdź dostępne diecezje, linki do zapisów i przejście na stronę każdej diecezji.",
       breadcrumb: ["Udział /", "Zapisy"],
       leftMenuTitle: "Udział",
-      leftMenuItems: [{ label: "Zapisy na DID", href: "/pl/apply" }],
+      leftMenuItems: [
+        { label: "Zapisy na DID", href: "/pl/apply" },
+        { label: "Stan zapisów", href: "/pl/status" },
+      ],
       pageTitle: "Zapisy na DID",
       cardTitle: (name: string) => `Zapisy na DID — ${name}`,
       cardDesc: () => `Zapisy otwarte.`,
@@ -1536,7 +1587,10 @@ export const content = {
         "Stan zapisów na DID ŚDM 2027 w Seulu według diecezji. Sprawdź cele, aktualną liczbę zapisanych i postęp uczestnictwa.",
       breadcrumb: ["Udział /", "Stan"],
       leftMenuTitle: "Udział",
-      leftMenuItems: [{ label: "Zapisy na DID", href: "/pl/apply" }],
+      leftMenuItems: [
+        { label: "Zapisy na DID", href: "/pl/apply" },
+        { label: "Stan zapisów", href: "/pl/status" },
+      ],
       pageTitle: "Stan zapisów",
     },
     noticePage: {
@@ -1647,7 +1701,10 @@ export const content = {
         },
         {
           title: "MITMACHEN",
-          items: [{ label: "DID-Anmeldung", href: "/de/apply" }],
+          items: [
+            { label: "DID-Anmeldung", href: "/de/apply" },
+            { label: "Anmeldestatus", href: "/de/status" },
+          ],
         },
       ],
     },
@@ -1730,7 +1787,10 @@ export const content = {
         "Anmeldeleitfaden für das DID zum WJT 2027 in Seoul (Days in Diocese). Prüfen Sie verfügbare Diözesen, Anmeldelinks und den Zugang zur Seite jeder Diözese.",
       breadcrumb: ["Mitmachen /", "Anmeldung"],
       leftMenuTitle: "Mitmachen",
-      leftMenuItems: [{ label: "DID-Anmeldung", href: "/de/apply" }],
+      leftMenuItems: [
+        { label: "DID-Anmeldung", href: "/de/apply" },
+        { label: "Anmeldestatus", href: "/de/status" },
+      ],
       pageTitle: "DID-Anmeldung",
       cardTitle: (name: string) => `DID-Anmeldung — ${name}`,
       cardDesc: () => `Anmeldung möglich.`,
@@ -1757,7 +1817,10 @@ export const content = {
         "Anmeldestatus des DID zum WJT 2027 in Seoul nach Diözese. Prüfen Sie Zielzahlen, aktuelle Anmeldungen und den Fortschritt der Teilnahme.",
       breadcrumb: ["Mitmachen /", "Status"],
       leftMenuTitle: "Mitmachen",
-      leftMenuItems: [{ label: "DID-Anmeldung", href: "/de/apply" }],
+      leftMenuItems: [
+        { label: "DID-Anmeldung", href: "/de/apply" },
+        { label: "Anmeldestatus", href: "/de/status" },
+      ],
       pageTitle: "Anmeldestatus",
     },
     noticePage: {
@@ -1865,7 +1928,10 @@ export const content = {
         },
         {
           title: "参与",
-          items: [{ label: "DID报名", href: "/zh/apply" }],
+          items: [
+            { label: "DID报名", href: "/zh/apply" },
+            { label: "各教区报名情况", href: "/zh/status" },
+          ],
         },
       ],
     },
@@ -1948,7 +2014,10 @@ export const content = {
         "2027首尔世界青年日教区日（DID）报名指南。查看各教区报名情况和报名链接，前往可参与教区的DID报名页面。",
       breadcrumb: ["参与 /", "报名"],
       leftMenuTitle: "参与",
-      leftMenuItems: [{ label: "DID报名", href: "/zh/apply" }],
+      leftMenuItems: [
+        { label: "DID报名", href: "/zh/apply" },
+        { label: "各教区报名情况", href: "/zh/status" },
+      ],
       pageTitle: "DID报名",
       cardTitle: (name: string) => `${name} DID报名`,
       cardDesc: () => `现已开放报名。`,
@@ -1972,7 +2041,10 @@ export const content = {
         "2027首尔世界青年日教区日（DID）各教区报名情况。查看各教区的目标人数、当前报名人数、报名率及参与进度。",
       breadcrumb: ["参与 /", "报名情况"],
       leftMenuTitle: "参与",
-      leftMenuItems: [{ label: "DID报名", href: "/zh/apply" }],
+      leftMenuItems: [
+        { label: "DID报名", href: "/zh/apply" },
+        { label: "各教区报名情况", href: "/zh/status" },
+      ],
       pageTitle: "各教区报名情况",
     },
     noticePage: {
@@ -2080,7 +2152,10 @@ export const content = {
         },
         {
           title: "參與",
-          items: [{ label: "DID報名", href: "/zh-tw/apply" }],
+          items: [
+            { label: "DID報名", href: "/zh-tw/apply" },
+            { label: "各教區報名情況", href: "/zh-tw/status" },
+          ],
         },
       ],
     },
@@ -2163,7 +2238,10 @@ export const content = {
         "2027首爾世界青年日教區日（DID）報名指南。查看各教區報名情況和報名連結，前往可參與教區的DID報名頁面。",
       breadcrumb: ["參與 /", "報名"],
       leftMenuTitle: "參與",
-      leftMenuItems: [{ label: "DID報名", href: "/zh-tw/apply" }],
+      leftMenuItems: [
+        { label: "DID報名", href: "/zh-tw/apply" },
+        { label: "各教區報名情況", href: "/zh-tw/status" },
+      ],
       pageTitle: "DID報名",
       cardTitle: (name: string) => `${name} DID報名`,
       cardDesc: () => `現已開放報名。`,
@@ -2187,7 +2265,10 @@ export const content = {
         "2027首爾世界青年日教區日（DID）各教區報名情況。查看各教區的目標人數、目前報名人數、報名率及參與進度。",
       breadcrumb: ["參與 /", "報名情況"],
       leftMenuTitle: "參與",
-      leftMenuItems: [{ label: "DID報名", href: "/zh-tw/apply" }],
+      leftMenuItems: [
+        { label: "DID報名", href: "/zh-tw/apply" },
+        { label: "各教區報名情況", href: "/zh-tw/status" },
+      ],
       pageTitle: "各教區報名情況",
     },
     noticePage: {
@@ -2298,7 +2379,10 @@ export const content = {
         },
         {
           title: "SUMALI",
-          items: [{ label: "Aplikasyon sa DID", href: "/fil/apply" }],
+          items: [
+            { label: "Aplikasyon sa DID", href: "/fil/apply" },
+            { label: "Katayuan ng Aplikasyon", href: "/fil/status" },
+          ],
         },
       ],
     },
@@ -2381,7 +2465,10 @@ export const content = {
         "Gabay sa aplikasyon sa DID ng WYD 2027 Seoul (Days in Diocese). Tingnan ang mga available na diyosesis, mga link ng aplikasyon, at kung paano pumunta sa pahina ng bawat diyosesis.",
       breadcrumb: ["Sumali /", "Aplikasyon"],
       leftMenuTitle: "Sumali",
-      leftMenuItems: [{ label: "Aplikasyon sa DID", href: "/fil/apply" }],
+      leftMenuItems: [
+        { label: "Aplikasyon sa DID", href: "/fil/apply" },
+        { label: "Katayuan ng Aplikasyon", href: "/fil/status" },
+      ],
       pageTitle: "Aplikasyon sa DID",
       cardTitle: (name: string) => `Aplikasyon sa DID — ${name}`,
       cardDesc: () => `Bukas na ang aplikasyon.`,
@@ -2408,7 +2495,10 @@ export const content = {
         "Katayuan ng aplikasyon sa DID ng WYD 2027 Seoul ayon sa diyosesis. Tingnan ang target na bilang, kasalukuyang mga aplikante, at progreso ng pakikilahok.",
       breadcrumb: ["Sumali /", "Katayuan"],
       leftMenuTitle: "Sumali",
-      leftMenuItems: [{ label: "Aplikasyon sa DID", href: "/fil/apply" }],
+      leftMenuItems: [
+        { label: "Aplikasyon sa DID", href: "/fil/apply" },
+        { label: "Katayuan ng Aplikasyon", href: "/fil/status" },
+      ],
       pageTitle: "Katayuan ng Aplikasyon",
     },
     noticePage: {
@@ -2516,7 +2606,10 @@ export const content = {
         },
         {
           title: "参加",
-          items: [{ label: "DID申込", href: "/ja/apply" }],
+          items: [
+            { label: "DID申込", href: "/ja/apply" },
+            { label: "教区別申込状況", href: "/ja/status" },
+          ],
         },
       ],
     },
@@ -2599,7 +2692,10 @@ export const content = {
         "WYD2027ソウル教区大会（DID）の参加申込ガイドです。教区別の申込可否と申込リンクを確認し、参加可能な教区のDID申込ページへ進めます。",
       breadcrumb: ["参加 /", "申込"],
       leftMenuTitle: "参加",
-      leftMenuItems: [{ label: "DID申込", href: "/ja/apply" }],
+      leftMenuItems: [
+        { label: "DID申込", href: "/ja/apply" },
+        { label: "教区別申込状況", href: "/ja/status" },
+      ],
       pageTitle: "DID申込",
       cardTitle: (name: string) => `${name} DID申込`,
       cardDesc: () => `お申し込みいただけます。`,
@@ -2624,7 +2720,10 @@ export const content = {
         "WYD2027ソウル教区大会（DID）の教区別申込状況ページです。各教区の目標人数、現在の申込人数、申込率と参加の進捗をご確認ください。",
       breadcrumb: ["参加 /", "申込状況"],
       leftMenuTitle: "参加",
-      leftMenuItems: [{ label: "DID申込", href: "/ja/apply" }],
+      leftMenuItems: [
+        { label: "DID申込", href: "/ja/apply" },
+        { label: "教区別申込状況", href: "/ja/status" },
+      ],
       pageTitle: "教区別申込状況",
     },
     noticePage: {
@@ -2735,7 +2834,10 @@ export const content = {
         },
         {
           title: "THAM GIA",
-          items: [{ label: "Đăng ký DID", href: "/vi/apply" }],
+          items: [
+            { label: "Đăng ký DID", href: "/vi/apply" },
+            { label: "Tình trạng đăng ký", href: "/vi/status" },
+          ],
         },
       ],
     },
@@ -2818,7 +2920,10 @@ export const content = {
         "Hướng dẫn đăng ký DID của ĐHGTTG 2027 Seoul (Days in Diocese). Xem các giáo phận có thể tham gia, liên kết đăng ký và cách đến trang đăng ký của từng giáo phận.",
       breadcrumb: ["Tham gia /", "Đăng ký"],
       leftMenuTitle: "Tham gia",
-      leftMenuItems: [{ label: "Đăng ký DID", href: "/vi/apply" }],
+      leftMenuItems: [
+        { label: "Đăng ký DID", href: "/vi/apply" },
+        { label: "Tình trạng đăng ký", href: "/vi/status" },
+      ],
       pageTitle: "Đăng ký DID",
       cardTitle: (name: string) => `Đăng ký DID — ${name}`,
       cardDesc: () => `Đã mở đăng ký.`,
@@ -2845,7 +2950,10 @@ export const content = {
         "Tình trạng đăng ký DID của ĐHGTTG 2027 Seoul theo giáo phận. Xem chỉ tiêu, số người đã đăng ký hiện tại và tiến độ tham gia.",
       breadcrumb: ["Tham gia /", "Tình trạng"],
       leftMenuTitle: "Tham gia",
-      leftMenuItems: [{ label: "Đăng ký DID", href: "/vi/apply" }],
+      leftMenuItems: [
+        { label: "Đăng ký DID", href: "/vi/apply" },
+        { label: "Tình trạng đăng ký", href: "/vi/status" },
+      ],
       pageTitle: "Tình trạng đăng ký",
     },
     noticePage: {

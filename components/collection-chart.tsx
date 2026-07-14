@@ -87,10 +87,7 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
           />
           <p className="m-0 font-bold">{data.name}</p>
         </div>
-        <p className="m-0 text-gray-600">
-          신청 현황: {data.달성률}% ({data.현재인원.toLocaleString()}명/
-          {data.목표인원.toLocaleString()}명)
-        </p>
+        <p className="m-0 text-gray-600">{data.달성률}%</p>
       </div>
     );
   }
@@ -131,7 +128,10 @@ export default function CollectionChart({ data: sourceData }: CollectionChartPro
   const chartRef = useRef<HTMLDivElement>(null);
   const data: ChartData[] = sourceData.map((item) => ({
     ...item,
-    달성률: Math.round((item.현재인원 / item.목표인원) * 100),
+    달성률:
+      item.목표인원 > 0
+        ? Math.round((item.현재인원 / item.목표인원) * 100)
+        : 0,
   }));
 
   useEffect(() => {

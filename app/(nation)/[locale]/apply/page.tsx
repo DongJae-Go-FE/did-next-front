@@ -249,7 +249,7 @@ export default async function Page({
                   ? getDioceseImageUrl(krName, locale)
                   : image;
               const key = name.replace(/\s/g, "");
-              const rate = Math.round((applied / total) * 100);
+              const rate = total > 0 ? Math.round((applied / total) * 100) : 0;
               return (
                 <li key={krName}>
                   <Card className="w-full max-w-full px-4">
@@ -275,13 +275,13 @@ export default async function Page({
                       >
                         {t.cardDesc()}
                       </CardDescription>
-                      {/* <div className="mt-1">
+                      <div className="mt-1">
                         <div className="flex flex-wrap justify-between items-center gap-x-2 gap-y-1 mb-1">
                           <span className="text-xs font-medium text-gray-600">
                             {t.rateLabel}
                           </span>
                           <span className="text-xs font-semibold text-gray-800">
-                            {rate}% ({applied}/{total})
+                            {rate}%
                           </span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
@@ -299,7 +299,7 @@ export default async function Page({
                             }}
                           />
                         </div>
-                      </div> */}
+                      </div>
                     </CardHeader>
 
                     <CardFooter className="px-0">

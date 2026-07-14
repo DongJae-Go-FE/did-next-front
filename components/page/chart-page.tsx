@@ -19,7 +19,7 @@ export default function ChartPage({ data, locale }: ChartPageProps) {
         <p className="text-sm text-gray-600">
           {isKr ? "총 신청 현황" : "Overall Application Status"}:{" "}
           <span className="font-semibold text-gray-900">
-            {totalRate}% ({totalCurrent.toLocaleString()}/{totalTarget.toLocaleString()})
+            {totalRate}%
           </span>
         </p>
         <p className="text-xs text-gray-500">
