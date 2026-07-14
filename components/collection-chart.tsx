@@ -11,6 +11,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
 } from "recharts";
 
 interface ChartData {
@@ -95,6 +96,31 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
   return null;
 };
 
+interface CustomAxisTickProps {
+  x?: number;
+  y?: number;
+  payload?: { value: string };
+}
+
+const CustomAxisTick = ({ x = 0, y = 0, payload }: CustomAxisTickProps) => {
+  if (!payload) return null;
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text
+        x={0}
+        y={0}
+        dy={4}
+        textAnchor="end"
+        transform="rotate(-45)"
+        className="fill-gray-600"
+        fontSize={11}
+      >
+        {payload.value}
+      </text>
+    </g>
+  );
+};
+
 const CustomActiveBar = ({
   x = 0,
   y = 0,
@@ -165,40 +191,41 @@ export default function CollectionChart({ data: sourceData }: CollectionChartPro
 
   return (
     <div ref={chartRef} className="w-full">
-      <BarChart
-        style={{
-          width: "100%",
-          maxWidth: "100%",
-          maxHeight: "80vh",
-          aspectRatio: 2 / 1,
-        }}
-        data={displayData}
-        margin={{
-          top: 5,
-          right: 0,
-          left: 0,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis
-          width="auto"
-          domain={[0, 100]}
-          tickFormatter={(value) => `${value}%`}
-        />
-        <Tooltip content={<CustomTooltip />} />
-        <Bar
-          dataKey="달성률"
-          activeBar={<CustomActiveBar />}
-          animationDuration={1000}
-          animationEasing="ease-out"
+      <ResponsiveContainer width="100%" aspect={2}>
+        <BarChart
+          data={displayData}
+          margin={{
+            top: 5,
+            right: 0,
+            left: 0,
+            bottom: 60,
+          }}
         >
-          {displayData.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={entry.color} />
-          ))}
-        </Bar>
-      </BarChart>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis
+            dataKey="name"
+            interval={0}
+            tick={<CustomAxisTick />}
+            height={70}
+          />
+          <YAxis
+            width="auto"
+            domain={[0, 100]}
+            tickFormatter={(value) => `${value}%`}
+          />
+          <Tooltip content={<CustomTooltip />} />
+          <Bar
+            dataKey="달성률"
+            activeBar={<CustomActiveBar />}
+            animationDuration={1000}
+            animationEasing="ease-out"
+          >
+            {displayData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
       <CustomLegend data={data} />
     </div>
   );
