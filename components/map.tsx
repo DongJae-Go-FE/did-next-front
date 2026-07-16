@@ -348,9 +348,9 @@ export default function Map({ locale = "kr" }: { locale?: Locale }) {
     <div
       ref={mapContainerRef}
       style={{ opacity: mapOpacity, transition: "opacity 0.3s ease-out" }}
-      className="relative w-full min-h-[calc(100dvh-208px)]"
+      className="relative h-[720px] w-full"
     >
-      <div id={mapId} className="min-h-[calc(100dvh-208px)] w-full bg-gray-200" />
+      <div id={mapId} className="h-[720px] w-full bg-gray-200" />
     </div>
   );
 }

@@ -130,7 +130,7 @@ export const content = {
     },
     applyCta: {
       label: "DID APPLY",
-      title: "DiD 신청하기",
+      title: "DID 신청하기",
       desc: "교구별 신청 페이지에서 참여 가능한 교구를 확인하고 바로 신청할 수 있습니다.",
       cta: "신청 페이지 이동",
       href: "/kr/apply",
@@ -338,7 +338,7 @@ export const content = {
       alt: "WYD2027 Seoul DID main image",
     },
     mainVerse: {
-      lines: ["Take courage.", "I have conquered", "the world."],
+      lines: ["Take courage!", "I have overcome", "the world."],
       ref: "(John 16:33)",
       alt1: "WYD 2027 DID Main Image 1",
       alt2: "WYD 2027 DID Main Image 2",
