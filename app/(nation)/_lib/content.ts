@@ -171,6 +171,7 @@ export const content = {
       personLabel13: ["이국종", "블라시오"],
       personLabel14: ["이기우", "요셉"],
       personLabel15: ["밀라논나 장명숙", "안젤라"],
+      personLabel16: ["백윤학", "지휘자"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -398,6 +399,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "Conductor"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
@@ -628,6 +630,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "Director de orquesta"],
       personAlt: "Video de apoyo a la JMJ 2027",
     },
     applyPage: {
@@ -858,6 +861,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "Chef d'orchestre"],
       personAlt: "Vidéo de soutien aux JMJ 2027",
     },
     applyPage: {
@@ -1088,6 +1092,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "Maestro"],
       personAlt: "Vídeo de apoio à JMJ 2027",
     },
     applyPage: {
@@ -1318,6 +1323,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "Direttore d'orchestra"],
       personAlt: "Video di sostegno alla GMG 2027",
     },
     applyPage: {
@@ -1548,6 +1554,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "Dyrygent"],
       personAlt: "Wideo wsparcia ŚDM 2027",
     },
     applyPage: {
@@ -1778,6 +1785,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "Dirigent"],
       personAlt: "Unterstützungsvideo zum WJT 2027",
     },
     applyPage: {
@@ -2005,6 +2013,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "指挥家"],
       personAlt: "2027世青应援视频",
     },
     applyPage: {
@@ -2229,6 +2238,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "指揮家"],
       personAlt: "2027世青應援影片",
     },
     applyPage: {
@@ -2456,6 +2466,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "Konduktor"],
       personAlt: "Video ng suporta sa WYD 2027",
     },
     applyPage: {
@@ -2683,6 +2694,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "指揮者"],
       personAlt: "WYD 2027 応援動画",
     },
     applyPage: {
@@ -2911,6 +2923,7 @@ export const content = {
       personLabel13: ["Lee Kook-jong", "Blaise"],
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
+      personLabel16: ["Baek Yun-hak", "Nhạc trưởng"],
       personAlt: "Video cổ vũ ĐHGTTG 2027",
     },
     applyPage: {
