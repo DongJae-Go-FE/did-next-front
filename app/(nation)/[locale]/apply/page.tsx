@@ -194,15 +194,16 @@ export default async function Page({
     chartData.map((d) => [d.name, { applied: d.현재인원, total: d.목표인원 }]),
   );
 
+  // Notion 교구명은 "원주(영문명)", "원주교구" 등 형식이 유동적이라 괄호와 접미사를 제거해 비교
+  const normalizeName = (s: string) =>
+    s.replace(/\(.*?\)/g, "").replace(/대?교구$/, "").trim();
+
   function findNotionData(krName: string) {
     if (notionMap.has(krName)) return notionMap.get(krName)!;
 
-    const simplified = krName.replace("대교구", "교구");
-    if (notionMap.has(simplified)) return notionMap.get(simplified)!;
-
-    const short = krName.replace(/대?교구$/, "");
+    const short = normalizeName(krName);
     for (const [key, value] of notionMap) {
-      if (key.replace(/대?교구$/, "") === short) return value;
+      if (normalizeName(key) === short) return value;
     }
     return { applied: 0, total: 1 };
   }
