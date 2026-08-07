@@ -37,12 +37,19 @@ import {
 
 const IMAGE_BASE = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || "";
 
-const dioceseData = [
+const dioceseData: {
+  krName: string;
+  enName: string;
+  image: string;
+  href: string;
+  closed?: boolean;
+}[] = [
   {
     krName: "안동교구",
     enName: "Diocese of Andong",
     image: `${IMAGE_BASE}/did/apply/andong.jpg`,
     href: "https://forms.gle/vdmVvsfDaDeXGdNE6",
+    closed: true,
   },
   {
     krName: "부산교구",
@@ -242,7 +249,7 @@ export default async function Page({
                 "repeat(auto-fill, minmax(min(300px,100%), 1fr))",
             }}
           >
-            {dioceseData.map(({ krName, enName, image, href }) => {
+            {dioceseData.map(({ krName, enName, image, href, closed }) => {
               const { applied, total } = findNotionData(krName);
               const name = locale === "kr" ? krName : enName;
               const imageSrc =
@@ -304,14 +311,23 @@ export default async function Page({
                     </CardHeader>
 
                     <CardFooter className="px-0">
-                      <a
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex min-h-12 w-full items-center justify-center rounded-md bg-[#0047BB] px-4 py-3 text-center body01m text-white transition-colors hover:bg-[#003a99]"
-                      >
-                        {t.applyBtn}
-                      </a>
+                      {closed ? (
+                        <span
+                          aria-disabled="true"
+                          className="flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-md bg-gray-300 px-4 py-3 text-center body01m text-gray-600"
+                        >
+                          {t.applyClosed}
+                        </span>
+                      ) : (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex min-h-12 w-full items-center justify-center rounded-md bg-[#0047BB] px-4 py-3 text-center body01m text-white transition-colors hover:bg-[#003a99]"
+                        >
+                          {t.applyBtn}
+                        </a>
+                      )}
                     </CardFooter>
                   </Card>
                 </li>

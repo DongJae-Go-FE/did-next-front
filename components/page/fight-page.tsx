@@ -170,6 +170,30 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
   const items: ItemType[] = [
     {
       type: "link",
+      href: "https://youtu.be/AcxyAbdS4KU",
+      src: `${IMAGE_BASE}/did/main/fight/f18.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      mobileImageClassName: "object-[50%_50%]",
+      label: t.personLabel18 as unknown as string[],
+      labelClassName: LABEL_BOTTOM_CENTER,
+      singleLineLabel: true,
+    },
+    {
+      type: "link",
+      href: "https://youtu.be/auS3QR1e--0",
+      src: `${IMAGE_BASE}/did/main/fight/f17.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      mobileImageClassName: "object-[50%_50%]",
+      label: t.personLabel17 as unknown as string[],
+      labelClassName: LABEL_BOTTOM_CENTER,
+      singleLineLabel: true,
+    },
+    {
+      type: "link",
       href: "https://www.youtube.com/watch?v=PZD5qGCE21Q",
       src: `${IMAGE_BASE}/did/main/fight/f16.png`,
       alt: t.personAlt,

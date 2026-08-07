@@ -172,6 +172,8 @@ export const content = {
       personLabel14: ["이기우", "요셉"],
       personLabel15: ["밀라논나 장명숙", "안젤라"],
       personLabel16: ["백윤학", "지휘자"],
+      personLabel17: ["김하종", "빈첸시오 신부"],
+      personLabel18: ["하예린", "요안나"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -190,6 +192,7 @@ export const content = {
       cardDesc: () => `신청 가능합니다.`,
       rateLabel: "신청률",
       applyBtn: "신청하기",
+      applyClosed: "모집완료",
       applyUnavailable: "아직 신청 기간이 아닙니다.",
       privacyDialogTitle: "개인정보 수집·이용 동의",
       privacyDialogDesc:
@@ -400,6 +403,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "Conductor"],
+      personLabel17: ["Kim Ha-jong", "Fr. Vincenzo"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
@@ -418,6 +423,7 @@ export const content = {
       cardDesc: () => `Applications are open.`,
       rateLabel: "Application Rate",
       applyBtn: "Apply",
+      applyClosed: "Applications Closed",
       applyUnavailable: "Applications are not open yet.",
       privacyDialogTitle:
         "Consent to Collection and Use of Personal Information",
@@ -631,6 +637,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "Director de orquesta"],
+      personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "Video de apoyo a la JMJ 2027",
     },
     applyPage: {
@@ -649,6 +657,7 @@ export const content = {
       cardDesc: () => `Inscripciones abiertas.`,
       rateLabel: "Tasa de inscripción",
       applyBtn: "Inscribirse",
+      applyClosed: "Inscripciones cerradas",
       applyUnavailable: "Las inscripciones aún no están abiertas.",
       privacyDialogTitle:
         "Consentimiento para la recopilación y el uso de datos personales",
@@ -862,6 +871,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "Chef d'orchestre"],
+      personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "Vidéo de soutien aux JMJ 2027",
     },
     applyPage: {
@@ -880,6 +891,7 @@ export const content = {
       cardDesc: () => `Inscriptions ouvertes.`,
       rateLabel: "Taux d'inscription",
       applyBtn: "S'inscrire",
+      applyClosed: "Inscriptions closes",
       applyUnavailable: "Les inscriptions ne sont pas encore ouvertes.",
       privacyDialogTitle:
         "Consentement à la collecte et à l'utilisation des données personnelles",
@@ -1093,6 +1105,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "Maestro"],
+      personLabel17: ["Kim Ha-jong", "Pe. Vincenzo"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "Vídeo de apoio à JMJ 2027",
     },
     applyPage: {
@@ -1111,6 +1125,7 @@ export const content = {
       cardDesc: () => `Inscrições abertas.`,
       rateLabel: "Taxa de inscrição",
       applyBtn: "Inscrever-se",
+      applyClosed: "Inscrições encerradas",
       applyUnavailable: "As inscrições ainda não estão abertas.",
       privacyDialogTitle:
         "Consentimento para a coleta e o uso de dados pessoais",
@@ -1324,6 +1339,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "Direttore d'orchestra"],
+      personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "Video di sostegno alla GMG 2027",
     },
     applyPage: {
@@ -1342,6 +1359,7 @@ export const content = {
       cardDesc: () => `Iscrizioni aperte.`,
       rateLabel: "Tasso di iscrizione",
       applyBtn: "Iscriviti",
+      applyClosed: "Iscrizioni chiuse",
       applyUnavailable: "Le iscrizioni non sono ancora aperte.",
       privacyDialogTitle:
         "Consenso alla raccolta e all'uso dei dati personali",
@@ -1555,6 +1573,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "Dyrygent"],
+      personLabel17: ["Kim Ha-jong", "Ks. Vincenzo"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "Wideo wsparcia ŚDM 2027",
     },
     applyPage: {
@@ -1573,6 +1593,7 @@ export const content = {
       cardDesc: () => `Zapisy otwarte.`,
       rateLabel: "Wskaźnik zapisów",
       applyBtn: "Zapisz się",
+      applyClosed: "Zapisy zakończone",
       applyUnavailable: "Zapisy nie zostały jeszcze otwarte.",
       privacyDialogTitle:
         "Zgoda na zbieranie i wykorzystywanie danych osobowych",
@@ -1786,6 +1807,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "Dirigent"],
+      personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "Unterstützungsvideo zum WJT 2027",
     },
     applyPage: {
@@ -1804,6 +1827,7 @@ export const content = {
       cardDesc: () => `Anmeldung möglich.`,
       rateLabel: "Anmeldequote",
       applyBtn: "Anmelden",
+      applyClosed: "Anmeldung geschlossen",
       applyUnavailable: "Die Anmeldung ist noch nicht geöffnet.",
       privacyDialogTitle:
         "Einwilligung in die Erhebung und Nutzung personenbezogener Daten",
@@ -2014,6 +2038,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "指挥家"],
+      personLabel17: ["Kim Ha-jong", "文森佐神父"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "2027世青应援视频",
     },
     applyPage: {
@@ -2032,6 +2058,7 @@ export const content = {
       cardDesc: () => `现已开放报名。`,
       rateLabel: "报名率",
       applyBtn: "报名",
+      applyClosed: "报名已截止",
       applyUnavailable: "报名尚未开始。",
       privacyDialogTitle: "个人信息收集与使用同意",
       privacyDialogDesc: "报名DID前，请确认并同意以下内容。",
@@ -2239,6 +2266,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "指揮家"],
+      personLabel17: ["Kim Ha-jong", "文森佐神父"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "2027世青應援影片",
     },
     applyPage: {
@@ -2257,6 +2286,7 @@ export const content = {
       cardDesc: () => `現已開放報名。`,
       rateLabel: "報名率",
       applyBtn: "報名",
+      applyClosed: "報名已截止",
       applyUnavailable: "報名尚未開始。",
       privacyDialogTitle: "個人資料蒐集與使用同意",
       privacyDialogDesc: "報名DID前，請確認並同意以下內容。",
@@ -2467,6 +2497,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "Konduktor"],
+      personLabel17: ["Kim Ha-jong", "Fr. Vincenzo"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "Video ng suporta sa WYD 2027",
     },
     applyPage: {
@@ -2485,6 +2517,7 @@ export const content = {
       cardDesc: () => `Bukas na ang aplikasyon.`,
       rateLabel: "Antas ng Aplikasyon",
       applyBtn: "Mag-apply",
+      applyClosed: "Sarado na ang aplikasyon",
       applyUnavailable: "Hindi pa bukas ang aplikasyon.",
       privacyDialogTitle:
         "Pahintulot sa Pangongolekta at Paggamit ng Personal na Impormasyon",
@@ -2695,6 +2728,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "指揮者"],
+      personLabel17: ["Kim Ha-jong", "ヴィンチェンツォ神父"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "WYD 2027 応援動画",
     },
     applyPage: {
@@ -2713,6 +2748,7 @@ export const content = {
       cardDesc: () => `お申し込みいただけます。`,
       rateLabel: "申込率",
       applyBtn: "申し込む",
+      applyClosed: "募集終了",
       applyUnavailable: "まだ申込期間ではありません。",
       privacyDialogTitle: "個人情報の収集・利用への同意",
       privacyDialogDesc:
@@ -2924,6 +2960,8 @@ export const content = {
       personLabel14: ["Lee Gi-woo", "Joseph"],
       personLabel15: ["Milanonna Jang Myung-sook", "Angela"],
       personLabel16: ["Baek Yun-hak", "Nhạc trưởng"],
+      personLabel17: ["Kim Ha-jong", "Cha Vincenzo"],
+      personLabel18: ["Ha Ye-rin", "Joanna"],
       personAlt: "Video cổ vũ ĐHGTTG 2027",
     },
     applyPage: {
@@ -2942,6 +2980,7 @@ export const content = {
       cardDesc: () => `Đã mở đăng ký.`,
       rateLabel: "Tỷ lệ đăng ký",
       applyBtn: "Đăng ký",
+      applyClosed: "Đã đóng đăng ký",
       applyUnavailable: "Chưa mở đăng ký.",
       privacyDialogTitle:
         "Đồng ý thu thập và sử dụng thông tin cá nhân",
