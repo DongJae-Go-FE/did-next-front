@@ -174,6 +174,7 @@ export const content = {
       personLabel16: ["백윤학", "지휘자"],
       personLabel17: ["김하종", "빈첸시오 신부"],
       personLabel18: ["하예린", "요안나"],
+      personLabel19: ["안치환"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -405,6 +406,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "Conductor"],
       personLabel17: ["Kim Ha-jong", "Fr. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
@@ -639,6 +641,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "Director de orquesta"],
       personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "Video de apoyo a la JMJ 2027",
     },
     applyPage: {
@@ -873,6 +876,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "Chef d'orchestre"],
       personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "Vidéo de soutien aux JMJ 2027",
     },
     applyPage: {
@@ -1107,6 +1111,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "Maestro"],
       personLabel17: ["Kim Ha-jong", "Pe. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "Vídeo de apoio à JMJ 2027",
     },
     applyPage: {
@@ -1341,6 +1346,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "Direttore d'orchestra"],
       personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "Video di sostegno alla GMG 2027",
     },
     applyPage: {
@@ -1575,6 +1581,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "Dyrygent"],
       personLabel17: ["Kim Ha-jong", "Ks. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "Wideo wsparcia ŚDM 2027",
     },
     applyPage: {
@@ -1809,6 +1816,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "Dirigent"],
       personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "Unterstützungsvideo zum WJT 2027",
     },
     applyPage: {
@@ -2040,6 +2048,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "指挥家"],
       personLabel17: ["Kim Ha-jong", "文森佐神父"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "2027世青应援视频",
     },
     applyPage: {
@@ -2268,6 +2277,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "指揮家"],
       personLabel17: ["Kim Ha-jong", "文森佐神父"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "2027世青應援影片",
     },
     applyPage: {
@@ -2499,6 +2509,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "Konduktor"],
       personLabel17: ["Kim Ha-jong", "Fr. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "Video ng suporta sa WYD 2027",
     },
     applyPage: {
@@ -2730,6 +2741,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "指揮者"],
       personLabel17: ["Kim Ha-jong", "ヴィンチェンツォ神父"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "WYD 2027 応援動画",
     },
     applyPage: {
@@ -2962,6 +2974,7 @@ export const content = {
       personLabel16: ["Baek Yun-hak", "Nhạc trưởng"],
       personLabel17: ["Kim Ha-jong", "Cha Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
+      personLabel19: ["Ahn Chi-hwan"],
       personAlt: "Video cổ vũ ĐHGTTG 2027",
     },
     applyPage: {
