@@ -80,6 +80,7 @@ const dioceseData: {
     enName: "Diocese of Daejeon",
     image: `${IMAGE_BASE}/did/apply/daejeon.png`,
     href: "https://forms.cloud.microsoft/r/vAnC2j6k8m",
+    closed: true,
   },
   {
     krName: "광주대교구",
