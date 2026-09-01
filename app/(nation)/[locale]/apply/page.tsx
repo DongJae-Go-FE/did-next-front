@@ -21,6 +21,7 @@ import {
 
 import SliderBackdrop from "@/components/ui/slider-backdrop";
 import JsonLd from "@/components/json-ld";
+import ApplyGuidelineDialog from "@/components/apply-guideline-dialog";
 import { content, locales, type Locale } from "../../_lib/content";
 import { getDioceseImageUrl } from "@/lib/diocese-display";
 import { getDioceseChartData } from "@/lib/notion-status";
@@ -319,6 +320,11 @@ export default async function Page({
                         >
                           {t.applyClosed}
                         </span>
+                      ) : locale === "kr" ? (
+                        <ApplyGuidelineDialog
+                          href={href}
+                          triggerLabel={t.applyBtn}
+                        />
                       ) : (
                         <a
                           href={href}

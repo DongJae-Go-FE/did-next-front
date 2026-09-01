@@ -616,4 +616,22 @@ body,
   font-size: 20px !important;
 }
 
+/* fight 슬라이더 화살표: 배경 없이 두껍고 크게 */
+.fight-swiper .swiper-button-prev,
+.fight-swiper .swiper-button-next {
+  margin-top: -42px; /* 하단 페이지네이션 여백(pb-10)을 감안해 카드 세로 중앙으로 보정 */
+  z-index: 40;
+}
+
+.fight-swiper .swiper-button-prev::after,
+.fight-swiper .swiper-button-next::after {
+  font-size: 32px !important;
+  -webkit-text-stroke: 3px #0047bb;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35));
+}
+
+.fight-swiper .swiper-button-disabled {
+  opacity: 0.35 !important;
+}
+
 /**/

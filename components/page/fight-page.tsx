@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { BackDrop } from "../ui/common";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import { content, type Locale } from "@/app/(nation)/_lib/content";
 
@@ -168,6 +169,42 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
 
   // 최신순 정렬: 새로 추가하는 항목은 이 배열의 맨 앞에 넣으면 됩니다.
   const items: ItemType[] = [
+    {
+      type: "link",
+      href: "https://youtu.be/3CTaF7z5eg0?si=DotygUqjDf2uKHe6",
+      src: `${IMAGE_BASE}/did/main/fight/f22.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      mobileImageClassName: "object-[50%_50%]",
+      label: t.personLabel22 as unknown as string[],
+      labelClassName: LABEL_BOTTOM_CENTER,
+      singleLineLabel: true,
+    },
+    {
+      type: "link",
+      href: "https://youtu.be/-X8ND3hhWQI?si=GuBib59DU4CVznK-",
+      src: `${IMAGE_BASE}/did/main/fight/f21.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      mobileImageClassName: "object-[50%_50%]",
+      label: t.personLabel21 as unknown as string[],
+      labelClassName: LABEL_BOTTOM_CENTER,
+      singleLineLabel: true,
+    },
+    {
+      type: "link",
+      href: "https://youtu.be/pJqVVxeis2Y?si=j3jlKQMp5W1tqmjs",
+      src: `${IMAGE_BASE}/did/main/fight/f20.png`,
+      alt: t.personAlt,
+      imageClassName:
+        "object-[30%_26%] max-[1079px]:object-[26%_26%] max-[767px]:object-[24%_20%]",
+      mobileImageClassName: "object-[50%_50%]",
+      label: t.personLabel20 as unknown as string[],
+      labelClassName: LABEL_BOTTOM_CENTER,
+      singleLineLabel: true,
+    },
     {
       type: "link",
       href: "https://youtu.be/wzA5iNF6Ml8",
@@ -386,7 +423,12 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
     },
   ];
 
-  const desktopItems = items;
+  // PC는 9개씩(3x3) 한 페이지로 묶어 슬라이더로 보여줍니다.
+  const DESKTOP_PAGE_SIZE = 9;
+  const desktopPages: ItemType[][] = Array.from(
+    { length: Math.ceil(items.length / DESKTOP_PAGE_SIZE) },
+    (_, i) => items.slice(i * DESKTOP_PAGE_SIZE, (i + 1) * DESKTOP_PAGE_SIZE),
+  );
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1280);
@@ -427,16 +469,30 @@ export default function FightPage({ locale = "kr" }: { locale?: Locale }) {
             ))}
           </Swiper>
         ) : (
-          <ul className="grid grid-cols-3 gap-6">
-            {desktopItems.map((item, i) => (
-              <li
-                key={i}
-                className="relative aspect-[16/5.45] rounded-xl overflow-hidden bg-neutral-200"
-              >
-                <CardItem item={item} locale={locale} />
-              </li>
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={24}
+            slidesPerView={1}
+            autoHeight
+            navigation
+            pagination={{ clickable: true }}
+            className="fight-swiper did-swiper !pb-10"
+          >
+            {desktopPages.map((page, pi) => (
+              <SwiperSlide key={pi}>
+                <ul className="grid grid-cols-3 gap-6">
+                  {page.map((item, i) => (
+                    <li
+                      key={i}
+                      className="relative aspect-[16/5.45] rounded-xl overflow-hidden bg-neutral-200"
+                    >
+                      <CardItem item={item} locale={locale} />
+                    </li>
+                  ))}
+                </ul>
+              </SwiperSlide>
             ))}
-          </ul>
+          </Swiper>
         )}
       </div>
     </section>

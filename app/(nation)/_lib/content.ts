@@ -89,6 +89,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "공지사항", href: "/kr/notice" },
+            { label: "자주하는 질문", href: "/kr/faq" },
             { label: "후원사 소개", href: "/kr#sponsor" },
           ],
         },
@@ -175,6 +176,9 @@ export const content = {
       personLabel17: ["김하종", "빈첸시오 신부"],
       personLabel18: ["하예린", "요안나"],
       personLabel19: ["안치환"],
+      personLabel20: ["김태원", "바오로"],
+      personLabel21: ["박완규", "사도요한"],
+      personLabel22: ["갓등중창단 OB"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -230,6 +234,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "공지사항", href: "/kr/notice" },
+        { label: "자주하는 질문", href: "/kr/faq" },
         { label: "후원사 소개", href: "/kr#sponsor" },
       ],
       pageTitle: "공지사항",
@@ -322,6 +327,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "Announcements", href: "/en/notice" },
+            { label: "FAQ", href: "/en/faq" },
             { label: "Sponsors", href: "/en#sponsor" },
           ],
         },
@@ -407,6 +413,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "Fr. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
@@ -464,6 +473,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "Announcements", href: "/en/notice" },
+        { label: "FAQ", href: "/en/faq" },
         { label: "Sponsors", href: "/en#sponsor" },
       ],
       pageTitle: "Announcements",
@@ -556,6 +566,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "Avisos", href: "/es/notice" },
+            { label: "Preguntas frecuentes", href: "/es/faq" },
             { label: "Patrocinadores", href: "/es#sponsor" },
           ],
         },
@@ -642,6 +653,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "Video de apoyo a la JMJ 2027",
     },
     applyPage: {
@@ -699,6 +713,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "Avisos", href: "/es/notice" },
+        { label: "Preguntas frecuentes", href: "/es/faq" },
         { label: "Patrocinadores", href: "/es#sponsor" },
       ],
       pageTitle: "Avisos",
@@ -791,6 +806,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "Annonces", href: "/fr/notice" },
+            { label: "Questions fréquentes", href: "/fr/faq" },
             { label: "Partenaires", href: "/fr#sponsor" },
           ],
         },
@@ -877,6 +893,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "Vidéo de soutien aux JMJ 2027",
     },
     applyPage: {
@@ -934,6 +953,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "Annonces", href: "/fr/notice" },
+        { label: "Questions fréquentes", href: "/fr/faq" },
         { label: "Partenaires", href: "/fr#sponsor" },
       ],
       pageTitle: "Annonces",
@@ -1026,6 +1046,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "Avisos", href: "/pt/notice" },
+            { label: "Perguntas frequentes", href: "/pt/faq" },
             { label: "Patrocinadores", href: "/pt#sponsor" },
           ],
         },
@@ -1112,6 +1133,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "Pe. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "Vídeo de apoio à JMJ 2027",
     },
     applyPage: {
@@ -1169,6 +1193,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "Avisos", href: "/pt/notice" },
+        { label: "Perguntas frequentes", href: "/pt/faq" },
         { label: "Patrocinadores", href: "/pt#sponsor" },
       ],
       pageTitle: "Avisos",
@@ -1261,6 +1286,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "Avvisi", href: "/it/notice" },
+            { label: "Domande frequenti", href: "/it/faq" },
             { label: "Sponsor", href: "/it#sponsor" },
           ],
         },
@@ -1347,6 +1373,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "Video di sostegno alla GMG 2027",
     },
     applyPage: {
@@ -1404,6 +1433,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "Avvisi", href: "/it/notice" },
+        { label: "Domande frequenti", href: "/it/faq" },
         { label: "Sponsor", href: "/it#sponsor" },
       ],
       pageTitle: "Avvisi",
@@ -1496,6 +1526,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "Ogłoszenia", href: "/pl/notice" },
+            { label: "Najczęstsze pytania", href: "/pl/faq" },
             { label: "Sponsorzy", href: "/pl#sponsor" },
           ],
         },
@@ -1582,6 +1613,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "Ks. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "Wideo wsparcia ŚDM 2027",
     },
     applyPage: {
@@ -1639,6 +1673,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "Ogłoszenia", href: "/pl/notice" },
+        { label: "Najczęstsze pytania", href: "/pl/faq" },
         { label: "Sponsorzy", href: "/pl#sponsor" },
       ],
       pageTitle: "Ogłoszenia",
@@ -1731,6 +1766,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "Mitteilungen", href: "/de/notice" },
+            { label: "Häufige Fragen", href: "/de/faq" },
             { label: "Sponsoren", href: "/de#sponsor" },
           ],
         },
@@ -1817,6 +1853,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "P. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "Unterstützungsvideo zum WJT 2027",
     },
     applyPage: {
@@ -1874,6 +1913,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "Mitteilungen", href: "/de/notice" },
+        { label: "Häufige Fragen", href: "/de/faq" },
         { label: "Sponsoren", href: "/de#sponsor" },
       ],
       pageTitle: "Mitteilungen",
@@ -1963,6 +2003,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "公告", href: "/zh/notice" },
+            { label: "常见问题", href: "/zh/faq" },
             { label: "赞助商", href: "/zh#sponsor" },
           ],
         },
@@ -2049,6 +2090,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "文森佐神父"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "2027世青应援视频",
     },
     applyPage: {
@@ -2103,6 +2147,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "公告", href: "/zh/notice" },
+        { label: "常见问题", href: "/zh/faq" },
         { label: "赞助商", href: "/zh#sponsor" },
       ],
       pageTitle: "公告",
@@ -2192,6 +2237,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "公告", href: "/zh-tw/notice" },
+            { label: "常見問題", href: "/zh-tw/faq" },
             { label: "贊助商", href: "/zh-tw#sponsor" },
           ],
         },
@@ -2278,6 +2324,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "文森佐神父"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "2027世青應援影片",
     },
     applyPage: {
@@ -2332,6 +2381,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "公告", href: "/zh-tw/notice" },
+        { label: "常見問題", href: "/zh-tw/faq" },
         { label: "贊助商", href: "/zh-tw#sponsor" },
       ],
       pageTitle: "公告",
@@ -2424,6 +2474,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "Mga Abiso", href: "/fil/notice" },
+            { label: "Mga Madalas Itanong", href: "/fil/faq" },
             { label: "Mga Sponsor", href: "/fil#sponsor" },
           ],
         },
@@ -2510,6 +2561,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "Fr. Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "Video ng suporta sa WYD 2027",
     },
     applyPage: {
@@ -2567,6 +2621,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "Mga Abiso", href: "/fil/notice" },
+        { label: "Mga Madalas Itanong", href: "/fil/faq" },
         { label: "Mga Sponsor", href: "/fil#sponsor" },
       ],
       pageTitle: "Mga Abiso",
@@ -2656,6 +2711,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "お知らせ", href: "/ja/notice" },
+            { label: "よくある質問", href: "/ja/faq" },
             { label: "協賛企業", href: "/ja#sponsor" },
           ],
         },
@@ -2742,6 +2798,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "ヴィンチェンツォ神父"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "WYD 2027 応援動画",
     },
     applyPage: {
@@ -2797,6 +2856,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "お知らせ", href: "/ja/notice" },
+        { label: "よくある質問", href: "/ja/faq" },
         { label: "協賛企業", href: "/ja#sponsor" },
       ],
       pageTitle: "お知らせ",
@@ -2889,6 +2949,7 @@ export const content = {
           title: "NOTICE",
           items: [
             { label: "Thông báo", href: "/vi/notice" },
+            { label: "Câu hỏi thường gặp", href: "/vi/faq" },
             { label: "Nhà tài trợ", href: "/vi#sponsor" },
           ],
         },
@@ -2975,6 +3036,9 @@ export const content = {
       personLabel17: ["Kim Ha-jong", "Cha Vincenzo"],
       personLabel18: ["Ha Ye-rin", "Joanna"],
       personLabel19: ["Ahn Chi-hwan"],
+      personLabel20: ["Kim Tae-won", "Paul"],
+      personLabel21: ["Park Wan-kyu", "John the Apostle"],
+      personLabel22: ["Gatdeung Chorus OB"],
       personAlt: "Video cổ vũ ĐHGTTG 2027",
     },
     applyPage: {
@@ -3032,6 +3096,7 @@ export const content = {
       leftMenuTitle: "NOTICE",
       leftMenuItems: [
         { label: "Thông báo", href: "/vi/notice" },
+        { label: "Câu hỏi thường gặp", href: "/vi/faq" },
         { label: "Nhà tài trợ", href: "/vi#sponsor" },
       ],
       pageTitle: "Thông báo",

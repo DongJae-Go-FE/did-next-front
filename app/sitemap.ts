@@ -57,6 +57,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily" as const,
       priority: 0.8,
     },
+    {
+      url: `${SITE_URL}/${locale}/faq`,
+      lastModified: contentUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
   ]);
 
   // 공지사항 동적 페이지
