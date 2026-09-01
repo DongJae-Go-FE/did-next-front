@@ -351,7 +351,8 @@ export default function ApplyGuidelineDialog({
                   e.preventDefault();
                   return;
                 }
-                handleOpenChange(false);
+                // 즉시 닫으면 새 탭 네비게이션 전에 앵커가 언마운트되어 이동이 취소됨
+                setTimeout(() => handleOpenChange(false), 0);
               }}
               className={
                 agreed
