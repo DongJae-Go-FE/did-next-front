@@ -179,6 +179,7 @@ export const content = {
       personLabel20: ["김태원", "바오로"],
       personLabel21: ["박완규", "사도요한"],
       personLabel22: ["갓등중창단 OB"],
+      personLabel23: ["에드윈 킴", "바실리오"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -416,6 +417,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
@@ -656,6 +658,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "Video de apoyo a la JMJ 2027",
     },
     applyPage: {
@@ -896,6 +899,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "Vidéo de soutien aux JMJ 2027",
     },
     applyPage: {
@@ -1136,6 +1140,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "Vídeo de apoio à JMJ 2027",
     },
     applyPage: {
@@ -1376,6 +1381,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "Video di sostegno alla GMG 2027",
     },
     applyPage: {
@@ -1616,6 +1622,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "Wideo wsparcia ŚDM 2027",
     },
     applyPage: {
@@ -1856,6 +1863,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "Unterstützungsvideo zum WJT 2027",
     },
     applyPage: {
@@ -2093,6 +2101,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "2027世青应援视频",
     },
     applyPage: {
@@ -2327,6 +2336,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "2027世青應援影片",
     },
     applyPage: {
@@ -2564,6 +2574,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "Video ng suporta sa WYD 2027",
     },
     applyPage: {
@@ -2801,6 +2812,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "WYD 2027 応援動画",
     },
     applyPage: {
@@ -3039,6 +3051,7 @@ export const content = {
       personLabel20: ["Kim Tae-won", "Paul"],
       personLabel21: ["Park Wan-kyu", "John the Apostle"],
       personLabel22: ["Gatdeung Chorus OB"],
+      personLabel23: ["Edwin Kim", "Basil"],
       personAlt: "Video cổ vũ ĐHGTTG 2027",
     },
     applyPage: {
