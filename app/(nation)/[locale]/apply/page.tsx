@@ -69,6 +69,7 @@ const dioceseData: {
     enName: "Diocese of Chuncheon",
     image: `${IMAGE_BASE}/did/apply/chuncheon.webp`,
     href: "https://forms.gle/TkPQatCrLhXHmtvCA",
+    closed: true,
   },
   {
     krName: "대구대교구",
