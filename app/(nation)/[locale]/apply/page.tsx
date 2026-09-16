@@ -43,6 +43,7 @@ const dioceseData: {
   enName: string;
   image: string;
   href: string;
+  /** 노션 수치와 무관하게 강제 마감할 때만 사용 (기본은 등록인원 >= 목표인원이면 자동 마감) */
   closed?: boolean;
 }[] = [
   {
@@ -50,7 +51,6 @@ const dioceseData: {
     enName: "Diocese of Andong",
     image: `${IMAGE_BASE}/did/apply/andong.jpg`,
     href: "https://forms.gle/vdmVvsfDaDeXGdNE6",
-    closed: true,
   },
   {
     krName: "부산교구",
@@ -69,7 +69,6 @@ const dioceseData: {
     enName: "Diocese of Chuncheon",
     image: `${IMAGE_BASE}/did/apply/chuncheon.webp`,
     href: "https://forms.gle/TkPQatCrLhXHmtvCA",
-    closed: true,
   },
   {
     krName: "대구대교구",
@@ -82,7 +81,6 @@ const dioceseData: {
     enName: "Diocese of Daejeon",
     image: `${IMAGE_BASE}/did/apply/daejeon.png`,
     href: "https://forms.cloud.microsoft/r/vAnC2j6k8m",
-    closed: true,
   },
   {
     krName: "광주대교구",
@@ -261,6 +259,8 @@ export default async function Page({
                   : image;
               const key = name.replace(/\s/g, "");
               const rate = total > 0 ? Math.round((applied / total) * 100) : 0;
+              // 노션 등록인원이 목표인원에 도달하면 자동 마감 (수동 closed 플래그는 강제 마감용)
+              const isClosed = closed || (total > 0 && applied >= total);
               return (
                 <li key={krName}>
                   <Card className="w-full max-w-full px-4">
@@ -314,7 +314,7 @@ export default async function Page({
                     </CardHeader>
 
                     <CardFooter className="px-0">
-                      {closed ? (
+                      {isClosed ? (
                         <span
                           aria-disabled="true"
                           className="flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-md bg-gray-300 px-4 py-3 text-center body01m text-gray-600"
