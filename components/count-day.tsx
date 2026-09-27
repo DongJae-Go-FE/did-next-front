@@ -2,6 +2,11 @@ import CountUp from "@/components/count-up";
 import type { Locale } from "@/app/(nation)/_lib/content";
 
 const COUNTDOWN_COPY: Record<Locale, { prefix: string; suffix: string }> = {
+  ar: { prefix: "باقي ", suffix: " يومًا على الحدث" },
+  ur: { prefix: "تقریب میں ", suffix: " دن باقی ہیں" },
+  tr: { prefix: "Etkinliğe ", suffix: " gün kaldı" },
+  id: { prefix: "", suffix: " hari menuju acara" },
+  ms: { prefix: "", suffix: " hari lagi sebelum acara" },
   kr: { prefix: "D-", suffix: "" },
   en: { prefix: "D-", suffix: " until the event" },
   es: { prefix: "D-", suffix: " para el evento" },

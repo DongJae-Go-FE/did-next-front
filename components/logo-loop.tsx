@@ -406,6 +406,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     return (
       <div
         ref={containerRef}
+        dir="ltr"
         className={rootClasses}
         style={containerStyle}
         role="region"

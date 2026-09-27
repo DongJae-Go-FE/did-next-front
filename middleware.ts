@@ -14,6 +14,11 @@ const LANG_BY_LOCALE: Record<string, string> = {
   fil: "fil",
   ja: "ja",
   vi: "vi",
+  ar: "ar",
+  ur: "ur-PK",
+  tr: "tr",
+  id: "id",
+  ms: "ms",
 };
 
 function getLocale(pathname: string): string {

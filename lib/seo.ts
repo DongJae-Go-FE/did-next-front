@@ -1,17 +1,6 @@
-export type SiteLocale =
-  | "kr"
-  | "en"
-  | "es"
-  | "fr"
-  | "pt"
-  | "it"
-  | "pl"
-  | "de"
-  | "zh"
-  | "zh-tw"
-  | "fil"
-  | "ja"
-  | "vi";
+import type { Locale } from "@/app/(nation)/_lib/content";
+
+export type SiteLocale = Locale;
 
 export const SITE_URL = "https://wyd2027did.org";
 
@@ -31,6 +20,12 @@ export const OG_IMAGE = {
 export const OG_IMAGES = [OG_IMAGE];
 
 export const SITE_NAME_BY_LOCALE = {
+  ar: "WYD DID | أيام الأبرشيات سيول 2027",
+  ur: "WYD DID | سیول 2027 اسقفی ایام",
+  tr: "WYD DID | 2027 Seul Piskoposluk Günleri",
+  id: "WYD DID | Hari-hari di Keuskupan Seoul 2027",
+  ms: "WYD DID | Hari-hari di Keuskupan Seoul 2027",
+
   kr: "WYD DID | 2027 서울 세계청년대회 교구대회 공식 홈페이지",
   en: "WYD DID | 2027 Seoul Days in Diocese",
   es: "Sitio web oficial del DID de la JMJ 2027 Seúl",
@@ -47,6 +42,12 @@ export const SITE_NAME_BY_LOCALE = {
 } as const satisfies Record<SiteLocale, string>;
 
 export const SITE_TITLE_BY_LOCALE = {
+  ar: "WYD DID | أيام الأبرشيات سيول 2027",
+  ur: "WYD DID | سیول 2027 اسقفی ایام",
+  tr: "WYD DID | 2027 Seul Piskoposluk Günleri",
+  id: "WYD DID | Hari-hari di Keuskupan Seoul 2027",
+  ms: "WYD DID | Hari-hari di Keuskupan Seoul 2027",
+
   kr: "WYD DID | 2027 서울 세계청년대회 교구대회 공식 홈페이지",
   en: "WYD DID | 2027 Seoul Days in Diocese",
   es: "Sitio web oficial del DID de la JMJ 2027 Seúl",
@@ -63,6 +64,12 @@ export const SITE_TITLE_BY_LOCALE = {
 } as const satisfies Record<SiteLocale, string>;
 
 export const EVENT_NAME_BY_LOCALE = {
+  ar: "WYD DID | أيام الأبرشيات سيول 2027",
+  ur: "WYD DID | سیول 2027 اسقفی ایام",
+  tr: "WYD DID | 2027 Seul Piskoposluk Günleri",
+  id: "WYD DID | Hari-hari di Keuskupan Seoul 2027",
+  ms: "WYD DID | Hari-hari di Keuskupan Seoul 2027",
+
   kr: "WYD2027 서울 세계청년대회 교구대회(DID)",
   en: "WYD2027 Seoul Days in Diocese",
   es: "JMJ 2027 Seúl — Days in Diocese (DID)",
@@ -79,6 +86,12 @@ export const EVENT_NAME_BY_LOCALE = {
 } as const satisfies Record<SiteLocale, string>;
 
 export const SITE_ALIASES_BY_LOCALE = {
+  ar: ["WYD", "WYD DID", "WYD 2027", "Days in Diocese", "WYD DID | أيام الأبرشيات سيول 2027"],
+  ur: ["WYD", "WYD DID", "WYD 2027", "Days in Diocese", "WYD DID | سیول 2027 اسقفی ایام"],
+  tr: ["WYD", "WYD DID", "WYD 2027", "Days in Diocese", "WYD DID | 2027 Seul Piskoposluk Günleri"],
+  id: ["WYD", "WYD DID", "WYD 2027", "Days in Diocese", "WYD DID | Hari-hari di Keuskupan Seoul 2027"],
+  ms: ["WYD", "WYD DID", "WYD 2027", "Days in Diocese", "WYD DID | Hari-hari di Keuskupan Seoul 2027"],
+
   kr: [
     "WYD",
     "WYD DID",
@@ -233,6 +246,12 @@ export const SITE_ALIASES_BY_LOCALE = {
 } as const satisfies Record<SiteLocale, readonly string[]>;
 
 export const SEARCH_ALIASES_BY_LOCALE = {
+  ar: ["WYD", "WYD DID", "WYD 2027", "Days in Diocese", "WYD DID | أيام الأبرشيات سيول 2027"],
+  ur: ["WYD", "WYD DID", "WYD 2027", "Days in Diocese", "WYD DID | سیول 2027 اسقفی ایام"],
+  tr: ["WYD", "WYD DID", "WYD 2027", "Days in Diocese", "WYD DID | 2027 Seul Piskoposluk Günleri"],
+  id: ["WYD", "WYD DID", "WYD 2027", "Days in Diocese", "WYD DID | Hari-hari di Keuskupan Seoul 2027"],
+  ms: ["WYD", "WYD DID", "WYD 2027", "Days in Diocese", "WYD DID | Hari-hari di Keuskupan Seoul 2027"],
+
   kr: [
     "WYD",
     "WYD DID",
@@ -406,6 +425,12 @@ export function getCanonicalUrl(locale: SiteLocale, path: string = "") {
 }
 
 const LOCALE_LANGUAGE_BY_LOCALE = {
+  ar: "ar",
+  ur: "ur-PK",
+  tr: "tr-TR",
+  id: "id-ID",
+  ms: "ms-MY",
+
   kr: "ko-KR",
   en: "en-US",
   es: "es-ES",
@@ -422,6 +447,12 @@ const LOCALE_LANGUAGE_BY_LOCALE = {
 } as const satisfies Record<SiteLocale, string>;
 
 const OG_LOCALE_BY_LOCALE = {
+  ar: "ar_AR",
+  ur: "ur_PK",
+  tr: "tr_TR",
+  id: "id_ID",
+  ms: "ms_MY",
+
   kr: "ko_KR",
   en: "en_US",
   es: "es_ES",

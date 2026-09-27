@@ -1,3 +1,4 @@
+import { locales } from "@/app/(nation)/_lib/content";
 import type { MetadataRoute } from "next";
 import { getNoticeList } from "@/lib/notion-notice";
 
@@ -10,21 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const contentUpdated = new Date("2026-02-24T12:00:00+09:00");
 
   // 정적 페이지 — 모든 로케일에 대해 생성
-  const siteLocales = [
-    "kr",
-    "en",
-    "es",
-    "fr",
-    "pt",
-    "it",
-    "pl",
-    "de",
-    "zh",
-    "zh-tw",
-    "fil",
-    "ja",
-    "vi",
-  ];
+  const siteLocales = locales;
 
   const staticPages: MetadataRoute.Sitemap = siteLocales.flatMap((locale) => [
     {

@@ -1,3 +1,4 @@
+import { getTextDirection } from "@/lib/locale-direction";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import localFont from "next/font/local";
@@ -59,6 +60,11 @@ const SUPPORTED_LANGS = [
   "fil",
   "ja",
   "vi",
+  "ar",
+  "ur-PK",
+  "tr",
+  "id",
+  "ms",
 ] as const;
 type SupportedLang = (typeof SUPPORTED_LANGS)[number];
 
@@ -77,7 +83,7 @@ export default async function RootLayout({
   const lang = getRequestLang(headersList.get("x-site-locale"));
 
   return (
-    <html lang={lang} className="lenis lenis-smooth">
+    <html lang={lang} dir={getTextDirection(lang)} className="lenis lenis-smooth">
       <body className={pretendard.className}>{children}</body>
     </html>
   );

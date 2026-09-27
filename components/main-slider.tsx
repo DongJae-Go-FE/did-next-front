@@ -27,6 +27,7 @@ import SliderItem02 from "./slider-item/slider-item02";
 import SliderItem01En from "./slider-item/en/slider-item01";
 import SliderItem02En from "./slider-item/en/slider-item02";
 
+import { getTextDirection } from "@/lib/locale-direction";
 import { content, type Locale } from "@/app/(nation)/_lib/content";
 
 export default function MainSlider({ locale = "kr" }: { locale?: Locale }) {
@@ -141,37 +142,38 @@ export default function MainSlider({ locale = "kr" }: { locale?: Locale }) {
 
   return (
     <div
+      dir="ltr"
       ref={flickingRef}
       className="flicking-viewport relative h-[90dvh] w-full flicking-hidden"
     >
       <div className="flicking-camera">
         {isKr ? (
           <>
-            <Panel>
+            <Panel dir={getTextDirection(locale)}>
               <SliderItem00 locale={locale} />
             </Panel>
             {/* <Panel>
               <SliderItem000 />
             </Panel> */}
-            <Panel>
+            <Panel dir={getTextDirection(locale)}>
               <SliderItem01 />
             </Panel>
-            <Panel>
+            <Panel dir={getTextDirection(locale)}>
               <SliderItem02 />
             </Panel>
           </>
         ) : (
           <>
-            <Panel>
+            <Panel dir={getTextDirection(locale)}>
               <SliderItem00 locale={locale} />
             </Panel>
             {/* <Panel>
               <SliderItem000En />
             </Panel> */}
-            <Panel>
+            <Panel dir={getTextDirection(locale)}>
               <SliderItem01En locale={locale} />
             </Panel>
-            <Panel>
+            <Panel dir={getTextDirection(locale)}>
               <SliderItem02En locale={locale} />
             </Panel>
           </>

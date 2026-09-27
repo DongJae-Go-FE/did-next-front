@@ -24,7 +24,7 @@ export default function GlobalError({
     const path = window.location.pathname;
     const firstSegment = path.split("/")[1];
     if (
-      ["en", "es", "fr", "pt", "it", "pl", "de", "zh", "zh-tw", "fil", "ja", "vi"].includes(
+      ["en", "es", "fr", "pt", "it", "pl", "de", "zh", "zh-tw", "fil", "ja", "vi", "ar", "ur", "tr", "id", "ms"].includes(
         firstSegment,
       )
     ) {

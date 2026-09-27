@@ -13,8 +13,7 @@ import {
 import LeftMenu from "@/components/ui/left-menu";
 import SliderBackdrop from "@/components/ui/slider-backdrop";
 import JsonLd from "@/components/json-ld";
-import { content, locales, type Locale } from "../../_lib/content";
-import { faqContent, CHATBOT_URL } from "../../_lib/faq-content";
+import { content, locales, faqContent, CHATBOT_URL, type Locale } from "../../_lib/content";
 import { createBreadcrumbJsonLd } from "@/lib/structured-data";
 import {
   SITE_URL,
@@ -147,7 +146,7 @@ export default async function Page({
                   className="group border-b border-gray-200"
                 >
                   <summary className="flex items-start gap-x-3 md:gap-x-4 py-5 md:py-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
-                    <span className="text-[#0047BB] font-bold text-base md:text-lg shrink-0 leading-6 md:leading-7">
+                    <span dir="ltr" className="text-[#0047BB] font-bold text-base md:text-lg shrink-0 leading-6 md:leading-7">
                       Q{index + 1}.
                     </span>
                     <span className="flex-1 text-gray-900 font-semibold text-base md:text-lg leading-6 md:leading-7 group-open:text-[#0047BB] transition-colors">
@@ -159,7 +158,7 @@ export default async function Page({
                       height={22}
                     />
                   </summary>
-                  <div className="pb-6 md:pb-7 pl-9 md:pl-11 pr-2 md:pr-8 flex flex-col gap-y-3">
+                  <div className="pb-6 md:pb-7 ps-9 md:ps-11 pe-2 md:pe-8 flex flex-col gap-y-3">
                     {item.a.map((paragraph) => (
                       <p
                         key={paragraph.slice(0, 30)}

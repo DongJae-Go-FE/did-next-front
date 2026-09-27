@@ -14,9 +14,9 @@ export default function LeftMenu(props: { title: string; menus: readonly MenusTy
   const pathName = usePathname();
 
   return (
-    <div className="relative border-r border-gray-200">
+    <div className="relative border-e border-gray-200">
       <div className="w-60 text-gray-900 pt-4 max-[767px]:hidden sticky top-30">
-        <h3 className="pl-8 h-14 flex items-center heading04b">
+        <h3 className="ps-8 h-14 flex items-center heading04b">
           {props.title}
         </h3>
         <nav>
@@ -27,7 +27,7 @@ export default function LeftMenu(props: { title: string; menus: readonly MenusTy
                   <Link
                     href={items.href}
                     className={cn(
-                      "block pl-8 py-3",
+                      "block ps-8 py-3",
                       pathName === items.href ? "body01b" : "body01m"
                     )}
                   >

@@ -5,6 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const t = {
+  ar: {"title": "الصفحة غير موجودة", "desc": "الصفحة المطلوبة غير موجودة أو تم نقلها.", "btn": "العودة إلى الرئيسية"},
+  ur: {"title": "صفحہ نہیں ملا", "desc": "مطلوبہ صفحہ موجود نہیں یا منتقل کر دیا گیا ہے۔", "btn": "مرکزی صفحے پر جائیں"},
+  tr: {"title": "Sayfa Bulunamadı", "desc": "İstediğiniz sayfa mevcut değil veya taşınmış.", "btn": "Ana Sayfaya Dön"},
+  id: {"title": "Halaman Tidak Ditemukan", "desc": "Halaman yang Anda minta tidak ada atau telah dipindahkan.", "btn": "Ke Beranda"},
+  ms: {"title": "Halaman Tidak Ditemui", "desc": "Halaman yang diminta tidak wujud atau telah dipindahkan.", "btn": "Ke Laman Utama"},
+
   kr: {
     title: "페이지를 찾을 수 없습니다",
     desc: "요청하신 페이지가 존재하지 않거나 이동되었습니다.",
@@ -95,6 +101,11 @@ function detectLocale(pathname: string | null): NotFoundLocale {
     if (lang.startsWith("fil") || lang.startsWith("tl")) return "fil";
     if (lang.startsWith("ja")) return "ja";
     if (lang.startsWith("vi")) return "vi";
+    if (lang.startsWith("ar")) return "ar";
+    if (lang.startsWith("ur")) return "ur";
+    if (lang.startsWith("tr")) return "tr";
+    if (lang.startsWith("id")) return "id";
+    if (lang.startsWith("ms")) return "ms";
     if (lang.startsWith("en")) return "en";
   }
   return "kr";

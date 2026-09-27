@@ -17,6 +17,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { getTextDirection } from "@/lib/locale-direction";
 import Menu from "../menu";
 import {
   content,
@@ -113,7 +114,7 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
 
         <ul className="flex items-center gap-x-1">
           <li>
-            <Select value={value} onValueChange={handleLanguageChange}>
+            <Select dir={getTextDirection(locale)} value={value} onValueChange={handleLanguageChange}>
               <SelectTrigger
                 aria-label={
                   locale === "kr" ? "언어 선택" : "Select language"
@@ -131,7 +132,7 @@ export default function Header({ locale = "kr" }: { locale?: Locale }) {
               <SelectContent size="lg" className="font-black">
                 {locales.map((lang) => (
                   <SelectItem key={lang} value={lang} size="lg">
-                    {localeLabels[lang]}
+                    <bdi lang={content[lang].lang}>{localeLabels[lang]}</bdi>
                   </SelectItem>
                 ))}
               </SelectContent>
