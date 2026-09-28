@@ -199,6 +199,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "رياضي"],
       personAlt: "فيديو دعم اليوم العالمي للشباب 2027",
     },
     applyPage: {
@@ -439,6 +440,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "کھلاڑی"],
       personAlt: "WYD 2027 کی حمایت کی ویڈیو",
     },
     applyPage: {
@@ -679,6 +681,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Sporcu"],
       personAlt: "WYD 2027 destek videosu",
     },
     applyPage: {
@@ -919,6 +922,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Atlet"],
       personAlt: "Video dukungan WYD 2027",
     },
     applyPage: {
@@ -1159,6 +1163,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Atlet"],
       personAlt: "Video sokongan WYD 2027",
     },
     applyPage: {
@@ -1397,6 +1402,7 @@ export const content = {
       personLabel23: ["에드윈 킴", "바실리오"],
       personLabel24: ["레이어스 클래식"],
       personLabel25: ["트리오 좋은세상만들기"],
+      personLabel26: ["차준환", "선수"],
       personAlt: "wyd did 응원영상",
     },
     applyPage: {
@@ -1637,6 +1643,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Athlete"],
       personAlt: "WYD 2027 Support Video",
     },
     applyPage: {
@@ -1880,6 +1887,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Deportista"],
       personAlt: "Video de apoyo a la JMJ 2027",
     },
     applyPage: {
@@ -2123,6 +2131,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Athlète"],
       personAlt: "Vidéo de soutien aux JMJ 2027",
     },
     applyPage: {
@@ -2366,6 +2375,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Atleta"],
       personAlt: "Vídeo de apoio à JMJ 2027",
     },
     applyPage: {
@@ -2609,6 +2619,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Atleta"],
       personAlt: "Video di sostegno alla GMG 2027",
     },
     applyPage: {
@@ -2852,6 +2863,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Sportowiec"],
       personAlt: "Wideo wsparcia ŚDM 2027",
     },
     applyPage: {
@@ -3095,6 +3107,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Sportler"],
       personAlt: "Unterstützungsvideo zum WJT 2027",
     },
     applyPage: {
@@ -3335,6 +3348,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "运动员"],
       personAlt: "2027世青应援视频",
     },
     applyPage: {
@@ -3572,6 +3586,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "運動員"],
       personAlt: "2027世青應援影片",
     },
     applyPage: {
@@ -3812,6 +3827,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Atleta"],
       personAlt: "Video ng suporta sa WYD 2027",
     },
     applyPage: {
@@ -4052,6 +4068,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "選手"],
       personAlt: "WYD 2027 応援動画",
     },
     applyPage: {
@@ -4293,6 +4310,7 @@ export const content = {
       personLabel23: ["Edwin Kim", "Basil"],
       personLabel24: ["Layers Classic"],
       personLabel25: ["Trio", "Making a Better World"],
+      personLabel26: ["Cha Jun-hwan", "Vận động viên"],
       personAlt: "Video cổ vũ ĐHGTTG 2027",
     },
     applyPage: {
